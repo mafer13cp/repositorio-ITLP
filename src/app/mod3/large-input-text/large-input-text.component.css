@@ -1,3 +1,10 @@
 .txtDesc{
     width: 100%;
 }
+
+.lbl{
+    position:relative;
+    text-align: center;
+    left: 50%;
+    right: 50%;
+}
