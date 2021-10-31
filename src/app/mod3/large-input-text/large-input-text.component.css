@@ -3,9 +3,7 @@
     
 }
 
-.lbl{
-    position:relative;
+.center{
     text-align: center;
-    left: 50%;
-    right: 50%;
+    margin: 0 auto;
 }
