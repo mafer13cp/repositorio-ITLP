@@ -1,9 +1,12 @@
 .txtDesc{
     width: 100%;
-    
+    font-size: 25px;
 }
-
 .center{
     text-align: center;
     margin: 0 auto;
+}
+.lbl{
+    color: #495867;
+    font-size: 30px;
 }

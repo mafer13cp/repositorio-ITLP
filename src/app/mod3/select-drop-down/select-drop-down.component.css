@@ -4,7 +4,9 @@
 }
 .txt{
     width: 100%;
+    font-size: 25px;
 }
-.ddl{
-    width: 100%;
+.lbl{
+    color: #495867;
+    font-size: 30px;
 }
