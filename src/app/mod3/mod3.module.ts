@@ -9,6 +9,8 @@ import { RatingComponent } from './rating/rating.component';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { ReturnButtonComponent } from './return-button/return-button.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,20 +18,23 @@ import {MatSelectModule} from '@angular/material/select';
     DropDownListComponent,
     SelectDropDownComponent,
     UploadFileComponent,
-    RatingComponent
+    RatingComponent,
+    ReturnButtonComponent
   ],
   imports: [
     CommonModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule
   ],
   exports:[
     LargeInputTextComponent,
     DropDownListComponent,
     SelectDropDownComponent,
     UploadFileComponent,
-    RatingComponent
+    RatingComponent,
+    ReturnButtonComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }
