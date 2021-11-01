@@ -1,0 +1,20 @@
+.tarjetadev{
+    width: fit-content;
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+#foto{
+    width: 150px;
+    height: 250px;
+    margin: 0px;
+    padding: 0px;
+}
+
+p{
+    font-size: 20px;
+    color: #47525E;
+    margin: 0px;
+   
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-specific-search',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./specific-search.component.css']
 })
 export class SpecificSearchComponent implements OnInit {
+  
+  @Input() texto:String;
 
-  constructor() { }
+  constructor() { 
+    this.texto="";
+  }
 
   ngOnInit(): void {
   }

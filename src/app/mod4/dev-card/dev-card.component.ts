@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dev-card',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() dev:String;
+
+  constructor() { 
+    this.dev = "";
+  }
 
   ngOnInit(): void {
   }

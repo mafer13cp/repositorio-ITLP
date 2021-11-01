@@ -11,8 +11,9 @@ import { DevCardComponent } from './dev-card/dev-card.component';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import {Mat}
+import {MatCardModule} from '@angular/material/card';
 
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import {Mat}
     CommonModule,
     MatInputModule,
     MatDividerModule,
+    MatCardModule,
+    MatSelectModule
   ],
   exports: [
     CommentSectionComponent,
