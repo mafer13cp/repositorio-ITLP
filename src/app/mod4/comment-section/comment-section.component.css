@@ -1,0 +1,17 @@
+#commentsection{
+    width: 600px;
+    height: fit-content;
+
+    margin-left: 10px;
+}
+#divisor{
+    color: #BDD5EA;
+    margin-bottom: 5px;
+}
+p{
+    color: #495867;
+    font-size: 35px;
+    margin-bottom: 0px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
