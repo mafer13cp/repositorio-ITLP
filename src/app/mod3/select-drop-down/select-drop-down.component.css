@@ -1,0 +1,12 @@
+.center{
+    margin:0 auto;
+    text-align: center;
+}
+.txt{
+    width: 100%;
+    font-size: 25px;
+}
+.lbl{
+    color: #495867;
+    font-size: 30px;
+}

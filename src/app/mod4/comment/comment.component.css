@@ -1,0 +1,19 @@
+div{
+    width: 70%;
+}
+#fotoperfil{
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+p{
+    font-size: 20px;
+    color: #47525E;
+}
+#comentario{
+    font-size: 20px;
+    color: #8190A5;
+}

@@ -1,0 +1,21 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-color: #495867;
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+    padding: 1%;
+}
+.bar h2 {
+    margin-top: 1%;
+    color: #577399;
+}
