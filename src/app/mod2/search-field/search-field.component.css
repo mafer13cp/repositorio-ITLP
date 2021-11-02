@@ -1,0 +1,35 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.search {
+    width: 320px;
+    outline-color: #577399;
+    outline-width: 2px;
+    outline-style: solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search input {
+    margin-left: 20px;
+    border-style: hidden;
+    font-size: 20px;
+}
+.search input:focus {
+    outline: none;
+}
+.search p {
+    margin-top: 4px;
+    font-size: 25px;
+    font-weight: 900;
+    color: #BDD5EA;
+}
+.icon {
+    font-size: 26px;
+    font-weight: 900;
+    cursor: pointer;
+}

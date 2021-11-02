@@ -1,0 +1,19 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.docCard {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+}
+.content {
+    width: 80px;
+    height: 80px;
+}
+.docName {
+    font-size: 16px;
+    color: #577399;
+}
