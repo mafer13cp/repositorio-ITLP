@@ -1,0 +1,19 @@
+
+footer{
+	background-color: #577399;
+	color: #b4cce3;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+}
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    position:fixed;
+    bottom: 0;
+}
+#T2{
+    margin-left: 80%;
+}
