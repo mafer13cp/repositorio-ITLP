@@ -1,0 +1,13 @@
+#signupcontainer{
+    margin-top: 30%;
+    margin-left: 10%;
+    border-radius: 10%;
+    border-width: 1px;
+    border-color: white;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    display:grid;
+    align-items: center;
+    text-align: center;
+}
