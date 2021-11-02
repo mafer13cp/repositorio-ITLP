@@ -5,6 +5,9 @@
     --white-ish: #F7F7FF;
 }
 
+.grid {
+    margin: 5px;
+}
 .tag {
     background-color: #BDD5EA;
 }

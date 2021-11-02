@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-mini',
+  selector: 'docMini',
   templateUrl: './doc-mini.component.html',
   styleUrls: ['./doc-mini.component.css']
 })

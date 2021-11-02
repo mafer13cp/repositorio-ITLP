@@ -17,6 +17,10 @@ import { CardDocComponent } from './card-doc/card-doc.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 //#endregion
 
@@ -37,7 +41,11 @@ import {MatDividerModule} from '@angular/material/divider';
     Mod2RoutingModule,
     MatChipsModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatInputModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatExpansionModule
   ],
   exports: [
     TagGridComponent,

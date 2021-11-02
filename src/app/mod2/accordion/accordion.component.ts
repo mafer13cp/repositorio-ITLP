@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-accordion',
+  selector: 'accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.css']
 })
-export class AccordionComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class AccordionComponent {
+  panelOpenState = false;
 }
