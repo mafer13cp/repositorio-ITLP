@@ -1,11 +1,12 @@
 div{
-    width: 100%;
+    width: 70%;
 }
 #fotoperfil{
     float: left;
-    width: 50px;
-    height: 50px;
-    background: sienna;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 5px;
 }
 
 p{

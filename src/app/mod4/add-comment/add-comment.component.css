@@ -1,13 +1,8 @@
-.comentarios{   
-    min-width: 150px;
-    max-width: 500px;
+.dejarComentario {
     width: 100%;
-    margin-left: 20px;
 }
-#addcomen{
-    width: 500px;
+  
+.materialcomen {
     margin-left: 10px;
-    resize: vertical;
-    min-height: 50px;
+    width: 50%;
 }
-

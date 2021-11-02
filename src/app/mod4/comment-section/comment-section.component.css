@@ -1,8 +1,9 @@
 #commentsection{
-    width: 600px;
+    width: 90%;
     height: fit-content;
-
     margin-left: 10px;
+    margin-right: 10px;
+
 }
 #divisor{
     color: #BDD5EA;

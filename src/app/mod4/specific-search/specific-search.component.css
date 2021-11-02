@@ -1,6 +1,9 @@
 #busquedaespecifica{
     margin-left: 20px;
+    width: 100%;
+    min-width: 800px;
 }
+
 .ddl{   
     font-size: 20px;
     width: 300px;
@@ -17,7 +20,7 @@ p{
     border-width: 5px;
     border-color: #577399;
     border-style: solid;
-    width: 90%;
+    width: 100%;
 }
 
 #busqueda{
