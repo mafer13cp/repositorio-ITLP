@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-delete',
+  selector: 'adminDelete',
   templateUrl: './admin-delete.component.html',
   styleUrls: ['./admin-delete.component.css']
 })
