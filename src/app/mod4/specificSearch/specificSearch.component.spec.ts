@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocumentFullComponent } from './document-full.component';
+import { SpecificSearchComponent } from './specificSearch.component';
 
-describe('DocumentFullComponent', () => {
-  let component: DocumentFullComponent;
-  let fixture: ComponentFixture<DocumentFullComponent>;
+describe('SpecificSearchComponent', () => {
+  let component: SpecificSearchComponent;
+  let fixture: ComponentFixture<SpecificSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocumentFullComponent ]
+      declarations: [ SpecificSearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DocumentFullComponent);
+    fixture = TestBed.createComponent(SpecificSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

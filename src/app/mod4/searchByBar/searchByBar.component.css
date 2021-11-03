@@ -4,6 +4,8 @@
     border: 3px #495867 solid;
     height: 50px;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
     position: relative;
     min-width: 800px;
 }

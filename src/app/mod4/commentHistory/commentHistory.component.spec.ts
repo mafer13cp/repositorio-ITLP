@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommentHistoryComponent } from './comment-history.component';
+import { CommentHistoryComponent } from './commentHistory.component';
 
 describe('CommentHistoryComponent', () => {
   let component: CommentHistoryComponent;

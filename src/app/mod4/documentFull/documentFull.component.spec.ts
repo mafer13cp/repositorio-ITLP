@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddCommentComponent } from './add-comment.component';
+import { DocumentFullComponent } from './documentFull.component';
 
-describe('AddCommentComponent', () => {
-  let component: AddCommentComponent;
-  let fixture: ComponentFixture<AddCommentComponent>;
+describe('DocumentFullComponent', () => {
+  let component: DocumentFullComponent;
+  let fixture: ComponentFixture<DocumentFullComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddCommentComponent ]
+      declarations: [ DocumentFullComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddCommentComponent);
+    fixture = TestBed.createComponent(DocumentFullComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-document-full',
-  templateUrl: './document-full.component.html',
-  styleUrls: ['./document-full.component.css']
+  selector: 'documentFull',
+  templateUrl: './documentFull.component.html',
+  styleUrls: ['./documentFull.component.css']
 })
 export class DocumentFullComponent implements OnInit {
 

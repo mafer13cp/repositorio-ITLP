@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CommentSectionComponent } from './comment-section/comment-section.component';
-import { AddCommentComponent } from './add-comment/add-comment.component';
-import { CommentHistoryComponent } from './comment-history/comment-history.component';
+import { CommentSectionComponent } from './commentSection/commentSection.component';
+import { AddCommentComponent } from './addComment/addComment.component';
+import { CommentHistoryComponent } from './commentHistory/commentHistory.component';
 import { CommentComponent } from './comment/comment.component';
-import { DocumentFullComponent } from './document-full/document-full.component';
-import { SearchByBarComponent } from './search-by-bar/search-by-bar.component';
-import { SpecificSearchComponent } from './specific-search/specific-search.component';
-import { DevCardComponent } from './dev-card/dev-card.component';
+import { DocumentFullComponent } from './documentFull/documentFull.component';
+import { SearchByBarComponent } from './searchByBar/searchByBar.component';
+import { SpecificSearchComponent } from './specificSearch/specificSearch.component';
+import { DevCardComponent } from './devCard/devCard.component';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';

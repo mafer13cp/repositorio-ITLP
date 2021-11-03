@@ -1,8 +1,21 @@
 div{
-    width: 70%;
+    width: 100%;
 }
+
+table, tr, td{
+    table-layout:fixed;
+}
+#perfil{
+    vertical-align: top;
+}
+
+#nombret{
+    text-align: start;
+    height: -50px;
+}
+
+
 #fotoperfil{
-    float: left;
     width: 70px;
     height: 70px;
     margin-right: 10px;

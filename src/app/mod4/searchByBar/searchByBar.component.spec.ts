@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpecificSearchComponent } from './specific-search.component';
+import { SearchByBarComponent } from './searchByBar.component';
 
-describe('SpecificSearchComponent', () => {
-  let component: SpecificSearchComponent;
-  let fixture: ComponentFixture<SpecificSearchComponent>;
+describe('SearchByBarComponent', () => {
+  let component: SearchByBarComponent;
+  let fixture: ComponentFixture<SearchByBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpecificSearchComponent ]
+      declarations: [ SearchByBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpecificSearchComponent);
+    fixture = TestBed.createComponent(SearchByBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
