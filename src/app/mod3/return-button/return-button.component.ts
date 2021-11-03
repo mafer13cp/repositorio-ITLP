@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'returnButton',
+  selector: 'app-return-button',
   templateUrl: './return-button.component.html',
   styleUrls: ['./return-button.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
-  selector: 'searchByBar',
+  selector: 'app-search-by-bar',
   templateUrl: './search-by-bar.component.html',
   styleUrls: ['./search-by-bar.component.css']
 })

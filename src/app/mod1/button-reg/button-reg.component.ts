@@ -1,7 +1,7 @@
 import { Component, OnInit,Input} from '@angular/core';
 
 @Component({
-  selector: 'buttonReg',
+  selector: 'app-button-reg',
   templateUrl: './button-reg.component.html',
   styleUrls: ['./button-reg.component.css']
 })

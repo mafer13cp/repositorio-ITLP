@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'headerITLP',
+  selector: 'app-header-itlp',
   templateUrl: './header-itlp.component.html',
   styleUrls: ['./header-itlp.component.css']
 })

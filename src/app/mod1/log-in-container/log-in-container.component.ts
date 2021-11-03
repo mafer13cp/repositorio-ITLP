@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'logInContainer',
+  selector: 'app-log-in-container',
   templateUrl: './log-in-container.component.html',
   styleUrls: ['./log-in-container.component.css']
 })

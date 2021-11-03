@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verticalDivisor',
+  selector: 'app-vertical-divisor',
   templateUrl: './vertical-divisor.component.html',
   styleUrls: ['./vertical-divisor.component.css']
 })

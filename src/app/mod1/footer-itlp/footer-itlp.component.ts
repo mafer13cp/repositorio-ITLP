@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'footerITLP',
+  selector: 'app-footer-itlp',
   templateUrl: './footer-itlp.component.html',
   styleUrls: ['./footer-itlp.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'selectDropDown',
+  selector: 'app-select-drop-down',
   templateUrl: './select-drop-down.component.html',
   styleUrls: ['./select-drop-down.component.css']
 })
