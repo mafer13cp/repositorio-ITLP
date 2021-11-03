@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home-button',
+  selector: 'homeButton',
   templateUrl: './home-button.component.html',
   styleUrls: ['./home-button.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-dev-card',
+  selector: 'devCard',
   templateUrl: './dev-card.component.html',
   styleUrls: ['./dev-card.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-comment-history',
+  selector: 'commentHistory',
   templateUrl: './comment-history.component.html',
   styleUrls: ['./comment-history.component.css']
 })

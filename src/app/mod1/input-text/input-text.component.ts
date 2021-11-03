@@ -1,7 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-input-text',
+  selector: 'inputText',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.css']
 })

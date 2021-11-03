@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-upload-file',
+  selector: 'uploadFile',
   templateUrl: './upload-file.component.html',
   styleUrls: ['./upload-file.component.css']
 })
