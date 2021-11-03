@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LargeInputTextComponent } from './large-input-text/large-input-text.component';
-import { DropDownListComponent } from './drop-down-list/drop-down-list.component';
-import { SelectDropDownComponent } from './select-drop-down/select-drop-down.component'
-import { UploadFileComponent } from './upload-file/upload-file.component';
+import { LargeInputTextComponent } from './largeInputText/largeInputText.component';
+import { DropDownListComponent } from './dropDownList/dropDownList.component';
+import { SelectDropDownComponent } from './selectDropDown/selectDropDown.component'
+import { UploadFileComponent } from './uploadFile/uploadFile.component';
 import { RatingComponent } from './rating/rating.component';
 //Librerias de MUI
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { ReturnButtonComponent } from './return-button/return-button.component';
+import { ReturnButtonComponent } from './returnButton/returnButton.component';
 import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({

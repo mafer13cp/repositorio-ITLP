@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LargeInputTextComponent } from './large-input-text.component';
+import { LargeInputTextComponent } from './largeInputText.component';
 
 describe('LargeInputTextComponent', () => {
   let component: LargeInputTextComponent;

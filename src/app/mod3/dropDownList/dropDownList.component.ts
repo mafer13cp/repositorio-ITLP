@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-drop-down-list',
-  templateUrl: './drop-down-list.component.html',
-  styleUrls: ['./drop-down-list.component.css']
+  selector: 'dropDownList',
+  templateUrl: './dropDownList.component.html',
+  styleUrls: ['./dropDownList.component.css']
 })
 export class DropDownListComponent implements OnInit {
 

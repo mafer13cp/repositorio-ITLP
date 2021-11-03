@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploadFileComponent } from './upload-file.component';
+import { SelectDropDownComponent } from './selectDropDown.component';
 
-describe('UploadFileComponent', () => {
-  let component: UploadFileComponent;
-  let fixture: ComponentFixture<UploadFileComponent>;
+describe('SelectDropDownComponent', () => {
+  let component: SelectDropDownComponent;
+  let fixture: ComponentFixture<SelectDropDownComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UploadFileComponent ]
+      declarations: [ SelectDropDownComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UploadFileComponent);
+    fixture = TestBed.createComponent(SelectDropDownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
