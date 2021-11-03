@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonRegComponent } from './button-reg.component';
+import { HeaderITLPComponent } from './headerItlp.component';
 
-describe('ButtonRegComponent', () => {
-  let component: ButtonRegComponent;
-  let fixture: ComponentFixture<ButtonRegComponent>;
+describe('HeaderITLPComponent', () => {
+  let component: HeaderITLPComponent;
+  let fixture: ComponentFixture<HeaderITLPComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonRegComponent ]
+      declarations: [ HeaderITLPComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonRegComponent);
+    fixture = TestBed.createComponent(HeaderITLPComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

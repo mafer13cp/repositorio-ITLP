@@ -1,9 +1,9 @@
 import { Component, OnInit,Input} from '@angular/core';
 
 @Component({
-  selector: 'app-button-reg',
-  templateUrl: './button-reg.component.html',
-  styleUrls: ['./button-reg.component.css']
+  selector: 'buttonReg',
+  templateUrl: './buttonReg.component.html',
+  styleUrls: ['./buttonReg.component.css']
 })
 export class ButtonRegComponent implements OnInit {
 

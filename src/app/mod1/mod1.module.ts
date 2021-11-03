@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeButtonComponent } from './home-button/home-button.component';
-import { HeaderITLPComponent } from './header-itlp/header-itlp.component';
-import { FooterITLPComponent } from './footer-itlp/footer-itlp.component';
-import { LogInContainerComponent } from './log-in-container/log-in-container.component';
-import { SignUpContainerComponent } from './sign-up-container/sign-up-container.component';
-import { InputTextComponent } from './input-text/input-text.component';
-import { ButtonRegComponent } from './button-reg/button-reg.component';
-import { ButtonIconComponent } from './button-icon/button-icon.component';
+import { HomeButtonComponent } from './homeButton/homeButton.component';
+import { HeaderITLPComponent } from './headerItlp/headerItlp.component';
+import { FooterITLPComponent } from './footerItlp/footerItlp.component';
+import { LogInContainerComponent } from './logInContainer/logInContainer.component';
+import { SignUpContainerComponent } from './signUpContainer/signUpContainer.component';
+import { InputTextComponent } from './inputText/inputText.component';
+import { ButtonRegComponent } from './buttonReg/buttonReg.component';
+import { ButtonIconComponent } from './buttonIcon/buttonIcon.component';
 
 
 

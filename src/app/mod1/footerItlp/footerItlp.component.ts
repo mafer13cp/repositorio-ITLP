@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-footer-itlp',
-  templateUrl: './footer-itlp.component.html',
-  styleUrls: ['./footer-itlp.component.css']
+  selector: 'footerItlp',
+  templateUrl: './footerItlp.component.html',
+  styleUrls: ['./footerItlp.component.css']
 })
 export class FooterITLPComponent implements OnInit {
 

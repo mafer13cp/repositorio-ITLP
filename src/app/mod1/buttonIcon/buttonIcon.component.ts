@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-button-icon',
-  templateUrl: './button-icon.component.html',
-  styleUrls: ['./button-icon.component.css']
+  selector: 'buttonIcon',
+  templateUrl: './buttonIcon.component.html',
+  styleUrls: ['./buttonIcon.component.css']
 })
 export class ButtonIconComponent implements OnInit {
 

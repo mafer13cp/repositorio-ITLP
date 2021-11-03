@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterITLPComponent } from './footer-itlp.component';
+import { InputTextComponent } from './inputText.component';
 
-describe('FooterITLPComponent', () => {
-  let component: FooterITLPComponent;
-  let fixture: ComponentFixture<FooterITLPComponent>;
+describe('InputTextComponent', () => {
+  let component: InputTextComponent;
+  let fixture: ComponentFixture<InputTextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterITLPComponent ]
+      declarations: [ InputTextComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterITLPComponent);
+    fixture = TestBed.createComponent(InputTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
