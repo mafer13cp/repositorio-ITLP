@@ -7,6 +7,7 @@ import { AdminResultDocComponent } from './admin-result-doc/admin-result-doc.com
 import { AdminResultComponent } from './admin-result/admin-result.component';
 import { CardResultComponent } from './card-result/card-result.component';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 

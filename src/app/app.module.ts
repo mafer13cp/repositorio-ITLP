@@ -12,11 +12,6 @@ import { Mod3Module } from './mod3/mod3.module';
 import { Mod4Module } from './mod4/mod4.module';
 import { Mod5Module } from './mod5/mod5.module';
 
-//pasar a import del modulo 5
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-
-
 
 @NgModule({
   declarations: [
@@ -30,9 +25,7 @@ import {MatCardModule} from '@angular/material/card';
     Mod2Module,
     Mod3Module,
     Mod4Module,
-    Mod5Module,
-    MatButtonModule, //pasar a mod5
-    MatCardModule //pasar a mod5
+    Mod5Module
   ],
   providers: [],
   bootstrap: [AppComponent]
