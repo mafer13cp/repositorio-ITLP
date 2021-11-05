@@ -6,7 +6,9 @@ import { SelectDropDownComponent } from './selectDropDown/selectDropDown.compone
 import { UploadFileComponent } from './uploadFile/uploadFile.component';
 import { RatingComponent } from './rating/rating.component';
 import { ReturnButtonComponent } from './returnButton/returnButton.component';
+import { DocInfoComponent } from './docInfo/docInfo.component';
 import { Mod1Module } from '../mod1/mod1.module';
+import { Mod2Module } from '../mod2/mod2.module';
 //Librerias de MUI
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
     SelectDropDownComponent,
     UploadFileComponent,
     RatingComponent,
-    ReturnButtonComponent
+    ReturnButtonComponent,
+    DocInfoComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +31,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatSelectModule,
     MatButtonModule,
-    Mod1Module
+    Mod1Module,
+    Mod2Module
   ],
   exports:[
     LargeInputTextComponent,
@@ -36,7 +40,8 @@ import {MatButtonModule} from '@angular/material/button';
     SelectDropDownComponent,
     UploadFileComponent,
     RatingComponent,
-    ReturnButtonComponent
+    ReturnButtonComponent,
+    DocInfoComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }
