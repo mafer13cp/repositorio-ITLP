@@ -7,6 +7,7 @@ import { UploadFileComponent } from './uploadFile/uploadFile.component';
 import { RatingComponent } from './rating/rating.component';
 import { ReturnButtonComponent } from './returnButton/returnButton.component';
 import { DocInfoComponent } from './docInfo/docInfo.component';
+import { AdminAddComponent } from './adminAdd/adminAdd.component';
 import { Mod1Module } from '../mod1/mod1.module';
 import { Mod2Module } from '../mod2/mod2.module';
 //Librerias de MUI
@@ -23,7 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
     UploadFileComponent,
     RatingComponent,
     ReturnButtonComponent,
-    DocInfoComponent
+    DocInfoComponent,
+    AdminAddComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import {MatButtonModule} from '@angular/material/button';
     UploadFileComponent,
     RatingComponent,
     ReturnButtonComponent,
-    DocInfoComponent
+    DocInfoComponent,
+    AdminAddComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }
