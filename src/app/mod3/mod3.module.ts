@@ -5,11 +5,12 @@ import { DropDownListComponent } from './dropDownList/dropDownList.component';
 import { SelectDropDownComponent } from './selectDropDown/selectDropDown.component'
 import { UploadFileComponent } from './uploadFile/uploadFile.component';
 import { RatingComponent } from './rating/rating.component';
+import { ReturnButtonComponent } from './returnButton/returnButton.component';
+import { Mod1Module } from '../mod1/mod1.module';
 //Librerias de MUI
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { ReturnButtonComponent } from './returnButton/returnButton.component';
 import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    Mod1Module
   ],
   exports:[
     LargeInputTextComponent,

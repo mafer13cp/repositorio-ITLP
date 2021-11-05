@@ -1,5 +1,12 @@
-.ddl{
+.center{
     margin: 0 auto;
+    text-align: center;
     width: 100%;
+}
+.cbb{
+    width: 90%;
+    text-align: center;
     font-size: 25px;
+    border-radius: 20px;
+    border:solid  #495867 3px;
 }
