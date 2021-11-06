@@ -1,2 +1,15 @@
-
-  
+<section class="collapsible">
+    <input type="checkbox" id="menu">
+    <label for="menu"></label>
+    <div class="menuContent">
+        <section class="accList">
+            <accordion [title]="'Materias'"></accordion>
+            <accordion [title]="'Temas'"></accordion>
+            <accordion [title]="'Tags'"></accordion>
+        </section>
+        <section class="more">
+            <h2>Ayuda <mat-icon>help</mat-icon></h2>
+            <h2>Acerca de nosotros <mat-icon>info</mat-icon></h2>
+        </section>
+    </div>
+</section>

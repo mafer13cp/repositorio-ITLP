@@ -1,0 +1,88 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.collapsible {
+    height: 100%;
+    display: flex;
+}
+.menuContent {
+    height: 100%;
+    background-color: #F7F7FF;
+    border:none;
+    max-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.collapsible label {
+    background-color: #577399;
+    width: 55px;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    background: url(../../../assets/img/menu.png) no-repeat left top;
+    background-color: #577399;
+}
+input#menu {
+    display: none;
+}
+input:checked +label {
+    background-image: url(../../../assets/img/close.png);
+    background-color: #F7F7FF;
+    border-style: solid;
+    border-color: #495867;
+    border-width: 2px 0 2px 2px;
+}
+input:checked ~ label {
+    background-image: url(../../../assets/img/close.png);
+    background-color: #F7F7FF;
+    border-style: solid;
+    border-color: #495867;
+    border-width: 2px 0 2px 2px;
+}
+input:checked ~ .menuContent {
+    max-width: 1000%;
+    overflow: auto;
+    border-style: solid;
+    border-color: #495867;
+    border-width: 2px 2px 2px 0;
+}
+
+.accList {
+    margin-top: 2vh;
+    margin-right: 2vh;
+}
+
+.more {
+    color: #577399;
+    padding: 2vh;
+}
+
+.more mat-icon {
+    color: #495867;
+}
+
+/* scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
