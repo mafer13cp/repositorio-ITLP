@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'accordion',
@@ -6,6 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accordion.component.css']
 })
 
-export class AccordionComponent {
+export class AccordionComponent implements OnInit{
+
+  @Input() title: string;
+
+  constructor() { 
+    this.title = "";
+  }
+
+  ngOnInit(): void {
+  }
+  
   panelOpenState = false;
+
 }

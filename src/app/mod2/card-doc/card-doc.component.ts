@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'cardDoc',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardDocComponent implements OnInit {
 
-  constructor() { }
+  @Input () docName: string;
+
+  constructor() { 
+    this.docName="name";
+  }
 
   ngOnInit(): void {
   }

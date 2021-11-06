@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'headerLine',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderLineComponent implements OnInit {
 
-  constructor() { }
+  @Input() title: string;
+
+  constructor() { 
+    this.title="";
+  }
 
   ngOnInit(): void {
   }
