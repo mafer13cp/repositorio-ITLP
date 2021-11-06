@@ -7,15 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DocMiniComponent implements OnInit {
 
-  @Input() docName: string;
-  @Input() autorName: string;
+  @Input() docTitle: string = "title";
+  @Input() autorName: string = "name";
 
   constructor() { 
-    this.docName="";
-    this.autorName="";
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
 }
