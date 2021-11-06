@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'adminAdd',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminAdd.component.css']
 })
 export class AdminAddComponent implements OnInit {
-
+  @Input() ops:string[]=[];
   constructor() { }
 
   ngOnInit(): void {
