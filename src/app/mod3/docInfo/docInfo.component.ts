@@ -8,6 +8,7 @@ import { Component, OnInit,Input } from '@angular/core';
 export class DocInfoComponent implements OnInit {
   @Input() desc:string = "";
   @Input() tit:string = "";
+  @Input() nomDoc:string = "";
   constructor() { }
 
   ngOnInit(): void {
