@@ -1,0 +1,20 @@
+.contenedor{
+    width: 850px;
+    background-color: #F7F7FF;
+    height:250px;
+}
+.Autor{
+    position: relative;
+    left: 230px;
+    top: 20px;
+}
+.Materia{
+    position: relative;
+    left: 430px;
+    bottom: 148px;
+}
+.Etiqueta{
+    position: relative;
+    left: 630px;
+    bottom: 316px;
+}

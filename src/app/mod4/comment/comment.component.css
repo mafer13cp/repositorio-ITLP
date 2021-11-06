@@ -1,0 +1,32 @@
+div{
+    width: 100%;
+}
+
+table, tr, td{
+    table-layout:fixed;
+}
+#perfil{
+    vertical-align: top;
+}
+
+#nombret{
+    text-align: start;
+    height: -50px;
+}
+
+
+#fotoperfil{
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+p{
+    font-size: 20px;
+    color: #47525E;
+}
+#comentario{
+    font-size: 20px;
+    color: #8190A5;
+}
