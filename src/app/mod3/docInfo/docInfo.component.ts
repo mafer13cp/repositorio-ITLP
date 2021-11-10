@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'docInfo',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./docInfo.component.css']
 })
 export class DocInfoComponent implements OnInit {
-
+  @Input() desc:string = "";
+  @Input() tit:string = "";
+  @Input() nomDoc:string = "";
   constructor() { }
 
   ngOnInit(): void {

@@ -1,7 +1,6 @@
 <div class="center">
     <select class="cbb">
         <option disabled selected>Elige una opcion</option>
-        <option value="op1">Opción 1</option>
-        <option value="op2">Opción 2</option>
+        <option *ngFor="let op of ops">{{op}}</option>
     </select>
 </div>

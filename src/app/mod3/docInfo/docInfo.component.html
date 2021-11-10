@@ -1,9 +1,10 @@
 <div>
     <div class="center">
-        <label class="lbl1">Titulo del documento</label>
-        <cardDoc></cardDoc>
+        <label class="lbl1">{{tit}}</label>
+        <cardDoc [docName]="nomDoc"></cardDoc>
     </div>
     <div>
-        <label class="lbl2">Resumen</label>
+        <label class="lbl2">Resumen<br><br>{{desc}}
+        </label>
     </div>
 </div>
