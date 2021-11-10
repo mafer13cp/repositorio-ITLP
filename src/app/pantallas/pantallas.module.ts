@@ -40,6 +40,24 @@ import { TagGenComponent } from './tagGen/tagGen.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ViewDocUsrComponent,
+    ViewDocAutComponent,
+    ViewDocPanComponent,
+    SubirDocComponent,
+    BusAdminComponent,
+    LoginComponent,
+    RegistroComponent,
+    ResBusquedaComponent,
+    InicioColapComponent,
+    InicioDespComponent,
+    AddAdminsComponent,
+    PerfilUsrComponent,
+    DocGenComponent,
+    MatGenComponent,
+    TemGenComponent,
+    TagGenComponent
   ]
 })
 export class PantallasModule { }
