@@ -1,5 +1,5 @@
 #inputtext{
-    width: 150px;
+    width: 100%;
 }
 #labelit{
     text-align: center;
@@ -10,7 +10,7 @@
 }
 #inputit{
     margin-top: 5%;
-    width: 150px;
+    width: 100%;
     border-color: #4e5867;
     border-width: 1px;
     border-radius: 10%;
