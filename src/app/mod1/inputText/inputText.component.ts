@@ -9,7 +9,7 @@ export class InputTextComponent implements OnInit {
  
   @Input() texto:String;
   constructor() { 
-    this.texto="";
+    this.texto="Ingresar usuario";
   }
 
   ngOnInit(): void {

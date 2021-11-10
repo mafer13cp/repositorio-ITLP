@@ -7,10 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardDocComponent implements OnInit {
 
-  @Input () docName: string;
+  @Input () docName: string = "title";
 
   constructor() { 
-    this.docName="name";
   }
 
   ngOnInit(): void {

@@ -8,10 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class AccordionComponent implements OnInit{
 
-  @Input() title: string;
+  @Input() title: string = "title";
+  @Input() listItems: string[] = ['item'];
 
   constructor() { 
-    this.title = "";
   }
 
   ngOnInit(): void {
