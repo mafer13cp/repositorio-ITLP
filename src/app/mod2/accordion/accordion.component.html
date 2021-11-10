@@ -7,11 +7,6 @@
   </mat-expansion-panel-header>
 
   <ul class="list">
-    <li><a href="">Tema</a></li>
-    <li><a href="">Tema</a></li>
-    <li><a href="">Tema</a></li>
-    <li><a href="">Tema</a></li>
-    <li><a href="">Tema</a></li>
-    <li><a href="">Tema</a></li>
+    <li *ngFor="let item of listItems"><a href="">{{item}}</a></li>
 </ul>
 </mat-expansion-panel>
