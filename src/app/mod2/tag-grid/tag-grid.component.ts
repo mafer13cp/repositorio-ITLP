@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'tagGrid',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagGridComponent implements OnInit {
 
-  constructor() { }
+  @Input() listTags: string[]  = ['tag'];
+  
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
