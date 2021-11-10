@@ -10,6 +10,8 @@ import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { CardDocComponent } from '../mod2/card-doc/card-doc.component';
+import { Mod2Module } from '../mod2/mod2.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    Mod2Module
   ],
   exports:[
     UserInfoComponent,

@@ -1,20 +1,8 @@
 .contenedor{
-    width: 850px;
+    width: 100%;
     background-color: #F7F7FF;
-    height:250px;
-}
-.Autor{
-    position: relative;
-    left: 230px;
-    top: 20px;
-}
-.Materia{
-    position: relative;
-    left: 430px;
-    bottom: 148px;
-}
-.Etiqueta{
-    position: relative;
-    left: 630px;
-    bottom: 316px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

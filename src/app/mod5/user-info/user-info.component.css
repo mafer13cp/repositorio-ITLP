@@ -1,51 +1,56 @@
 .contenedor{
-    width: 850px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color: rgb(87,115,153);
+    width: 100%;
 /*    margin: 0 auto; */
 }
-.encabezado{
-    background-color: rgb(87,115,153);
-    height: 150px;
+.contIzq{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 0%;
+}
+.contText{
+    display: flex;
+    flex-direction: column;
+}
+.contText2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0%;
+    margin-top: 0%;
+}
+.contDer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5%;
 }
 .Redimension{
     max-width:130px;
     max-height:130px;
-    vertical-align: middle;
-    position: relative;
-    left: 60px;
-    top: 10px;
 }
 .NombreU{
     color: white;
-    position: relative;
-    left: 220px;
-    bottom: 110px;
 }
 .NombreP{
     color: #495867;
-    position: relative;
-    left: 220px;
-    bottom: 120px;
+
 }
 .NombreI{
     color: whitesmoke;
-    position: relative;
-    left: 220px;
-    bottom: 130px;
+
 }
 .Correo{
     color: whitesmoke;
-    position: relative;
-    left: 630px;
-    bottom: 355px;
+
 }
 .NoControl{
     color: whitesmoke;
-    position: relative;
-    left: 630px;
-    bottom: 355px;
 }
 .Linea{
     position: relative;
-    left: 550px;
-    bottom: 250px;
+    left: 100%;
 }
