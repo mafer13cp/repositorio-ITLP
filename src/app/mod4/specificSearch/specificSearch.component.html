@@ -3,18 +3,8 @@
     <mat-divider id="divisorbusqueda"></mat-divider>
 
     <div id="contenido">
-        <div class="ddl">
-            <mat-form-field appearance="fill" class="ddl">
-                <mat-label>Elige una opción</mat-label>
-                <mat-select>
-                    <mat-option value="op1">Opción 1</mat-option>
-                    <mat-option value="op2">Opción 2</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <form class="barrabusqueda">
-            <input id="busqueda" type="text" placeholder="Ingrese su búsqueda">
-        </form>
-        <button id="btnreg">{{texto}}</button>
+        <dropDownList id="list"></dropDownList>
+        <searchField id="barra"></searchField>
+        <buttonReg [texto]="'Buscar'"></buttonReg>
     </div>
 </div>
