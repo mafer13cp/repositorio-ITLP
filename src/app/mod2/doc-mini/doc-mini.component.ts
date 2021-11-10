@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'docMini',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocMiniComponent implements OnInit {
 
-  constructor() { }
+  @Input() docTitle: string = "title";
+  @Input() autorName: string = "name";
 
-  ngOnInit(): void {
+  constructor() { 
+  }
+
+  ngOnInit(): void { 
   }
 
 }

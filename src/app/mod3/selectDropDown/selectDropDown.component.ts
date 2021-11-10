@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'selectDropDown',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./selectDropDown.component.css']
 })
 export class SelectDropDownComponent implements OnInit {
-
+  @Input() ops:string[] = [];
   constructor() { }
 
   ngOnInit(): void {

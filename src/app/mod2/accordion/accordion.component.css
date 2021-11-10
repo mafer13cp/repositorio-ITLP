@@ -4,6 +4,9 @@
     --light-blue: #BDD5EA;
     --white-ish: #F7F7FF;
 }
+.acc {
+    margin: 5px;
+}
 .title {
     font-size: 18px;
     color: #495867;

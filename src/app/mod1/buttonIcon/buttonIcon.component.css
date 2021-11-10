@@ -5,13 +5,18 @@
     font-size: large;
     border: #577399;
     border-radius: 10%;
-    width: 120px;
-    height: 40px;
+    width: 7%;
+    height: 5%;
 
 }
 #subiri{
+    background-image: url(../../../assets/img/subiricon.png) ;
+    background-repeat: no-repeat;
+    
     width: 20px;
     height: 20px;
     margin: 0px;
     float: right;
+    object-fit: cover;
+    object-position: center center;
 }

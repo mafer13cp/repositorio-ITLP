@@ -8,6 +8,11 @@ import { DocumentFullComponent } from './documentFull/documentFull.component';
 import { SearchByBarComponent } from './searchByBar/searchByBar.component';
 import { SpecificSearchComponent } from './specificSearch/specificSearch.component';
 import { DevCardComponent } from './devCard/devCard.component';
+import { Mod1Module } from '../mod1/mod1.module';
+import { Mod2Module } from '../mod2/mod2.module';
+import { Mod3Module } from '../mod3/mod3.module';
+import { Mod5Module } from '../mod5/mod5.module';
+
 
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
@@ -32,7 +37,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatDividerModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    Mod1Module,
+    Mod2Module,
+    Mod3Module,
+    Mod5Module
   ],
   exports: [
     CommentSectionComponent,
