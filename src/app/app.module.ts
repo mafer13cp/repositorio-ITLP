@@ -11,6 +11,7 @@ import { Mod2Module } from './mod2/mod2.module';
 import { Mod3Module } from './mod3/mod3.module';
 import { Mod4Module } from './mod4/mod4.module';
 import { Mod5Module } from './mod5/mod5.module';
+import { PantallasModule } from './pantallas/pantallas.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Mod5Module } from './mod5/mod5.module';
     Mod2Module,
     Mod3Module,
     Mod4Module,
-    Mod5Module
+    Mod5Module,
+    PantallasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
