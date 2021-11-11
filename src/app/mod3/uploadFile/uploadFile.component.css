@@ -2,7 +2,8 @@
     margin:0 auto;
     text-align: center;
 }
-.lbl{
+.btn{
     color: #495867;
-    font-size: 30px;
+    border: 0px;
+    background-color: white;
 }

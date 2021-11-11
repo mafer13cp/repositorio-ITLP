@@ -3,7 +3,7 @@ import { Component, OnInit,Input } from '@angular/core';
 @Component({
   selector: 'selectDropDown',
   templateUrl: './selectDropDown.component.html',
-  styleUrls: ['./selectDropDown.component.css']
+  styleUrls: ['./selectDropDown.component.css','../../app.component.css']
 })
 export class SelectDropDownComponent implements OnInit {
   @Input() ops:string[] = [];

@@ -1,29 +1,23 @@
 .d1{
     width: 30%;
-    padding-top: 36px;
+    margin-top: 3.5%;
+    height: 6%;
 }
 .d2{
     width: 50%;
-    padding-top: 10px;
+    height: 10%;
 }
 .d3{
     width: 20%;
-    padding-top: 37px;
+    margin-top: 3.5%;
+    height: 6%;
 }
 .d1,.d2,.d3{
-    height: 90px;
     float: left;
-}
-.txt{
-    width: 90%;
+    align-items: center;
     text-align: center;
-    font-size: 25px;
-    border-radius: 50px;
-    border:solid  #495867 3px;
-    padding: 1%;
 }
 .lbl{
     color: #495867;
-    font-size: 25px;
     margin-left: 2%;
 }

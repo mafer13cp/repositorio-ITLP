@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'largeInputText',
   templateUrl: './largeInputText.component.html',
-  styleUrls: ['./largeInputText.component.css']
+  styleUrls: ['./largeInputText.component.css','../../app.component.css']
 })
 export class LargeInputTextComponent implements OnInit {
 

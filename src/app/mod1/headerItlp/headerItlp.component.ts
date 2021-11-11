@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'headerItlp',
   templateUrl: './headerItlp.component.html',
-  styleUrls: ['./headerItlp.component.css']
+  styleUrls: ['./headerItlp.component.css','../../app.component.css']
 })
 export class HeaderITLPComponent implements OnInit {
 

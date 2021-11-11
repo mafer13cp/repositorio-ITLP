@@ -3,28 +3,24 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 8%;
     width: 100%;
     display: flex;
     align-items: center;
     background-color: #4e5867;
     color: #b4cce3;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
 }
 button{
     background-color:#4e5867;
     color: #b4cce3;
     border: #4e5867;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
 }
 .spacer {
     flex: 1;
 }
 #fperfil{
-    width:40px;
-    height:40px;
+    width:10%;
+    height:50%;
     src:"../../assets/usericon.jpg";
 }
 .libro{

@@ -4,32 +4,38 @@
     --light-blue: #BDD5EA;
     --white-ish: #F7F7FF;
 }
+.component{
+    align-items: center;
+    text-align: center;
+    margin:0 auto;
+}
 .search {
-    width: 320px;
-    outline-color: #577399;
-    outline-width: 2px;
+    width: 90%;
+    outline-color: #495867;
+    outline-width: 3px;
     outline-style: solid;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 0 auto;
 }
 .search input {
-    margin-left: 20px;
+    margin-left: 5%;
     border-style: hidden;
-    font-size: 20px;
+    width: 75%;
 }
 .search input:focus {
     outline: none;
 }
 .search p {
     margin-top: 4px;
-    font-size: 25px;
     font-weight: 900;
     color: #BDD5EA;
+    width: 10%;
 }
 .icon {
-    font-size: 26px;
     font-weight: 900;
     cursor: pointer;
+    width: 10%;
 }
