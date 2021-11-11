@@ -1,10 +1,9 @@
 #btnreg{
     background-color: #577399;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: 20px;
     border: #577399;
-    border-radius: 10%;
-    height: 100%;
-    width: 100%;
+    border-radius: 50px;
+    border:solid  #495867 3px;
+    padding: 0.5%;
 }

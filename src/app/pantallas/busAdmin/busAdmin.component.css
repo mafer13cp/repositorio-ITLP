@@ -1,0 +1,25 @@
+.head{
+    width: 100%;
+    height: 59px;
+}
+.bar{
+    width: 100%;
+    margin: 0 auto;
+}
+.search{
+    width: 100%;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.separador{
+    width: 96%;
+    margin: 0 auto;
+}
+.result{
+    width: 100%;
+    margin: 20px auto;
+}
+.foot{
+    width: 100%;
+}

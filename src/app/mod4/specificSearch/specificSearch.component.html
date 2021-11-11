@@ -1,10 +1,12 @@
-<div id="busquedaespecifica">   
-    <p>Búsqueda específica</p>
-    <mat-divider id="divisorbusqueda"></mat-divider>
-
-    <div id="contenido">
-        <dropDownList id="list"></dropDownList>
-        <searchField id="barra"></searchField>
-        <buttonReg [texto]="'Buscar'"></buttonReg>
+<div class="contenedor">
+    <headerLine [title]="'Búsqueda Específica'"></headerLine>
+    <div class="d1">
+        <dropDownList class="ddl" [ops]="['opcion1','opcion2']"></dropDownList>
+    </div>
+    <div class="d2">
+        <searchField></searchField>
+    </div>
+    <div class="d3">
+        <buttonReg class="btn" [texto]="'Buscar'"></buttonReg>
     </div>
 </div>

@@ -1,22 +1,13 @@
 #btnicon{
     background-color: #577399;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-size: 20px;
     border: #577399;
-    border-radius: 10%;
-    width: 7%;
-    height: 5%;
-
+    border-radius: 50px;
+    border:solid  #495867 3px;
+    padding: 0.5%;
+    text-align: center;
 }
-#subiri{
-    background-image: url(../../../assets/img/subiricon.png) ;
-    background-repeat: no-repeat;
-    
-    width: 20px;
-    height: 20px;
-    margin: 0px;
-    float: right;
-    object-fit: cover;
-    object-position: center center;
+#icono{
+    font-size: 18px;
 }

@@ -1,30 +1,28 @@
 #barrabusqueda{
-    margin: 0px;
-    padding: 0px;
     border: 3px #495867 solid;
-    width: 100%;
-    padding: 10px;
+    width: 99%;
     display: flex;    
     justify-content:space-between;
     flex-wrap:  wrap;
     align-items:center;
+    text-align: center;
+    margin: 0 auto;
 }
 #buscar{
     display: flex;    
     justify-content:space-evenly;
 }
 p{
-    margin: 0px;
-    padding: 0px;
     font-size: 20px;
     color: #577399;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 1% 10%;
 }
 #busqueda{
-    margin: 0px;
-    padding: 0px;
+    margin: 1% 1%;
     font-size: 30px;
     color: #577399;
-    margin-right: 10px;
+    margin-right: 10%;
+}
+.boton{
+    margin: 1% 1%;
 }

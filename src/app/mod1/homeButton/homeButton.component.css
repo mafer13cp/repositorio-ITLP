@@ -1,9 +1,7 @@
-#btnhome{
-    margin-top: 20%;
-    margin-left: 20%;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-image: url(../../../assets/img/usericon.jpg) ;
-    background-repeat: no-repeat;
+#libro{
+    margin: 0 0.5%;
+    background-color: white;
+    border-radius: 50px;
+    padding: 0.5%;
+    color: #495867;
 }

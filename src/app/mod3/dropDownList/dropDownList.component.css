@@ -2,7 +2,7 @@
     margin: 0 auto;
     text-align: center;
     width: 100%;
-    margin: 1% auto;
+    margin: 0 auto;
 }
 .cbb{
     width: 90%;
@@ -10,5 +10,5 @@
     font-size: 25px;
     border-radius: 50px;
     border:solid  #495867 3px;
-    padding: 1%;
+    padding: 0.5%;
 }
