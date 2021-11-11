@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'adminResultDoc',
   templateUrl: './admin-result-doc.component.html',
-  styleUrls: ['./admin-result-doc.component.css']
+  styleUrls: ['./admin-result-doc.component.css','../../app.component.css']
 })
 export class AdminResultDocComponent implements OnInit {
 

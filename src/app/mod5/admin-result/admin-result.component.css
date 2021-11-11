@@ -1,9 +1,11 @@
-.boton{
-    position: relative;
-    left: 50px;
-    top: 5px;
-}
 .comp{
-    position: relative;
+    align-items: center;
+    text-align:center;
     margin: 10px;
+    width: 200px;
+    height: fit-content;
+    margin: 0 auto;
+}
+.boton{
+    margin-top:3%;
 }

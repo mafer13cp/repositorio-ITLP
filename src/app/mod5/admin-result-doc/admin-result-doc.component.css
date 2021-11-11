@@ -1,9 +1,8 @@
 .Contenedor{
-    display: flex;
-    flex-direction: column;
-}
-.boton{
-    position: relative;
-    left: 50px;
-    top: 5px;
+    align-items: center;
+    text-align:center;
+    margin: 10px;
+    width: 200px;
+    height: fit-content;
+    margin: 0 auto;
 }

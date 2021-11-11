@@ -1,6 +1,6 @@
 .contenedor{
     width: 100%;
-    background-color: #F7F7FF;
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
