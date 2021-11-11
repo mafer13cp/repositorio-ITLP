@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'commentHistory',
   templateUrl: './commentHistory.component.html',
-  styleUrls: ['./commentHistory.component.css']
+  styleUrls: ['./commentHistory.component.css','../../app.component.css']
 })
 export class CommentHistoryComponent implements OnInit {
 

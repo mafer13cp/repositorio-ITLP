@@ -16,17 +16,14 @@ table, tr, td{
 
 
 #fotoperfil{
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
-    margin-left: 5px;
+    width: 90%;
+    height: 90%;
+    margin: 5% 5%;
 }
 
 p{
-    font-size: 20px;
     color: #47525E;
 }
 #comentario{
-    font-size: 20px;
     color: #8190A5;
 }

@@ -1,28 +1,28 @@
 #barrabusqueda{
     border: 3px #495867 solid;
     width: 99%;
-    display: flex;    
-    justify-content:space-between;
-    flex-wrap:  wrap;
-    align-items:center;
-    text-align: center;
-    margin: 0 auto;
+    margin: 0.5% auto;
+    height: 7%;
 }
 #buscar{
-    display: flex;    
-    justify-content:space-evenly;
+    width: 100%;
 }
-p{
-    font-size: 20px;
+#buscar .norm{
     color: #577399;
-    margin: 1% 10%;
-}
-#busqueda{
+    width:15%;
+    text-align: center;
+    float: left;
     margin: 1% 1%;
-    font-size: 30px;
+}
+.busqueda{
     color: #577399;
-    margin-right: 10%;
+    width: 19%;
+    float: left;
+    margin: 1% 0;
+    margin-left: 1%;
 }
 .boton{
-    margin: 1% 1%;
+    width: 11%;
+    float: left;
+    margin-top: 0.5%;
 }
