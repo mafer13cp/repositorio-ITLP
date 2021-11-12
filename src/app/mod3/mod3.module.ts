@@ -4,7 +4,6 @@ import { LargeInputTextComponent } from './largeInputText/largeInputText.compone
 import { DropDownListComponent } from './dropDownList/dropDownList.component';
 import { SelectDropDownComponent } from './selectDropDown/selectDropDown.component'
 import { UploadFileComponent } from './uploadFile/uploadFile.component';
-import { RatingComponent } from './rating/rating.component';
 import { ReturnButtonComponent } from './returnButton/returnButton.component';
 import { DocInfoComponent } from './docInfo/docInfo.component';
 import { AdminAddComponent } from './adminAdd/adminAdd.component';
@@ -22,7 +21,6 @@ import {MatButtonModule} from '@angular/material/button';
     DropDownListComponent,
     SelectDropDownComponent,
     UploadFileComponent,
-    RatingComponent,
     ReturnButtonComponent,
     DocInfoComponent,
     AdminAddComponent
@@ -41,7 +39,6 @@ import {MatButtonModule} from '@angular/material/button';
     DropDownListComponent,
     SelectDropDownComponent,
     UploadFileComponent,
-    RatingComponent,
     ReturnButtonComponent,
     DocInfoComponent,
     AdminAddComponent

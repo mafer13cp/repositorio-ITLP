@@ -8,8 +8,7 @@ import { BusAdminComponent } from './busAdmin/busAdmin.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ResBusquedaComponent } from './resBusqueda/resBusqueda.component';
-import { InicioColapComponent } from './inicioColap/inicioColap.component';
-import { InicioDespComponent } from './inicio-desp/inicio-desp.component';
+import { InicioComponent } from './inicio/inicio.component';
 import { AddAdminsComponent } from './addAdmins/addAdmins.component';
 import { PerfilUsrComponent } from './perfilUsr/perfilUsr.component';
 import { DocGenComponent } from './docGen/docGen.component';
@@ -32,8 +31,7 @@ import { Mod5Module } from '../mod5/mod5.module';
     LoginComponent,
     RegistroComponent,
     ResBusquedaComponent,
-    InicioColapComponent,
-    InicioDespComponent,
+    InicioComponent,
     AddAdminsComponent,
     PerfilUsrComponent,
     DocGenComponent,
@@ -58,8 +56,7 @@ import { Mod5Module } from '../mod5/mod5.module';
     LoginComponent,
     RegistroComponent,
     ResBusquedaComponent,
-    InicioColapComponent,
-    InicioDespComponent,
+    InicioComponent,
     AddAdminsComponent,
     PerfilUsrComponent,
     DocGenComponent,

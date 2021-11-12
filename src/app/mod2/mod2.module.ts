@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Mod2RoutingModule } from './mod2-routing.module';
-import { TagGridComponent } from './tag-grid/tag-grid.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
@@ -11,6 +10,10 @@ import { GridCardsComponent } from './grid-cards/grid-cards.component';
 import { HeaderLineComponent } from './header-line/header-line.component';
 import { DocMiniComponent } from './doc-mini/doc-mini.component';
 import { CardDocComponent } from './card-doc/card-doc.component';
+import { AccordionTagComponent } from './accordion-tag/accordion-tag.component';
+import { AccordionTextComponent } from './accordion-text/accordion-text.component';
+import { AccordionRateComponent } from './accordion-rate/accordion-rate.component';
+import { DocSideInfoComponent } from './doc-side-info/doc-side-info.component';
 
 //#region MUI
 
@@ -21,18 +24,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { AccordionTagComponent } from './accordion-tag/accordion-tag.component';
-import { AccordionTextComponent } from './accordion-text/accordion-text.component';
-import { AccordionRateComponent } from './accordion-rate/accordion-rate.component';
 import { DividerComponent } from './divider/divider.component';
-import { Mod3Module } from '../mod3/mod3.module';
-import { DocSideInfoComponent } from './doc-side-info/doc-side-info.component';
 
 //#endregion
 
 @NgModule({
   declarations: [
-    TagGridComponent,
     SearchBarComponent,
     SearchFieldComponent,
     SideNavComponent,
@@ -59,7 +56,6 @@ import { DocSideInfoComponent } from './doc-side-info/doc-side-info.component';
     MatExpansionModule,
   ],
   exports: [
-    TagGridComponent,
     SearchBarComponent,
     SearchFieldComponent,
     SideNavComponent,

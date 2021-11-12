@@ -3,8 +3,11 @@
     height: 100%;
 }
 .head{
-    height: 200px;
+    height: 5%;
+    padding-top: 1%;
+    padding-left: 1%;
 }
+
 .cuerpo1{
     width: 30%;
     margin: 0 auto;

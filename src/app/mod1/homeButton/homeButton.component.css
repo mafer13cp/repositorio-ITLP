@@ -1,13 +1,14 @@
 .libro{
     width: 5vh;
     height: 5vh;
-    margin: 0 0.5%;
-    margin-left: 0.5%;
     background-color: white;
     border-radius: 50%;
     padding: 0.5%;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 i {
     color: #495867;
