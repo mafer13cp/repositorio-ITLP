@@ -1,20 +1,14 @@
-<div>
-    <div class="head">
-        <headerItlp></headerItlp>
+<div class="busAdmin">
+    <headerItlp></headerItlp>
+    <searchByBar></searchByBar>
+    <div class="cuerpo1">
+        <specificSearch></specificSearch>
     </div>
-    <div class="bar">
-        <searchByBar></searchByBar>
-    </div>
-    <div class="search">
-        <specificSearch [texto]="'Buscar'"></specificSearch>
-    </div>
-    <div class="separador">
+    <div class="cuerpo2">
         <headerLine [title]="''"></headerLine>
     </div>
-    <div class="result">
+    <div class="cuerpo3">
         <adminSearchResult></adminSearchResult>
     </div>
-    <div class="foot">
-        <footerItlp></footerItlp>
-    </div>
+    <footerItlp></footerItlp>
 </div>
