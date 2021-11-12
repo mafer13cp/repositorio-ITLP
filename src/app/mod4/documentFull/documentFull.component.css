@@ -1,0 +1,84 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.docFull {
+    background-color: #F7F7FF;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.document {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerDoc {
+    width: 95%;
+    display: flex;
+    align-items: center;
+}
+#return {
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+#return i {
+    font-size: 6vh;
+}
+h2 {
+    margin-left: 2%;
+    color: #495867;
+}
+.docCont {
+    display: flex;
+}
+.doc {
+    margin-top: 1%;
+    width: 90%;
+    height: 85%;
+    border-radius: 4vh 4vh;
+    border-color: #8294a7;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.docText {
+    width: 95%;
+    height: 98%;
+    overflow: auto;
+    padding-right: 1%;
+}
+.doc p {
+    line-height: 3vh;
+    text-align: justify;
+    color: #577399;
+}
+
+/* scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #F7F7FF;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #8294a7
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #495867; 
+  }

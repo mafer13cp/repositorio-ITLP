@@ -16,7 +16,4 @@ export class AccordionComponent implements OnInit{
 
   ngOnInit(): void {
   }
-  
-  panelOpenState = false;
-
 }

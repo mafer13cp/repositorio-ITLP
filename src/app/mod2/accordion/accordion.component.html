@@ -1,11 +1,10 @@
-
 <mat-expansion-panel class="acc">
   <mat-expansion-panel-header>
     <mat-panel-title class="title">
       {{title}}
     </mat-panel-title>
   </mat-expansion-panel-header>
-
+  <divider class="divider"></divider>
   <ul class="list">
     <li *ngFor="let item of listItems"><a href="">{{item}}</a></li>
 </ul>

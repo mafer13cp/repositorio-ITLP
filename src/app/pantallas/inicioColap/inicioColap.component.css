@@ -1,0 +1,62 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+#body {
+    min-height: 81.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #F7F7FF;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#upload {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+#textUp {
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#textUp h2 {
+    color: #577399;
+}
+#textUp h3 {
+    color: #495867;
+}
+
+#subirBtn {
+    width: 20vh;
+}
+
+#cards {
+    margin-top: 4%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bar {
+    width: 100%;
+}

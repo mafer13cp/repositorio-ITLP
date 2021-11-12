@@ -1,0 +1,29 @@
+#cont {
+    min-width: 30vh;
+    height: 99.5%;
+    border-color: #495867;
+    border-width: 3px;
+    border-style: solid;
+    overflow: auto;
+}
+
+/* scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #F7F7FF;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8294a7
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #495867; 
+}
