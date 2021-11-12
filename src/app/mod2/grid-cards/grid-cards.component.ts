@@ -10,14 +10,6 @@ export class GridCardsComponent implements OnInit {
   //private docs: object[] = [];
 
   @Input() title: string = "title";
-  /* @Input()
-    set docList (docList) {
-      this.docs = docList.map(doc => myDocs (doc))
-    }
-
-  get docList () {
-    return this.docs;
-  } */
 
   constructor() { }
 
@@ -26,10 +18,3 @@ export class GridCardsComponent implements OnInit {
 
 }
 
-/* function myDocs (doc:object) {
-  return {
-    ...doc,
-    docName: doc,
-    autorName: doc
-  }
-} */

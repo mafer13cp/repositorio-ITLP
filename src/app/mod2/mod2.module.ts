@@ -21,6 +21,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AccordionTagComponent } from './accordion-tag/accordion-tag.component';
+import { AccordionTextComponent } from './accordion-text/accordion-text.component';
+import { AccordionRateComponent } from './accordion-rate/accordion-rate.component';
+import { DividerComponent } from './divider/divider.component';
+import { Mod3Module } from '../mod3/mod3.module';
+import { DocSideInfoComponent } from './doc-side-info/doc-side-info.component';
 
 //#endregion
 
@@ -34,7 +40,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     GridCardsComponent,
     HeaderLineComponent,
     DocMiniComponent,
-    CardDocComponent
+    CardDocComponent,
+    AccordionTagComponent,
+    AccordionTextComponent,
+    AccordionRateComponent,
+    DividerComponent,
+    DocSideInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -45,7 +56,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatInputModule,
     MatIconModule,
     MatSidenavModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
   exports: [
     TagGridComponent,
@@ -56,7 +67,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     GridCardsComponent,
     HeaderLineComponent,
     DocMiniComponent,
-    CardDocComponent
+    CardDocComponent,
+    AccordionTagComponent,
+    AccordionTextComponent,
+    AccordionRateComponent,
+    DividerComponent,
+    DocSideInfoComponent
   ]
 })
 export class Mod2Module { }

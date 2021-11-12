@@ -1,0 +1,16 @@
+root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.acc {
+    margin: 5px;
+}
+.title {
+    color: #495867;
+}
+p {
+    margin-top: 1vh;
+    color: #577399;
+}

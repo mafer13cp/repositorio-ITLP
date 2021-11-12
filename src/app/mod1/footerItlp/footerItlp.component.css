@@ -1,17 +1,9 @@
-
 footer{
 	background-color: #577399;
 	color: #b4cce3;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     height: 5%;
-}
-label{
-    position:fixed;
-    bottom: 1%;
-}
-#T2{
-    margin-left: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
