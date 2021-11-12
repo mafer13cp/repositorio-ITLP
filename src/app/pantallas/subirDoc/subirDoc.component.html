@@ -1,1 +1,26 @@
-<p>subir-doc works!</p>
+<div class="subirDoc">
+    <headerItlp class="head"></headerItlp>
+    <div class="cuerpo1">
+        <headerLine [title]="'Subir Documento'"></headerLine>
+        <inputText [texto]="'Título del documento'"></inputText>
+        <inputText [texto]="'Autor(es)'"></inputText>
+        <inputText [texto]="'Materia'"></inputText>
+    </div>
+    <div class="cuerpo2">
+        <div class="desc">
+            <largeInputText></largeInputText>
+        </div>
+        <div class="select">
+            <selectDropDown [ops]="['op1','op2']"></selectDropDown>
+        </div>
+    </div>
+    <div class="cuerpo3">
+        <div class="file">
+            <uploadFile></uploadFile>
+        </div>
+        <div class="button">
+            <buttonIcon></buttonIcon>
+        </div>
+    </div>
+    <footerItlp></footerItlp>
+</div>
