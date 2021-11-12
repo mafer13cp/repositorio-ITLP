@@ -15,6 +15,7 @@
     align-items: center; /*los alinea verticalmente*/
     justify-content: center; /*los alinea horizontalmente*/
 }
-.signContainer{
+.sign{
     width: 30%;
+    height: 80%;
 }

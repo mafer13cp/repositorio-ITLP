@@ -2,12 +2,23 @@
     border-radius: 50px;
     border:solid  #495867 3px;
     width: 99%;
-    height: fit-content;
+    height: 100%;
     background-color: white;
-    align-items: center;
     text-align: center;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .cuerpo1,.cuerpo2,.cuerpo3,.cuerpo4,.cuerpo5,.cuerpo6,.cuerpo7{
-    margin-top: 2%;
+    height: 12%;
+}
+.cuerpo1{
+    margin-top: 8%;
+}
+.cuerpo7{
+    margin-bottom: 5%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
