@@ -1,10 +1,13 @@
-<div class="subirDoc">
-    <headerItlp></headerItlp>
-    <div class="cuerpo1">
+<headerItlp></headerItlp>
+<!--Inicia componente-->
+<section class="subirDoc">
+    <div class="cuerpo0">
         <headerLine [title]="'Subir Documento'"></headerLine>
-        <inputText [texto]="'Título del documento'"></inputText>
-        <inputText [texto]="'Autor(es)'"></inputText>
-        <inputText [texto]="'Materia'"></inputText>
+        <div class="cuerpo1">
+            <inputText [texto]="'Título del documento'"></inputText>
+            <inputText [texto]="'Autor(es)'"></inputText>
+            <inputText [texto]="'Materia'"></inputText>
+        </div>
     </div>
     <div class="cuerpo2">
         <div class="desc">
@@ -22,5 +25,6 @@
             <buttonIcon></buttonIcon>
         </div>
     </div>
-    <footerItlp></footerItlp>
-</div>
+</section>
+<!--Termina componente-->
+<footerItlp></footerItlp>

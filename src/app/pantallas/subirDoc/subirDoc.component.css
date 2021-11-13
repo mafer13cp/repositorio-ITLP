@@ -1,25 +1,43 @@
-.cuerpo1{
-    margin: 0 auto;
-    align-items: center;
-    margin-top: 2%;
+.subirDoc{
+    display: flex;
+    flex-direction: column;
+    min-height: 87%;
+    min-width: 500px;
+}
+.cuerpo0{
     width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    margin-top: 2%;
+}
+.cuerpo1{
+    margin-top: 2%;
 }
 .cuerpo2,.cuerpo3{
-    margin: 0 auto;
+    /*margin: 0 auto;
     align-items: center;
     text-align: center;
     margin-top: 2%;
     width: 68%;
-    height: 190px;
+    height: 190px;*/
+    width: 68%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-top: 2%;
+    
 }
 .desc, .select{
     width: 50%;
-    float: left;
 }
 .file,.button{
     width: 50%;
-    float: left;
+    text-align: center;
+
 }
 .cuerpo3{
-    height: 50px;
+    width: 68%;
+    display: flex;
+    flex-direction: row;
 }
