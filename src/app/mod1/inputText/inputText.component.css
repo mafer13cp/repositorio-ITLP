@@ -2,7 +2,7 @@
     width: 100%;
     align-items: center;
     text-align: center;
-    margin: 1% auto;
+    margin: 0 auto;
 }
 .lbl, .boton{
     width: 100%;
@@ -17,6 +17,6 @@
     text-align: center;
     border-radius: 50px;
     border:solid  #495867 3px;
-    padding: 0.5%;
+    padding: 5px;
     margin-top: 1%;
 }

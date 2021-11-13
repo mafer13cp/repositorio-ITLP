@@ -1,15 +1,23 @@
 .busAdmin{
-    height: 87%;
+    min-height: 87%;
+    display: flex;
+    flex-direction: column;
 }
-.cuerpo1,.cuerpo2,.cuerpo3{
+.cuerpo0{
+    width: 99%;
+    margin: 1% auto;
+    border: 2px #495867 solid;
+    height: 20%;
+}
+.cuerpo1{
     width: 95%;
     margin: 0 auto;
-    margin-bottom: 2%;
-    height: 160px;
 }
 .cuerpo2{
-    height: 10px;
+    width: 95%;
+    margin: 0 auto;
 }
 .cuerpo3{
-    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
