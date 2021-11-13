@@ -4,7 +4,7 @@
       {{title}}
     </mat-panel-title>
   </mat-expansion-panel-header>
-  <divider class="divider"></divider>
+  <divider [color]="'light'" class="divider"></divider>
   <ul class="list">
     <li *ngFor="let item of listItems"><a href="">{{item}}</a></li>
 </ul>
