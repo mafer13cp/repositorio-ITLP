@@ -5,16 +5,28 @@
 .contenido2{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content:space-around;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .seccion1{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
+    width: 20%;
+}
+
+.seccion2{
+    display: flex;
+    justify-content:center;
+    width: 60%;
+}
+
+.seccion3{
+    display: flex;
+    justify-content:center;
+    width: 20%;
 }
 
 .texto1{
