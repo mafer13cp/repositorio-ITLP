@@ -1,4 +1,12 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
 .content {
     width: 100%;
     height: 87%;
+    display: flex;
+
 }
