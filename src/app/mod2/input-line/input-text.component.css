@@ -1,0 +1,40 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.wrapper{
+    width: 100%;
+    padding-top: 1%;
+  }
+.input-data {
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+.input-data input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 2vh;
+    border-bottom: 3px solid #BDD5EA;
+}
+.input-data input:focus ~ label, .input-data input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 2vh;
+}
+.wrapper .input-data label {
+    font-size: 3vh;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #577399;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-data input:focus {
+    outline: none;
+    border-bottom: 4px solid #577399;
+}
