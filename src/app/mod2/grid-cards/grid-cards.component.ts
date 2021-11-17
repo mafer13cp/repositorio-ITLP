@@ -7,13 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GridCardsComponent implements OnInit {
 
-  //private docs: object[] = [];
 
   @Input() title: string = "title";
+  @Input() num: number = 1;
+  count: number[] =[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.count = Array(this.num);
   }
 
 }

@@ -12,6 +12,9 @@ h2{
 h3, p, button, i, label,mat-card-title, mat-icon,mat-label,div{
     font-size: 3vh;
 }
+h4 {
+    font-size: 2vh;
+}
 mat-card-title,mat-panel-title,select,td{
     font-size: 2.4vh;
 }
@@ -19,6 +22,9 @@ input, li,  mat-card-subtitle,mat-chip-list,mat-chip,option,textarea {
     font-size: 2.3vh;
 }
 mat-expansion-panel p {
+    font-size: 2.4vh;
+}
+.commentText, .resumenDoc{
     font-size: 2.4vh;
 }
 

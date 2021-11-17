@@ -1,29 +1,35 @@
-div{
-    width: 100%;
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
 }
-
-table, tr, td{
-    table-layout:fixed;
+.com {
+    width: 95%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
-#perfil{
-    vertical-align: top;
+.material-icons {
+    font-size: 6vh;
+    color: #577399;
 }
-
-#nombret{
-    text-align: start;
-    height: -50px;
+.commentContent {
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
 }
-
-
-#fotoperfil{
-    width: 90%;
-    height: 90%;
-    margin: 5% 5%;
+.commentHead {
+    display: flex;
 }
-
-p{
-    color: #47525E;
+.commentHead h3 {
+    color: #495867;
 }
-#comentario{
-    color: #8190A5;
+.commentHead h4 {
+    margin-left: 3%;
+    color: #BDD5EA;
+}
+.commentText {
+    line-height: 3vh;
+    color: #577399;
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommentSectionComponent } from './commentSection/commentSection.component';
-import { AddCommentComponent } from './addComment/addComment.component';
 import { CommentHistoryComponent } from './commentHistory/commentHistory.component';
 import { CommentComponent } from './comment/comment.component';
 import { DocumentFullComponent } from './documentFull/documentFull.component';
@@ -24,7 +23,6 @@ import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     CommentSectionComponent,
-    AddCommentComponent,
     CommentHistoryComponent,
     CommentComponent,
     DocumentFullComponent,
@@ -45,7 +43,6 @@ import {MatSelectModule} from '@angular/material/select';
   ],
   exports: [
     CommentSectionComponent,
-    AddCommentComponent,
     CommentHistoryComponent,
     CommentComponent,
     DocumentFullComponent,

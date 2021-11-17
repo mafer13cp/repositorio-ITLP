@@ -25,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DividerComponent } from './divider/divider.component';
+import { InputTextComponent } from './input-line/input-text.component';
 
 //#endregion
 
@@ -43,6 +44,7 @@ import { DividerComponent } from './divider/divider.component';
     AccordionRateComponent,
     DividerComponent,
     DocSideInfoComponent,
+    InputTextComponent,
   ],
   imports: [
     CommonModule,
@@ -68,7 +70,8 @@ import { DividerComponent } from './divider/divider.component';
     AccordionTextComponent,
     AccordionRateComponent,
     DividerComponent,
-    DocSideInfoComponent
+    DocSideInfoComponent,
+    InputTextComponent
   ]
 })
 export class Mod2Module { }

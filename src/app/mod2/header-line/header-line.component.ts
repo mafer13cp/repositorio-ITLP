@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderLineComponent implements OnInit {
 
   @Input() title: string = "title";
+  @Input() color: string = "dark";
 
   constructor() { 
   }

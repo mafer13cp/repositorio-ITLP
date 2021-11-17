@@ -1,17 +1,6 @@
 <section class="container">
-    <headerLine [title]="'Últimos aportes'"></headerLine>
+    <headerLine [title]="title"></headerLine>
     <div class="grid"> 
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
-        <docMini [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
+        <docMini *ngFor="let n of count" [autorName]="'Nombre del autor'" [docTitle]="'Título del doc'"></docMini>
     </div>
 </section>
