@@ -21,6 +21,7 @@ import { Mod2Module } from '../mod2/mod2.module';
 import { Mod3Module } from '../mod3/mod3.module';
 import { Mod4Module } from '../mod4/mod4.module';
 import { Mod5Module } from '../mod5/mod5.module';
+import { AboutUsComponent } from './aboutUs/about-us.component';
 @NgModule({
   declarations: [
     ViewDocUsrComponent,
@@ -37,7 +38,8 @@ import { Mod5Module } from '../mod5/mod5.module';
     DocGenComponent,
     MatGenComponent,
     TemGenComponent,
-    TagGenComponent
+    TagGenComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
@@ -62,7 +64,8 @@ import { Mod5Module } from '../mod5/mod5.module';
     DocGenComponent,
     MatGenComponent,
     TemGenComponent,
-    TagGenComponent
+    TagGenComponent,
+    AboutUsComponent
   ]
 })
 export class PantallasModule { }
