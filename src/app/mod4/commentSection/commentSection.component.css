@@ -1,12 +1,12 @@
-#commentsection{
-    width: 100%;
-    height: fit-content;
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
 }
-#divisor{
-    color: #BDD5EA;
-    margin-bottom: 5px;
+#commentSection{
+    width: 99%;
 }
 h2{
-    color: #495867;
-    margin: 2% 2%;
+    color: #577399;
 }

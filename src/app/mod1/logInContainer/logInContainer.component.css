@@ -1,16 +1,19 @@
 #logincontainer{
     border-radius: 50px;
     border:solid  #495867 3px;
-    width: 99%;
-    height: 370px;
+    width: 93%;
     background-color: white;
-    align-items: center;
     text-align: center;
-    margin: 0 auto;
     padding: 3%;
+    height: 94%;
 }
-.cuerpo1,.cuerpo2,.cuerpo3{
-    height: 100px;
+.cuerpo1{
+    height: 20%;
+    margin-top: 20%;
+}
+.cuerpo2,.cuerpo3{
+    height: 20%;
+    margin-top: 1%;
 }
 label{
     font-size:small;
@@ -18,7 +21,4 @@ label{
 }
 #lcuenta{
     margin-top: 5%;
-}
-.boton{
-    width: 100%;
 }
