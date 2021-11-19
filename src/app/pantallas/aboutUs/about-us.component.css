@@ -26,3 +26,6 @@
     flex-direction: column;
     align-items: center;
 }
+.card{
+    margin-bottom: 3%;
+}

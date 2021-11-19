@@ -1,0 +1,14 @@
+<mat-expansion-panel class="acc">
+    <mat-expansion-panel-header>
+      <div class="edit">
+        <mat-panel-title class="title">
+          {{title}}
+        </mat-panel-title>
+        <i class="material-icons">edit</i>
+      </div>
+    </mat-expansion-panel-header>
+    <divider [color]="'light'"></divider>
+    <mat-chip-list class="grid">
+        <mat-chip class="tag" *ngFor ="let tag of listTags">{{tag}}</mat-chip>
+    </mat-chip-list>
+  </mat-expansion-panel>

@@ -4,16 +4,16 @@
     --light-blue: #BDD5EA;
     --white-ish: #F7F7FF;
 }
-.container {
+.container{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    width: 100%;
+    margin: 10px;
 }
-.title {
-    color: #495867;
-    font-weight: 500;
-}
-.divider {
+.grid {
+    margin-top: 20px;
     width: 100%;
-    height: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

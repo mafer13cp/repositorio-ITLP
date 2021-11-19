@@ -1,0 +1,24 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.acc {
+    margin: 5px;
+}
+.title {
+    color: #495867;
+}
+.list {
+    list-style-type: none;
+}
+.list li a {
+    text-decoration: none;
+    color: #577399;
+}
+.edit{
+    display: flex;
+    flex-direction: row;
+    color: #495867;
+}

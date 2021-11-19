@@ -1,15 +1,26 @@
 .contenedor{
     display: flex;
     flex-direction: column;
-    height: 87%;
+    justify-content: center;
+    overflow: auto;
+    min-height: 87%;
 }
 
-.cuerpo1{
-
-}
 .cuerpo2{
+    display: flex;
+    justify-content: center;
 
+    width: 80%;
+}
+#1{
+    width: 100%;
+}
+.cuerpo1{
+    width: 100%;
+    align-self: center;
 }
 .cuerpo3{
-
+    width: 95%;
+    display: flex;
+    align-self: center;
 }

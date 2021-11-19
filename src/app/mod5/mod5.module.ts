@@ -12,6 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { CardDocComponent } from '../mod2/card-doc/card-doc.component';
 import { Mod2Module } from '../mod2/mod2.module';
+import { ListCardComponent } from './list-card/list-card.component';
+import { DocSideInfoAutComponent } from './doc-side-info-aut/doc-side-info-aut.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { Mod2Module } from '../mod2/mod2.module';
     AdminResultDocComponent,
     AdminResultComponent,
     CardResultComponent,
-    AdminDeleteComponent
+    AdminDeleteComponent,
+    ListCardComponent,
+    DocSideInfoAutComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +40,9 @@ import { Mod2Module } from '../mod2/mod2.module';
     AdminResultDocComponent,
     AdminResultComponent,
     CardResultComponent,
-    AdminDeleteComponent
+    AdminDeleteComponent,
+    ListCardComponent,
+    DocSideInfoAutComponent
   ]
 })
 export class Mod5Module { }

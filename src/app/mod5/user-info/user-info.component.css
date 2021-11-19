@@ -20,7 +20,7 @@
 .contText2{
     display: flex;
     flex-direction: column;
-    margin-left: 0%;
+    margin-left: 2%;
     margin-top: 0%;
 }
 .contDer{
@@ -29,9 +29,23 @@
     align-items: center;
     margin-right: 5%;
 }
+/*
+#userIcon{
+    width: 15vh;
+    height: 15vh;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 15vh;
+    text-align: center;
+    color: #4e5867;
+    cursor: pointer;
+*/
 .Redimension{
-    max-width:130px;
-    max-height:130px;
+    
+    max-width:150px;
+    max-height:150px;
+    margin-right: 2%;
+
 }
 .NombreU{
     color: white;

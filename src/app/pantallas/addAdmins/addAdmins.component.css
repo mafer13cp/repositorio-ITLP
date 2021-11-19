@@ -1,3 +1,7 @@
 .contenedor{
-    height: 87%;
+    margin-top: .5%;
+    height: 86%;
+}
+.comp{
+    height: 20%;
 }

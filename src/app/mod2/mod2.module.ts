@@ -26,6 +26,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DividerComponent } from './divider/divider.component';
 import { InputTextComponent } from './input-line/input-text.component';
+import { AccordionTagAutComponent } from './accordion-tag-aut/accordion-tag-aut.component';
+import { AccordionAutComponent } from './accordion-aut/accordion-aut.component';
+import { AccordionTextAutComponent } from './accordion-text-aut/accordion-text-aut.component';
 
 //#endregion
 
@@ -45,6 +48,9 @@ import { InputTextComponent } from './input-line/input-text.component';
     DividerComponent,
     DocSideInfoComponent,
     InputTextComponent,
+    AccordionTagAutComponent,
+    AccordionAutComponent,
+    AccordionTextAutComponent,
   ],
   imports: [
     CommonModule,
@@ -71,7 +77,10 @@ import { InputTextComponent } from './input-line/input-text.component';
     AccordionRateComponent,
     DividerComponent,
     DocSideInfoComponent,
-    InputTextComponent
+    InputTextComponent,
+    AccordionTagAutComponent,
+    AccordionAutComponent,
+    AccordionTextAutComponent,
   ]
 })
 export class Mod2Module { }
