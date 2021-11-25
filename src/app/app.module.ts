@@ -12,6 +12,7 @@ import { Mod3Module } from './mod3/mod3.module';
 import { Mod4Module } from './mod4/mod4.module';
 import { Mod5Module } from './mod5/mod5.module';
 import { PantallasModule } from './pantallas/pantallas.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PantallasModule } from './pantallas/pantallas.module';
     Mod3Module,
     Mod4Module,
     Mod5Module,
-    PantallasModule
+    PantallasModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
