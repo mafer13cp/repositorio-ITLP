@@ -5,7 +5,10 @@
         <headerLine [title]="'Subir Documento'"></headerLine>
         <div class="cuerpo1">
             <div class="inputT"><inputText [texto]="'Título del documento'"></inputText></div>
-            <div class="inputT"><inputText [texto]="'Autor(es)'"></inputText></div>
+            <div class="inputTSp">
+                <div class="itc1"><inputText [texto]="'Autor(es)'"></inputText></div>
+                <div class="btnc1"><buttonReg [texto]="'Agregar autor'"></buttonReg></div>
+            </div>
             <div class="inputT"><inputText [texto]="'Materia'"></inputText></div>
         </div>
     </div>
@@ -15,6 +18,7 @@
         </div>
         <div class="select">
             <selectDropDown [ops]="['op1','op2']"></selectDropDown>
+            <div class="btnSel"><buttonReg  [texto]="'Agregar tag'"></buttonReg></div>
         </div>
     </div>
     <div class="cuerpo3">
