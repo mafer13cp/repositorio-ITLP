@@ -7,9 +7,8 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class InputTextComponent implements OnInit {
  
-  @Input() texto:String;
+  @Input() text :string = "Ingresar texto:";
   constructor() { 
-    this.texto="Ingresar usuario";
   }
 
   ngOnInit(): void {

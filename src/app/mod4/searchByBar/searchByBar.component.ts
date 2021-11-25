@@ -7,10 +7,9 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class SearchByBarComponent implements OnInit {
 
-  @Input() texto:String;
+  @Input() text: string = "text";
 
   constructor() { 
-    this.texto="";
   }
 
   ngOnInit(): void {

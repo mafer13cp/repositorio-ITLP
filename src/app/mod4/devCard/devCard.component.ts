@@ -7,10 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DevCardComponent implements OnInit {
 
-  @Input() dev:String;
+  @Input() name: string = "name";
+  @Input() imgUrl: string = "https://material.angular.io/assets/img/examples/shiba2.jpg";
 
   constructor() { 
-    this.dev = "";
   }
 
   ngOnInit(): void {

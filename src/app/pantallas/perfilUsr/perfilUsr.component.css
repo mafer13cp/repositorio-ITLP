@@ -1,6 +1,5 @@
 .contenido{
-    height: 87%;
-    overflow: auto;
+    min-height: 87%;
 }
 
 .contenido2{
@@ -17,7 +16,7 @@
     justify-content: center;
     text-align: center;
     width: 20%;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 .seccion2{
     display: flex;

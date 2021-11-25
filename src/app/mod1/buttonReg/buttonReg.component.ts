@@ -7,9 +7,8 @@ import { Component, OnInit,Input} from '@angular/core';
 })
 export class ButtonRegComponent implements OnInit {
 
-  @Input() texto:String;
+  @Input() text: string = "btn";
   constructor() { 
-    this.texto="";
   }
 
   ngOnInit(): void {

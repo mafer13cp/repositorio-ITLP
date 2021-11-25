@@ -16,8 +16,12 @@
     width: 100%;
 }
 .cuerpo1{
-    width: 100%;
+    width: 99%;
     align-self: center;
+    border-color: #495867;
+    border-width: 3px;
+    border-style: solid;
+    margin-top: 0.5%;
 }
 .cuerpo3{
     width: 95%;
