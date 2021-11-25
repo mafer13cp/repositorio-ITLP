@@ -2,13 +2,14 @@
     height: 100%;
 }
 #buscar{
-    width: 100%;
+    width: 99%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
+    padding: 0.5%;
 }
 .largo{
     width: 200px;

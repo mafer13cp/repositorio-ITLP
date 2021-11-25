@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'buttonIcon',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonIconComponent implements OnInit {
 
+  @Input() text: string = "btn";
+  @Input() icon: string = "upload_file";
   constructor() { }
 
   ngOnInit(): void {

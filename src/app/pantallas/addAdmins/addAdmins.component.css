@@ -1,6 +1,9 @@
 .contenedor{
     margin-top: .5%;
     height: 86%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
 }
 .comp{
     height: 20%;

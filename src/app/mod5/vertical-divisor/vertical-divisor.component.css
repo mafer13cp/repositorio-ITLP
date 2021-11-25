@@ -1,8 +1,6 @@
 hr{ 
-    border:         none;
-    border-left:    1px solid hsla(255, 100%, 100%,255);
-    height:         12vh; /*Largo*/
-    width:          1px;      
-    position: relative; 
-    right: 380px;   /*Posición*/
+    border: none;
+    height: 12vh; 
+    width: 3px;  
+    background-color: hsla(255, 100%, 100%,255);
 }

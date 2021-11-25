@@ -5,27 +5,27 @@
             <img class="Redimension" src="../../../assets/img/usr.ico">
         </div>
         <div class="contText">
-        <div class="NombreU">
-            <h1>Nombre usuario</h1>
-        </div>
-        <div class="NombreP">
-            <h2>Puesto</h2>
-        </div>
-        <div class="NombreI">
-            <h2>ITLP</h2>
+            <div class="NombreU">
+                <h1>{{usuario.nombre}}</h1>
+            </div>
+            <div class="NombreP">
+                <h2>{{usuario.rol}}</h2>
+            </div>
+            <div class="NombreI">
+                <h2>ITLP</h2>
+            </div>
         </div>
     </div>
-</div>
     <div class="contDer">
         <div class="Linea">
             <verticalDivisor></verticalDivisor>
         </div>
         <div class="contText2">
             <div class="Correo">
-                <h2>correo@itlp.com</h2>
+                <h2>{{usuario.correo}}</h2>
             </div>
             <div class="NoControl">
-                <h2>Número de control</h2>
+                <h2>{{usuario.id}}</h2>
             </div>
         </div>
 
