@@ -8,5 +8,9 @@
     width: 100%;
     height: 87%;
     display: flex;
+    flex-direction: row;
+}
 
+.doc {
+    width: 100%;
 }

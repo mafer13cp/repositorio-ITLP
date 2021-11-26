@@ -5,7 +5,20 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <divider [color]="'light'"></divider>
+    <p>Calificación global:</p>
     <div class="center">
-        <label *ngFor="let n of count" for="" class="center lbl"><i class="material-icons">star_border</i></label>
+      <label  for=""><i class="material-icons rate">star_border</i></label>
+      <label  for=""><i class="material-icons rate">star_border</i></label>
+      <label  for=""><i class="material-icons rate">star_border</i></label>
+      <label  for=""><i class="material-icons rate">star_border</i></label>
+      <label  for=""><i class="material-icons rate">star_border</i></label>
+  </div>
+  <p>Calificar:</p>
+    <div class="center">
+        <label #1 for=""><i class="material-icons star" (click)='ngOnClick(1)'>star_border</i></label>
+        <label #2 for=""><i class="material-icons star" (click)='ngOnClick(2)'>star_border</i></label>
+        <label #3 for=""><i class="material-icons star" (click)='ngOnClick(3)'>star_border</i></label>
+        <label #4 for=""><i class="material-icons star" (click)='ngOnClick(4)'>star_border</i></label>
+        <label #5 for=""><i class="material-icons star" (click)='ngOnClick(5)'>star_border</i></label>
     </div>
   </mat-expansion-panel>

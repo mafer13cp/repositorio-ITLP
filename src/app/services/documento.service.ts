@@ -56,6 +56,10 @@ public filterDocByMateria(materia: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_materia', materia);
   return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
 }
+public filterDocByNombre(nombre: string):Observable<any> {
+  const paramsHttp = new HttpParams().set('nombre', nombre);
+  return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
+}
 public getDoc(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});

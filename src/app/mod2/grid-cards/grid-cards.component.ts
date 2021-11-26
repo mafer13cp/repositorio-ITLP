@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Documento } from 'src/app/interfaces/documento';
 
 @Component({
   selector: 'gridCards',
@@ -9,13 +10,12 @@ export class GridCardsComponent implements OnInit {
 
 
   @Input() title: string = "title";
-  @Input() num: number = 1;
-  count: number[] =[];
+  @Input() documents: Documento[]; 
+  docs: Documento[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.count = Array(this.num);
   }
 
 }

@@ -36,29 +36,29 @@ h2 {
     display: flex;
 }
 .doc {
-    margin-top: 0.5%;
-    width: 90%;
-    height: 84%;
-    border-radius: 4vh 4vh;
-    border-color: #8294a7;
-    border-width: 2px;
-    border-style: solid;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 98%;
+    height: 88%;
+    position: relative;
 }
-.docText {
-    width: 95%;
+.pdf {
+    width: 99%;
     height: 98%;
-    overflow: auto;
-    padding-right: 1%;
+    border-color:#577399;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 3vh;
 }
-.doc p {
-    line-height: 3vh;
-    text-align: justify;
-    color: #577399;
+.barra {
+    width: 99.5%;
+    height: 61px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    border-radius: 3vh 3vh 0 0;
+    background-color: #577399;
 }
+
 
 /* scrollbar*/
 /* width */
