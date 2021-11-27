@@ -5,11 +5,15 @@
         <headerLine [title]="'Subir Documento'"></headerLine>
         <div class="cuerpo1">
             <div class="inputT"><inputText [text]="'Título del documento'"></inputText></div>
-            <div class="inputTSp">
-                <div class="itc1"><inputText [text]="'Autor(es)'"></inputText></div>
-                <div class="btnc1"><buttonReg  [text]="'Agregar autor'"></buttonReg></div>
-            </div>
             <div class="inputT"><inputText [text]="'Materia'"></inputText></div>
+            <div class="inputTSp">
+                <div class="btnc1"><label id="lblAutor">Autor(es)</label><chipautor></chipautor></div>
+            </div>
+        </div>
+    </div>
+    <div class="cuerpo4">
+        <div class="file">
+            <uploadFile></uploadFile>
         </div>
     </div>
     <div class="cuerpo2">
@@ -18,13 +22,9 @@
         </div>
         <div class="select">
             <selectDropDown [ops]="['op1','op2']"></selectDropDown>
-            <div class="btnSel"><buttonReg  [text]="'Agregar tag'"></buttonReg></div>
         </div>
     </div>
     <div class="cuerpo3">
-        <div class="file">
-            <uploadFile></uploadFile>
-        </div>
         <div class="button">
             <buttonIcon [text]="'Subir'"></buttonIcon>
         </div>

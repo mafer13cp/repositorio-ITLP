@@ -6,7 +6,7 @@ import { Component, OnInit,Input,ViewChild,ElementRef } from '@angular/core';
   styleUrls: ['./dropDownList.component.css','../../app.component.css']
 })
 export class DropDownListComponent implements OnInit {
-  @Input() ops:string[] = ["Opcion 1","Opcion 2","Opcion 3"];
+  @Input() ops:string[] = ["Documentos","Autores","Materias","Etiquetas"];
   @ViewChild('btn') boton:ElementRef;
 
   constructor() { }

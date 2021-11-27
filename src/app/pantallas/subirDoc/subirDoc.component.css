@@ -28,14 +28,13 @@
     width: 50%;
 }
 .file,.button{
-    width: 50%;
+    width: 100%;
     text-align: center;
 
 }
 .cuerpo3{
     width: 68%;
-    display: flex;
-    flex-direction: row;
+
 }
 .inputT{
     margin-top: 1%;
@@ -43,17 +42,17 @@
 .inputTSp{
     margin: 0 auto;
     margin-top: 1%;
-    display: flex;
+    align-content: center;
+    text-align: center;
 }
 .itc1{
     width: 65%;
     margin-left: 5%;
 }
 .btnc1{
-    width: 200px;
-    margin-right: 10%;
-    align-self:flex-end;
-    text-align: left;
+    width: 70%;
+    margin:0 auto;
+    margin-top: 2%;
 }
 .special{
     display: flex;
@@ -72,4 +71,11 @@
 .btnSel{
     margin-top: 2%;
     text-align: center;
+}
+#lblAutor{
+    text-align: center;
+    width: 100%;
+    color: #4e5867;
+    font-size: 3vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

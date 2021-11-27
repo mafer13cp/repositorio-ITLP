@@ -20,4 +20,5 @@
     -webkit-transform: translateY(4px);
     transform: translateY(4px);
     border-bottom: none;
+    margin-bottom: 5px;
 }
