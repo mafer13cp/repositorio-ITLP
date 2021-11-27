@@ -9,7 +9,7 @@
     display: flex;
 }
 .menuContent {
-    height: 99.5%;
+    height:99.9%;
     background-color: #F7F7FF;
     border:none;
     max-width: 0;
@@ -36,7 +36,7 @@ input:checked +label {
     border-style: solid;
     border-color: #495867;
     border-width: 2px 0 2px 2px;
-    height: 99.5%;
+    height: 99.9%;
 }
 input:checked ~ label {
     background-image: url(../../../assets/img/close.png);
@@ -44,7 +44,7 @@ input:checked ~ label {
     border-style: solid;
     border-color: #495867;
     border-width: 2px 0 2px 2px;
-    height: 99.5%;
+    height: 99.9%;
 }
 input:checked ~ .menuContent {
     max-width: 99%;

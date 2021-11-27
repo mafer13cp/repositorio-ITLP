@@ -11,3 +11,6 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+.container{
+    width: 100%;
+}

@@ -5,7 +5,7 @@
     --white-ish: #F7F7FF;
 }
 #body {
-    min-height: 81.5%;
+    min-height: 81%;
     width: 100%;
     display: flex;
     flex-direction: row;

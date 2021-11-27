@@ -8,7 +8,7 @@ import { Usuario } from 'src/app/interfaces/usuario';
 })
 export class UserInfoComponent implements OnInit {
 
-  @Input() usuario: Usuario = {id: '17310000', rol: 'rol', nombre: 'Nombre usuario', correo: 'correo@gmail.com', contrasena: '', img: 1};
+  @Input() usuario: Usuario = {id: '17310000', rol: 'rol', nombre: 'María Fernanda Cota Pérez', correo: 'rebecarochingomez1993@gmail.com', contrasena: '', img: 1};
   constructor() { }
 
   ngOnInit(): void {

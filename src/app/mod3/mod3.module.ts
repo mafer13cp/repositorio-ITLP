@@ -14,6 +14,14 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { ChipTagComponent } from './chipTag/chipTag.component';
+
+//chipTAG
+import {MatChipsModule} from '@angular/material/chips';
+import {MaterialExampleModule} from '../../material.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,9 @@ import {MatButtonModule} from '@angular/material/button';
     UploadFileComponent,
     ReturnButtonComponent,
     DocInfoComponent,
-    AdminAddComponent
+    AdminAddComponent,
+    AutocompleteComponent,
+    ChipTagComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +42,12 @@ import {MatButtonModule} from '@angular/material/button';
     MatSelectModule,
     MatButtonModule,
     Mod1Module,
-    Mod2Module
+    Mod2Module,
+    MatChipsModule,
+    MaterialExampleModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule
   ],
   exports:[
     LargeInputTextComponent,
@@ -41,7 +56,9 @@ import {MatButtonModule} from '@angular/material/button';
     UploadFileComponent,
     ReturnButtonComponent,
     DocInfoComponent,
-    AdminAddComponent
+    AdminAddComponent,
+    AutocompleteComponent,
+    ChipTagComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }

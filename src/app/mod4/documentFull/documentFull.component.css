@@ -36,8 +36,8 @@ h2 {
     display: flex;
 }
 .doc {
-    width: 98%;
-    height: 88%;
+    width: 97%;
+    height: 86.5%;
     position: relative;
 }
 .pdf {
@@ -49,14 +49,17 @@ h2 {
     border-radius: 3vh;
 }
 .barra {
-    width: 99.5%;
-    height: 61px;
+    width: 99%;
+    height: 44px;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 99999;
     border-radius: 3vh 3vh 0 0;
-    background-color: #577399;
+    background-color: #577399 ;
+    border-color:#577399;
+    border-style: solid;
+    border-width: 4px;
 }
 
 

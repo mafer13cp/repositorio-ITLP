@@ -1,6 +1,6 @@
-<div class="center">
-    <select class="cbb">
-        <option disabled selected>Elige una opcion</option>
-        <option *ngFor="let op of ops">{{op}}</option>
-    </select>
+<div class="dropdown">
+  <button class="dropbtn"><p #btn>Elige una opción</p></button>
+  <div class="dropdown-content">
+      <p *ngFor="let op of ops" (click)="ngOnSelectEvent($event)">{{op}}</p>
+  </div>
 </div>

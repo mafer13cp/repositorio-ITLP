@@ -1,0 +1,18 @@
+#container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#autocomplete{
+    width: 100%;
+}
+#opciones{
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+#container:hover #opciones{
+    display: block;
+}

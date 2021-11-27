@@ -11,6 +11,7 @@
 }
 .cuerpo1,.cuerpo2,.cuerpo3,.cuerpo4,.cuerpo5,.cuerpo6,.cuerpo7{
     height: 12%;
+    margin-top: 6px;
 }
 .cuerpo1{
     margin-top: 8%;

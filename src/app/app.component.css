@@ -27,4 +27,6 @@ mat-expansion-panel p {
 .commentText, .resumenDoc{
     font-size: 2.4vh;
 }
-
+body{
+    min-width: 680px;
+}

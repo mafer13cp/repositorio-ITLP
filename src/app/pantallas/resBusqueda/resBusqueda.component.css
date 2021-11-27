@@ -1,7 +1,6 @@
 .contenedor{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     overflow: auto;
     min-height: 87%;
 }
@@ -21,10 +20,13 @@
     border-color: #495867;
     border-width: 3px;
     border-style: solid;
-    margin-top: 0.5%;
+    margin-top: 0.1%;
 }
 .cuerpo3{
     width: 95%;
     display: flex;
     align-self: center;
+}
+#grid{
+    width: 100%;
 }
