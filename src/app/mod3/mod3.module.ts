@@ -22,7 +22,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MaterialExampleModule} from '../../material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import { ChipautorComponent } from './chipautor/chipautor.component';
+import { ChipmatComponent } from './chipmat/chipmat.component';
 @NgModule({
   declarations: [
     LargeInputTextComponent,
@@ -33,7 +34,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     DocInfoComponent,
     AdminAddComponent,
     AutocompleteComponent,
-    ChipTagComponent
+    ChipTagComponent,
+    ChipautorComponent,
+    ChipmatComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +61,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     DocInfoComponent,
     AdminAddComponent,
     AutocompleteComponent,
-    ChipTagComponent
+    ChipTagComponent,
+    ChipautorComponent,
+    ChipmatComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }
