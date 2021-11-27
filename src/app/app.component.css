@@ -29,4 +29,5 @@ mat-expansion-panel p {
 }
 body{
     min-width: 680px;
+    min-height: 500px;
 }

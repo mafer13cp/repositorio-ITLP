@@ -20,7 +20,7 @@ export class ChipTagComponent {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl();
   filteredFruits: Observable<string[]>;
-  fruits: string[] = ['POO']; //Colección de los tags seleccionados o ingresados.
+  fruits: string[] = []; //Colección de los tags seleccionados o ingresados.
   allFruits: string[] = [];  //Coleccion de todos los tags que se mostraran.
 
   @ViewChild('autocomplete') fruitInput: ElementRef<HTMLInputElement>;
