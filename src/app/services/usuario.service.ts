@@ -56,7 +56,7 @@ public filterUsuarioByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
 }
-public getUsuario(num: number):Observable<any> {
+public getUsuarioNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
 }

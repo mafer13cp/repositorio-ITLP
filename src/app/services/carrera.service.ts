@@ -56,7 +56,7 @@ public filterCarreraByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/carreras`,{params: paramsHttp});
 }
-public getCarrera(num: number):Observable<any> {
+public getCarreraNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/carreras`,{params: paramsHttp});
 }

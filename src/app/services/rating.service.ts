@@ -66,7 +66,7 @@ public getDocRating(doc: string):number {
   });
   return Math.floor(sum%i);
 }
-public getRating(num: number):Observable<any> {
+public getRatingNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/ratings`,{params: paramsHttp});
 }

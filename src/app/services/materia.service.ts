@@ -56,7 +56,7 @@ public filterMatByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
 }
-public getMat(num: number):Observable<any> {
+public getMatNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
 }

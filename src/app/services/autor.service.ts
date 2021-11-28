@@ -60,7 +60,7 @@ public filterAutorByUsuario(usuario: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_autor', usuario);
   return this.http.get<any>(`${this.baseUrl}/autores`,{params: paramsHttp});
 }
-public getAutor(num: number):Observable<any> {
+public getAutorNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/autores`,{params: paramsHttp});
 }

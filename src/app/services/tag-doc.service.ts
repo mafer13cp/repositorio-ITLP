@@ -56,7 +56,7 @@ public filterTagDocByTag(tag: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_tag', tag);
   return this.http.get<any>(`${this.baseUrl}/tag-docs`,{params: paramsHttp});
 }
-public getTagDoc(num: number):Observable<any> {
+public getTagDocNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/tag-docs`,{params: paramsHttp});
 }

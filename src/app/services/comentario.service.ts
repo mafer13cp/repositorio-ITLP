@@ -56,7 +56,7 @@ public filterComByUsuario(usuario: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_usuario', usuario);
   return this.http.get<any>(`${this.baseUrl}/comentarios`,{params: paramsHttp});
 }
-public getCom(num: number):Observable<any> {
+public getComNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/comentarios`,{params: paramsHttp});
 }
