@@ -1,8 +1,9 @@
 export interface Usuario {
     id: string;
-    rol: string;
     nombre: string;
     correo: string;
     contrasena: string;
-    img: number;
+    imagen:string; //O num??
+    fk_rol: string;
+    fk_carrera: string;
 }

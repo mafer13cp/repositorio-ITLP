@@ -1,4 +1,4 @@
 export interface Administrador {
-    fk_usuario: string;
     puesto: string;
+    fk_usuario: string;
 }
