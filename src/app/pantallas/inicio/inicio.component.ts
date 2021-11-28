@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BusquedaService } from 'src/app/services/busqueda.service';
 
 @Component({
   selector: 'inicio',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bus:BusquedaService) { }
 
   ngOnInit(): void {
+    console.log("Documentos");
+    console.log(this.bus.getDocYUsr());
   }
 
 }

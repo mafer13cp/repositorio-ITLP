@@ -1,4 +1,6 @@
-export interface Usuario {
+import { Rating } from "./rating";
+
+export interface UsuarioRating {
     id: string;
     nombre: string;
     correo: string;
@@ -6,4 +8,5 @@ export interface Usuario {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
+    ratings: Rating[]; //un usuario puede calificar muchos documentos.
 }
