@@ -1,8 +1,8 @@
 <div class="contenedor">
   <form class="search">
-    <input type="text">
+    <input #searchField type="text">
     <p>|&nbsp;</p>
-    <i class="material-icons">search</i>
+    <i class="material-icons" (click)="ngOnClick()">search</i>
   </form>
 </div>
 
