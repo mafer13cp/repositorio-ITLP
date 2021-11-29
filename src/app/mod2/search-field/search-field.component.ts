@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'searchField',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-field.component.css','../../app.component.css']
 })
 export class SearchFieldComponent implements OnInit {
+  @Output() public SFEvent= new EventEmitter();
+  @ViewChild('searchField') searchField:ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  ngOnClick(){
+    this.SFEvent.emit(this.searchField.nativeElement.value);;
+  }
 }
