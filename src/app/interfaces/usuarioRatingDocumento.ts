@@ -8,5 +8,5 @@ export interface UsuarioRatingDocumento {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    rating_documento: RatingDocumento[]; //un usuario puede votar en varios documentos
+    ratings_usuario: RatingDocumento[]; //un usuario puede votar en varios documentos
 }

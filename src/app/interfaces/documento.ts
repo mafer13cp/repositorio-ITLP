@@ -1,7 +1,7 @@
 export interface Documento {
     id: number;
     nombre: string;
-    descripción: string;
+    descripcion: string;
     archivoUrl: string;
     fk_materia: string;
 }

@@ -10,18 +10,27 @@ import { Documento } from '../interfaces/documento';
   providedIn: 'root'
 })
 export class BusquedaService {
-  private parametro:string="";
+  private parametro:any;
+  private click:boolean = false;
   //Declaraciones pantallaInicio
   private docs:Documento[] = [];
 
   constructor(private docServ:DocumentoService) { }
 
-  public getParam():string{
-    return this.parametro;
+  public getParam():Observable<any>{
+    return <any>this.parametro;
   }
 
-  public setParam(param:string):void{
+  public setParam(param:any):void{
     this.parametro = param;
+  }
+
+  public getClick():Observable<any>{
+    return <any>this.click;
+  }
+
+  public setClick(click:any):void{
+    this.click = click;
   }
 
   //#region PantallaInicio

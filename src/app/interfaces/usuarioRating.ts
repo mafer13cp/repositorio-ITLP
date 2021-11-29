@@ -8,5 +8,5 @@ export interface UsuarioRating {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    ratings: Rating[]; //un usuario puede calificar muchos documentos.
+    ratings_usuario: Rating[]; //un usuario puede calificar muchos documentos.
 }

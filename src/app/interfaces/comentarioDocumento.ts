@@ -5,5 +5,5 @@ export interface ComentarioDocumento {
     texto: string;
     fk_documento: number;
     fk_usuario: string;
-    comentario_documento:Documento[];
+    comentario_documento:Documento;
 }
