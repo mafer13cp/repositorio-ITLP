@@ -6,5 +6,5 @@ export interface DocumentoMateria {
     descripción: string;
     archivoUrl: string;
     fk_materia: string;
-    materia: Materia; //Un documento pertenece a una materia.
+    documento_materia: Materia; //Un documento pertenece a una materia.
 }

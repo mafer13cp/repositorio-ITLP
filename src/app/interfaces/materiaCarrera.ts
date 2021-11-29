@@ -4,5 +4,5 @@ export interface MateriaCarrera {
     id: string;
     nombre: string;
     fk_carrera: string;
-    carrera:Carrera; //una materia pertenece a una carrera.
+    materia_carrera:Carrera; //una materia pertenece a una carrera.
 }

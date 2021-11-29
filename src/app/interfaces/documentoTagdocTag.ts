@@ -6,5 +6,5 @@ export interface DocumentoTagDocTag {
     descripción: string;
     archivoUrl: string;
     fk_materia: string;
-    tagDocTags: Tag[]; //un documento tiene muchos tags.
+    tags_documento: Tag[]; //un documento tiene muchos tags.
 }

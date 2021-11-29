@@ -4,5 +4,5 @@ export interface CarreraMateriaDocumento {
     id: string;
     siglas: string;
     nombre: string;
-    materiaDocumentos:MateriaDocumento[]; //Una carrera puede tener varios documentos.
+    documentos_materia:MateriaDocumento[]; //Una carrera puede tener varios documentos.
 }

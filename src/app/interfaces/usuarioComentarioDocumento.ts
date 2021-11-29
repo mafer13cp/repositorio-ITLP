@@ -1,4 +1,4 @@
-import { Comentario } from "./comentario";
+import { ComentarioDocumento } from "./comentarioDocumento";
 
 export interface UsuarioComentarioDocumento {
     id: string;
@@ -8,5 +8,5 @@ export interface UsuarioComentarioDocumento {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    comentarios: Comentario[]; //un usuario puede comentar muchas veces en un mismo documentos.
+    comentario_documento: ComentarioDocumento[]; //un usuario puede comentar muchas veces en un mismo documentos.
 }

@@ -5,5 +5,5 @@ export interface RatingDocumento {
     calificacion: number;
     fk_documento: number;
     fk_usuario: string;
-    documentos: Documento[]; //un documento puede ser votado muchas veces
+    rating_documento: Documento[]; //un documento puede ser votado muchas veces
 }

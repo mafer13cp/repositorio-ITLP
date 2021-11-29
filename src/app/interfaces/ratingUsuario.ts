@@ -5,5 +5,5 @@ export interface RatingUsuario {
     calificacion: number;
     fk_documento: number;
     fk_usuario: string;
-    usuario: Usuario; //un voto solo pertenece a un usuario.
+    rating_usuario: Usuario; //un voto solo pertenece a un usuario.
 }

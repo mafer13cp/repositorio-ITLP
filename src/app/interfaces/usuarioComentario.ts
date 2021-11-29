@@ -8,5 +8,5 @@ export interface UsuarioComentario {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    comentarios: Comentario[]; //un usuario puede hacer muchos comentarios.
+    comentarios_usuario: Comentario[]; //un usuario puede hacer muchos comentarios.
 }

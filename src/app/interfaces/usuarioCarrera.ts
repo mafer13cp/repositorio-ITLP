@@ -8,5 +8,5 @@ export interface UsuarioCarrera {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    carrera:Carrera; //un usuario pertenece a una carrera.
+    usuario_carrera:Carrera|null; //un usuario pertenece a una carrera.
 }

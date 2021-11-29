@@ -8,5 +8,5 @@ export interface UsuarioAutorDocumento {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    autorDocumentos: Documento[]; //un usuario puede tener muchos documentos.
+    documentos_usuario: Documento[]; //un usuario puede tener muchos documentos.
 }

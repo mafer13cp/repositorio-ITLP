@@ -8,5 +8,5 @@ export interface UsuarioRol {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    rol: Rol; //un usuario tiene un rol.
+    usuario_rol: Rol; //un usuario tiene un rol.
 }

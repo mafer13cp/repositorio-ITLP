@@ -6,5 +6,5 @@ export interface DocumentoRating {
     descripción: string;
     archivoUrl: string;
     fk_materia: string;
-    ratings: Rating[]; //un doumento puede ser votado muchas veces.
+    ratings_documento: Rating[]; //un doumento puede ser votado muchas veces.
 }

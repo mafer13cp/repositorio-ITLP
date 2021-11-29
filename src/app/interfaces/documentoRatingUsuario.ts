@@ -6,5 +6,5 @@ export interface DocumentoRatingUsuario {
     descripción: string;
     archivoUrl: string;
     fk_materia: string;
-    ratingUsuarios: RatingUsuario[]; //un documento tiene votos de muchos usuarios.
+    rating_usuario: RatingUsuario[]; //un documento tiene votos de muchos usuarios.
 }

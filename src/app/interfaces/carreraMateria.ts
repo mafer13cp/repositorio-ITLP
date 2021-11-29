@@ -4,5 +4,5 @@ export interface CarreraMateria {
     id: string;
     siglas: string;
     nombre: string;
-    materias: Materia[]; //Una carrera puede tener varias materias.
+    materias_carrera: Materia[]; //Una carrera puede tener varias materias.
 }

@@ -8,5 +8,5 @@ export interface UsuarioCarreraMateria {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    carreraMaterias: CarreraMateria[]; //un usuario puede participar en varias materias.
+    materias_carrera: CarreraMateria[]; //un usuario puede participar en varias materias.
 }
