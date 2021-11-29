@@ -6,6 +6,6 @@
   </mat-expansion-panel-header>
   <divider [color]="'light'" class="divider"></divider>
   <ul class="list">
-    <li *ngFor="let item of listItems"><a href="">{{item}}</a></li>
+    <li *ngFor="let item of listItems"><a #a (click)="ngOnClick($event)">{{item}}</a></li>
 </ul>
 </mat-expansion-panel>

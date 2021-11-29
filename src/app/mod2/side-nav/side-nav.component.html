@@ -3,9 +3,9 @@
     <label for="menu"></label>
     <div class="menuContent">
         <section class="accList">
-            <accordion [title]="'Materias'" [listItems]="['uno', 'dos', 'tres', 'cuatro']"></accordion>
-            <accordion [title]="'Temas'" [listItems]="['uno', 'dos', 'tres', 'cuatro']"></accordion>
-            <accordion [title]="'Tags'" [listItems]="['uno', 'dos', 'tres', 'cuatro']"></accordion>
+            <accordion [title]="'Tags'" [listItems]="['uno', 'dos', 'tres', 'cuatro']" (AccEvent)="ngThrowParam($event)"></accordion>
+            <accordion [title]="'Materias'" [listItems]="['uno', 'dos', 'tres', 'cuatro']" (AccEvent)="ngThrowParam($event)"></accordion>
+            <accordion [title]="'Carreras'" [listItems]="['uno', 'dos', 'tres', 'cuatro']" (AccEvent)="ngThrowParam($event)"></accordion>
         </section>
         <section class="more">
             <h3>Ayuda <i class="material-icons">help</i></h3>
