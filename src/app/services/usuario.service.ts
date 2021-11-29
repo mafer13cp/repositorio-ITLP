@@ -56,9 +56,79 @@ public filterUsuarioByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
 }
-public getUsuario(num: number):Observable<any> {
+public getUsuarioNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
+}
+//#endregion
+
+//#region Filter Include
+public getDocumentos():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["documentos_usuario"]}`);
+}
+
+public getCarrera():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["usuario_carrera"]}`);
+}
+
+public getMateriaCarrera():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'usuario_carrera',
+        scope: {
+          include: [{relation: 'materias_carrera'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
+}
+
+public getComentarios():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["comentarios_usuario"]}`);
+}
+
+public getDocumentoComentarios():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'comentarios_usuario',
+        scope: {
+          include: [{relation: 'comentario_documento'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
+}
+
+public getRatings():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["ratings_usuario"]}`);
+}
+
+public getDocumentoRatings():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'ratings_usuario',
+        scope: {
+          include: [{relation: 'rating_documento'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
+}
+
+public getRol():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["usuario_rol"]}`);
 }
 //#endregion
 }

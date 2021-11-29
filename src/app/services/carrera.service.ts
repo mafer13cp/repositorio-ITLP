@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { Carrera } from '../interfaces/carrera';
 import { HttpParams } from '@angular/common/http';
@@ -56,9 +56,35 @@ public filterCarreraByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/carreras`,{params: paramsHttp});
 }
-public getCarrera(num: number):Observable<any> {
+public getCarreraNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/carreras`,{params: paramsHttp});
+}
+//#endregion
+
+//#region Filter Include
+public getMaterias():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/carreras/?filter={"include":["materias_carrera"]}`);
+}
+
+public getDocumentosMateria():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'materias_carrera',
+        scope: {
+          include: [{relation: 'documentos_materia'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/carreras/?filter=${y}`);
+}
+
+public getUsuarios():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/carreras/?filter={"include":["usuarios_carrera"]}`);
 }
 //#endregion
 }

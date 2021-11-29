@@ -7,7 +7,7 @@ import { Otro } from '../interfaces/otros';
 @Injectable({
   providedIn: 'root'
 })
-export class EmpleadoService {
+export class OtrosService {
 
   baseUrl: string = 'https://itlp-repo.herokuapp.com';
 
@@ -49,16 +49,22 @@ export class EmpleadoService {
 
 //#region GET PARAMS 
 public filterOtroByNom(nom: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nom', nom);
+  const paramsHttp = new HttpParams().set('nombre', nom);
   return this.http.get<any>(`${this.baseUrl}/otros`,{params: paramsHttp});
 }
 public filterDocByArea(doc: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('fk_doc', doc);
+  const paramsHttp = new HttpParams().set('fk_documento', doc);
   return this.http.get<any>(`${this.baseUrl}/otros`,{params: paramsHttp});
 }
 public getOtrosNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/otros`,{params: paramsHttp});
+}
+//#endregion
+
+//#region Filter Include
+public getDocumento():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/otros/?filter={"include":["otro_documento"]}`);
 }
 //#endregion
 }

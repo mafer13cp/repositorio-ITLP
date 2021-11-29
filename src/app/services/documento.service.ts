@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 import { Documento } from '../interfaces/documento';
@@ -60,9 +60,83 @@ public filterDocByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
 }
-public getDoc(num: number):Observable<any> {
+public getDocNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
 }
 //#endregion
+
+//#region Filter Include
+public getUsuarios():Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["usuarios_documento"]}`);
+}
+
+public getComentarios():Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["comentarios_documento"]}`);
+}
+
+public getUsuariosComentarios():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'comentarios_documento',
+        scope: {
+          include: [{relation: 'comentario_usuario'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
+}
+
+public getMateria():Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["documento_materia"]}`);
+}
+
+public getCarreraMateria():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'documento_materia',
+        scope: {
+          include: [{relation: 'materia_carrera'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
+}
+
+public getOtros():Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["otros_documento"]}`);
+}
+
+public getRatings():Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["ratings_documento"]}`);
+}
+
+public getUsuarioRatings():Observable<any>{
+  const x = {
+    include: [
+      {
+        relation: 'ratings_documento',
+        scope: {
+          include: [{relation: 'rating_usuario'}],
+        },
+      },
+    ],
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  console.log(y);
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
+}
+
+public getTags():Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["tags_documento"]}`);
+}
+//#enderegion
 }

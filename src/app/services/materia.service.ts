@@ -56,9 +56,19 @@ public filterMatByNombre(nombre: string):Observable<any> {
   const paramsHttp = new HttpParams().set('nombre', nombre);
   return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
 }
-public getMat(num: number):Observable<any> {
+public getMatNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
+}
+//#endregion
+
+//#region Filter Include
+public getCarrera():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/materias/?filter={"include":["materia_carrera"]}`);
+}
+
+public getDocumentos():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/materias/?filter={"include":["documentos_materia"]}`);
 }
 //#endregion
 }

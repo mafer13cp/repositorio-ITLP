@@ -1,5 +1,5 @@
 export interface Documento {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;

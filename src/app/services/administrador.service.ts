@@ -52,7 +52,7 @@ public filterAdminByPuesto(puesto: string):Observable<any> {
   const paramsHttp = new HttpParams().set('puesto', puesto);
   return this.http.get<any>(`${this.baseUrl}/administradores`,{params: paramsHttp});
 }
-public getAdmin(num: number):Observable<any> {
+public getAdminNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/administradores`,{params: paramsHttp});
 }

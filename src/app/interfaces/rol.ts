@@ -1,4 +1,4 @@
 export interface Rol {
-    id:string;
+    id:number;
     nombre:string;
 }

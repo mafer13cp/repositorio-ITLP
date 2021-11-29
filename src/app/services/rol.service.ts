@@ -19,7 +19,7 @@ export class RolService {
   public getRoles():Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/roles`);
   }
-  public getRolById(id: string):Observable<any> {
+  public getRolById(id: number):Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/roles/${id}`);
   }
 //#endregion
@@ -41,7 +41,7 @@ export class RolService {
 //#endregion
 
 //#region DELETE 
-  public delRol(id: string):Observable<any> {
+  public delRol(id: number):Observable<any> {
     const headers = {'content-type': 'application/json'};
     return this.http.delete(`${this.baseUrl}/roles/${id}`, {'headers': headers, observe: 'response'});
   }
@@ -55,6 +55,12 @@ public filterRolByNombre(nombre: string):Observable<any> {
 public getRolesNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
   return this.http.get<any>(`${this.baseUrl}/roles`,{params: paramsHttp});
+}
+//#endregion
+
+//#region Filter Include
+public getUsuarios():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/roles/?filter={"include":["usuarios_rol"]}`);
 }
 //#endregion
 }
