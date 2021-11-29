@@ -1,4 +1,4 @@
-import { AutorDocumento } from "./autorDocumento";
+import { Documento } from "./documento";
 
 export interface UsuarioAutorDocumento {
     id: string;
@@ -8,5 +8,5 @@ export interface UsuarioAutorDocumento {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    autorDocumentos: AutorDocumento[]; //un usuario puede tener muchos documentos.
+    autorDocumentos: Documento[]; //un usuario puede tener muchos documentos.
 }
