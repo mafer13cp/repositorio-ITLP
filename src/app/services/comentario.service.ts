@@ -61,4 +61,14 @@ public getComNum(num: number):Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/comentarios`,{params: paramsHttp});
 }
 //#endregion
+
+//#region Filter Include
+public getDocumento():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/comentarios/?filter={"include":["comentario_documento"]}`);
+}
+
+public getUsuario():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/comentarios/?filter={"include":["comentario_usuario"]}`);
+}
+//#endregion
 }

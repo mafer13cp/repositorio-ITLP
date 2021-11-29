@@ -57,7 +57,7 @@ public filterAutorByNombre(nombre: string):Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/autores`,{params: paramsHttp});
 }
 public filterAutorByUsuario(usuario: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('fk_autor', usuario);
+  const paramsHttp = new HttpParams().set('fk_usuario', usuario);
   return this.http.get<any>(`${this.baseUrl}/autores`,{params: paramsHttp});
 }
 public getAutorNum(num: number):Observable<any> {
@@ -65,4 +65,5 @@ public getAutorNum(num: number):Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/autores`,{params: paramsHttp});
 }
 //#endregion
+
 }

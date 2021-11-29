@@ -71,4 +71,14 @@ public getRatingNum(num: number):Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/ratings`,{params: paramsHttp});
 }
 //#endregion
+
+//#region Filter Include
+public getDocumento():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/ratings/?filter={"include":["rating_documento"]}`);
+}
+
+public getUsuario():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/ratings/?filter={"include":["rating_usuario"]}`);
+}
+//#endregion
 }

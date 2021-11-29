@@ -57,4 +57,10 @@ public getTagNum(num: number):Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/tags`,{params: paramsHttp});
 }
 //#endregion
+
+//#region Filter Include
+public getDocumentos():Observable<any>{ 
+  return this.http.get<any>(`${this.baseUrl}/tags/?filter={"include":["documentos_tag"]}`);
+}
+//#endregion
 }

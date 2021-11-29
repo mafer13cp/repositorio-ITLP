@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
-import { TagDoc } from '../interfaces/tag-doc';
+import { TagDoc } from '../interfaces/tagDoc';
 
 @Injectable({
   providedIn: 'root'

@@ -26,12 +26,6 @@ export class BusquedaService {
 
   //#region PantallaInicio
 
-  async getDocYUsr():Promise<Documento[]>{
-    await this.docServ.getDocNum(20).subscribe((data)=>{
-      this.docs = data;
-    });
-    return this.docs;
-  }
 
   //#endregion
 }
