@@ -11,7 +11,7 @@
           <mat-icon>cancel</mat-icon>
         </button>
       </mat-chip>
-      <input
+      <input (input) = "ngEnviarTags()"
         placeholder="Nuevo tag"
         #autocomplete
         [formControl]="fruitCtrl"

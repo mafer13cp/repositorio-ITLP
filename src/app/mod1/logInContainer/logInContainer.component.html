@@ -1,13 +1,12 @@
 <div id="logincontainer">
     <div class="cuerpo1">
-        <inputText [text]="'Nombre Usuario'" class="inputs"></inputText>
+        <inputText (ITEvent)="ngRecibirUsuario($event)"[text]="'Nombre Usuario'" class="inputs"></inputText>
     </div>
     <div class="cuerpo2">
-        <inputText [text]="'Contraseña'" class="inputs"></inputText>
+        <inputText (ITEvent)="ngRecibirContrasena($event)" [tipo]="'password'" [text]="'Contraseña'" class="inputs"></inputText>
     </div>
     <div class="cuerpo3">
-        <buttonReg [text]="'Login'"></buttonReg>
+        <buttonReg (click)="ngEnviarDatos()"[text]="'Login'"></buttonReg>
     </div>
-    <label id="lcuenta">¿No tienes una cuenta? Ingresa Aquí</label><br>
-    <label id="lcontra">¿Olvidaste tu contraseña?</label>
+    <label (click)="ngShowRegistro()" id="lcuenta">¿No tienes una cuenta? Ingresa Aquí</label><br>
 </div>

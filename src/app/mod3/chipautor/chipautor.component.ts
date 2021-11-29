@@ -1,5 +1,5 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, Output, ViewChild, EventEmitter} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
@@ -23,7 +23,7 @@ export class ChipautorComponent{
   filteredFruits: Observable<string[]>;
   fruits: string[] = []; //Colección de los tags seleccionados o ingresados.
   allFruits: string[] = [];  //Coleccion de todos los tags que se mostraran.
-
+  @Output() public CAEvent = new EventEmitter();
   @ViewChild('autocomplete') fruitInput: ElementRef<HTMLInputElement>;
 
   constructor() {
@@ -31,6 +31,10 @@ export class ChipautorComponent{
       startWith(null),
       map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
     );
+   }
+
+   ngEnviarAutores(){
+    this.CAEvent.emit(this.fruits);
    }
 
    add(event: MatChipInputEvent): void {

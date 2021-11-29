@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'login',
@@ -12,4 +12,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngProcesarDatos(datos:Object){
+    console.log(datos);
+    //Aqui se debería revisar los datos del login.
+  }
 }
