@@ -1,7 +1,7 @@
 import { RatingUsuario } from "./ratingUsuario";
 
 export interface DocumentoRatingUsuario {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;

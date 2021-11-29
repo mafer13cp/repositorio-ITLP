@@ -1,7 +1,7 @@
-import { TagDocDocumento } from "./tagDocDocumento";
+import { Documento } from "./documento";
 
 export interface TagTagDocDocumento {
-    id: string;
+    id: number;
     nombre: string;
-    tagDocDocumentos: TagDocDocumento[]; //un tag aparece en muchos documentos.
+    tagDocDocumentos: Documento[]; //un tag aparece en muchos documentos.
 }

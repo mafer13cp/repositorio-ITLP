@@ -1,7 +1,7 @@
 import { Usuario } from "./usuario";
 
 export interface DocumentoAutorUsuario {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;

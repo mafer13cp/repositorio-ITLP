@@ -1,7 +1,7 @@
 import { Otro } from "./otros";
 
 export interface DocumentoOtros {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;

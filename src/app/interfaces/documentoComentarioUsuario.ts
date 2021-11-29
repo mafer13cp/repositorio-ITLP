@@ -1,7 +1,7 @@
 import { ComentarioUsuario } from "./comentarioUsuario";
 
 export interface DocumentoComentarioUsuario {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;

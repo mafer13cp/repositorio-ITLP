@@ -1,5 +1,5 @@
 export interface TagDoc {
-    id: string;
-    fk_documento: string;
-    fk_tag: string;
+    id: number;
+    fk_documento: number;
+    fk_tag: number;
 }

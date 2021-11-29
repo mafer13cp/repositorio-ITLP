@@ -1,7 +1,7 @@
 import { MateriaCarrera } from "./materiaCarrera";
 
 export interface DocumentoMateriaCarrera {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;

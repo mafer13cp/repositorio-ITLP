@@ -1,9 +1,9 @@
 import { Documento } from "./documento";
 
 export interface RatingDocumento {
-    id: string;
+    id: number;
     calificacion: number;
-    fk_documento: string;
+    fk_documento: number;
     fk_usuario: string;
     documentos: Documento[]; //un documento puede ser votado muchas veces
 }

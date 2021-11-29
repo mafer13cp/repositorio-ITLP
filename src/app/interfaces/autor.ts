@@ -1,5 +1,5 @@
 export interface Autor {
-    id: string;
+    id: number;
     fk_usuario: string;
-    fk_documento: string;
+    fk_documento: number;
 }

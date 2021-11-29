@@ -1,5 +1,5 @@
 export interface Otro {
-    id: string;
+    id: number;
     nombre: string;
-    fk_documento: string;
+    fk_documento: number;
 }

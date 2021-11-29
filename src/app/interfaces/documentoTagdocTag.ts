@@ -1,10 +1,10 @@
-import { TagDocTag } from "./tagDocTag";
+import { Tag } from "./tag";
 
 export interface DocumentoTagDocTag {
-    id: string;
+    id: number;
     nombre: string;
     descripción: string;
     archivoUrl: string;
     fk_materia: string;
-    tagDocTags: TagDocTag; //un documento tiene muchos tags.
+    tagDocTags: Tag[]; //un documento tiene muchos tags.
 }

@@ -1,6 +1,6 @@
 export interface Rating {
-    id: string;
+    id: number;
     calificacion: number;
-    fk_documento: string;
+    fk_documento: number;
     fk_usuario: string;
 }

@@ -1,8 +1,8 @@
 import { Documento } from "./documento";
 
 export interface OtrosDocumento {
-    id: string;
+    id: number;
     nombre: string;
-    fk_documento: string;
+    fk_documento: number;
     documento: Documento; //un usuario no registrado solo esta asociado a un documento.
 }
