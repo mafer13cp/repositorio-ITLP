@@ -8,5 +8,5 @@ export interface UsuarioComentarioDocumento {
     imagen:number;
     fk_rol: number;
     fk_carrera: string;
-    comentario_documento: ComentarioDocumento[]; //un usuario puede comentar muchas veces en un mismo documentos.
+    comentarios_usuario: ComentarioDocumento[]; //un usuario puede comentar muchas veces en un mismo documentos.
 }
