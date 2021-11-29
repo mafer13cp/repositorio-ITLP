@@ -6,5 +6,5 @@ export interface DocumentoComentarioUsuario {
     descripcion: string;
     archivoUrl: string;
     fk_materia: string;
-    comentario_usuario: ComentarioUsuario[]; //un documento puede tener muchos usuarios que comentaron. 
+    comentarios_documento: ComentarioUsuario[]; //un documento puede tener muchos usuarios que comentaron. 
 }
