@@ -1,5 +1,5 @@
 <div class="dropdown">
-  <button class="dropbtn"><p #btn>Documentos</p></button>
+  <button class="dropbtn"><p #btn>Escoja un filtro</p></button>
   <div class="dropdown-content">
       <p *ngFor="let op of ops" (click)="ngOnSelectEvent($event)">{{op}}</p>
   </div>

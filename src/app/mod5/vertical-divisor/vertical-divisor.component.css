@@ -1,6 +1,6 @@
 hr{ 
     border: none;
-    height: 12vh; 
+    height: 100%; 
     width: 3px;  
-    background-color: hsla(255, 100%, 100%,255);
+    background-color: #495867;
 }

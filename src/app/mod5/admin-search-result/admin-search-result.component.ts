@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'adminSearchResult',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-search-result.component.css','../../app.component.css']
 })
 export class AdminSearchResultComponent implements OnInit {
+  @Input() resultados:any[];
 
   constructor() { }
 

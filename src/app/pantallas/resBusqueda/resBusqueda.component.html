@@ -1,9 +1,9 @@
 <headerItlp></headerItlp>
 <!-- Inicio Comp-->
 <div class="contenedor">
-        <specificSearch id="1"></specificSearch>
+        <specificSearch id="1" (SSEvent)="ngRecibirFiltro($event)" (SSEvent2)="ngRecibirTexto($event)"></specificSearch>
     <div class="cuerpo3">
-        <gridCards id="grid" [title] = "'Resultados:'"></gridCards>
+        <gridCards id="grid" [title] = "'Resultados:'" [documents]=documentosUsuario></gridCards>
     </div>
 </div>
 <!-- Final Comp-->

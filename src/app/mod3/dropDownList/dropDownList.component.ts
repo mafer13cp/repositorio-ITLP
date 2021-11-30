@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,ViewChild,ElementRef } from '@angular/core';
+import { Component, OnInit,Input,ViewChild,ElementRef,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'dropDownList',
@@ -8,6 +8,7 @@ import { Component, OnInit,Input,ViewChild,ElementRef } from '@angular/core';
 export class DropDownListComponent implements OnInit {
   @Input() ops:string[] = ["Documentos","Autores","Materias","Etiquetas"];
   @ViewChild('btn') boton:ElementRef;
+  @Output() public DDLEvent = new EventEmitter;
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class DropDownListComponent implements OnInit {
   ngOnSelectEvent(control:any){
     const texto = control.srcElement.innerHTML;
     this.boton.nativeElement.innerHTML = texto;
+    this.DDLEvent.emit(texto);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'adminResult',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-result.component.css','../../app.component.css']
 })
 export class AdminResultComponent implements OnInit {
+  @Input() id:any;
+  @Input() nombre:any;
 
   constructor() { }
 
