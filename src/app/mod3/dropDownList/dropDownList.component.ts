@@ -9,6 +9,7 @@ export class DropDownListComponent implements OnInit {
   @Input() ops:string[] = ["Documentos","Autores","Materias","Etiquetas"];
   @ViewChild('btn') boton:ElementRef;
   @Output() public DDLEvent = new EventEmitter;
+  @Input() default:string = "Elige un filtro";
 
   constructor() { }
 

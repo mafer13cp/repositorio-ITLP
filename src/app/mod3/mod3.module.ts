@@ -24,6 +24,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ChipautorComponent } from './chipautor/chipautor.component';
 import { ChipmatComponent } from './chipmat/chipmat.component';
+import { SignUpContComponent } from './signUpCont/signUpCont.component';
 @NgModule({
   declarations: [
     LargeInputTextComponent,
@@ -36,7 +37,8 @@ import { ChipmatComponent } from './chipmat/chipmat.component';
     AutocompleteComponent,
     ChipTagComponent,
     ChipautorComponent,
-    ChipmatComponent
+    ChipmatComponent,
+    SignUpContComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +65,8 @@ import { ChipmatComponent } from './chipmat/chipmat.component';
     AutocompleteComponent,
     ChipTagComponent,
     ChipautorComponent,
-    ChipmatComponent
+    ChipmatComponent,
+    SignUpContComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }
