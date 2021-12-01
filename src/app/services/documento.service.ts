@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 import { Documento } from '../interfaces/documento';
+import { DocumentoAutorUsuario } from '../interfaces/documentoAutorUsuario';
 
 @Injectable({
   providedIn: 'root'
@@ -78,8 +79,17 @@ public getUsuarios():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["usuarios_documento"]}`);
 }
 
-public getUsuariosIdDoc(id:number):Observable<any>{ //entre [] va la relación de lb4 parece.
-  return this.http.get<any>(`${this.baseUrl}/documentos/${id}?filter={"include":["usuarios_documento"]}`);
+public getUsuariosNomDoc(nom:string):Observable<any>{ //entre [] va la relación de lb4 parece.
+  const x = {
+    include:[{relation:'usuarios_documento'}],
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 
 public getComentarios():Observable<any>{ //entre [] va la relación de lb4 parece.

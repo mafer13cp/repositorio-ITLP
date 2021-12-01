@@ -6,5 +6,6 @@ export interface DocumentoMateriaCarrera {
     descripcion: string;
     archivoUrl: string;
     fk_materia: string;
+    fecha:string;
     documento_materia: MateriaCarrera; //un documento pertenece a una carrera.
 }

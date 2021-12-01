@@ -90,5 +90,25 @@ public getDocsByMatNombre(nom: string):Observable<any> {
   const y = encodeURIComponent(JSON.stringify(x));
   return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
 }
+
+public getDocsUsrByMatNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    },
+    include: [
+      {
+        relation: 'documentos_materia',
+        scope: {
+          include: [{relation: 'usuarios_documento'}]
+        }
+      }
+    ]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
+}
 //#endregion
 }

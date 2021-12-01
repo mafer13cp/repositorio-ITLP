@@ -141,5 +141,18 @@ public getDocumentosUsrNombre(nom:string):Observable<any>{
   const y = encodeURIComponent(JSON.stringify(x));
   return this.http.get<any>(`${this.baseUrl}/documentos?filter=${y}`);
 }
+
+public getDocsUsrByUsrNombre(nom:string):Observable<any>{
+  const x = {
+    include: [{relation:'documentos_usuario'}],
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/usuarios?filter=${y}`);
+}
 //#endregion
 }

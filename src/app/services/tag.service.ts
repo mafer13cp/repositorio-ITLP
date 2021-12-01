@@ -69,5 +69,25 @@ public getTagNum(num: number):Observable<any> {
 public getDocumentos():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/tags/?filter={"include":["documentos_tag"]}`);
 }
+
+public getDocsUsrByTagNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    },
+    include: [
+      {
+        relation: 'documentos_tag',
+        scope: {
+          include: [{relation: 'usuarios_documento'}]
+        }
+      }
+    ]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/tags?filter=${y}`);
+}
 //#endregion
 }

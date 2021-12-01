@@ -6,5 +6,6 @@ export interface DocumentoOtros {
     descripcion: string;
     archivoUrl: string;
     fk_materia: string;
+    fecha:string;
     otros_documento:Otro[]; //un documento puede tener muchos autores no registrados.
 }

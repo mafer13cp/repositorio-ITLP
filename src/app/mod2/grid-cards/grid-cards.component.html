@@ -1,6 +1,6 @@
 <section class="container">
     <headerLine [title]="title"></headerLine>
     <div class="grid"> 
-        <docMini *ngFor="let doc of documents" [autorName]=doc.usuarios_documento[0].nombre [docTitle]=doc.nombre></docMini>
+        <docMini *ngFor="let doc of documents" [autorName]=doc.usuarioPrincipal.nombre [docTitle]=doc.nombreDoc></docMini>
     </div>
 </section>

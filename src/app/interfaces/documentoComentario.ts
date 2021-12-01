@@ -6,5 +6,6 @@ export interface DocumentoComentario {
     descripcion: string;
     archivoUrl: string;
     fk_materia: string;
+    fecha:string;
     comentarios_documento: Comentario[]; //un documento puede tener muchos comentarios.
 }
