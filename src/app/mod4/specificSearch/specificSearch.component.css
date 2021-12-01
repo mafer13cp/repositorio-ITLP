@@ -7,12 +7,9 @@
     width: 20%;
 }
 .d2{
-    width: 60%;
+    width: 80%;
 }
-.d3{
-    width: 20%;
-}
-.d1,.d2,.d3{
+.d1,.d2{
     float: left;
     margin: 2% 0;
 }

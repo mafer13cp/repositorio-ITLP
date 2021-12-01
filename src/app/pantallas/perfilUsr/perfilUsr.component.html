@@ -1,28 +1,24 @@
 <headerItlp></headerItlp>
 <!-- Inicio Comp-->
 <div class="contenido">
-    <userInfo></userInfo>
+    <userInfo [usuario]=usuario></userInfo>
     <section class="contenido2">
         <div class="seccion1">
-            <h1 class="texto1">Acerca de mí:</h1>
-            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
-            <p></p>
-            <h1 class="texto2">Contribuciones:</h1>
-            <h1 class="texto1">10</h1>
-            <p></p>
-            <h1 class="texto2">Aparece en:</h1>
-            <h1 class="texto1">10</h1>
-            <p></p>
-            <h1 class="texto2">Comentarios:</h1>
-            <h1 class="texto1">10</h1>
+            <div class="subsection1">
+                <h1 class="texto1">Acerca de mí:</h1>
+                <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                <p></p>
+                <p></p>
+                <h1 class="texto2">Aparece en:</h1>
+                <h1 class="texto1">10</h1>
+                <p></p>
+                <h1 class="texto2">Comentarios:</h1>
+                <h1 class="texto1">10</h1>
+            </div>
+            <div class="subsection2"><hr></div>
         </div>
-        <verticalDivisor></verticalDivisor>
         <div class="seccion2">
             <gridCards [title]="'Mis documentos'"></gridCards>
-        </div>
-        <verticalDivisor></verticalDivisor>
-        <div class="seccion3">
-            <gridCards [title]="'Colaboraciones'"></gridCards>
         </div>
     </section>
 </div>

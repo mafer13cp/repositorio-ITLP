@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Documento } from 'src/app/interfaces/documento';
+import { DocumentoAutorUsuario } from 'src/app/interfaces/documentoAutorUsuario';
 
 @Component({
   selector: 'gridCards',
@@ -10,8 +11,7 @@ export class GridCardsComponent implements OnInit {
 
 
   @Input() title: string = "title";
-  @Input() documents: Documento[]; 
-  docs: Documento[];
+  @Input() documents: DocumentoAutorUsuario[]; 
 
   constructor() { }
 

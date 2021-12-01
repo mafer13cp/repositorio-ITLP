@@ -12,4 +12,7 @@ export class HomeButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnClick(){
+    //Aqui debe redirigir a la pantalla inicio.
+  }
 }

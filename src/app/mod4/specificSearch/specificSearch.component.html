@@ -1,12 +1,9 @@
 <div class="contenedor">
     <headerLine [title]="'Búsqueda Específica'"></headerLine>
     <div class="d1">
-        <dropDownList class="ddl"></dropDownList>
+        <dropDownList class="ddl" (DDLEvent)="ngEnviarFiltro($event)"></dropDownList>
     </div>
     <div class="d2">
-        <searchField></searchField>
-    </div>
-    <div class="d3">
-        <buttonReg class="btn" [text]="'Buscar'"></buttonReg>
+        <searchField (SFEvent)="ngEnviarTexto($event)"></searchField>
     </div>
 </div>

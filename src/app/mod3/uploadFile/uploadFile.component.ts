@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'uploadFile',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./uploadFile.component.css','../../app.component.css']
 })
 export class UploadFileComponent implements OnInit {
+  @Output() public UFEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngSendFile(event:any) {
+    this.UFEvent.emit(event.target.files[0]);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'selectDropDown',
@@ -7,9 +7,15 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class SelectDropDownComponent implements OnInit {
   @Input() ops:string[] = [];
+  @Output() public SDDEvent = new EventEmitter()
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngEnviarTags(tags:string[]){
+    this.SDDEvent.emit(tags);
   }
 
 }

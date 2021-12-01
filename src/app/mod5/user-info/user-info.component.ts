@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Usuario } from 'src/app/interfaces/usuario';
+import { UsuarioRol } from 'src/app/interfaces/usuarioRol';
+import { Rol } from 'src/app/interfaces/rol';
 
 @Component({
   selector: 'userInfo',
@@ -7,8 +8,8 @@ import { Usuario } from 'src/app/interfaces/usuario';
   styleUrls: ['./user-info.component.css','../../app.component.css']
 })
 export class UserInfoComponent implements OnInit {
+  @Input() usuario: UsuarioRol;
 
-  @Input() usuario: Usuario = {id: '17310000'/*, rol: 'rol'*/, nombre: 'María Fernanda Cota Pérez', correo: 'rebecarochingomez1993@gmail.com', contrasena: '', imagen: 1,fk_rol: 1, fk_carrera:""};
   constructor() { }
 
   ngOnInit(): void {

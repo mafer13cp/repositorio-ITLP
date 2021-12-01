@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter,ViewChild,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'largeInputText',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./largeInputText.component.css','../../app.component.css']
 })
 export class LargeInputTextComponent implements OnInit {
+  @Output() public LITEvent = new EventEmitter();
+  @ViewChild('texto') texto:ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  ngEnviarTexto(){
+    this.LITEvent.emit(this.texto.nativeElement.value);
+  }
 }

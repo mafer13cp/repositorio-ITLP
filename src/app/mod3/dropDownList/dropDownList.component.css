@@ -6,7 +6,7 @@
     width: 100%;
     border-radius: 3vh;
     padding-top: 0.5%;
-    height: 38px;
+    /*height: 38px;*/
   }
   
   .dropdown {
@@ -16,7 +16,8 @@
   }
   
   .dropdown-content {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
     position: absolute;
     background-color: #f9f9f9;
     z-index: 1;
@@ -33,7 +34,8 @@
   .dropdown-content p:hover {background-color: #f1f1f1}
   
   .dropdown:hover .dropdown-content {
-    display: block;
+    /*display: block;*/
+    visibility: visible;
   }
   
   .dropdown:hover .dropbtn {

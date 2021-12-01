@@ -4,29 +4,29 @@
     <div class="cuerpo0">
         <headerLine [title]="'Subir Documento'"></headerLine>
         <div class="cuerpo1">
-            <div class="inputT"><inputText [text]="'Título del documento'"></inputText></div>
-            <div class="inputT"><inputText [text]="'Materia'"></inputText></div>
+            <div class="inputT"><inputText (ITEvent)="ngRecibirTitulo($event)" [text]="'Título del documento'"></inputText></div>
+            <div class="inputT"><inputText (ITEvent)="ngRecibirMateria($event)" [text]="'Materia'"></inputText></div>
             <div class="inputTSp">
-                <div class="btnc1"><label id="lblAutor">Autor(es)</label><chipautor></chipautor></div>
+                <div class="btnc1"><label id="lblAutor">Autor(es)</label><chipautor (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
             </div>
         </div>
     </div>
     <div class="cuerpo4">
         <div class="file">
-            <uploadFile></uploadFile>
+            <uploadFile (UFEvent)="ngRecibirArchivo($event)"></uploadFile>
         </div>
     </div>
     <div class="cuerpo2">
         <div class="desc">
-            <largeInputText></largeInputText>
+            <largeInputText (LITEvent)="ngRecibirDescripcion($event)"></largeInputText>
         </div>
         <div class="select">
-            <selectDropDown ></selectDropDown>
+            <selectDropDown (SDDEvent)="ngRecibirTags($event)"></selectDropDown>
         </div>
     </div>
     <div class="cuerpo3">
         <div class="button">
-            <buttonIcon [text]="'Subir'"></buttonIcon>
+            <buttonIcon [text]="'Subir'" (click)="ngSubirDocumento()"></buttonIcon>
         </div>
     </div>
 </section>

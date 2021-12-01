@@ -3,6 +3,6 @@
         <label class="labelit">{{text}}</label>
     </div>
     <div class="boton">
-        <input type="text" class="txt">
+        <input #texto class="txt" (input)="ngEnviarTexto()">
     </div>
 </div>
