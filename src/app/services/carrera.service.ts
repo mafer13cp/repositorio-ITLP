@@ -79,7 +79,6 @@ public getDocumentosMateria():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/carreras/?filter=${y}`);
 }
 

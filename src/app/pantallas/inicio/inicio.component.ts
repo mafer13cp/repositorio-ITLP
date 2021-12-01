@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -7,15 +9,24 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./inicio.component.css','../../app.component.css']
 })
 export class InicioComponent implements OnInit {
+  user:UsuarioAutorDocumento[];
 
   constructor(private usuario:UsuarioService) { }
 
   ngOnInit(): void {
-    
-    /* PARA EJECUTAR UNA CONSULTA.
-    this.prueba().then((data)=>{
-      console.log(data);      
+    /*
+    // PARA EJECUTAR UNA CONSULTA.
+    this.prueba1().then((data)=>{
+      console.log(data);
+      console.log("Sigue el arreglo");
+      this.user = <UsuarioAutorDocumento[]>data;      
+      console.log(this.user);
       console.log("Proceso finalizado");
+      this.user.forEach(usuario => {
+        if(usuario.nombre == "Alfonso Rochín Gómez"){
+          console.log(usuario);
+        }
+      });
     });
     */
 
@@ -35,11 +46,10 @@ export class InicioComponent implements OnInit {
     //Redireccionar a página para subir documento
     console.log("Botón de subir");
   }
-
-  /*
-  prueba(){
+/*
+  prueba1(){
     return new Promise((resolve,reject)=>{
-      this.usuario.getRol().subscribe((data)=>{
+      this.usuario.getDocumentos().subscribe((data)=>{
         resolve(data);
       });
     });

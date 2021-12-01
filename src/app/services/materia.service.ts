@@ -52,9 +52,16 @@ public filterMatByCarrera(carrera: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_carrera', carrera);
   return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
 }
-public filterMatByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
+public filterMatByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
 }
 public getMatNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);

@@ -48,9 +48,16 @@ export class TagService {
 //#endregion
 
 //#region GET PARAMS 
-public filterTagByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/tags`,{params: paramsHttp});
+public filterTagByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/tags?filter=${y}`);
 }
 public getTagNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);

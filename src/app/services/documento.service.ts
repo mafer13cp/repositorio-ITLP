@@ -56,9 +56,16 @@ public filterDocByMateria(materia: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_materia', materia);
   return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
 }
-public filterDocByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
+public filterDocByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos?filter=${y}`);
 }
 public getDocNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
@@ -87,7 +94,6 @@ public getUsuariosComentarios():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 
@@ -107,7 +113,6 @@ public getCarreraMateria():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 
@@ -131,7 +136,6 @@ public getUsuarioRatings():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 

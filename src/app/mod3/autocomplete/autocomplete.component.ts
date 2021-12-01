@@ -44,7 +44,6 @@ export class AutocompleteComponent implements OnInit {
       this.opciones.nativeElement.appendChild(opcion);
       i++;
     }
-    console.log(this.opciones);
   }
 
   ngAssignStyle(opcion:any){
@@ -79,7 +78,6 @@ export class AutocompleteComponent implements OnInit {
       this.opciones.nativeElement.appendChild(opcion);
       i++;
     }
-    console.log(this.opciones);
   }
 
 }

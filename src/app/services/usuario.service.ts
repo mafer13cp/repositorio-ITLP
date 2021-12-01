@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 import { Usuario } from '../interfaces/usuario';
+import { UsuarioAutorDocumento } from '../interfaces/usuarioAutorDocumento';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +84,6 @@ public getMateriaCarrera():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 
@@ -103,7 +103,6 @@ public getDocumentoComentarios():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 
@@ -123,12 +122,12 @@ public getDocumentoRatings():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 
 public getRol():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["usuario_rol"]}`);
 }
+
 //#endregion
 }
