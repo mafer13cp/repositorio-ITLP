@@ -48,9 +48,16 @@ export class TagService {
 //#endregion
 
 //#region GET PARAMS 
-public filterTagByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/tags`,{params: paramsHttp});
+public filterTagByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/tags?filter=${y}`);
 }
 public getTagNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
@@ -61,6 +68,26 @@ public getTagNum(num: number):Observable<any> {
 //#region Filter Include
 public getDocumentos():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/tags/?filter={"include":["documentos_tag"]}`);
+}
+
+public getDocsUsrByTagNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    },
+    include: [
+      {
+        relation: 'documentos_tag',
+        scope: {
+          include: [{relation: 'usuarios_documento'}]
+        }
+      }
+    ]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/tags?filter=${y}`);
 }
 //#endregion
 }

@@ -6,5 +6,6 @@ export interface DocumentoAutorUsuario {
     descripcion: string;
     archivoUrl: string;
     fk_materia: string;
+    fecha:string;
     usuarios_documento:Usuario[]; //Autores registrados que son autores del documento. 
 }

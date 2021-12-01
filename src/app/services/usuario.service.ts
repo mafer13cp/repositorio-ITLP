@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 import { Usuario } from '../interfaces/usuario';
+import { UsuarioAutorDocumento } from '../interfaces/usuarioAutorDocumento';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +84,6 @@ public getMateriaCarrera():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 
@@ -103,7 +103,6 @@ public getDocumentoComentarios():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 
@@ -123,12 +122,37 @@ public getDocumentoRatings():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 
 public getRol():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["usuario_rol"]}`);
+}
+
+public getDocumentosUsrNombre(nom:string):Observable<any>{
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      },
+      include: [{relation:'documento_usuario'}]
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos?filter=${y}`);
+}
+
+public getDocsUsrByUsrNombre(nom:string):Observable<any>{
+  const x = {
+    include: [{relation:'documentos_usuario'}],
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/usuarios?filter=${y}`);
 }
 //#endregion
 }

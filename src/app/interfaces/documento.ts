@@ -4,4 +4,5 @@ export interface Documento {
     descripcion: string;
     archivoUrl: string;
     fk_materia: string;
+    fecha:string;
 }

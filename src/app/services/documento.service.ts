@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 import { Documento } from '../interfaces/documento';
+import { DocumentoAutorUsuario } from '../interfaces/documentoAutorUsuario';
 
 @Injectable({
   providedIn: 'root'
@@ -56,9 +57,16 @@ public filterDocByMateria(materia: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_materia', materia);
   return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
 }
-public filterDocByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/documentos`,{params: paramsHttp});
+public filterDocByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos?filter=${y}`);
 }
 public getDocNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
@@ -69,6 +77,19 @@ public getDocNum(num: number):Observable<any> {
 //#region Filter Include
 public getUsuarios():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["usuarios_documento"]}`);
+}
+
+public getUsuariosNomDoc(nom:string):Observable<any>{ //entre [] va la relación de lb4 parece.
+  const x = {
+    include:[{relation:'usuarios_documento'}],
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 
 public getComentarios():Observable<any>{ //entre [] va la relación de lb4 parece.
@@ -87,7 +108,6 @@ public getUsuariosComentarios():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 
@@ -107,7 +127,6 @@ public getCarreraMateria():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 
@@ -131,7 +150,6 @@ public getUsuarioRatings():Observable<any>{
     ],
   };
   const y = encodeURIComponent(JSON.stringify(x));
-  console.log(y);
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 

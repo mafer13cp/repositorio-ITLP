@@ -4,6 +4,11 @@ import { DocumentoAutorUsuario } from 'src/app/interfaces/documentoAutorUsuario'
 import { MateriaDocumento } from 'src/app/interfaces/materiaDocumento';
 import { TagTagDocDocumento } from 'src/app/interfaces/tagTagDocDocumento';
 import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { DocumentoService } from 'src/app/services/documento.service';
+import { MateriaService } from 'src/app/services/materia.service';
+import { TagService } from 'src/app/services/tag.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'resBusqueda',
@@ -13,13 +18,14 @@ import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento'
 export class ResBusquedaComponent implements OnInit {
   filtro:string;
   texto:string;
-  documentos:Documento[]; //Filtro por documentos.
+  documentos:Documento[] = []; //Filtro por documentos.
   documentosAutor:UsuarioAutorDocumento; //Filtro por autor.
   documentosMateria:MateriaDocumento;//Filtro por materia
   documentosTag:TagTagDocDocumento; //Filtro por etiqueta
-  documentosUsuario:DocumentoAutorUsuario[]; //Documentos con su usuario asociado.
+  documentosUsuario:DocumentoAutorUsuario[] = []; //Documentos con su usuario asociado.
 
-  constructor() { }
+  constructor(private usuario:UsuarioService, private documento:DocumentoService, private materia:MateriaService,
+    private comunicacion:ComunicacionService, private tag:TagService) { }
 
   ngOnInit(): void {
   }
@@ -28,9 +34,8 @@ export class ResBusquedaComponent implements OnInit {
     this.filtro = filtro;
   }
 
-  ngRecibirTexto(texto:string){
+  async ngRecibirTexto(texto:string){
     this.texto = texto;
-    //Aqui se realiza la consulta
     if(this.filtro == null){
       alert("ERROR: Debe elegir un filtro");
     }
@@ -39,28 +44,58 @@ export class ResBusquedaComponent implements OnInit {
     }
     else{
       if(this.filtro == "Documentos"){
-        //aqui documentos se iguala a la consulta de los documentos.
+        this.comunicacion.setDocsEmpty();
+        this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
+          if(data.length == 0)
+            alert("No se encontró ninguna coincidencia.");
+          else{
+            data.forEach(docUsr => {
+              this.comunicacion.addDocumentoUsr(docUsr);
+            });
+          }
+        });
       }
       else if(this.filtro == "Autores"){
-        //la consulta se asigna a documentosAutor, hacer el método que consulte Documentos de un usuario que reciba el nombre del usuario.
-        //aqui documentos se iguala a documentos_usuario de documentosAutor
+        this.comunicacion.setDocsEmpty();
+        this.usuario.getDocsUsrByUsrNombre(texto).subscribe((data)=>{
+          if(data.length == 0)
+            alert("No se encontró ninguna coincidencia.");
+          else{
+            data.forEach(usr => {
+              usr.documentos_usuario.forEach(doc => {
+                this.comunicacion.addDocumentoUsr2(doc,data);
+              });
+            });
+          }
+        });
       }
       else if(this.filtro == "Materias"){
-        //la consulta se asigna a documentosMateria, hacer el método que consulte Documentos de una materia que reciba el nombre de la materia.
-        //aqui documentos se iguala a documentos_materia de documentosMateria
+        this.comunicacion.setDocsEmpty();
+        this.materia.getDocsUsrByMatNombre(texto).subscribe((data)=>{
+          if(data.length == 0)
+            alert("No se encontró ninguna coincidencia.");
+          else{
+            data.forEach(materia => {
+              materia.documentos_materia.forEach(docUsr => {
+                this.comunicacion.addDocumentoUsr(docUsr);
+              });
+            });
+          }
+        });
       }
       else if(this.filtro == "Etiquetas"){
-        //la consulta se asigna a documentosTag, hacer el método que consulte Documentos de un tag que reciba el nombre del tag.
-        //aqui documentos se iguala a documentos_tag de documentosTag
-      }
-      if(this.documentos != null){
-      //realizar la consulta de los usuarios para cada documento y rellenar el documentosUsuario.
-        for(let i = 0; i < this.documentos.length; i++){
-          //this.documentosUsuario[i] = consulta del usuario de documentos[i] definir la consulta que devuelva un documentoUsuarios segun su id de doc.
-        }
-      }
-      else{
-        alert("No se encontraron coincidencias");
+        this.comunicacion.setDocsEmpty();
+        this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
+          if(data.length == 0)
+            alert("No se encontró ninguna coincidencia.");
+          else{
+            data.forEach(tag => {
+              tag.documentos_tag.forEach(docUsr => {
+                this.comunicacion.addDocumentoUsr(docUsr);
+              });
+            });
+          }
+        });
       }
     }
   }

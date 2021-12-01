@@ -52,9 +52,16 @@ public filterMatByCarrera(carrera: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_carrera', carrera);
   return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
 }
-public filterMatByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/materias`,{params: paramsHttp});
+public filterMatByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
 }
 public getMatNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
@@ -69,6 +76,39 @@ public getCarrera():Observable<any>{
 
 public getDocumentos():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/materias/?filter={"include":["documentos_materia"]}`);
+}
+
+public getDocsByMatNombre(nom: string):Observable<any> {
+  const x = {
+    include:[{relation:'documentos_materia'}],
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
+}
+
+public getDocsUsrByMatNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    },
+    include: [
+      {
+        relation: 'documentos_materia',
+        scope: {
+          include: [{relation: 'usuarios_documento'}]
+        }
+      }
+    ]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
 }
 //#endregion
 }
