@@ -10,6 +10,7 @@ export class DropDownListComponent implements OnInit {
   @ViewChild('btn') boton:ElementRef;
   @Output() public DDLEvent = new EventEmitter;
   @Input() default:string = "Elige un filtro";
+  @ViewChild('contenido') contenido:ElementRef;
 
   constructor() { }
 
@@ -20,6 +21,15 @@ export class DropDownListComponent implements OnInit {
     const texto = control.srcElement.innerHTML;
     this.boton.nativeElement.innerHTML = texto;
     this.DDLEvent.emit(texto);
+    this.contenido.nativeElement.style.visibility = "hidden";
+  }
+
+  ngMouseOver(){
+    this.contenido.nativeElement.style.visibility = "visible";
+  }
+
+  ngMouseOut(){
+    this.contenido.nativeElement.style.visibility = "hidden";
   }
 
 }

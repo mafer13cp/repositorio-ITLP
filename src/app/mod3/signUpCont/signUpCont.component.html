@@ -1,11 +1,9 @@
 <div id="signupcontainer">
-    <div class="cuerpo1"><inputText [text]="'Nombre Usuario'" id="inputs" class="imputs"></inputText></div>
-    <div class="cuerpo2"><inputText [text]="'Nombre'" class="inputs"></inputText></div>
-    <div class="cuerpo3"><inputText [text]="'Apellidos'" class="inputs"></inputText></div>
-    <div class="cuerpo4"><inputText [text]="'Correo'" class="inputs"></inputText></div>
-    <div class="cuerpo5"><inputText [text]="'Contraseña'" class="inputs"></inputText></div>
-    <div class="cuerpo6"><inputText [text]="'No. Control'" class="inputs"></inputText></div>
-    <div class="carreras"><dropDownList [ops]=carrerasNombre [default]="'Elige tu carrera'"></dropDownList></div>
-    <div class="roles"><dropDownList [ops]=roles [default]="'Elige tu rol'"></dropDownList></div>
-    <div class="cuerpo7"><buttonReg [text]="'SignUp'" id="btnreg" ></buttonReg></div>
+    <div class="cuerpo2"><inputText (ITEvent)="ngRecibirNombre($event)" [text]="'Nombre'" class="inputs"></inputText></div>
+    <div class="cuerpo4"><inputText (ITEvent)="ngRecibirCorreo($event)" [text]="'Correo'" class="inputs"></inputText></div>
+    <div class="cuerpo5"><inputText (ITEvent)="ngRecibirContrasena($event)"[text]="'Contraseña'" class="inputs"></inputText></div>
+    <div class="cuerpo6"><inputText (ITEvent)="ngRecibirId($event)" [text]="'No. Control'" class="inputs"></inputText></div>
+    <div class="roles"><dropDownList (DDLEvent)="ngRecibirRol($event)" [ops]=roles [default]="'Elige tu rol'"></dropDownList></div>
+    <div #carreras class="carreras"><dropDownList (DDLEvent)="ngRecibirCarrera($event)" [ops]=carrerasNombre [default]="'Elige tu carrera'"></dropDownList></div>
+    <div class="cuerpo7"><buttonReg (click)="ngEnviarDatos()" [text]="'SignUp'" id="btnreg" ></buttonReg></div>
 </div>

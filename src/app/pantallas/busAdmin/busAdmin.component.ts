@@ -23,28 +23,34 @@ export class BusAdminComponent implements OnInit {
     this.texto = texto;
     //Realizar la consulta;
     if(this.filtro == null){
-      console.log("DEBE SELECCIONAR UN FILTRO ERROR");
+      alert("ERROR: Debe elegir un filtro");
     }
-    else if(this.filtro == "Documentos"){
-      console.log(this.filtro);
-      console.log(texto);
-      this.resultados = [{id:"10",nombre:"Algoritmos"},{id:"20",nombre:"probabilidad"}];
-      //Consultar los documentos según su nombre, no es necesario crear.
+    else if(texto == null || texto == ""){
+      alert("ERROR: No se ingreso ninguna palabra para filtrar");
     }
-    else if(this.filtro == "Materias"){
-      console.log(this.filtro);
-      console.log(texto);
-      //Consultar las materias por el nombre, no es necesario crear.
-    }
-    else if(this.filtro == "Etiquetas"){
-      console.log(this.filtro);
-      console.log(texto);
-      //Consultar las etiquetas por el nombre, no es necesario crear.
-    }
-    else if(this.filtro == "Autores"){
-      console.log(this.filtro);
-      console.log(texto);
-      //Consultar usuarios por el nombre, no es necesario crear.
+    else{
+      if(this.filtro == "Documentos"){
+        this.resultados = [{id:"10",nombre:"Algoritmos"},{id:"20",nombre:"probabilidad"}];
+        //Consultar los documentos según su nombre, no es necesario crear.
+        console.log(this.resultados.length);
+        if(this.resultados.length == 0)
+        alert("No se encontraron coincidencias");
+      }
+      else if(this.filtro == "Materias"){
+        //Consultar las materias por el nombre, no es necesario crear.
+        if(this.resultados.length == 0)
+          alert("No se encontraron coincidencias");
+      }
+      else if(this.filtro == "Etiquetas"){
+        //Consultar las etiquetas por el nombre, no es necesario crear.
+        if(this.resultados.length == 0)
+          alert("No se encontraron coincidencias");
+      }
+      else if(this.filtro == "Autores"){
+        //Consultar usuarios por el nombre, no es necesario crear.
+        if(this.resultados.length == 0)
+          alert("No se encontraron coincidencias");
+      }
     }
   }
 

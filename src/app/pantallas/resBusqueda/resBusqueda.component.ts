@@ -32,29 +32,24 @@ export class ResBusquedaComponent implements OnInit {
     this.texto = texto;
     //Aqui se realiza la consulta
     if(this.filtro == null){
-      console.log("DEBE SELECCIONAR UN FILTRO ERROR");
+      alert("ERROR: Debe elegir un filtro");
     }
-      else{
+    else if(texto == null || texto == ""){
+      alert("ERROR: No se ingreso ninguna palabra para filtrar");
+    }
+    else{
       if(this.filtro == "Documentos"){
-        console.log(this.filtro);
-        console.log(texto);
         //aqui documentos se iguala a la consulta de los documentos.
       }
       else if(this.filtro == "Autores"){
-        console.log(this.filtro);
-        console.log(texto);
         //la consulta se asigna a documentosAutor, hacer el método que consulte Documentos de un usuario que reciba el nombre del usuario.
         //aqui documentos se iguala a documentos_usuario de documentosAutor
       }
       else if(this.filtro == "Materias"){
-        console.log(this.filtro);
-        console.log(texto);
         //la consulta se asigna a documentosMateria, hacer el método que consulte Documentos de una materia que reciba el nombre de la materia.
         //aqui documentos se iguala a documentos_materia de documentosMateria
       }
       else if(this.filtro == "Etiquetas"){
-        console.log(this.filtro);
-        console.log(texto);
         //la consulta se asigna a documentosTag, hacer el método que consulte Documentos de un tag que reciba el nombre del tag.
         //aqui documentos se iguala a documentos_tag de documentosTag
       }
@@ -65,7 +60,7 @@ export class ResBusquedaComponent implements OnInit {
         }
       }
       else{
-        console.log("ERROR NO SE ENCONTRARON COINCIDENCIAS");
+        alert("No se encontraron coincidencias");
       }
     }
   }

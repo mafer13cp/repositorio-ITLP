@@ -13,7 +13,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngProcesarDatos(datos:Object){
-    console.log(datos);
-    //Aqui se debería revisar los datos del login.
+    if(datos['usuario'] == null || datos['usuario'] == "")
+      alert("ERROR: Debe ingresar un usuario");
+    else if(datos['contrasena'] == null || datos['contrasena'] == "")
+      alert("ERROR: Debe ingresar una contraseña")
+    else{
+      console.log(datos);
+      //Aqui se debería revisar los datos del login.
+    }
   }
 }
