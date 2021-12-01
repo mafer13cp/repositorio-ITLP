@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, ViewChild, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'comment',
@@ -6,6 +6,7 @@ import { Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./comment.component.css','../../app.component.css']
 })
 export class CommentComponent implements OnInit {
+  @Output() public UserEvent= new EventEmitter();
 
   @Input() userName: string = "Nombre usuario";
   @Input() date: string = "01/01/21";
@@ -16,4 +17,10 @@ export class CommentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnClick(control: any){
+    //Mandar el nombre de usuario y el id para mostrar perfil
+    const texto = control.srcElement.innerHTML;
+    this.UserEvent.emit(texto);
+    console.log("desde comentario: " + texto);
+  }
 }

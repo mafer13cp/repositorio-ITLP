@@ -2,7 +2,7 @@
     <i class="material-icons">account_circle</i>
     <div class="commentContent">
         <div class="commentHead">
-            <h3>{{userName}}</h3>
+            <h3><a #a (click)=ngOnClick($event)>{{userName}}</a></h3>
             <h4>{{date}}</h4>
         </div>
         <p class="commentText">{{text}}</p>

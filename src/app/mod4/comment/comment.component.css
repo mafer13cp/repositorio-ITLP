@@ -35,3 +35,6 @@
     line-height: 3vh;
     color: #577399;
 }
+a {
+    cursor: pointer;
+}

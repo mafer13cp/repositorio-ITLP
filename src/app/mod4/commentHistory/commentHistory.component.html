@@ -1,5 +1,4 @@
 <div class="history">
-    <comment class="com"></comment>
-    <comment class="com"></comment>
+    <comment *ngFor="let com of comments" class="comment" [userName]="com.usuario" [date]="com.fecha" [text]="com.texto" (UserEvent)="ngThrowParam($event)"></comment>
 </div>
 
