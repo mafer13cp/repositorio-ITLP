@@ -1,14 +1,18 @@
 <div class="contenedor">
-    <headerLine [title]="'Agregar materia/Etiqueta'"></headerLine>
+    <headerLine [title]="'Agregar Materia/Etiqueta'"></headerLine>
     <div class="cuerpo1">
         <div class="d1">
-            <dropDownList class="ddl" [ops]="['Materia', 'Tag']"></dropDownList>
+            <dropDownList class="ddl" [ops]="['Materia', 'Tag']" (DDLEvent)="ngRecibirAdd($event)" [default]="'Elige una opción'"></dropDownList>
         </div>
         <div class="d2">
-            <inputText [text]="'Nombre'"></inputText>
+            <inputText [text]="'Nombre'" (ITEvent)="ngRecibirNombre($event)"></inputText>
         </div>
         <div class="d3">
-            <buttonReg [text]="'Agregar'"></buttonReg>
+            <buttonReg [text]="'Agregar'" (click)="ngAgregar()"></buttonReg>
+        </div>
+        <div class="mat" #materia>
+            <inputText [text]="'Clave'" (ITEvent)="ngRecibirClave($event)"></inputText> <br>
+            <dropDownList #carreras class="ddlMat" (DDLEvent)="ngRecibirCarrera($event)" [ops]=carrerasNombre [default]="'Elige tu carrera'"></dropDownList>
         </div>
     </div>
 </div>

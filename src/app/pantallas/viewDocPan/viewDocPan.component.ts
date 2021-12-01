@@ -12,4 +12,8 @@ export class ViewDocPanComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngClickAcc(text: string)
+  {
+    console.log("desde view pan: " + text);
+  }
 }

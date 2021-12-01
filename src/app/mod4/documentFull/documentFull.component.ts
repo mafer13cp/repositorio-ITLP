@@ -18,4 +18,9 @@ export class DocumentFullComponent implements OnInit {
     }, 100);
   }
 
+  ngOnClick() {
+    console.log("Regresar a la pantalla de info");
+    //Routing
+  }
+
 }
