@@ -1,6 +1,6 @@
 <section class="container">
     <headerLine [title]="title"></headerLine>
     <div class="grid"> 
-        <cardResult *ngFor="let n of count" [nombre]="content" [id]="name"></cardResult>
+        <cardResult *ngFor="let dato of datos" [name]=dato.name [id]=dato.id [content]=dato.count></cardResult>
     </div>
 </section>
