@@ -12,4 +12,17 @@ export class ViewDocAutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngClickAcc(text: string)
+  {
+    console.log("desde view aut: " + text);
+  }
+
+  ngOnEdit(control: any)
+  {
+    console.log("editar desde view autor");
+  }
+  ngOnDelete(control: any)
+  {
+    console.log("eliminar desde view autor");
+  }
 }

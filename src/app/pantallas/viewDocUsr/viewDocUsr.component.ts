@@ -12,4 +12,8 @@ export class ViewDocUsrComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngClickAcc(text: string)
+  {
+    console.log("desde view user: " + text);
+  }
 }

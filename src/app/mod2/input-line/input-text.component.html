@@ -1,6 +1,7 @@
 <div class="wrapper">
     <div class="input-data">
-       <input type="text" required>
+       <input #inputText type="text" required>
        <label>{{desc}}</label>
+       <i class="material-icons icon" (click)="ngOnInput()">send</i>
     </div>
  </div>

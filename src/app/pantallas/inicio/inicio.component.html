@@ -2,14 +2,14 @@
 <!-- Inicio Comp-->
 <searchBar id="bar" (SBEvent)="ngClickSF($event)"></searchBar>
 <section id="body">
-    <sideNav></sideNav>
+    <sideNav (AccEvent)="ngClickAcc($event)"></sideNav>
     <div id="content">
         <div id="upload">
             <div id="textUp">
                 <h2>¿Tienes algo qué aportar?</h2>
                 <h3>Sube tu documento ahora</h3>
             </div>
-            <buttonIcon id="subirBtn" [text]="'Subir'"></buttonIcon>
+            <buttonIcon id="subirBtn" [text]="'Subir'" (click)="ngSubir()"></buttonIcon>
         </div>
         <div id="cards">
             <gridCards [title]="'Últimos aportes'"></gridCards>

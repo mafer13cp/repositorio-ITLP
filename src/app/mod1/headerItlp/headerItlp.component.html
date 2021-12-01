@@ -2,12 +2,13 @@
 <section class= "head">
     <div class="left">
         <homeButton></homeButton>
-        <a id="materias">Materias</a>
-        <a id="temas">Temas</a>
+        <a #materias id="materias" (click)="ngOnClick('materias')">Materias</a>
+        <a #tags id="tags" (click)="ngOnClick('tags')">Tags</a>
+        <a #docs id="docs" (click)="ngOnClick('docs')">Documentos</a>
     </div>
     <div class="userInf">
         <p class="divisorLat">|</p>
-        <label id="nusuario">Nombre de Usuario</label>
-        <i id="userIcon" class="material-icons">person_outline</i>
+        <label id="nusuario"><a #usuario (click)="ngOnClick('usuario')">Nombre de Usuario</a></label>
+        <i #icon id="userIcon" class="material-icons" (click)="ngOnClick('usuario')">person_outline</i>
     </div>
 </section>

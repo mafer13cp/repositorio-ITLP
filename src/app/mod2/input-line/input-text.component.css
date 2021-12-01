@@ -38,3 +38,14 @@
     outline: none;
     border-bottom: 4px solid #577399;
 }
+
+.icon {
+    color: #495867;
+    cursor: pointer;
+    right: 0;
+    position: absolute;
+    margin-right: 2vh;
+    transform: translateY(-120%);
+    font-size: 4.5vh;
+}
+

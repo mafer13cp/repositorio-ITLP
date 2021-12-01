@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Output, ViewChild, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'accordionTag',
@@ -6,6 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./accordion-tag.component.css','../../app.component.css']
 })
 export class AccordionTagComponent implements OnInit {
+  @Output() public AccEvent= new EventEmitter();
+  texto: string ="";
 
   @Input() title: string = "title";
   @Input() listTags: string[]  = ['tag'];
@@ -15,4 +17,10 @@ export class AccordionTagComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnClick(control: any){
+    //Mandar el valor del tag y el id de la selección
+    this.texto = control.srcElement.childNodes[1].textContent;
+    this.AccEvent.emit(this.texto);
+    console.log("desde accordion tag: " + this.texto);
+  }
 }

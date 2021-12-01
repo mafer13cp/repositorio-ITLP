@@ -15,6 +15,6 @@ export class SearchFieldComponent implements OnInit {
   }
 
   ngOnClick(){
-    this.SFEvent.emit(this.searchField.nativeElement.value);;
+    this.SFEvent.emit(this.searchField.nativeElement.value);
   }
 }

@@ -38,6 +38,8 @@ export class AccordionRateComponent implements OnInit {
       this.controles[i].innerHTML = "star";
       i++;
     }
+    console.log("rating: " + num);
+    //Aquí se actualiza rating
   }
 
 

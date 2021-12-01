@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'commentSection',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commentSection.component.css','../../app.component.css']
 })
 export class CommentSectionComponent implements OnInit {
+  @Output() public UserEvent= new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngThrowParam(text:string){
+    this.UserEvent.emit(text);
+    console.log("desde comment section: " + text);
   }
 
 }

@@ -9,6 +9,7 @@
     height: 87%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .docContent {
     height: 100%;
@@ -38,6 +39,9 @@ h2, h3 {
     position: relative;
     left: 175px;
     bottom: 200px;
+}
+i {
+    cursor: pointer;
 }
 
 /* scrollbar*/

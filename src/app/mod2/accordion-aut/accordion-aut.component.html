@@ -4,11 +4,11 @@
         <mat-panel-title class="title">
           {{title}}
         </mat-panel-title>
-        <i class="material-icons">edit</i>
+        <i class="material-icons" #i (click)="ngOnEdit($event)">edit</i>
       </div>
     </mat-expansion-panel-header>
     <divider [color]="'light'" class="divider"></divider>
     <ul class="list">
-      <li *ngFor="let item of listItems"><a href="">{{item}}</a></li>
+      <li *ngFor="let item of listItems"><a #a (click)="ngOnClick($event)">{{item}}</a></li>
   </ul>
   </mat-expansion-panel>

@@ -22,8 +22,18 @@ export class InicioComponent implements OnInit {
   }
 
   ngClickSF(text:string){
+    //redireccionar a resBusqueda y mandar parámetro ingresado
     console.log("Desde inicio");
     console.log(text);
+  }
+  ngClickAcc(text: string)
+  {
+    console.log("desde inicio: " + text);
+  }
+
+  ngSubir(){
+    //Redireccionar a página para subir documento
+    console.log("Botón de subir");
   }
 
   /*
