@@ -129,5 +129,17 @@ public getRol():Observable<any>{
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["usuario_rol"]}`);
 }
 
+public getDocumentosUsrNombre(nom:string):Observable<any>{
+  const x = {
+    where: {
+      nombre: {
+        like: nom+'%'
+      },
+      include: [{relation:'documento_usuario'}]
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos?filter=${y}`);
+}
 //#endregion
 }

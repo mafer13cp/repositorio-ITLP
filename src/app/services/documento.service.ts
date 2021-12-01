@@ -78,6 +78,10 @@ public getUsuarios():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["usuarios_documento"]}`);
 }
 
+public getUsuariosIdDoc(id:number):Observable<any>{ //entre [] va la relación de lb4 parece.
+  return this.http.get<any>(`${this.baseUrl}/documentos/${id}?filter={"include":["usuarios_documento"]}`);
+}
+
 public getComentarios():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["comentarios_documento"]}`);
 }

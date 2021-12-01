@@ -77,5 +77,18 @@ public getCarrera():Observable<any>{
 public getDocumentos():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/materias/?filter={"include":["documentos_materia"]}`);
 }
+
+public getDocsByMatNombre(nom: string):Observable<any> {
+  const x = {
+    include:[{relation:'documentos_materia'}],
+    where: {
+      nombre: {
+        like: nom+'%'
+      }
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/materias?filter=${y}`);
+}
 //#endregion
 }
