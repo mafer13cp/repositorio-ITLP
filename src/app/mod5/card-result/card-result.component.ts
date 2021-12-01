@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-result.component.css','../../app.component.css']
 })
 export class CardResultComponent implements OnInit {
-  @Input() content: string = "content";
-  @Input() name: string = "name";
+  @Input() nombre: any = "content";
+  @Input() id: any = "name";
 
   constructor() { 
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'specificSearch',
@@ -6,8 +6,8 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./specificSearch.component.css','../../app.component.css']
 })
 export class SpecificSearchComponent implements OnInit {
-  
-  @Input() text: string = "text";
+  @Output() SSEvent = new EventEmitter;
+  @Output() SSEvent2 = new EventEmitter;
 
   constructor() { 
   }
@@ -15,4 +15,11 @@ export class SpecificSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngEnviarFiltro(filtro:string){
+    this.SSEvent.emit(filtro);
+  }
+
+  ngEnviarTexto(texto:string){
+    this.SSEvent2.emit(texto);
+  }
 }

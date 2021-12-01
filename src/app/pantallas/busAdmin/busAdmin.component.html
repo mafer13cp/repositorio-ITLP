@@ -2,13 +2,13 @@
 <!--Comienza componente-->
 <section class="busAdmin">
     <div class="cuerpo1">
-        <specificSearch></specificSearch>
+        <specificSearch (SSEvent2)="ngRecibirTexto($event)" (SSEvent)="ngRecibirFiltro($event)" ></specificSearch>
     </div>
     <div class="cuerpo2">
         <headerLine [title]="''"></headerLine>
     </div>
     <div class="cuerpo3">
-        <adminSearchResult></adminSearchResult>
+        <adminSearchResult [resultados]=resultados></adminSearchResult>
     </div>
 </section>
 <!--Termina componente-->

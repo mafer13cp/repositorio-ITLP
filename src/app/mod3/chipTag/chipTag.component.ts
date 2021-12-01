@@ -1,5 +1,5 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild, EventEmitter, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
@@ -24,6 +24,7 @@ export class ChipTagComponent {
   allFruits: string[] = [];  //Coleccion de todos los tags que se mostraran.
 
   @ViewChild('autocomplete') fruitInput: ElementRef<HTMLInputElement>;
+  @Output() public CTEvent = new EventEmitter();
 
   constructor() {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
@@ -31,6 +32,11 @@ export class ChipTagComponent {
       map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
     );
   }
+
+
+  ngEnviarTags(){
+    this.CTEvent.emit(this.fruits);
+   }
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
