@@ -10,13 +10,12 @@ export class ListCardComponent implements OnInit {
   @Input() content: string = "content";
   @Input() name: string = "name";
   @Input() title: string = "title";
-  @Input() num: number = 1;
-  count: number[] =[];
+  @Input() datos: any[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.count = Array(this.num);
+    
   }
 
 }
