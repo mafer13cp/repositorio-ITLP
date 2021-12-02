@@ -24,7 +24,7 @@ export class RegistroComponent implements OnInit {
   }
 
   ngRecibirDatos(datos:Object){
-    if(datos['nombre'] == null || datos['nombre'] == "")
+    if(datos['nombre'] == null || datos['nombre'] == "") //Validacion vacio o nulo
       this.openSnackBar("ERROR: Se debe ingresar un nombre","OK");
     else if(datos['correo'] == null)
       this.openSnackBar("ERROR: Se debe ingresar un correo","OK");
@@ -36,7 +36,15 @@ export class RegistroComponent implements OnInit {
       this.openSnackBar("ERROR: Se debe seleccionar un rol","OK");
     else if(datos['carrera'] == null)
       this.openSnackBar("ERROR: Se debe seleccionar una carrera","OK");
-    else{
+    else if(datos['nombre'].length > 50) //Validacion de longitud
+      this.openSnackBar("ERROR: El nombre de usuario no puede exceder los 50 caracteres","OK");
+    else if(datos['correo'].length > 50)
+      this.openSnackBar("ERROR: El correo no puede exceder los 50 caracteres","OK");
+    else if(datos['contrasena'].length > 200)
+      this.openSnackBar("ERROR: La contraseña no puede exceder los 200 caracteres","OK");
+    else if(datos['id'].length > 15)
+      this.openSnackBar("ERROR: El número de control no puede exceder los 15 caracteres","OK");
+    else {
       let re1 = new RegExp(`.*@gmail.com$`,'i');
       let re2 = new RegExp(`.*@outlook.es$`,'i');
       let re3 = new RegExp(`.*@lapaz.tecnm.mx$`,'i');
