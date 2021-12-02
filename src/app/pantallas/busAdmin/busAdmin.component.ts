@@ -4,6 +4,7 @@ import { DocumentoService } from 'src/app/services/documento.service';
 import { MateriaService } from 'src/app/services/materia.service';
 import { TagService } from 'src/app/services/tag.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'busAdmin',
@@ -16,9 +17,14 @@ export class BusAdminComponent implements OnInit {
   resultados:any[] = []; //resultado de la consulta segun el filtro y el texto.
   usuarios:UsuarioAutorDocumento[];
 
-  constructor(private documento:DocumentoService, private materia:MateriaService, private tag:TagService, private usuario:UsuarioService) { }
+  constructor(private documento:DocumentoService, private materia:MateriaService, 
+    private tag:TagService, private usuario:UsuarioService,readonly snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action);
   }
 
   ngRecibirFiltro(filtro:string){
@@ -29,10 +35,10 @@ export class BusAdminComponent implements OnInit {
     this.texto = texto;
     //Realizar la consulta;
     if(this.filtro == null){
-      alert("ERROR: Debe elegir un filtro");
+      this.openSnackBar("ERROR: Debe elegir un filtro","OK");
     }
     else if(texto == null || texto == ""){
-      alert("ERROR: No se ingreso ninguna palabra para filtrar");
+      this.openSnackBar("ERROR: No se ingresó ninguna palabra para filtrar","OK");
     }
     else{
       if(this.filtro == "Documentos"){
@@ -41,7 +47,7 @@ export class BusAdminComponent implements OnInit {
         this.documento.filterDocByNombre(texto).subscribe((data)=>{
           this.resultados = data;
           if(this.resultados.length == 0)
-          alert("No se encontraron coincidencias");
+          this.openSnackBar("No se encontraron coincidencias","OK");
         });
       }
       else if(this.filtro == "Materias"){
@@ -49,7 +55,7 @@ export class BusAdminComponent implements OnInit {
         this.materia.filterMatByNombre(texto).subscribe((data)=>{
           this.resultados = data;
           if(this.resultados.length == 0)
-          alert("No se encontraron coincidencias");
+          this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
         });
       }
       else if(this.filtro == "Etiquetas"){
@@ -57,7 +63,7 @@ export class BusAdminComponent implements OnInit {
         this.tag.filterTagByNombre(texto).subscribe((data)=>{
           this.resultados = data;
           if(this.resultados.length == 0)
-          alert("No se encontraron coincidencias");
+          this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
         });
       }
       else if(this.filtro == "Autores"){
@@ -72,7 +78,7 @@ export class BusAdminComponent implements OnInit {
               this.resultados.push(user);
           });
           if(this.resultados.length == 0)
-          alert("No se encontraron coincidencias");
+          this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
         });
       }
     }

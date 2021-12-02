@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'subirDoc',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class SubirDocComponent implements OnInit {
   coleccion = {autores: null,tags:null,titulo:null,materia:null,archivo:null,descripcion:null};
 
-  constructor() { }
+  constructor(readonly snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action);
   }
 
   ngRecibirAutores(autores:string[]){
@@ -39,17 +44,17 @@ export class SubirDocComponent implements OnInit {
 
   ngSubirDocumento(){
     if(this.coleccion.titulo == null || this.coleccion.titulo == "")
-      alert("ERROR: Debe ingresar un título");
+      this.openSnackBar("ERROR: Debe ingresar un título","OK");
     else if(this.coleccion.materia == null || this.coleccion.materia == "")
-      alert("ERROR: Debe ingresar una materia");
+      this.openSnackBar("ERROR: Debe ingresar una materia","OK");
     else if(this.coleccion.autores == null || this.coleccion.autores == [])
-      alert("ERROR: Debe ingresar al menos un autor");
+      this.openSnackBar("ERROR: Debe ingresar al menos un autor","OK");
     else if(this.coleccion.archivo == null || this.coleccion.archivo == "")
-      alert("ERROR: Debe seleccionar un archivo");
+      this.openSnackBar("ERROR: Debe seleccionar un archivo","OK");
     else if(this.coleccion.descripcion == null || this.coleccion.descripcion == "")
-      alert("ERROR: Debe ingresar una descripción");
+      this.openSnackBar("ERROR: Debe ingresar una descripción","OK");
     else if(this.coleccion.tags == null || this.coleccion.tags == [])
-      alert("ERROR: Debe ingresar al menos un tag");
+      this.openSnackBar("ERROR: Debe ingresar al menos un tag","OK");
     else{
       console.log(this.coleccion);
       //Aqui se debe hacer el procedimiento de subir el documento.

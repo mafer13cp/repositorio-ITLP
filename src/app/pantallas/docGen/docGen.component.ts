@@ -25,6 +25,7 @@ export class DocGenComponent implements OnInit {
   ngConsultarDocs(){
     this.documento.getUsuarios().subscribe((data)=>{ //todas las materias y cada una con todos sus documentos en documentos_materia
       this.documentos = data;
+      console.log(data);
       this.documentos.forEach(t => {
         this.datos.push({id:t.id, name:t.nombre, count:t.usuarios_documento[0].nombre}); //Da error porque AGENTES INTELIGENTES no tiene un autor asociado.
       });

@@ -85,5 +85,15 @@ public getDocumentosMateria():Observable<any>{
 public getUsuarios():Observable<any>{ 
   return this.http.get<any>(`${this.baseUrl}/carreras/?filter={"include":["usuarios_carrera"]}`);
 }
+
+public getCarreraByName(name:string):Observable<any>{ 
+  const x = {
+    where: {
+      nombre: name
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/carreras/?filter=${y}`);
+}
 //#endregion
 }

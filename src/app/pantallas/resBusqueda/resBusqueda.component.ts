@@ -9,6 +9,7 @@ import { DocumentoService } from 'src/app/services/documento.service';
 import { MateriaService } from 'src/app/services/materia.service';
 import { TagService } from 'src/app/services/tag.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'resBusqueda',
@@ -25,9 +26,13 @@ export class ResBusquedaComponent implements OnInit {
   documentosUsuario:DocumentoAutorUsuario[] = []; //Documentos con su usuario asociado.
 
   constructor(private usuario:UsuarioService, private documento:DocumentoService, private materia:MateriaService,
-    private comunicacion:ComunicacionService, private tag:TagService) { }
+    private comunicacion:ComunicacionService, private tag:TagService,readonly snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action);
   }
 
   ngRecibirFiltro(filtro:string){
@@ -37,17 +42,17 @@ export class ResBusquedaComponent implements OnInit {
   async ngRecibirTexto(texto:string){
     this.texto = texto;
     if(this.filtro == null){
-      alert("ERROR: Debe elegir un filtro");
+      this.openSnackBar("ERROR: Debe elegir un filtro","OK");
     }
     else if(texto == null || texto == ""){
-      alert("ERROR: No se ingreso ninguna palabra para filtrar");
+      this.openSnackBar("ERROR: Se debe ingresar una algún texto para filtrar","OK");
     }
     else{
       if(this.filtro == "Documentos"){
         this.comunicacion.setDocsEmpty();
         this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
           if(data.length == 0)
-            alert("No se encontró ninguna coincidencia.");
+            this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
             data.forEach(docUsr => {
               this.comunicacion.addDocumentoUsr(docUsr);
@@ -59,7 +64,7 @@ export class ResBusquedaComponent implements OnInit {
         this.comunicacion.setDocsEmpty();
         this.usuario.getDocsUsrByUsrNombre(texto).subscribe((data)=>{
           if(data.length == 0)
-            alert("No se encontró ninguna coincidencia.");
+            this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
             data.forEach(usr => {
               usr.documentos_usuario.forEach(doc => {
@@ -73,7 +78,7 @@ export class ResBusquedaComponent implements OnInit {
         this.comunicacion.setDocsEmpty();
         this.materia.getDocsUsrByMatNombre(texto).subscribe((data)=>{
           if(data.length == 0)
-            alert("No se encontró ninguna coincidencia.");
+            this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
             data.forEach(materia => {
               materia.documentos_materia.forEach(docUsr => {
@@ -87,7 +92,7 @@ export class ResBusquedaComponent implements OnInit {
         this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
           if(data.length == 0)
-            alert("No se encontró ninguna coincidencia.");
+            this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
             data.forEach(tag => {
               tag.documentos_tag.forEach(docUsr => {
