@@ -63,7 +63,7 @@ export class RegistroComponent implements OnInit {
 
         this.carrera.getCarreraByName(datos['carrera']).subscribe((data)=>{
           this.idCarr = data[0].id;
-          this.usr = {id:datos['nombre'],correo:datos['correo'],contrasena:datos['contrasena'],nombre:datos['nombre'], fk_rol:this.idRol,fk_carrera:this.idCarr,imagen:0};
+          this.usr = {id:datos['nombre'],correo:datos['correo'],contrasena:datos['contrasena'], descripcion:"", nombre:datos['nombre'], fk_rol:this.idRol,fk_carrera:this.idCarr,imagen:0};
           this.usuario.postUsuario(this.usr);
         });
       }

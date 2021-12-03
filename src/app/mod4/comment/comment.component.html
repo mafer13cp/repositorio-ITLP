@@ -1,8 +1,12 @@
 <div class="com">
-    <i class="material-icons">account_circle</i>
+    <img class="imgIcon" src="{{imgIcon}}">
     <div class="commentContent">
         <div class="commentHead">
             <h3><a #a (click)=ngOnClick($event)>{{userName}}</a></h3>
+            <div class="tooltip">
+                <i class="material-icons icon" matTooltip="Info about the action">{{iconRol}}</i>
+                <span class="tooltiptext">{{ttt}}</span>
+            </div>
             <h4>{{date}}</h4>
         </div>
         <p class="commentText">{{text}}</p>

@@ -2,11 +2,15 @@
     <div class="contIzq">
         <div>
             <!--<i class="Redimension" id="userIcon" class="material-icons">person_outline</i> -->
-            <img class="Redimension" src="../../../assets/img/usr.ico">
+            <img class="Redimension" src="{{img}}">
         </div>
         <div class="contText">
             <div class="NombreU">
-                <h2>{{nombre}}</h2>
+                <h2>{{nombre}}</h2> 
+                <div class="tooltip">
+                    <i class="material-icons icon" matTooltip="Info about the action">{{iconRol}}</i>
+                    <span class="tooltiptext">{{ttt}}</span>
+                </div>
             </div>
             <div class="NombreP">
                 <h3>{{rol}}</h3>

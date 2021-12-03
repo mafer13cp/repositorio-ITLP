@@ -23,6 +23,7 @@ import { Mod3Module } from '../mod3/mod3.module';
 import { Mod4Module } from '../mod4/mod4.module';
 import { Mod5Module } from '../mod5/mod5.module';
 import { AboutUsComponent } from './aboutUs/about-us.component';
+import { EditarUsuarioComponent } from './editarUsuario/editar-usuario.component';
 @NgModule({
   declarations: [
     ViewDocUsrComponent,
@@ -40,7 +41,8 @@ import { AboutUsComponent } from './aboutUs/about-us.component';
     MatGenComponent,
     TemGenComponent,
     TagGenComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -67,7 +69,8 @@ import { AboutUsComponent } from './aboutUs/about-us.component';
     MatGenComponent,
     TemGenComponent,
     TagGenComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EditarUsuarioComponent
   ]
 })
 export class PantallasModule { }

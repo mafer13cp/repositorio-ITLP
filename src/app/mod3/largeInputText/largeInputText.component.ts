@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter,ViewChild,ElementRef } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter,ViewChild,ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'largeInputText',
@@ -8,6 +8,7 @@ import { Component, OnInit,Output,EventEmitter,ViewChild,ElementRef } from '@ang
 export class LargeInputTextComponent implements OnInit {
   @Output() public LITEvent = new EventEmitter();
   @ViewChild('texto') texto:ElementRef;
+  @Input() placeHolder: string = "Ej. En este documento se trata el tema de...";
 
   constructor() { }
 

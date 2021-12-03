@@ -11,6 +11,7 @@ export class HeaderITLPComponent implements OnInit {
   @ViewChild('tags') tagsLink:ElementRef;
   @ViewChild('docs') documentosLink:ElementRef;
   @ViewChild('usuario') usuarioLink:ElementRef;
+  imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomar la foto del usuario loggeado
 
   constructor() { }
 

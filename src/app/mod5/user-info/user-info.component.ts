@@ -14,6 +14,9 @@ export class UserInfoComponent implements OnInit {
   nombre:string ="";
   id:string = "";
   correo:string = "";
+  img: string = "../../../assets/img/userIcons/0.png";
+  iconRol: string = "school";
+  ttt: string =""; // ToolTip Text
 
   constructor(private comunicacion:ComunicacionService) { }
 
@@ -24,7 +27,32 @@ export class UserInfoComponent implements OnInit {
       this.nombre = this.usuario.nombre;
       this.id = this.usuario.id;
       this.correo = this.usuario.correo;
+      this.img = `../../../assets/img/userIcons/${this.usuario.imagen}.png`;
+      this.setIconRol(this.usuario.fk_rol);
     });
+  }
+
+  setIconRol(rol: number) {
+    switch (rol) {
+      case 0: //alumno
+        this.iconRol = "school"
+        this.ttt = "Este usuario es un alumno de la institutción";
+        break;
+      case 1: //maestro
+        this.iconRol = "history_edu"
+        this.ttt = "Este usuario es un maestro de la institutción";
+        break;
+      case 2: // empleado
+        this.iconRol = "work"
+        this.ttt = "Este usuario es un empleado de la institutción";
+        break;
+      case 3: //admin
+        this.iconRol = "local_police"
+        this.ttt = "Este usuario es un administrador del sitio";
+        break;
+      default:
+        break;
+    }
   }
 
 }

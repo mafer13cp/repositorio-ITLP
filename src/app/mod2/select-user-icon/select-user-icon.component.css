@@ -4,6 +4,10 @@
     --light-blue: #BDD5EA;
     --white-ish: #F7F7FF;
 }
+.suContainer {
+    width: 100%;
+    height: 100%;
+}
 .btnIcon {
     width: 118px;
     height: 110px;
@@ -44,12 +48,12 @@
 .btnIcon:hover ~ .list {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-around;
+    overflow-y: auto;
     justify-content: space-around;
 }
 .list:hover {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-around;
+    overflow-y: auto;
     justify-content: space-around;
 }
