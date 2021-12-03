@@ -39,9 +39,7 @@ export class PerfilUsrComponent implements OnInit {
     //Aqui se mandaría a llamar el método que consulte un usuariocomentario por ID, se debe crear.
     //hacerle count.
     this.usr.getComentsById(id).subscribe((data)=>{
-      this.comentarios = data[0].comentarios_usuario.length;
-      console.log(data);
-      console.log(this.comentarios);
+      this.comentarios = data[0].comentarios_usuario.length
     });
   }
 
@@ -50,8 +48,6 @@ export class PerfilUsrComponent implements OnInit {
     //hacerle count.
     this.usr.getDocsById(id).subscribe((data)=>{
       this.apariciones = data[0].documentos_usuario.length;
-      console.log(data);
-      console.log(this.apariciones);
     });
   }
 
@@ -60,11 +56,8 @@ export class PerfilUsrComponent implements OnInit {
     //se asigna el resultado a documentos y se mandan al gridCards.
     this.usr.getDocsById(id).subscribe((data)=>{
       data[0].documentos_usuario.forEach(doc => {
-        console.log(doc,data[0].nombre);
         this.comunicacion.addDocumentoUsrPerfil(doc,data[0].nombre);
       });
-      console.log(data);
-      console.log(this.apariciones);
     });
   }
 }

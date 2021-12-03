@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
-h1,h2,h3,h4,p,label,button,input,textarea,td,div,mat-card-title,mat-icon,mat-card-title,mat-panel-title,mat-card-subtitle,mat-chip-list,mat-chip,select,option,mat-label{
+h1,h2,h3,h4,p,label,button,input,textarea,td,div,mat-card-title,mat-icon,mat-card-title,mat-panel-title,mat-card-subtitle,mat-chip-list,mat-chip,select,option,mat-label,mat-autocomplete,mat-option{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1{
@@ -18,8 +18,9 @@ h4 {
 mat-card-title,mat-panel-title,select,td{
     font-size: 2.4vh;
 }
-input, li,  mat-card-subtitle,mat-chip-list,mat-chip,option,textarea {
+input, li,  mat-card-subtitle,mat-chip-list,mat-chip,option,textarea,mat-autocomplete,mat-option {
     font-size: 2.3vh;
+    
 }
 mat-expansion-panel p {
     font-size: 2.4vh;
