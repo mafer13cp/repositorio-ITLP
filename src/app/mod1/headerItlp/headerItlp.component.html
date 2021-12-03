@@ -9,6 +9,14 @@
     <div class="userInf">
         <p class="divisorLat">|</p>
         <label id="nusuario"><a #usuario (click)="ngOnClick('usuario')">Nombre de Usuario</a></label>
-        <i #icon id="userIcon" class="material-icons" (click)="ngOnClick('usuario')">person_outline</i>
+        <div class="usrIcon">
+            <img #icon id="userIcon" class="icon" src="{{imgIcon}}" (click)="ngOnClick('usuario')">
+            <div class="menuUser">
+                <label class="editUser" (click)="ngEdit()">Editar usuario <i class="material-icons">edit</i></label>
+                <label class="logOut" (click)="ngLogOut()">Cerrar sesión <i class="material-icons" >logout</i></label>
+                <label class="help" (click)="ngHelp()">Necesito ayuda <i class="material-icons" >contact_support</i></label>
+            </div>
+        </div>
+        
     </div>
 </section>

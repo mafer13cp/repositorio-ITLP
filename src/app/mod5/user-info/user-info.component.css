@@ -39,12 +39,17 @@
     max-width:150px;
     max-height:150px;
     margin-right: 2%;
+    background-color: #BDD5EA;
+    border-radius: 50%;
+    border: 3px solid whitesmoke;
 }
 .NombreU{
     color: white;
+    display: flex;
+    flex-direction: row;
 }
 .NombreP{
-    color: #495867;
+    color: #BDD5EA;
 
 }
 .NombreI{
@@ -61,3 +66,45 @@
 .Linea{
     margin-right: 20%;
 }
+i {
+    cursor: help;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #BDD5EA;
+    color: rgb(87,115,153);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #BDD5EA transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }

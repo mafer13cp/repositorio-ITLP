@@ -11,6 +11,7 @@ export class HeaderITLPComponent implements OnInit {
   @ViewChild('tags') tagsLink:ElementRef;
   @ViewChild('docs') documentosLink:ElementRef;
   @ViewChild('usuario') usuarioLink:ElementRef;
+  imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomar la foto del usuario loggeado
 
   constructor() { }
 
@@ -43,6 +44,18 @@ export class HeaderITLPComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  ngEdit() {
+    console.log("Te manda a la pantalla de editar usuario");
+  }
+
+  ngLogOut() {
+    console.log("Cierra sesión, te regresa a la pantalla de login");
+  }
+
+  ngHelp() {
+    console.log("Te manda a la pantalla de ayuda");
   }
 
 }

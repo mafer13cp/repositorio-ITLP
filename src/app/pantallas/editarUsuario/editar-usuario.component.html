@@ -1,0 +1,19 @@
+<headerItlp></headerItlp>
+<!--Inicia componente-->
+<section class="editUser">
+
+    <headerLine [title]="'Editar datos de usuario'" class="title"></headerLine>
+    <div class="input">
+        <div class="desc">
+            <largeInputText [placeHolder]="'Ej. Soy estudiante de...'" (LITEvent)="ngRecibirDescripcion($event)"></largeInputText>
+        </div>
+        <div class="select">
+            <selectUserIcon (IconEvent)="ngRecibirImg($event)"></selectUserIcon>
+        </div>
+    </div>
+    <div class="button">
+        <buttonIcon [text]="'Guardar'" [icon]="'save'" (click)="ngGuardarCambios()"></buttonIcon>
+    </div>
+</section>
+<!--Termina componente-->
+<footerItlp></footerItlp>

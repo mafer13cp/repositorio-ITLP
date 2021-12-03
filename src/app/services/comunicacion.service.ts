@@ -67,7 +67,7 @@ export class ComunicacionService {
       idDoc:documento.id,
       nombreDoc:documento.nombre,
       usuarios:null,
-      usuarioPrincipal:{id:"",nombre:usuario,correo:"",imagen:1,fk_rol:1,fk_carrera:"",contrasena:""}, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
+      usuarioPrincipal:{id:"",nombre:usuario,correo:"",imagen:1,fk_rol:1,fk_carrera:"",contrasena:"", descripcion:""}, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
       tags:null,

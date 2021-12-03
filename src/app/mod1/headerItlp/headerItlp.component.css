@@ -19,6 +19,7 @@
 }
 .userInf {
     width: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -42,4 +43,49 @@
     text-align: center;
     color: #4e5867;
     cursor: pointer;
+    margin-top: 1vh;
+}
+.menuUser {
+    background-color: #b4cce3;
+    color: #4e5867;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 90px;
+    padding-left: 2vh;
+    padding-bottom: 1vh;
+    z-index: 9999;
+    position: fixed;
+    top: 8%;
+    right: 0;
+    border: 3px solid #4e5867;
+    border-radius: 0 0 15px 15px;
+}
+.menuUser label {
+    width: 90%;
+    font-size: 24px;
+    border: 2px dotted #4e5867;
+    border-width: 0 0 2px 0;
+    cursor: pointer;
+}
+.material-icons{
+    font-size: 2.5vh;
+}
+
+.menuUser label:hover {
+    color: #577399;
+    border-color: #577399;
+}
+.usrIcon {
+    height: 100%;
+}
+#userIcon:hover ~ .menuUser {
+    display: flex;
+}
+.usrIcon:hover .menuUser {
+    display: flex;
+}
+.menuUser:hover {
+    display: flex;
 }

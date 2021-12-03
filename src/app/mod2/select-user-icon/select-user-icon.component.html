@@ -1,0 +1,9 @@
+<section class="suContainer">
+    <button #btnIcon class="btnIcon">
+        <img src="{{selectedImg}}" alt="" class="si">
+    </button>
+    <div class="list">
+        <img *ngFor= "let img of imgs" src="{{img.url}}" alt="User Icon" class="img" (click)= ngOnSelect(img)>
+    </div>
+</section>
+
