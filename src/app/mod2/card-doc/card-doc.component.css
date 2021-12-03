@@ -13,6 +13,13 @@
     width: 80px;
     height: 80px;
 }
+.nameTitle {
+    width: 98%;
+}
 .docTitle {
+    width: 100%;
     color: #577399;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
