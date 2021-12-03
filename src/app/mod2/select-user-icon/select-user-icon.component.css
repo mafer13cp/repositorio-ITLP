@@ -1,0 +1,55 @@
+:root {
+    --gray-blue: #495867;
+    --dark-blue: #577399;
+    --light-blue: #BDD5EA;
+    --white-ish: #F7F7FF;
+}
+.btnIcon {
+    width: 118px;
+    height: 110px;
+    background-color: #F7F7FF;
+    border: 4px solid #577399;
+    border-radius: 25%;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+.si{
+    margin: 0;
+    width: 100%;
+    height: 101%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.list {
+    display: none;
+    background-color: #F7F7FF;
+    width: 100%;
+    height: 100%;
+}
+.img {
+    height: 100px;
+    width: 100px;
+    background-color: #BDD5EA;
+    border-radius: 16px;
+    margin: 1vh;
+    cursor: pointer;
+}
+.img:hover {
+    background-color: #9cc5e9;
+    height: 105px;
+    width: 105px;
+    margin: 0.6vh;
+}
+.btnIcon:hover ~ .list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
+.list:hover {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
