@@ -6,7 +6,7 @@ import { Component, OnInit,Input, ViewChild, ElementRef, Output, EventEmitter } 
   styleUrls: ['./selectDropDown.component.css','../../app.component.css']
 })
 export class SelectDropDownComponent implements OnInit {
-  @Input() ops:string[] = [];
+  @Input() tags:string[] = [];
   @Output() public SDDEvent = new EventEmitter()
 
   constructor() { }

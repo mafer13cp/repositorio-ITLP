@@ -15,6 +15,7 @@ import { DocGenComponent } from './docGen/docGen.component';
 import { MatGenComponent } from './matGen/matGen.component';
 import { TemGenComponent } from './temGen/temGen.component';
 import { TagGenComponent } from './tagGen/tagGen.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { Mod1Module } from '../mod1/mod1.module';
 import { Mod2Module } from '../mod2/mod2.module';
@@ -47,7 +48,8 @@ import { AboutUsComponent } from './aboutUs/about-us.component';
     Mod2Module,
     Mod3Module,
     Mod4Module,
-    Mod5Module
+    Mod5Module,
+    MatSnackBarModule
   ],
   exports: [
     ViewDocUsrComponent,

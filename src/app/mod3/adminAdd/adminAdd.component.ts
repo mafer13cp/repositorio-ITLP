@@ -65,7 +65,6 @@ export class AdminAddComponent implements OnInit {
       this.datos = {nombre: this.nombre};
     }   
     this.AAEvent.emit(this.datos);
-    console.log(this.datos);
   }
 
 }

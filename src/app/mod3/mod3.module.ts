@@ -25,6 +25,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { ChipautorComponent } from './chipautor/chipautor.component';
 import { ChipmatComponent } from './chipmat/chipmat.component';
 import { SignUpContComponent } from './signUpCont/signUpCont.component';
+import { MyAutocompComponent } from './myAutocomp/myAutocomp.component';
 @NgModule({
   declarations: [
     LargeInputTextComponent,
@@ -38,7 +39,8 @@ import { SignUpContComponent } from './signUpCont/signUpCont.component';
     ChipTagComponent,
     ChipautorComponent,
     ChipmatComponent,
-    SignUpContComponent
+    SignUpContComponent,
+    MyAutocompComponent
   ],
   imports: [
     CommonModule,
@@ -66,7 +68,8 @@ import { SignUpContComponent } from './signUpCont/signUpCont.component';
     ChipTagComponent,
     ChipautorComponent,
     ChipmatComponent,
-    SignUpContComponent
+    SignUpContComponent,
+    MyAutocompComponent
   ] //Exportamos los componenetes para poder utilizarlos en otros modulos
 })
 export class Mod3Module { }

@@ -50,6 +50,7 @@ export class SignUpContComponent implements OnInit {
 
   ngRecibirCarrera(carrera:string){
     this.carr = carrera;
+
   }
 
   ngRecibirNombre(nombre:string){

@@ -1,0 +1,12 @@
+.autoc{
+    width: 70%;
+    text-align: center;
+    border-radius: 50px;
+    border:solid  #495867 3px;
+    padding: 5px;
+}
+.contenido{
+    text-align: center;
+    width: 100%;
+    margin-top: 1%;
+}

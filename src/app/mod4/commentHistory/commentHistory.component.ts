@@ -25,7 +25,6 @@ export class CommentHistoryComponent implements OnInit {
   }
   ngThrowParam(text:string){
     this.UserEvent.emit(text);
-    console.log("desde comment history: " + text);
   }
 
 }

@@ -129,6 +129,39 @@ public getRol():Observable<any>{
   return this.http.get<any>(`${this.baseUrl}/usuarios/?filter={"include":["usuario_rol"]}`);
 }
 
+public getRolById(i:string):Observable<any>{ 
+  const x = {
+    where: {
+      id: i
+    },
+    include: [{relation:'usuario_rol'}]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
+}
+
+public getDocsById(i:string):Observable<any>{ 
+  const x = {
+    where: {
+      id: i
+    },
+    include: [{relation:'documentos_usuario'}]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
+}
+
+public getComentsById(i:string):Observable<any>{ 
+  const x = {
+    where: {
+      id: i
+    },
+    include: [{relation:'comentarios_usuario'}]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
+}
+
 public getDocumentosUsrNombre(nom:string):Observable<any>{
   const x = {
     where: {
