@@ -46,4 +46,16 @@ export class HeaderITLPComponent implements OnInit {
     }
   }
 
+  ngEdit() {
+    console.log("Te manda a la pantalla de editar usuario");
+  }
+
+  ngLogOut() {
+    console.log("Cierra sesión, te regresa a la pantalla de login");
+  }
+
+  ngHelp() {
+    console.log("Te manda a la pantalla de ayuda");
+  }
+
 }

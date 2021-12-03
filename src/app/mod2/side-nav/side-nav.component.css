@@ -63,6 +63,10 @@ input:checked ~ .menuContent {
     padding: 2vh;
 }
 
+.more h3 {
+    cursor: pointer;
+}
+
 .more mat-icon {
     color: #495867;
 }
