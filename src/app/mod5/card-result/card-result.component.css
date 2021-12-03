@@ -1,6 +1,14 @@
 .example-card{
-    height: 100px;
+    min-height: 100px;
     max-width: 160px;
     text-align: center;
     margin: 10px;
+    height: fit-content;
+}
+.c {
+    width: 100%;
+}
+p {
+    width: 100%;
+    overflow: grow;
 }

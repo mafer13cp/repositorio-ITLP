@@ -9,3 +9,10 @@
 .boton{
     margin-top:3%;
 }
+.card {
+    height: fit-content;
+}
+.del{
+    color: #f5f5f5;
+    background-color: rgb(249,95,98);
+}
