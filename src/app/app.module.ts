@@ -14,13 +14,6 @@ import { Mod5Module } from './mod5/mod5.module';
 import { PantallasModule } from './pantallas/pantallas.module';
 import { HttpClientModule } from '@angular/common/http';
 
-/*
-import { ChtagComponent } from './chtag/chtag.component';
-import {MatChipsModule} from '@angular/material/chips';
-import {MaterialExampleModule} from '../material.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-*/
 
 @NgModule({
   declarations: [

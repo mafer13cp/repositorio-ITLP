@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UsuarioLogService } from 'src/app/services/usuario-log.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -10,7 +11,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(readonly snackBar: MatSnackBar, private usuarioLog:UsuarioLogService, private usuario:UsuarioService) { }
+  constructor(readonly snackBar: MatSnackBar, private usuarioLog:UsuarioLogService, private usuario:UsuarioService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
             this.usuarioLog.setLoggeado(true);
             this.usuarioLog.setUsuarioLoggeado(data[i]);
             //ir a la pantalla de inicio routing.
+            this.router.navigate(["/inicio"]);
             break;
           }
         }
