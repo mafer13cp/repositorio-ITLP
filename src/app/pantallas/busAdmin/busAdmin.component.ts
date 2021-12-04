@@ -24,7 +24,9 @@ export class BusAdminComponent implements OnInit {
   }
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
   }
 
   ngRecibirFiltro(filtro:string){

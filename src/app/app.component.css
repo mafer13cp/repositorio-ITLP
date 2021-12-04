@@ -41,3 +41,10 @@ body{
 ::ng-deep .sbRed button {
     color: white;
 }
+::ng-deep .sbBlack {
+    background-color: rgb(70, 67, 67);
+    color: #BDD5EA;
+}
+::ng-deep .sbBlack button {
+    color:  #5d8ed3;
+}

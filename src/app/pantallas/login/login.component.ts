@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
   }
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
   }
 
   ngProcesarDatos(datos:Object){
@@ -23,9 +25,9 @@ export class LoginComponent implements OnInit {
     else if(datos['contrasena'] == null || datos['contrasena'] == "")
       this.openSnackBar("ERROR: Debe ingresar una contraseña","OK");
     else if(datos['usuario'].length > 50) //Validaciones de longitud
-      this.openSnackBar("ERROR: Los nombres de usuario no exceden los 50 caracteres","OK");
+      this.openSnackBar("ERROR: El nombre de usuario excede el máximo de caractéres","OK");
     else if(datos['contrasena'].length > 200)
-      this.openSnackBar("ERROR: Las contraseñas no exceden los 200 caracteres","OK");
+      this.openSnackBar("ERROR: La contraseña excede el máximo de caractéres","OK");
     else{
       console.log(datos);
       //Aqui se debería revisar los datos del login.
