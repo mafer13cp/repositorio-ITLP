@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DeleteDialogComponent } from 'src/app/mod1/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'viewDocAut',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewDocAut.component.css']
 })
 export class ViewDocAutComponent implements OnInit {
+  documentoId:number = 0;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +27,6 @@ export class ViewDocAutComponent implements OnInit {
   ngOnDelete(control: any)
   {
     console.log("eliminar desde view autor");
+    this.dialog.open(DeleteDialogComponent, {data: {documentoId: this.documentoId }}); //Recibe el id del doc
   }
 }

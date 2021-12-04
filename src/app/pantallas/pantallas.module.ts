@@ -24,6 +24,7 @@ import { Mod4Module } from '../mod4/mod4.module';
 import { Mod5Module } from '../mod5/mod5.module';
 import { AboutUsComponent } from './aboutUs/about-us.component';
 import { EditarUsuarioComponent } from './editarUsuario/editar-usuario.component';
+import { EditarDocComponent } from './editarDoc/editar-doc.component';
 @NgModule({
   declarations: [
     ViewDocUsrComponent,
@@ -42,7 +43,8 @@ import { EditarUsuarioComponent } from './editarUsuario/editar-usuario.component
     TemGenComponent,
     TagGenComponent,
     AboutUsComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    EditarDocComponent
   ],
   imports: [
     CommonModule,
@@ -70,7 +72,8 @@ import { EditarUsuarioComponent } from './editarUsuario/editar-usuario.component
     TemGenComponent,
     TagGenComponent,
     AboutUsComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    EditarDocComponent
   ]
 })
 export class PantallasModule { }

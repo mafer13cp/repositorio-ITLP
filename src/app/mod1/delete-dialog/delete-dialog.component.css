@@ -1,0 +1,14 @@
+.btns {
+    display: flex;
+    height: 30%;
+}
+.btns > * {
+    width: 50%;
+    font-size: 24px;
+}
+.cancel {
+    margin-top: 1vh;
+}
+.delete {
+    margin-top: 0.9vh;
+}

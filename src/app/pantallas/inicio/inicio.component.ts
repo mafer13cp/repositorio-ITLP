@@ -14,6 +14,10 @@ export class InicioComponent implements OnInit {
   constructor(private usuario:UsuarioService) { }
 
   ngOnInit(): void {
+    const timeElapsed = Date.now();
+const today = new Date(timeElapsed);
+today.toLocaleDateString();
+console.log(today);
     /*
     // PARA EJECUTAR UNA CONSULTA.
     this.prueba1().then((data)=>{

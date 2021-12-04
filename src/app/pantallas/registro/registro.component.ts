@@ -20,7 +20,9 @@ export class RegistroComponent implements OnInit {
   }
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
   }
 
   ngRecibirDatos(datos:Object){
@@ -37,7 +39,7 @@ export class RegistroComponent implements OnInit {
     else if(datos['carrera'] == null)
       this.openSnackBar("ERROR: Se debe seleccionar una carrera","OK");
     else if(datos['nombre'].length > 50) //Validacion de longitud
-      this.openSnackBar("ERROR: El nombre de usuario no puede exceder los 50 caracteres","OK");
+      this.openSnackBar("ERROR: El nombre no puede exceder los 50 caracteres","OK");
     else if(datos['correo'].length > 50)
       this.openSnackBar("ERROR: El correo no puede exceder los 50 caracteres","OK");
     else if(datos['contrasena'].length > 200)
