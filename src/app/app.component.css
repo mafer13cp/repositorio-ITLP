@@ -32,3 +32,12 @@ body{
     min-width: 680px;
     min-height: 500px;
 }
+
+/*SnackBars*/
+::ng-deep .sbRed {
+    background-color: brown;
+    color: white;
+}
+::ng-deep .sbRed button {
+    color: white;
+}
