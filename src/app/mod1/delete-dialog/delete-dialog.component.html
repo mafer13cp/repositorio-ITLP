@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>¿Desea eliminar el documento?</h1>
+<div mat-dialog-content>Esta es una acción permanente y no es reversible.</div>
+<div mat-dialog-actions class="btns">
+  <buttonReg [text]="'Cancelar'" class="cancel" (click)="ngOnCancel()"></buttonReg>
+  <buttonIcon [text]="'Eliminar'" [icon]="'delete_forever'" class="delete" (click)="ngOnDelete()"></buttonIcon>
+</div>

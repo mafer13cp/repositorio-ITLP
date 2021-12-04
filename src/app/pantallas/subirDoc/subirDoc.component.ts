@@ -37,7 +37,9 @@ export class SubirDocComponent implements OnInit {
   }
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
   }
 
   ngRecibirAutores(autores:string[]){

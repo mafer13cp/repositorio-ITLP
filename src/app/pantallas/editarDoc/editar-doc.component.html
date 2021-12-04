@@ -1,0 +1,32 @@
+<headerItlp></headerItlp>
+<!--Inicia componente-->
+<section class="subirDoc">
+    <div class="cuerpo0">
+        <headerLine [title]="'Editar Documento'"></headerLine>
+        <div class="cuerpo1">
+            <div class="inputT"><inputText (ITEvent)="ngRecibirTitulo($event)" [text]="'Título del documento'"></inputText></div>
+            <div class="inputT">
+                <label id="lblAutor">Materia</label>
+                <myAutocomp (MAEvent)="ngRecibirMateria($event)"></myAutocomp>
+            </div>
+            <div class="inputTSp">
+                <div class="btnc1"><label id="lblAutor">Autor(es)</label><chipautor (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
+            </div>
+        </div>
+    </div>
+    <div class="cuerpo2">
+        <div class="desc">
+            <largeInputText (LITEvent)="ngRecibirDescripcion($event)"></largeInputText>
+        </div>
+        <div class="select">
+            <selectDropDown (SDDEvent)="ngRecibirTags($event)" [tags]=tags></selectDropDown>
+        </div>
+    </div>
+    <div class="cuerpo3">
+        <div class="button">
+            <buttonIcon [text]="'Guardar'" (click)="ngSubirDocumento()"></buttonIcon>
+        </div>
+    </div>
+</section>
+<!--Termina componente-->
+<footerItlp></footerItlp>

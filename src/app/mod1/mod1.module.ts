@@ -8,6 +8,7 @@ import { SignUpContainerComponent } from './signUpContainer/signUpContainer.comp
 import { InputTextComponent } from './inputText/inputText.component';
 import { ButtonRegComponent } from './buttonReg/buttonReg.component';
 import { ButtonIconComponent } from './buttonIcon/buttonIcon.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 
 
@@ -20,7 +21,8 @@ import { ButtonIconComponent } from './buttonIcon/buttonIcon.component';
     SignUpContainerComponent,
     InputTextComponent,
     ButtonRegComponent,
-    ButtonIconComponent
+    ButtonIconComponent,
+    DeleteDialogComponent
   ],
   imports: [
     CommonModule

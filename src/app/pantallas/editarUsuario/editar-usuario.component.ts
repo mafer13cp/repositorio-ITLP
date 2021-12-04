@@ -38,7 +38,9 @@ export class EditarUsuarioComponent implements OnInit {
     this.openSnackBar("LISTO: Cambios guardados","OK");
   }
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
   }
 
 }
