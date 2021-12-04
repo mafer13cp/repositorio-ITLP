@@ -30,6 +30,14 @@ export class TagService {
     const body = JSON.stringify(tag);
     return this.http.post(`${this.baseUrl}/tags`,body, {'headers': headers, observe: 'response'});
   }
+
+  async postMultTags(tags:string[]){
+    for await(let tag of tags){
+      const headers = {'content-type': 'application/json'};
+      const body = JSON.stringify({nombre:tag});
+      this.http.post(`${this.baseUrl}/tags`,body, {'headers': headers, observe: 'response'});    
+    }
+  }
 //#endregion
 
 //#region PUT 

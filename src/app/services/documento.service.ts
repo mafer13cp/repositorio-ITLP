@@ -28,7 +28,9 @@ export class DocumentoService {
 //#region POST
   public postDoc(doc: Documento):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(doc);
+    let x = {nombre:doc.nombre, descripcion:doc.descripcion, archivoUrl:doc.archivoUrl,fecha:doc.fecha, fk_materia:doc.fk_materia};
+    const body = JSON.stringify(x);
+    console.log(body);
     return this.http.post(`${this.baseUrl}/documentos`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion

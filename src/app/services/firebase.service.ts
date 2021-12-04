@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/storage';
 import { environment } from 'src/environments/environment';
-import { Firestore } from '@angular/fire/firestore';
 
 firebase.initializeApp(environment.firebaseConfig);
 

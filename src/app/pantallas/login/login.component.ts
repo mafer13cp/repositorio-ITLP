@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UsuarioLogService } from 'src/app/services/usuario-log.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'login',
@@ -8,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(readonly snackBar: MatSnackBar) { }
+  constructor(readonly snackBar: MatSnackBar, private usuarioLog:UsuarioLogService, private usuario:UsuarioService) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +32,16 @@ export class LoginComponent implements OnInit {
       this.openSnackBar("ERROR: La contraseña excede el máximo de caractéres","OK");
     else{
       console.log(datos);
-      //Aqui se debería revisar los datos del login.
+      this.usuario.getUsuarios().subscribe((data)=>{
+        for(let i =0; i<data.length;i++){
+          if(data[i].nombre == data['usuario'] && data[i].contrasena == data['contrasena']){
+            this.usuarioLog.setLoggeado(true);
+            this.usuarioLog.setUsuarioLoggeado(data[i]);
+            //ir a la pantalla de inicio routing.
+            break;
+          }
+        }
+      });
     }
   }
 }
