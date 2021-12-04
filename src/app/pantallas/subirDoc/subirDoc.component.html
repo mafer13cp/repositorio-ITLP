@@ -10,7 +10,7 @@
                 <myAutocomp (MAEvent)="ngRecibirMateria($event)"></myAutocomp>
             </div>
             <div class="inputTSp">
-                <div class="btnc1"><label id="lblAutor">Autor(es)</label><chipautor (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
+                <div class="btnc1"><label id="lblAutor">Otros autores</label><chipautor [autores]=autores (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
             </div>
         </div>
     </div>

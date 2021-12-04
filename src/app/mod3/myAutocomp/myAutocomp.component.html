@@ -1,5 +1,5 @@
 <div class="contenido">
-    <input #autoc class="autoc" matInput type="text" placeholder="Agregue la materia" [matAutocomplete]="auto" (input)="filtrarTexto()" (focus)="filtrarTexto()">
+    <input #autoc class="autoc" matInput type="text" placeholder="Agregue la materia" [matAutocomplete]="auto" (input)="filtrarTexto()" (focus)="filtrarTexto()" (click)="filtrarTexto()">
     <mat-autocomplete #auto="matAutocomplete" >
         <mat-option *ngFor="let item of filtro" [value]="item">
         {{item}}

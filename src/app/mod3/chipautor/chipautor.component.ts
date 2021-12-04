@@ -1,10 +1,11 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Component, ElementRef, Output, ViewChild, EventEmitter} from '@angular/core';
+import {Component, ElementRef, Output, ViewChild, EventEmitter, Input} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { UsuarioLogService } from 'src/app/services/usuario-log.service';
 
 /**
  * @title Chips Autocomplete
@@ -22,14 +23,15 @@ export class ChipautorComponent{
   fruitCtrl = new FormControl();
   filteredFruits: Observable<string[]>;
   fruits: string[] = []; //Colección de los tags seleccionados o ingresados.
-  allFruits: string[] = [];  //Coleccion de todos los tags que se mostraran.
+  //allFruits: string[] = [];  //Coleccion de todos los tags que se mostraran.
   @Output() public CAEvent = new EventEmitter();
   @ViewChild('autocomplete') fruitInput: ElementRef<HTMLInputElement>;
+  @Input() autores:string[];
 
-  constructor() {
+  constructor(private usuario:UsuarioLogService) {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
-      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
+      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.autores.slice())),
     );
    }
 
@@ -68,6 +70,6 @@ export class ChipautorComponent{
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.allFruits.filter(fruit => fruit.toLowerCase().includes(filterValue));
+    return this.autores.filter(fruit => fruit.toLowerCase().includes(filterValue));
   }
 }
