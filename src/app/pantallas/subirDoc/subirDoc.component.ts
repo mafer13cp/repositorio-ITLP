@@ -205,16 +205,37 @@ export class SubirDocComponent implements OnInit {
             this.docServ.postDoc({id:null,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:url,fk_materia:this.matID,fecha:this.date}).subscribe((data)=>{
               console.log(data);
               console.log("SESUBIO");
-              //this.tagServ.postMultTags(this.otherTagN);
-              //subir a la tabla tagDoc
-              //subir a la tabla autores.
-              //subir a la tabla otros.
+
+              for(let i = 0; i < this.otherTagN.length; i++){
+                this.tagServ.postTag(this.otherTagN[i]).subscribe((data)=>{
+                  //console.log(data);
+                  this.tagsID.push(data.body.id);
+                });
+              }
+
+              for(let i = 0; i < this.otrosN.length; i++){
+                this.otrosServ.postOtro(this.otrosN[i],data.body.id).subscribe((data)=>{
+                  //console.log(data);
+                });
+              }
+
+              for(let i = 0; i < this.usrsID.length; i++){
+                this.autorServ.postAutor(this.usrsID[i],data.body.id).subscribe((data)=>{
+                  //console.log(data);
+                });
+              }
+
+              setTimeout(() => {
+                for(let i = 0; i < this.tagsID.length; i++){
+                  this.tagDocServ.postTagDoc(this.tagsID[i],data.body.id).subscribe((data)=>{
+                    console.log("TAGDOC");
+                    console.log(data);
+                  });
+                }
+              }, 3000);
             });
           });
         })
-                
-        //Aqui se debe hacer el procedimiento de subir el documento con las consultas faltantes.
-        
       }
     }
   }

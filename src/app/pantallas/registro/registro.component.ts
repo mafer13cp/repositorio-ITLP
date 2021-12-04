@@ -13,10 +13,18 @@ export class RegistroComponent implements OnInit {
   usr:Usuario;
   idRol:number;
   idCarr:string;
+  idUsr:string[] = [];
+  correosUsr:string[] = [];
 
   constructor(readonly snackBar: MatSnackBar, private usuario:UsuarioService, private carrera:CarreraService) { }
 
   ngOnInit(): void {
+    this.usuario.getUsuarios().subscribe((data)=>{
+      data.forEach(u => {
+        this.idUsr.push(u.id);
+        this.correosUsr.push(u.correo);
+      });
+    });
   }
 
   openSnackBar(message: string, action: string) {
@@ -42,18 +50,14 @@ export class RegistroComponent implements OnInit {
       this.openSnackBar("ERROR: El nombre no puede exceder los 50 caracteres","OK");
     else if(datos['correo'].length > 50)
       this.openSnackBar("ERROR: El correo no puede exceder los 50 caracteres","OK");
-    else if(datos['contrasena'].length > 200)
-      this.openSnackBar("ERROR: La contraseña no puede exceder los 200 caracteres","OK");
+    else if(datos['contrasena'].length > 40)
+      this.openSnackBar("ERROR: La contraseña no puede exceder los 40 caracteres","OK");
     else if(datos['id'].length > 15)
       this.openSnackBar("ERROR: El número de control no puede exceder los 15 caracteres","OK");
     else {
-      let re1 = new RegExp(`.*@gmail.com$`,'i');
-      let re2 = new RegExp(`.*@outlook.es$`,'i');
-      let re3 = new RegExp(`.*@lapaz.tecnm.mx$`,'i');
-      let re4 = new RegExp(`.*@outlook.com$`,'i');
-      let re5 = new RegExp(`.*@hotmail.com$`,'i');
-      let re6 = new RegExp(`.*@yahoo.mx$`,'i');
-      if(datos['correo'].match(re1) || datos['correo'].match(re2) || datos['correo'].match(re3) || datos['correo'].match(re4)|| datos['correo'].match(re5)|| datos['correo'].match(re6)){
+      console.log(datos);
+      let re = new RegExp(`.*@lapaz.tecnm.mx$`,'i');
+      if(datos['correo'].match(re)){
         if(datos['rol']=="Alumno")
           this.idRol = 0;
         else if(datos['rol']=="Maestro")
@@ -63,11 +67,31 @@ export class RegistroComponent implements OnInit {
         else if(datos['rol']=="Administrador")
           this.idRol = 3;
 
-        this.carrera.getCarreraByName(datos['carrera']).subscribe((data)=>{
-          this.idCarr = data[0].id;
-          this.usr = {id:datos['nombre'],correo:datos['correo'],contrasena:datos['contrasena'], descripcion:"", nombre:datos['nombre'], fk_rol:this.idRol,fk_carrera:this.idCarr,imagen:0};
-          this.usuario.postUsuario(this.usr);
-        });
+        let existe = false;
+        for(let i = 0; i < this.idUsr.length; i++){
+          if(this.idUsr[i] == datos['id'])
+            existe = true;
+        }
+
+        let existe2 = false;
+        for(let i = 0; i < this.correosUsr.length; i++){
+          if(this.correosUsr[i] == datos['correo'])
+            existe2 = true;
+        }
+
+        if(existe2)
+          this.openSnackBar("ERROR: El correo ya se encuentra registrado","OK");
+        else if(existe)
+          this.openSnackBar("ERROR: El número de control ya está registrado","OK");
+        else{
+          this.carrera.getCarreraByName(datos['carrera']).subscribe((data)=>{
+            this.idCarr = data[0].id;
+            this.usr = {id:datos['id'].toUpperCase(),correo:datos['correo'].toLowerCase(),contrasena:datos['contrasena'], descripcion:"", nombre:datos['nombre'], fk_rol:this.idRol,fk_carrera:this.idCarr,imagen:0};
+            this.usuario.postUsuario(this.usr).subscribe(data=>{
+              console.log(data);
+            });
+          });
+        }
       }
       else{
         this.openSnackBar("ERROR: El correo no tiene el formato correcto","OK");

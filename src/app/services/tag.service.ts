@@ -25,18 +25,10 @@ export class TagService {
 //#endregion
 
 //#region POST
-  public postTag(tag: Tag):Observable<any> {
+  public postTag(nom:string):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(tag);
+    const body = JSON.stringify({nombre:nom});
     return this.http.post(`${this.baseUrl}/tags`,body, {'headers': headers, observe: 'response'});
-  }
-
-  async postMultTags(tags:string[]){
-    for await(let tag of tags){
-      const headers = {'content-type': 'application/json'};
-      const body = JSON.stringify({nombre:tag});
-      this.http.post(`${this.baseUrl}/tags`,body, {'headers': headers, observe: 'response'});    
-    }
   }
 //#endregion
 
