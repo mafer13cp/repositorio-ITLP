@@ -10,6 +10,7 @@ import { MateriaService } from 'src/app/services/materia.service';
 import { TagService } from 'src/app/services/tag.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { utimesSync } from 'fs';
 
 @Component({
   selector: 'resBusqueda',
@@ -39,6 +40,88 @@ export class ResBusquedaComponent implements OnInit {
 
   ngRecibirFiltro(filtro:string){
     this.filtro = filtro;
+    if(filtro == "Documentos"){
+      this.comunicacion.setDocsEmpty();
+        this.documento.getUsuariosNomDoc("").subscribe((data)=>{
+          if(data.length == 0)
+            this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
+          else{
+            data.forEach(docUsr => {
+              this.comunicacion.addDocumentoUsr(docUsr);
+            });
+          }
+        });
+    }
+    else if(filtro == "Autores"){
+      this.comunicacion.setDocsEmpty();
+        this.usuario.getDocsUsrByUsrNombre("").subscribe((data)=>{
+          console.log(data);
+          if(data.length == 0)
+            this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
+          else{
+            data.forEach(usr => {
+              if(usr.documentos_usuario != null){
+                usr.documentos_usuario.forEach(doc => {
+                  let docs = this.comunicacion.getDocumentoUsrNormal();
+                    console.log(docs);
+                    if(docs.length == 0)
+                      this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,fk_carrera:usr.fk_carrera});
+                    else{
+                      docs.forEach(d => {
+                        if(d.idDoc != doc.id){
+                          this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,
+                            contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,
+                            fk_carrera:usr.fk_carrera});
+                        }
+                      });
+                    }
+                });
+              }
+            });
+          }
+        });
+    }
+    else if(filtro == "Materias"){
+      this.comunicacion.setDocsEmpty();
+      this.materia.getDocsUsrByMatNombre("").subscribe((data)=>{
+        console.log(data);
+        if(data.length == 0)
+          this.openSnackBar("ERROR: No hay ningún documento asociado a materias","OK");
+        else{
+          data.forEach(materia => {
+            if(materia.documentos_materia != null){
+              materia.documentos_materia.forEach(docUsr => {
+                this.comunicacion.addDocumentoUsr(docUsr);
+              });
+            }
+          });
+        }
+      });
+    }
+    else if(filtro == "Etiquetas"){
+      this.comunicacion.setDocsEmpty();
+        this.tag.getDocsUsrByTagNombre("").subscribe((data)=>{
+          if(data.length == 0)
+            this.openSnackBar("ERROR: No hay ningún documento asociado a un tag","OK");
+          else{
+            let docs = this.comunicacion.getDocumentoUsrNormal();
+            data.forEach(tag => {
+              if(tag.documentos_tag != null){
+                tag.documentos_tag.forEach(docUsr => {
+                  if(docs.length == 0)
+                    this.comunicacion.addDocumentoUsr(docUsr);
+                  else{
+                    docs.forEach(doc => {
+                      if(doc.idDoc != docUsr.id)
+                        this.comunicacion.addDocumentoUsr(docUsr);
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
+    }
   }
 
   async ngRecibirTexto(texto:string){
@@ -69,9 +152,22 @@ export class ResBusquedaComponent implements OnInit {
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
             data.forEach(usr => {
-              usr.documentos_usuario.forEach(doc => {
-                this.comunicacion.addDocumentoUsr2(doc,data);
-              });
+              if(usr.documentos_usuario!=null){
+                usr.documentos_usuario.forEach(doc => {
+                  let docs = this.comunicacion.getDocumentoUsrNormal();
+                    if(docs.length == 0)
+                      this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,fk_carrera:usr.fk_carrera});
+                    else{
+                      docs.forEach(d => {
+                        if(d.idDoc != doc.id){
+                          this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,
+                            contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,
+                            fk_carrera:usr.fk_carrera});
+                          }
+                      });
+                    }
+                });
+              }
             });
           }
         });
@@ -96,10 +192,20 @@ export class ResBusquedaComponent implements OnInit {
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
+            let docs = this.comunicacion.getDocumentoUsrNormal();
             data.forEach(tag => {
-              tag.documentos_tag.forEach(docUsr => {
-                this.comunicacion.addDocumentoUsr(docUsr);
-              });
+              if(tag.documentos_tag != null){
+                tag.documentos_tag.forEach(docUsr => {
+                  if(docs.length == 0)
+                    this.comunicacion.addDocumentoUsr(docUsr);
+                  else{
+                    docs.forEach(doc => {
+                      if(doc.idDoc != docUsr.id)
+                        this.comunicacion.addDocumentoUsr(docUsr);
+                    });
+                  }
+                });
+              }
             });
           }
         });

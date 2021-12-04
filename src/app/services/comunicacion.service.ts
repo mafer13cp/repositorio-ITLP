@@ -47,12 +47,12 @@ export class ComunicacionService {
     this.documentoGrid$.next(this.documentoGrid);
   }
 
-  addDocumentoUsr2(documento:Documento, usuarios:Usuario[]){
+  addDocumentoUsr2(documento:Documento, usuarios:Usuario[],usuario:Usuario){
     this.docShowTemp = {
       idDoc:documento.id,
       nombreDoc:documento.nombre,
       usuarios:usuarios,
-      usuarioPrincipal:usuarios[0], //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
+      usuarioPrincipal:usuario, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
       tags:null,
@@ -79,6 +79,10 @@ export class ComunicacionService {
 
   getDocumentoUsr$():Observable<DocShow[]>{
     return this.documentoGrid$.asObservable();
+  }
+
+  getDocumentoUsrNormal():DocShow[]{
+    return this.documentoGrid;
   }
 
   setDocsEmpty(){
