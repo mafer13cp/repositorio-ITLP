@@ -14,6 +14,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class PerfilUsrComponent implements OnInit {
   rol:Rol = {id:1,nombre:"Administrador"}; //Temporal en lo que se recibe un UsuarioRol
   @Input() usuario:UsuarioRol;
+  desc:string;
   comentarios:number;
   apariciones:number;
   documentos:UsuarioAutorDocumento;
@@ -34,6 +35,7 @@ export class PerfilUsrComponent implements OnInit {
   ngConsultarUsuarioRol(id:string){
     this.usr.getRolById(id).subscribe((data)=>{
       this.usuario = data;
+      this.desc = data[0].descripcion;
       this.comunicacion.setUsuarioPerfil(this.usuario);
     });
   }
