@@ -27,7 +27,7 @@ export class MateriaService {
 //#region POST
   public postMat(mat: Materia):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(mat);
+    const body = JSON.stringify({id:mat.id,nombre:mat.nombre,fk_carrera:mat.fk_carrera});
     return this.http.post(`${this.baseUrl}/materias`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion

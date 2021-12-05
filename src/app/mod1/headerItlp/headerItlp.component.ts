@@ -16,6 +16,7 @@ export class HeaderITLPComponent implements OnInit {
   imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomar la foto del usuario loggeado
   nombre:string;
   idLog:string;
+  admin:boolean;
 
   constructor(private router:Router,private route:ActivatedRoute, private usuario:UsuarioService) { }
 
@@ -24,6 +25,9 @@ export class HeaderITLPComponent implements OnInit {
     this.usuario.getUsuarioById(this.idLog).subscribe(data=>{
       this.imgIcon = `../../../assets/img/userIcons/${data[0].imagen}.png`;
       this.nombre = data[0].nombre;
+      if(data[0].fk_rol == 3){
+        this.admin = true;
+      }
     });
   }
 
@@ -78,4 +82,11 @@ export class HeaderITLPComponent implements OnInit {
     this.router.navigate([`/inicio/${this.idLog}`]);
   }
 
+  ngBusAdmin(){
+    this.router.navigate([`/busAdmin/${this.idLog}`]);
+  }
+
+  ngAddAdmin(){
+    this.router.navigate([`/addAdmins/${this.idLog}`]);
+  }
 }

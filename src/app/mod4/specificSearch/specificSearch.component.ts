@@ -8,6 +8,7 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 export class SpecificSearchComponent implements OnInit {
   @Output() SSEvent = new EventEmitter;
   @Output() SSEvent2 = new EventEmitter;
+  @Input() ops:string[] = ["Documentos","Autores","Materias","Etiquetas"];
 
   constructor() { 
   }

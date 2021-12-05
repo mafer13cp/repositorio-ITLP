@@ -11,7 +11,7 @@
             <buttonReg [text]="'Agregar'" (click)="ngAgregar()"></buttonReg>
         </div>
         <div class="mat" #materia>
-            <inputText [text]="'Clave'" (ITEvent)="ngRecibirClave($event)"></inputText> <br>
+            <inputText [text]="'Clave'" (ITEvent)="ngRecibirClave($event)" ></inputText> <br>
             <dropDownList #carreras class="ddlMat" (DDLEvent)="ngRecibirCarrera($event)" [ops]=carrerasNombre [default]="'Elige tu carrera'"></dropDownList>
         </div>
     </div>
