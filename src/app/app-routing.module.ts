@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pantallas/aboutUs/about-us.component';
 import { AddAdminsComponent } from './pantallas/addAdmins/addAdmins.component';
+import { AyudaComponent } from './pantallas/ayuda/ayuda.component';
 import { BusAdminComponent } from './pantallas/busAdmin/busAdmin.component';
 import { DocGenComponent } from './pantallas/docGen/docGen.component';
 import { EditarDocComponent } from './pantallas/editarDoc/editar-doc.component';
@@ -99,6 +100,10 @@ const routes: Routes = [
   {
     path:'viewDocUsr/:idLog/:idDoc/:a',
     component:ViewDocUsrComponent
+  },
+  {
+    path: 'ayuda',
+    component:AyudaComponent
   },
   {
     path: '**',

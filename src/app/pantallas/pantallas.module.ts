@@ -25,6 +25,7 @@ import { Mod5Module } from '../mod5/mod5.module';
 import { AboutUsComponent } from './aboutUs/about-us.component';
 import { EditarUsuarioComponent } from './editarUsuario/editar-usuario.component';
 import { EditarDocComponent } from './editarDoc/editar-doc.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 @NgModule({
   declarations: [
     ViewDocUsrComponent,
@@ -44,7 +45,8 @@ import { EditarDocComponent } from './editarDoc/editar-doc.component';
     TagGenComponent,
     AboutUsComponent,
     EditarUsuarioComponent,
-    EditarDocComponent
+    EditarDocComponent,
+    AyudaComponent
   ],
   imports: [
     CommonModule,
