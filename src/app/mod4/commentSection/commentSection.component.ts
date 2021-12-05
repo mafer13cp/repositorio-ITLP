@@ -2,6 +2,7 @@ import { Component, OnInit, Output, ViewChild, EventEmitter } from '@angular/cor
 import { ActivatedRoute } from '@angular/router';
 import { ComentarioService } from 'src/app/services/comentario.service';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { DocumentoService } from 'src/app/services/documento.service';
 
 @Component({
   selector: 'commentSection',
@@ -13,11 +14,12 @@ export class CommentSectionComponent implements OnInit {
   idDoc:number;
   idLog:string;
 
-  constructor(private comuncacion:ComunicacionService,private comentario:ComentarioService, private route:ActivatedRoute) { }
+  constructor(private comunicacion:ComunicacionService,private comentario:ComentarioService, private route:ActivatedRoute,
+    private documento:DocumentoService) { }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
-    this.comuncacion.getDocComentarios$().subscribe(doc => {
+    this.comunicacion.getDocComentarios$().subscribe(doc => {
       this.idDoc=doc.id;
     });
   }
@@ -29,7 +31,11 @@ export class CommentSectionComponent implements OnInit {
   ngRealizarComentario(texto:string){
     let date:string = new Date(Date.now()).toLocaleDateString().toString();
     this.comentario.postCom({id:1,texto:texto,fk_documento:this.idDoc,fk_usuario:this.idLog,fecha:date}).subscribe(com=>{
-      console.log("si");
+      console.log(com);
+      console.log("Se subio");
+      this.documento.getComentariosUsuarioByDocId(this.idDoc).subscribe(doc=>{
+        this.comunicacion.setDocComentarios(doc[0]);
+      });
     });
   }
 }

@@ -10,7 +10,10 @@ export class CommentComponent implements OnInit {
   @Input() userName: string = "Nombre usuario";
   @Input() date: string = "01/01/21";
   @Input() text: string = "Lorem";
-  imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomarlo del usuario
+  @Input() imagen:number = 0;
+  @Input() rol:number = 0;
+
+  imgIcon: string = ""; //Debe tomarlo del usuario
   iconRol: string = "school";  //Debe tomarlo del usuario x2
   ttt: string =""; // ToolTip Text  //Debe tomarlo del usuario x3
 
@@ -18,7 +21,8 @@ export class CommentComponent implements OnInit {
 
   ngOnInit(): void {
     //Aquí se debe de hacer la consulta del usuario y poner la info en las variables
-    this.setIconRol(3);
+    this.setIconRol(this.rol);
+    this.imgIcon = `../../../assets/img/userIcons/${this.imagen}.png`; //Debe tomarlo del usuario
   }
 
   ngOnClick(control: any){

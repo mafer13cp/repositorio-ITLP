@@ -84,6 +84,6 @@ export class ViewDocAutComponent implements OnInit {
   ngOnDelete(control: any)
   {
     console.log("eliminar desde view autor");
-    this.dialog.open(DeleteDialogComponent, {data: {documentoId: this.idDoc }}); //Recibe el id del doc
+    this.dialog.open(DeleteDialogComponent, {data: {documentoId: this.idDoc,idLog:this.idLog }}); //Recibe el id del doc
   }
 }
