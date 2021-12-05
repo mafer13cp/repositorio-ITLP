@@ -3,7 +3,7 @@ import { Otro } from 'src/app/interfaces/otros';
 import { Usuario } from 'src/app/interfaces/usuario';
 
 @Component({
-  selector: 'acoordionUsr',
+  selector: 'accordionUsr',
   templateUrl: './acoordion-usr.component.html',
   styleUrls: ['./acoordion-usr.component.css']
 })
@@ -11,15 +11,15 @@ export class AcoordionUsrComponent implements OnInit {
 
   @Output() public AccEvent= new EventEmitter();
    //para pruebas
-  listUsuarios: {nombre: string, fk_rol: number}[] = [{nombre: "nombre 1", fk_rol: 0},
+  /*listUsuarios: {nombre: string, fk_rol: number}[] = [{nombre: "nombre 1", fk_rol: 0},
   {nombre: "nombre 2", fk_rol: 1}, {nombre: "nombre 3", fk_rol: 2}, {nombre: "nombre 4", fk_rol: 3}];
 
   listOtros: {nombre: string}[] = [{nombre: "nombre 5"}, {nombre: "nombre 6"}];
-
+*/
   //fin de pruebas
 
-  /* listUsuarios: Usuario[];
-  listOtros: Otro[]; */
+  @Input() listUsuarios: Usuario[];
+  @Input() listOtros: Otro[];
 
   rolIcon: string[] = ["school", "history_edu", "work", "local_police"];
   ttt: string[] = ["Este usuario es un alumno de la institutción", 
@@ -39,4 +39,5 @@ export class AcoordionUsrComponent implements OnInit {
     this.AccEvent.emit(texto);
   }
 
+  
 }

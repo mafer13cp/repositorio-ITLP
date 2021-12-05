@@ -1,5 +1,5 @@
 <div id="cont">
-    <accordionAut [title]="'Autores'" (click)="ngEsAutor()" [listItems]=autores (AccEvent)="ngThrowParam($event)"></accordionAut>
+    <accordionUsr  (click)="ngEsAutor()" [listUsuarios]=autores [listOtros]=otros (AccEvent)="ngThrowParam($event)"></accordionUsr>
     <accordionText [title]="'Fecha de publicación'" [textAcc]="'01/11/2021'"></accordionText>
     <accordionAut [title]="'Materia'" (click)="ngEsMateria()" [listItems]="[materia]" (AccEvent)="ngThrowParam($event)"></accordionAut>
     <accordionRate [title]="'Rating'"></accordionRate>

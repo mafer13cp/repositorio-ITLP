@@ -1,7 +1,7 @@
 <!-- Toolbar -->
 <section class= "head">
     <div class="left">
-        <homeButton></homeButton>
+        <homeButton (click)="ngRedirectInicio()"></homeButton>
         <a #materias id="materias" (click)="ngOnClick('materias')">Materias</a>
         <a #tags id="tags" (click)="ngOnClick('tags')">Tags</a>
         <a #docs id="docs" (click)="ngOnClick('docs')">Documentos</a>

@@ -164,6 +164,18 @@ public getOtros():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["otros_documento"]}`);
 }
 
+public getOtrosByDocId(idDoc:number):Observable<any>{ //entre [] va la relación de lb4 parece.
+  const x = {
+    where: {
+      id:idDoc
+    },
+    include:['otros_documento']
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
+}
+
+
 public getRatings():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["ratings_documento"]}`);
 }

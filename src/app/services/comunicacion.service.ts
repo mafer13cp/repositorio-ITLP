@@ -5,6 +5,7 @@ import { Documento } from '../interfaces/documento';
 import { DocumentoAutorUsuario } from '../interfaces/documentoAutorUsuario';
 import { DocumentoComentarioUsuario } from '../interfaces/documentoComentarioUsuario';
 import { Materia } from '../interfaces/materia';
+import { Otro } from '../interfaces/otros';
 import { Tag } from '../interfaces/tag';
 import { Usuario } from '../interfaces/usuario';
 import { UsuarioRol } from '../interfaces/usuarioRol';
@@ -24,10 +25,12 @@ export class ComunicacionService {
   private tags$:Subject<string[]>;
   private esView:boolean = false; //No está en un viewAut o viewUsr
   private esView$:Subject<boolean>;
-  private autoresView:string[];
+  private autoresView:Usuario[];
   private materiaView:string;
   private tagsView:string[];
-  private autoresView$:Subject<string[]>;
+  private otrosView:Otro[];
+  private otrosView$:Subject<Otro[]>;
+  private autoresView$:Subject<Usuario[]>;
   private materiaView$:Subject<string>;
   private tagsView$:Subject<string[]>;
   private docComentarios:DocumentoComentarioUsuario;
@@ -51,6 +54,8 @@ export class ComunicacionService {
     this.tagsView$ = new Subject();
     this.docComentarios$ = new Subject();
     this.urlDocFull$ = new Subject();
+    this.otrosView = [];
+    this.otrosView$ = new Subject();
   }
 
   addDocumentoUsr(documento:DocumentoAutorUsuario){
@@ -160,13 +165,22 @@ export class ComunicacionService {
     return this.materiaView$.asObservable();
   }
 
-  setAutoresView(autor:string){
+  setAutoresView(autor:Usuario){
     this.autoresView.push(autor);
     this.autoresView$.next(this.autoresView);
   }
 
-  getAutoresView$():Observable<string[]>{
+  getAutoresView$():Observable<Usuario[]>{
     return this.autoresView$.asObservable();
+  }
+
+  setOtrosView(otro:Otro){
+    this.otrosView.push(otro);
+    this.otrosView$.next(this.otrosView);
+  }
+
+  getOtrosView$():Observable<Otro[]>{
+    return this.otrosView$.asObservable();
   }
 
   setTagsView(tag:string){
@@ -178,13 +192,15 @@ export class ComunicacionService {
     return this.tagsView$.asObservable();
   }
 
-  setTagMatAutViewEmpty(){
+  setTagMatAutOtroViewEmpty(){
     this.tagsView = [];
     this.autoresView = [];
     this.materiaView = "";
+    this.otrosView = [];
     this.materiaView$.next(this.materiaView);
     this.autoresView$.next(this.autoresView);
     this.tagsView$.next(this.tagsView);
+    this.otrosView$.next(this.otrosView);
   }
   setDocComentarios(docCom:DocumentoComentarioUsuario){
     this.docComentarios = docCom;

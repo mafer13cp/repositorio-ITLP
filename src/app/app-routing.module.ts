@@ -53,7 +53,7 @@ const routes: Routes = [
     component:EditarDocComponent
   },
   {
-    path:'editarUsuario',
+    path:'editarUsuario/:idUsr',
     component:EditarUsuarioComponent
   },
   {
