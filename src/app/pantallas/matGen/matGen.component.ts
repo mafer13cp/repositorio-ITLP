@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MateriaDocumento } from 'src/app/interfaces/materiaDocumento';
 import { MateriaService } from 'src/app/services/materia.service';
 
@@ -11,14 +12,17 @@ export class MatGenComponent implements OnInit {
   datos:any[] = [];
   materias:MateriaDocumento[];
 
-  constructor(private materia:MateriaService) { }
+  constructor(private materia:MateriaService,private router:Router) { }
 
   ngOnInit(): void {
     this.ngConsultarMaterias();
   }
 
-  ngClickSearchBar(texto:string){
-    //Aqui debe ir a resBusqueda y buscar con el filtro TAG usando el texto.
+  ngClickSearchBar(text:string){
+    if(text != null && text != "")
+      this.router.navigate([`/resBusqueda/${"SFText"}/${text}`]);
+    else
+      this.router.navigate([`/resBusqueda/${"SFText"}/${"_"}`]);
   }
 
   ngConsultarMaterias(){

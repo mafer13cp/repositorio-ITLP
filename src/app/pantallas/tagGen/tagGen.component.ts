@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TagTagDocDocumento } from 'src/app/interfaces/tagTagDocDocumento';
 import { TagService } from 'src/app/services/tag.service';
 
@@ -11,14 +12,17 @@ export class TagGenComponent implements OnInit {
   datos:any[]=[];
   tags:TagTagDocDocumento[];
 
-  constructor(private tag:TagService) { }
+  constructor(private tag:TagService,private router:Router) { }
 
   ngOnInit(): void {
     this.ngConsultarTags();
   }
 
-  ngClickSearchBar(texto:string){
-    //Aqui debe ir a resBusqueda y buscar con el filtro TAG usando el texto.
+  ngClickSearchBar(text:string){
+    if(text != null && text != "")
+      this.router.navigate([`/resBusqueda/${"SFText"}/${text}`]);
+    else
+      this.router.navigate([`/resBusqueda/${"SFText"}/${"_"}`]);
   }
 
   ngConsultarTags(){

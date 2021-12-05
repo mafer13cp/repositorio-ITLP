@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { CarreraService } from 'src/app/services/carrera.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -16,7 +17,8 @@ export class RegistroComponent implements OnInit {
   idUsr:string[] = [];
   correosUsr:string[] = [];
 
-  constructor(readonly snackBar: MatSnackBar, private usuario:UsuarioService, private carrera:CarreraService) { }
+  constructor(readonly snackBar: MatSnackBar, private usuario:UsuarioService, private carrera:CarreraService,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.usuario.getUsuarios().subscribe((data)=>{
@@ -55,7 +57,6 @@ export class RegistroComponent implements OnInit {
     else if(datos['id'].length > 15)
       this.openSnackBar("ERROR: El número de control no puede exceder los 15 caracteres","OK");
     else {
-      console.log(datos);
       let re = new RegExp(`.*@lapaz.tecnm.mx$`,'i');
       if(datos['correo'].match(re)){
         if(datos['rol']=="Alumno")
@@ -88,7 +89,10 @@ export class RegistroComponent implements OnInit {
             this.idCarr = data[0].id;
             this.usr = {id:datos['id'].toUpperCase(),correo:datos['correo'].toLowerCase(),contrasena:datos['contrasena'], descripcion:"", nombre:datos['nombre'], fk_rol:this.idRol,fk_carrera:this.idCarr,imagen:0};
             this.usuario.postUsuario(this.usr).subscribe(data=>{
-              console.log(data);
+              this.openSnackBar("Usuario dado de alta exitosamente","OK");
+              setTimeout(() => {
+                this.router.navigate(['/Login'])
+              }, 1000);
             });
           });
         }

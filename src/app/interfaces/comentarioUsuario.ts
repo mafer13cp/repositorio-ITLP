@@ -5,5 +5,6 @@ export interface ComentarioUsuario {
     texto: string;
     fk_documento: number;
     fk_usuario: string;
+    fecha:string;
     comentario_usuario: Usuario; //un comentario pertenece a un usuario.
 }

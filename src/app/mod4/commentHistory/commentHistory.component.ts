@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angular/core';
-import { Comentario } from 'src/app/interfaces/comentario';
 import { ComentShow } from 'src/app/interfaces/comentShow';
+import { DocumentoComentarioUsuario } from 'src/app/interfaces/documentoComentarioUsuario';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
   selector: 'commentHistory',
@@ -19,9 +20,14 @@ export class CommentHistoryComponent implements OnInit {
     usuario: 'Nombre de usuario',
     fecha: '30/11/21'
   }];
-  constructor() { }
+
+  docComentarios:DocumentoComentarioUsuario;
+  constructor(private comunicacion:ComunicacionService) { }
 
   ngOnInit(): void {
+    this.comunicacion.getDocComentarios$().subscribe(docComen=>{
+      this.docComentarios = docComen;
+    });
   }
   ngThrowParam(text:string){
     this.UserEvent.emit(text);

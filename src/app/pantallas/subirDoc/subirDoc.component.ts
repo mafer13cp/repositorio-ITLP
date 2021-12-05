@@ -1,4 +1,4 @@
-import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
+import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Materia } from 'src/app/interfaces/materia';
@@ -153,30 +153,36 @@ export class SubirDocComponent implements OnInit {
       this.tagsID = [];
 
       this.usrsID.push(this.usuarioLog.getUsuarioLoggeado().id);
+      console.log(this.usrsID);
+      console.log(this.coleccion);
       //Obtención de autores registrados en el sistema y de autores no registrados en el sistema.
-      for(let i = 0; i < this.coleccion.autores.length; i++){
-        let usrOrNot = false;
-        for(let j = 0; j < this.autoresO.length; j++){
-          if(this.coleccion.autores[i] == this.autoresO[j].nombre){
-            this.usrsID.push(this.autoresO[j].id);
-            usrOrNot = true;
+      if(this.coleccion.autores != null){
+        for(let i = 0; i < this.coleccion.autores.length; i++){
+          let usrOrNot = false;
+          for(let j = 0; j < this.autoresO.length; j++){
+            if(this.coleccion.autores[i] == this.autoresO[j].nombre){
+              this.usrsID.push(this.autoresO[j].id);
+              usrOrNot = true;
+            }
           }
+          if(!usrOrNot)
+            this.otrosN.push(this.coleccion.autores[i]);
         }
-        if(!usrOrNot)
-          this.otrosN.push(this.coleccion.autores[i]);
       }
 
       //Obtención de los tags registrados en el sistema y no registrados.
-      for(let i = 0; i < this.coleccion.tags.length; i++){
-        let tagOrNot = false;
-        for(let j = 0; j < this.tagsO.length; j++){
-          if(this.coleccion.tags[i] == this.tagsO[j].nombre){
-            this.tagsID.push(this.tagsO[j].id);
-            tagOrNot = true;
+      if(this.coleccion.tags != null){
+        for(let i = 0; i < this.coleccion.tags.length; i++){
+          let tagOrNot = false;
+          for(let j = 0; j < this.tagsO.length; j++){
+            if(this.coleccion.tags[i] == this.tagsO[j].nombre){
+              this.tagsID.push(this.tagsO[j].id);
+              tagOrNot = true;
+            }
           }
+          if(!tagOrNot)
+            this.otherTagN.push(this.coleccion.tags[i]);
         }
-        if(!tagOrNot)
-          this.otherTagN.push(this.coleccion.tags[i]);
       }
 
       //Obtener el id de la materia
@@ -186,53 +192,36 @@ export class SubirDocComponent implements OnInit {
           break;
         }
       }
-
-      console.log("USUARIOS");
-      console.log(this.usrsID);
-      console.log("OTROS");
-      console.log(this.otrosN);
-      console.log("TAGS");
-      console.log(this.tagsID);
-      console.log("OTROS tags");
-      console.log(this.otherTagN);
-      console.log("Materia");
-      console.log(this.matID);
+      console.log("SIGO BIEN");
       if(!this.boolTag && !this.boolAutor && !this.boolMat){
-        console.log(this.coleccion);
-        console.log("SE SUBIO EL DOCUMENTO");
         this.fireServ.uploadDoc(this.coleccion.archivo).then(()=>{
           this.fireServ.consultDoc(this.coleccion.archivo.name).then((url)=>{
             this.docServ.postDoc({id:null,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:url,fk_materia:this.matID,fecha:this.date}).subscribe((data)=>{
-              console.log(data);
-              console.log("SESUBIO");
 
               for(let i = 0; i < this.otherTagN.length; i++){
                 this.tagServ.postTag(this.otherTagN[i]).subscribe((data)=>{
-                  //console.log(data);
                   this.tagsID.push(data.body.id);
                 });
               }
 
               for(let i = 0; i < this.otrosN.length; i++){
                 this.otrosServ.postOtro(this.otrosN[i],data.body.id).subscribe((data)=>{
-                  //console.log(data);
                 });
               }
 
               for(let i = 0; i < this.usrsID.length; i++){
                 this.autorServ.postAutor(this.usrsID[i],data.body.id).subscribe((data)=>{
-                  //console.log(data);
                 });
               }
 
               setTimeout(() => {
                 for(let i = 0; i < this.tagsID.length; i++){
                   this.tagDocServ.postTagDoc(this.tagsID[i],data.body.id).subscribe((data)=>{
-                    console.log("TAGDOC");
-                    console.log(data);
                   });
                 }
               }, 3000);
+
+              this.openSnackBar("El documento se ha subido exitosamente","OK");
             });
           });
         })

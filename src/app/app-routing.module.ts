@@ -29,67 +29,71 @@ const routes: Routes = [
     redirectTo: '/login'
   },
   {
-    path:'/inicio',
+    path:'inicio',
     component:InicioComponent
   },
   {
-    path:'/aboutUs',
+    path:'aboutUs',
     component:AboutUsComponent
   },
   {
-    path:'/addAdmins',
+    path:'addAdmins',
     component:AddAdminsComponent
   },
   {
-    path:'/busAdmin',
+    path:'busAdmin',
     component:BusAdminComponent
   },
   {
-    path:'/docGen',
+    path:'docGen',
     component:DocGenComponent
   },
   {
-    path:'/editarDoc',
+    path:'editarDoc',
     component:EditarDocComponent
   },
   {
-    path:'/editarUsuario',
+    path:'editarUsuario',
     component:EditarUsuarioComponent
   },
   {
-    path:'/matGen',
+    path:'matGen',
     component:MatGenComponent
   },
   {
-    path:'/perfilUsr',
+    path:'perfilUsr/:idUsr',
     component:PerfilUsrComponent
   },
   {
-    path:'/registro',
+    path:'registro',
     component:RegistroComponent
   },
   {
-    path:'/resBusqueda',
+    path:'resBusqueda',
     component:ResBusquedaComponent
   },
   {
-    path:'/subirDoc',
+    path:'resBusqueda/:filtro/:texto',
+    component:ResBusquedaComponent
+  },
+  {
+    path:'subirDoc',
     component:SubirDocComponent
   },
   {
-    path:'/tagGen',
+    path:'tagGen',
     component:TagGenComponent
   },
   {
-    path:'/viewDocAut',
+    path:'viewDocAut/:idDoc',
     component:ViewDocAutComponent
   },
   {
-    path:'/viewDocPan',
+    path:'viewDocPan/:idDoc',
     component:ViewDocPanComponent
   },
   {
-    path:'/viewDocUsr',
+    path:'viewDocUsr/:idDoc',
     component:ViewDocUsrComponent
   },
   {

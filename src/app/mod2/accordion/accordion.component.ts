@@ -22,6 +22,5 @@ export class AccordionComponent implements OnInit{
     //Mandar el valor del tittle (tags, materia o docs) y el id de la selección
     const texto = control.srcElement.innerHTML;
     this.AccEvent.emit(texto);
-    console.log("desde accordion: " + texto);
   }
 }
