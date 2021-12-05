@@ -4,6 +4,7 @@
     text-align: center;
     margin: 10px;
     height: fit-content;
+    cursor: pointer;
 }
 .c {
     width: 100%;
