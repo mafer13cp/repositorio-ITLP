@@ -14,6 +14,7 @@ export class DocSideInfoComponent implements OnInit {
   tagOMat:string;
   autores:Usuario[] = [];
   otros:Otro[] = [];
+  auxOtros: boolean = false;
   tags:string[] = [];
   materia:string;
 
@@ -31,6 +32,9 @@ export class DocSideInfoComponent implements OnInit {
     });
     this.comunicacion.getOtrosView$().subscribe(otros=>{
       this.otros = otros;
+      if (this.otros.length > 0) {
+        this.auxOtros = true;
+      }
     });
   }
 

@@ -1,6 +1,9 @@
 <mat-expansion-panel class="acc">
     <mat-expansion-panel-header>
-      <mat-panel-title class="title">Autores</mat-panel-title>
+      <div class="edit">
+        <mat-panel-title class="title">Autores</mat-panel-title>
+        <i *ngIf="autor" class="material-icons">edit</i>
+      </div>
     </mat-expansion-panel-header>
     <divider [color]="'light'" class="divider"></divider>
     <ul class="list">
@@ -12,10 +15,12 @@
             <a #a (click)="ngOnClickUsr($event)">{{usuario.nombre}}</a>
         </li>
     </ul>
-    <br>
-  <mat-panel-title class="title">Otros autores</mat-panel-title>
-  <divider [color]="'light'" class="divider"></divider>
-  <ul class="list2">
-    <li *ngFor="let otro of listOtros">{{otro.nombre}}</li>
-  </ul>
+    <div *ngIf="otros" class="otrosDiv">
+      <br>
+      <mat-panel-title class="title">Otros autores</mat-panel-title>
+      <divider [color]="'light'" class="divider"></divider>
+      <ul class="list2">
+        <li *ngFor="let otro of listOtros">{{otro.nombre}}</li>
+      </ul>
+    </div>
   </mat-expansion-panel>
