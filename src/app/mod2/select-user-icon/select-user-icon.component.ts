@@ -14,6 +14,7 @@ export class SelectUserIconComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.selectedImg = `../../../assets/img/userIcons/${this.imgNum}.png`;
     this.createImgs();
   }
 
