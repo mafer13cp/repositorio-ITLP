@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'headerItlp',
@@ -13,7 +14,7 @@ export class HeaderITLPComponent implements OnInit {
   @ViewChild('usuario') usuarioLink:ElementRef;
   imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomar la foto del usuario loggeado
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,21 +26,25 @@ export class HeaderITLPComponent implements OnInit {
         //Redireccionar a materias
         this.headerEvent.emit(ruta);
         console.log("Te manda a ver las materias ehe");
+        this.router.navigate([`/matGen`]);
         break;
       case 'tags':
         //Redireccionar a tags
         this.headerEvent.emit(ruta);
         console.log("Te manda a ver las tags ehe");
+        this.router.navigate([`/tagGen`]);
         break;
       case 'docs':
         //Redireccionar a documentos
         this.headerEvent.emit(ruta);
         console.log("Te manda a ver los documentos ehe");
+        this.router.navigate([`/docGen`]);
           break;
       case 'usuario':
         //Redireccionar a perfil de usuario
         this.headerEvent.emit(ruta);
         console.log("Te manda a tu perfil de usuario ehe");
+        this.router.navigate([`/perfilUsr/${"17310710"}`]); //obtener el id del loggeado.
           break;
       default:
         break;
@@ -48,14 +53,21 @@ export class HeaderITLPComponent implements OnInit {
 
   ngEdit() {
     console.log("Te manda a la pantalla de editar usuario");
+    this.router.navigate([`/editarUsuario/${"17310710"}`]);
   }
 
   ngLogOut() {
     console.log("Cierra sesión, te regresa a la pantalla de login");
+    this.router.navigate([`/login`]);
   }
 
   ngHelp() {
     console.log("Te manda a la pantalla de ayuda");
+    this.router.navigate([`/inicio`]); //Debe llevarnos a help
+  }
+
+  ngRedirectInicio(){
+    this.router.navigate([`/inicio`]);
   }
 
 }
