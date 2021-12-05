@@ -1,7 +1,7 @@
 <div class="contenedor">
     <headerLine [title]="'Búsqueda Específica'"></headerLine>
     <div class="d1">
-        <dropDownList class="ddl" (DDLEvent)="ngEnviarFiltro($event)"></dropDownList>
+        <dropDownList class="ddl" (DDLEvent)="ngEnviarFiltro($event)" [ops]=ops></dropDownList>
     </div>
     <div class="d2">
         <searchField (SFEvent)="ngEnviarTexto($event)"></searchField>

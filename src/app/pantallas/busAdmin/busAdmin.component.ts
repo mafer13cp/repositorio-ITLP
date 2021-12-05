@@ -16,6 +16,7 @@ export class BusAdminComponent implements OnInit {
   texto:string;
   resultados:any[] = []; //resultado de la consulta segun el filtro y el texto.
   usuarios:UsuarioAutorDocumento[];
+  tipo:string;
 
   constructor(private documento:DocumentoService, private materia:MateriaService, 
     private tag:TagService, private usuario:UsuarioService,readonly snackBar: MatSnackBar) { }
@@ -31,6 +32,34 @@ export class BusAdminComponent implements OnInit {
 
   ngRecibirFiltro(filtro:string){
     this.filtro = filtro;
+    if(this.filtro == "Documentos"){
+      this.tipo = "Documento";
+      //this.resultados = [{id:"10",nombre:"Algoritmos"},{id:"20",nombre:"probabilidad"}];
+      //Consultar los documentos según su nombre, no es necesario crear.
+      this.documento.filterDocByNombre("").subscribe((data)=>{
+        this.resultados = data;
+        if(this.resultados.length == 0)
+        this.openSnackBar("No se encontraron coincidencias","OK");
+      });
+    }
+    else if(this.filtro == "Materias"){
+      this.tipo = "Materia";
+      //Consultar las materias por el nombre, no es necesario crear.
+      this.materia.filterMatByNombre("").subscribe((data)=>{
+        this.resultados = data;
+        if(this.resultados.length == 0)
+        this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
+      });
+    }
+    else if(this.filtro == "Etiquetas"){
+      this.tipo = "Tag";
+      //Consultar las etiquetas por el nombre, no es necesario crear.
+      this.tag.filterTagByNombre("").subscribe((data)=>{
+        this.resultados = data;
+        if(this.resultados.length == 0)
+        this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
+      });
+    }
   }
 
   ngRecibirTexto(texto:string){
@@ -44,6 +73,7 @@ export class BusAdminComponent implements OnInit {
     }
     else{
       if(this.filtro == "Documentos"){
+        this.tipo = "Documento";
         //this.resultados = [{id:"10",nombre:"Algoritmos"},{id:"20",nombre:"probabilidad"}];
         //Consultar los documentos según su nombre, no es necesario crear.
         this.documento.filterDocByNombre(texto).subscribe((data)=>{
@@ -53,6 +83,7 @@ export class BusAdminComponent implements OnInit {
         });
       }
       else if(this.filtro == "Materias"){
+        this.tipo = "Materia";
         //Consultar las materias por el nombre, no es necesario crear.
         this.materia.filterMatByNombre(texto).subscribe((data)=>{
           this.resultados = data;
@@ -61,24 +92,10 @@ export class BusAdminComponent implements OnInit {
         });
       }
       else if(this.filtro == "Etiquetas"){
+        this.tipo = "Tag";
         //Consultar las etiquetas por el nombre, no es necesario crear.
         this.tag.filterTagByNombre(texto).subscribe((data)=>{
           this.resultados = data;
-          if(this.resultados.length == 0)
-          this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
-        });
-      }
-      else if(this.filtro == "Autores"){
-        //Consultar usuarios por el nombre, no es necesario crear.
-        this.resultados = [];
-        this.usuarios = [];
-        this.usuario.getDocumentos().subscribe((data)=>{
-          this.usuarios = <UsuarioAutorDocumento[]>data;
-          let re = new RegExp(`${texto}.*`,'i');
-          this.usuarios.forEach(user => {
-            if(user.documentos_usuario != null && user.nombre.match(re))
-              this.resultados.push(user);
-          });
           if(this.resultados.length == 0)
           this.openSnackBar("ERROR: No se encontraron coincidencias","OK");
         });

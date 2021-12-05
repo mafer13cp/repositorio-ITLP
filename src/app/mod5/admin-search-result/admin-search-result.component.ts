@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AdminSearchResultComponent implements OnInit {
   @Input() resultados:any[];
+  @Input() tipo:string;
 
   constructor() { }
 

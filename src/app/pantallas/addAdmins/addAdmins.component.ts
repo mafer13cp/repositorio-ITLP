@@ -10,9 +10,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class AddAdminsComponent implements OnInit {
   idLog:string;
 
-  constructor(private router:Router, private route:ActivatedRoute,private usuario:UsuarioService) { }
-
-  ngOnInit(): void {
+  constructor(private router:Router, private route:ActivatedRoute,private usuario:UsuarioService) { 
     this.idLog = this.route.snapshot.paramMap.get('idLog');
     console.log(this.idLog);
     this.usuario.getUsuarios().subscribe(usuarios=>{
@@ -30,6 +28,10 @@ export class AddAdminsComponent implements OnInit {
           this.router.navigate([`/inicio/${this.idLog}`]);
       }
     });
+  }
+
+  ngOnInit(): void {
+    
   }
 
 }
