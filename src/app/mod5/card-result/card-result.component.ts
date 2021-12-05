@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'cardResult',
@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-result.component.css','../../app.component.css']
 })
 export class CardResultComponent implements OnInit {
+  @Output() public CREvent = new EventEmitter();
   @Input() content: any = "content";
   @Input() name: any = "name";
   @Input() id:any = "id"
@@ -16,5 +17,7 @@ export class CardResultComponent implements OnInit {
   ngOnInit(): void { 
   }
 
-
+  ngClickCard(){
+    this.CREvent.emit([this.name,this.id]);
+  }
 }

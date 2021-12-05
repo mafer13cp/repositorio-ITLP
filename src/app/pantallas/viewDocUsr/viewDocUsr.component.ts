@@ -71,6 +71,6 @@ export class ViewDocUsrComponent implements OnInit {
   }
 
   ngClickCard(){
-    this.router.navigate([`/viewDocPan/${this.idLog}/${this.idDoc}`])
+    this.router.navigate([`/viewDocPan/${this.idLog}/${this.idDoc}`]);
   }
 }
