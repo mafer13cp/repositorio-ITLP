@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MateriaDocumento } from 'src/app/interfaces/materiaDocumento';
 import { MateriaService } from 'src/app/services/materia.service';
 
@@ -11,18 +11,20 @@ import { MateriaService } from 'src/app/services/materia.service';
 export class MatGenComponent implements OnInit {
   datos:any[] = [];
   materias:MateriaDocumento[];
+  idLog:string;
 
-  constructor(private materia:MateriaService,private router:Router) { }
+  constructor(private materia:MateriaService,private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.ngConsultarMaterias();
   }
 
   ngClickSearchBar(text:string){
     if(text != null && text != "")
-      this.router.navigate([`/resBusqueda/${"SFText"}/${text}`]);
+      this.router.navigate([`/resBusqueda/${this.idLog}/${"SFText"}/${text}`]);
     else
-      this.router.navigate([`/resBusqueda/${"SFText"}/${"_"}`]);
+      this.router.navigate([`/resBusqueda/${this.idLog}/${"SFText"}/${"_"}`]);
   }
 
   ngConsultarMaterias(){

@@ -55,7 +55,7 @@ export class UsuarioService {
 //#endregion
 
 //#region GET PARAMS 
-public filterUsuarioByRol(rol: string):Observable<any> {
+public filterUsuarioByRol(rol: number):Observable<any> {
   const paramsHttp = new HttpParams().set('rol', rol);
   return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
 }

@@ -5,7 +5,6 @@ import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import { UsuarioLogService } from 'src/app/services/usuario-log.service';
 
 /**
  * @title Chips Autocomplete
@@ -28,7 +27,7 @@ export class ChipautorComponent{
   @ViewChild('autocomplete') fruitInput: ElementRef<HTMLInputElement>;
   @Input() autores:string[];
 
-  constructor(private usuario:UsuarioLogService) {
+  constructor() {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
       map((fruit: string | null) => (fruit ? this._filter(fruit) : this.autores.slice())),

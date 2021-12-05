@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MateriaService } from 'src/app/services/materia.service';
 import { TagService } from 'src/app/services/tag.service';
 
@@ -13,10 +13,12 @@ export class SideNavComponent implements OnInit {
   tags:string[] = [];
   materias:string[] = [];
   tagOMat:string;
+  idLog:string;
 
-  constructor(private tag:TagService, private materia:MateriaService,private router:Router) { }
+  constructor(private tag:TagService, private materia:MateriaService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.tag.getTags().subscribe(data=>{
       let cont = 0;
       for(let i = data.length-1; i >= 0; i--){
@@ -50,6 +52,6 @@ export class SideNavComponent implements OnInit {
   }
 
   ngRedirectAboutUs(){
-    this.router.navigate(['/aboutUs']);
+    this.router.navigate([`/aboutUs/${this.idLog}`]);
   }
 }

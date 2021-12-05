@@ -29,39 +29,43 @@ const routes: Routes = [
     redirectTo: '/login'
   },
   {
-    path:'inicio',
+    path:'inicio/:idLog',
     component:InicioComponent
   },
   {
-    path:'aboutUs',
+    path:'aboutUs/:idLog',
     component:AboutUsComponent
   },
   {
-    path:'addAdmins',
+    path:'addAdmins/:idLog',
     component:AddAdminsComponent
   },
   {
-    path:'busAdmin',
+    path:'busAdmin/:idLog',
     component:BusAdminComponent
   },
   {
-    path:'docGen',
+    path:'docGen/:idLog',
     component:DocGenComponent
   },
   {
-    path:'editarDoc',
+    path:'editarDoc/:idLog',
     component:EditarDocComponent
   },
   {
-    path:'editarUsuario/:idUsr',
+    path:'editarUsuario/:idLog',
     component:EditarUsuarioComponent
   },
   {
-    path:'matGen',
+    path:'matGen/:idLog',
     component:MatGenComponent
   },
   {
-    path:'perfilUsr/:idUsr',
+    path:'perfilUsr/:idLog',
+    component:PerfilUsrComponent
+  },
+  {
+    path:'perfilUsr/:idLog/:idUsr',
     component:PerfilUsrComponent
   },
   {
@@ -69,31 +73,31 @@ const routes: Routes = [
     component:RegistroComponent
   },
   {
-    path:'resBusqueda',
+    path:'resBusqueda/:idLog',
     component:ResBusquedaComponent
   },
   {
-    path:'resBusqueda/:filtro/:texto',
+    path:'resBusqueda/:idLog/:filtro/:texto',
     component:ResBusquedaComponent
   },
   {
-    path:'subirDoc',
+    path:'subirDoc/:idLog',
     component:SubirDocComponent
   },
   {
-    path:'tagGen',
+    path:'tagGen/:idLog',
     component:TagGenComponent
   },
   {
-    path:'viewDocAut/:idDoc/:a',
+    path:'viewDocAut/:idLog/:idDoc/:a',
     component:ViewDocAutComponent
   },
   {
-    path:'viewDocPan/:idDoc',
+    path:'viewDocPan/:idLog/:idDoc',
     component:ViewDocPanComponent
   },
   {
-    path:'viewDocUsr/:idDoc/:a',
+    path:'viewDocUsr/:idLog/:idDoc/:a',
     component:ViewDocUsrComponent
   },
   {

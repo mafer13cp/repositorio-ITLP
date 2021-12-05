@@ -38,25 +38,32 @@ export class ResBusquedaComponent implements OnInit {
     if(filtro == "Tag"){
       this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
+          console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
-            let docs = this.comunicacion.getDocumentoUsrNormal();
+            let docExistentes:number[] = [];
             data.forEach(tag => {
               if(tag.documentos_tag != null){
                 tag.documentos_tag.forEach(docUsr => {
-                  if(docs.length == 0)
+                  if(docExistentes.length == 0){
                     this.comunicacion.addDocumentoUsr(docUsr);
+                    docExistentes.push(docUsr.id)
+                  }
                   else{
-                    docs.forEach(doc => {
-                      if(doc.idDoc != docUsr.id)
-                        this.comunicacion.addDocumentoUsr(docUsr);
-                    });
+                    let existe = 0;
+                    for(let i = 0; i < docExistentes.length; i++){
+                      if(docUsr.id == docExistentes[i]){
+                        existe = 1;
+                      }
+                    }
+                    if(existe == 0){
+                      this.comunicacion.addDocumentoUsr(docUsr);
+                      docExistentes.push(docUsr.id);
+                    }
                   }
                 });
               }
-              else 
-                this.openSnackBar("Este tag no tiene documentos asociados","OK");
             });
           }
         });

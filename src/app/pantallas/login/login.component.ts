@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { UsuarioLogService } from 'src/app/services/usuario-log.service';
+import {  Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -11,9 +10,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(readonly snackBar: MatSnackBar, private usuarioLog:UsuarioLogService, private usuario:UsuarioService,private router:Router) { }
+  constructor(readonly snackBar: MatSnackBar, private usuario:UsuarioService,private router:Router) { }
 
   ngOnInit(): void {
+    
   }
 
   openSnackBar(message: string, action: string) {
@@ -33,15 +33,17 @@ export class LoginComponent implements OnInit {
       this.openSnackBar("ERROR: La contraseña excede el máximo de caractéres","OK");
     else{
       this.usuario.getUsuarios().subscribe((data)=>{
-        for(let i =0; i<data.length;i++){
-          if(data[i].nombre == data['usuario'] && data[i].contrasena == data['contrasena']){
-            this.usuarioLog.setLoggeado(true);
-            this.usuarioLog.setUsuarioLoggeado(data[i]);
-            //ir a la pantalla de inicio routing.
-            this.router.navigate(["/inicio"]);
+        let existe = false;
+        for(let i =0; i < data.length;i++){
+          if(data[i].id == datos['usuario'] && data[i].contrasena == datos['contrasena']){ //no es usuario, es ID
+            console.log(datos);
+            this.router.navigate([`/inicio/${datos['usuario']}`]);
+            existe = true;
             break;
           }
         }
+        if(!existe)
+          this.openSnackBar("ERROR: Los datos ingresados son incorrectos","OK");
       });
     }
   }

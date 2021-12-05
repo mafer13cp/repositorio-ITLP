@@ -17,11 +17,14 @@ export class PerfilUsrComponent implements OnInit {
   comentarios:number;
   apariciones:number;
   documentos:UsuarioAutorDocumento;
+  idLog:string;
 
   constructor(private usr:UsuarioService, private comunicacion:ComunicacionService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     let idUsr:string = this.route.snapshot.paramMap.get('idUsr');
+    if(idUsr == null)
+      idUsr = this.route.snapshot.paramMap.get('idLog');
     this.ngConsultarUsuarioRol(idUsr);
     this.ngConsultarUsuarioComentario(idUsr);
     this.ngConsultarUsuarioAutor(idUsr);
