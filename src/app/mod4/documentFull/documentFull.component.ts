@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ElementRef, ViewChild } from '@angular/core';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'documentFull',
@@ -13,7 +14,7 @@ export class DocumentFullComponent implements OnInit {
   @ViewChild('vista') embed: ElementRef;
   @Input() url:string;
 
-  constructor(private comunicacion:ComunicacionService) { }
+  constructor(private comunicacion:ComunicacionService,private location:Location) { }
 
   ngOnInit(): void {
     this.comunicacion.getUrlFull$().subscribe(url=>{
@@ -25,6 +26,7 @@ export class DocumentFullComponent implements OnInit {
   ngOnClick() {
     console.log("Regresar a la pantalla de info");
     //Routing
+    this.location.back();
   }
 
 }
