@@ -1,0 +1,21 @@
+<mat-expansion-panel class="acc">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="title">Autores</mat-panel-title>
+    </mat-expansion-panel-header>
+    <divider [color]="'light'" class="divider"></divider>
+    <ul class="list">
+      <li *ngFor="let usuario of listUsuarios">
+        <div class="tooltip">
+            <i class="material-icons icon" matTooltip="Acerca de">{{rolIcon[usuario.fk_rol]}}</i>
+            <span class="tooltiptext">{{ttt[usuario.fk_rol]}}</span>
+        </div>
+            <a #a (click)="ngOnClickUsr($event)">{{usuario.nombre}}</a>
+        </li>
+    </ul>
+    <br>
+  <mat-panel-title class="title">Otros autores</mat-panel-title>
+  <divider [color]="'light'" class="divider"></divider>
+  <ul class="list2">
+    <li *ngFor="let otro of listOtros">{{otro.nombre}}</li>
+  </ul>
+  </mat-expansion-panel>

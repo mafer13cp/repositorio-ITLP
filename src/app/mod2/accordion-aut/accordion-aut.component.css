@@ -16,7 +16,6 @@
 .list li a {
     text-decoration: none;
     color: #577399;
-    cursor: pointer;
 }
 .edit{
     display: flex;

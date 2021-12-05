@@ -30,6 +30,7 @@ import { AccordionTagAutComponent } from './accordion-tag-aut/accordion-tag-aut.
 import { AccordionAutComponent } from './accordion-aut/accordion-aut.component';
 import { AccordionTextAutComponent } from './accordion-text-aut/accordion-text-aut.component';
 import { SelectUserIconComponent } from './select-user-icon/select-user-icon.component';
+import { AcoordionUsrComponent } from './acoordion-usr/acoordion-usr.component';
 
 //#endregion
 
@@ -53,6 +54,7 @@ import { SelectUserIconComponent } from './select-user-icon/select-user-icon.com
     AccordionAutComponent,
     AccordionTextAutComponent,
     SelectUserIconComponent,
+    AcoordionUsrComponent,
   ],
   imports: [
     CommonModule,
