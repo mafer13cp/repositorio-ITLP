@@ -33,13 +33,17 @@ export class LoginComponent implements OnInit {
       this.openSnackBar("ERROR: La contraseña excede el máximo de caractéres","OK");
     else{
       this.usuario.getUsuarios().subscribe((data)=>{
+        let existe = false;
         for(let i =0; i < data.length;i++){
           if(data[i].id == datos['usuario'] && data[i].contrasena == datos['contrasena']){ //no es usuario, es ID
             console.log(datos);
             this.router.navigate([`/inicio/${datos['usuario']}`]);
+            existe = true;
             break;
           }
         }
+        if(!existe)
+          this.openSnackBar("ERROR: Los datos ingresados son incorrectos","OK");
       });
     }
   }
