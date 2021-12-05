@@ -29,7 +29,7 @@ export class DocMiniComponent implements OnInit {
         for(let i = 0; i < data.length; i++){
           if(data[i].usuarios_documento != null){
             for(let j = 0; j < data[i].usuarios_documento.length; j++){
-              if(data[i].usuarios_documento[j].nombre =="Alfonso Rochín Gómez" && data[i].id == this.idDoc){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
+              if(data[i].usuarios_documento[j].nombre =="Juan Pérez" && data[i].id == this.idDoc){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
                 esAutor = true;
               }
             }

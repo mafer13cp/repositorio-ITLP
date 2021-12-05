@@ -192,6 +192,14 @@ export class SubirDocComponent implements OnInit {
           break;
         }
       }
+      console.log("Usuarios en el sistema");
+      console.log(this.usrsID);
+      console.log("Otros Usuarios");
+      console.log(this.otrosN);
+      console.log("tags Nuevos");
+      console.log(this.otherTagN);
+      console.log("Tags Existentes");
+      console.log(this.tagsID);
       console.log("SIGO BIEN");
       if(!this.boolTag && !this.boolAutor && !this.boolMat){
         this.fireServ.uploadDoc(this.coleccion.archivo).then(()=>{

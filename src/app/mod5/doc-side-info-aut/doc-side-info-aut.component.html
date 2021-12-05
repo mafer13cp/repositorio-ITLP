@@ -1,7 +1,7 @@
 <div id="cont">
-    <accordionAut [title]="'Autores'" [listItems]="['Autor 1', 'Autor 2']" (AccEvent)="ngThrowParam($event)"></accordionAut>
+    <accordionAut [title]="'Autores'" (click)="ngEsAutor()" [listItems]=autores (AccEvent)="ngThrowParam($event)"></accordionAut>
     <accordionText [title]="'Fecha de publicación'" [textAcc]="'01/11/2021'"></accordionText>
-    <accordionAut [title]="'Materia'" [listItems]="['Nombre de la materia']" (AccEvent)="ngThrowParam($event)"></accordionAut>
+    <accordionAut [title]="'Materia'" (click)="ngEsMateria()" [listItems]="[materia]" (AccEvent)="ngThrowParam($event)"></accordionAut>
     <accordionRate [title]="'Rating'"></accordionRate>
-    <accordionTagAut [title]="'Tags'" [listTags]="['Uno', 'Dos', 'Tres', 'Cuatro', 'Cinco']" (AccEvent)="ngThrowParam($event)"></accordionTagAut>
+    <accordionTagAut [title]="'Tags'"(click)="ngEsTag()" [listTags]=tags (AccEvent)="ngThrowParam($event)"></accordionTagAut>
 </div>

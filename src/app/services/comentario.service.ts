@@ -27,7 +27,8 @@ export class ComentarioService {
 //#region POST
   public postCom(com: Comentario):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(com);
+    let x = {texto:com.texto, fk_documento:com.fk_documento, fk_usuario:com.fk_usuario,fecha:com.fecha};
+    const body = JSON.stringify(x);
     return this.http.post(`${this.baseUrl}/comentarios`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion

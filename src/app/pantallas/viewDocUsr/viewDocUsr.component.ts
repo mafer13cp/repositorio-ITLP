@@ -10,23 +10,22 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./viewDocUsr.component.css','../../app.component.css']
 })
 export class ViewDocUsrComponent implements OnInit {
-  autores:string[] = [];
-  tags:string[] = [];
-  materias:string[] = [];
   titulo:string;
   descripcion:string;
+  idDoc:number;
 
   constructor(private router:Router, private route:ActivatedRoute,private documento:DocumentoService,
     private comunicacion:ComunicacionService, private usuario:UsuarioService) { }
 
   ngOnInit(): void {
-    let idDoc:number = parseInt(this.route.snapshot.paramMap.get('idDoc'));
-    console.log(idDoc);
-    this.documento.getComentariosUsuarioByDocId(idDoc).subscribe(doc=>{
+    this.comunicacion.setTagMatAutViewEmpty();
+    this.idDoc = parseInt(this.route.snapshot.paramMap.get('idDoc'));
+    console.log(this.idDoc);
+    this.documento.getComentariosUsuarioByDocId(this.idDoc).subscribe(doc=>{
       console.log(doc);
       this.comunicacion.setDocComentarios(doc[0]);
     });
-    this.documento.getAuts_Tags_Mat_ByDocId(idDoc).subscribe(doc=>{
+    this.documento.getAuts_Tags_Mat_ByDocId(this.idDoc).subscribe(doc=>{
       console.log(doc);
       this.titulo = doc[0].nombre;
       this.descripcion = doc[0].descripcion;
@@ -63,5 +62,9 @@ export class ViewDocUsrComponent implements OnInit {
         this.router.navigate([`/perfilUsr/${usr[0].id}`]);
       });
     }
+  }
+
+  ngClickCard(){
+    this.router.navigate([`/viewDocPan/${this.idDoc}`])
   }
 }
