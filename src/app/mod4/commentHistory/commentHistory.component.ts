@@ -28,6 +28,7 @@ export class CommentHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.comunicacion.getDocComentarios$().subscribe(docComen=>{
+      console.log(docComen);
       this.docComentarios = docComen;
       if(this.docComentarios.comentarios_documento != null)
         this.comentariosUsuario = this.docComentarios.comentarios_documento;

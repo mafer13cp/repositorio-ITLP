@@ -38,6 +38,7 @@ export class ResBusquedaComponent implements OnInit {
     if(filtro == "Tag"){
       this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
@@ -71,6 +72,7 @@ export class ResBusquedaComponent implements OnInit {
     else if(filtro == "SFText"){
       this.comunicacion.setDocsEmpty();
         this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           if(data.length == 0)
             this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
           else{
@@ -83,6 +85,7 @@ export class ResBusquedaComponent implements OnInit {
     else if(filtro == "Materia"){
       this.comunicacion.setDocsEmpty();
         this.materia.getDocsUsrByMatNombre(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
@@ -110,6 +113,7 @@ export class ResBusquedaComponent implements OnInit {
     this.filtro = filtro;
     this.comunicacion.setDocsEmpty();
     this.documento.getUsuariosNomDoc("").subscribe((data)=>{
+      this.comunicacion.setDocsEmpty();
       if(data.length == 0)
         this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
       else{
@@ -128,6 +132,7 @@ export class ResBusquedaComponent implements OnInit {
     else if(texto == null || texto == ""){
       this.comunicacion.setDocsEmpty();
         this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
@@ -142,6 +147,7 @@ export class ResBusquedaComponent implements OnInit {
       if(this.filtro == "Documentos"){
         this.comunicacion.setDocsEmpty();
         this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
@@ -155,6 +161,7 @@ export class ResBusquedaComponent implements OnInit {
       else if(this.filtro == "Autores"){
         this.comunicacion.setDocsEmpty();
         this.usuario.getDocsUsrByUsrNombre(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
@@ -198,6 +205,7 @@ export class ResBusquedaComponent implements OnInit {
       else if(this.filtro == "Materias"){
         this.comunicacion.setDocsEmpty();
         this.materia.getDocsUsrByMatNombre(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
@@ -227,6 +235,7 @@ export class ResBusquedaComponent implements OnInit {
       else if(this.filtro == "Etiquetas"){
         this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
+          this.comunicacion.setDocsEmpty();
           console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");

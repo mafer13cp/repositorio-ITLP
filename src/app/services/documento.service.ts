@@ -43,7 +43,7 @@ export class DocumentoService {
 //#endregion
 
 //#region DELETE 
-  public delDoc(id: string):Observable<any> {
+  public delDoc(id: number):Observable<any> {
     const headers = {'content-type': 'application/json'};
     return this.http.delete(`${this.baseUrl}/documentos/${id}`, {'headers': headers, observe: 'response'});
   }

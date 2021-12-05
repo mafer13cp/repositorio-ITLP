@@ -15,7 +15,9 @@ export class InicioComponent implements OnInit{
   idLog:string;
 
   constructor(private documento:DocumentoService,private comunicacion:ComunicacionService,readonly snackBar: MatSnackBar,
-    private router:Router, private route:ActivatedRoute) { }
+    private router:Router, private route:ActivatedRoute) { 
+      //router.navigate(['/login']);
+    }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
