@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Otro } from 'src/app/interfaces/otros';
+import { Usuario } from 'src/app/interfaces/usuario';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
@@ -10,7 +12,8 @@ import { ComunicacionService } from 'src/app/services/comunicacion.service';
 export class DocSideInfoComponent implements OnInit {
   @Output() public AccEvent= new EventEmitter();
   tagOMat:string;
-  autores:string[] = [];
+  autores:Usuario[] = [];
+  otros:Otro[] = [];
   tags:string[] = [];
   materia:string;
 
@@ -25,6 +28,9 @@ export class DocSideInfoComponent implements OnInit {
     });
     this.comunicacion.getMateriaView$().subscribe(materia=>{
       this.materia = materia;
+    });
+    this.comunicacion.getOtrosView$().subscribe(otros=>{
+      this.otros = otros;
     });
   }
 

@@ -86,6 +86,7 @@ import { AcoordionUsrComponent } from './acoordion-usr/acoordion-usr.component';
     AccordionAutComponent,
     AccordionTextAutComponent,
     SelectUserIconComponent,
+    AcoordionUsrComponent
   ]
 })
 export class Mod2Module { }

@@ -18,22 +18,19 @@ export class ViewDocPanComponent implements OnInit {
     private comunicacion:ComunicacionService, private usuario:UsuarioService) { }
 
   ngOnInit(): void {
-    this.comunicacion.setTagMatAutViewEmpty();
+    this.comunicacion.setTagMatAutOtroViewEmpty();
     this.idDoc = parseInt(this.route.snapshot.paramMap.get('idDoc'));
-    console.log(this.idDoc);
     this.documento.getComentariosUsuarioByDocId(this.idDoc).subscribe(doc=>{
-      console.log(doc);
       this.comunicacion.setDocComentarios(doc[0]);
       this.comunicacion.setUrlFull(doc[0].archivoUrl);
       console.log(doc[0].archivoUrl);
     });
     this.documento.getAuts_Tags_Mat_ByDocId(this.idDoc).subscribe(doc=>{
-      console.log(doc);
       this.titulo = doc[0].nombre;
       //obtenerAutores
       if(doc[0].usuarios_documento != null){
         for(let i = 0; i < doc[0].usuarios_documento.length; i++){
-          this.comunicacion.setAutoresView(doc[0].usuarios_documento[i].nombre);
+          this.comunicacion.setAutoresView(doc[0].usuarios_documento[i]);
         }
       }
       //obtenerTags
@@ -45,6 +42,13 @@ export class ViewDocPanComponent implements OnInit {
       //obtenerMateria
       if(doc[0].documento_materia != null){
         this.comunicacion.setMateriaView(doc[0].documento_materia.nombre);
+      }
+    });
+    this.documento.getOtrosByDocId(this.idDoc).subscribe(data=>{
+      if(data[0].otros_documento != null){
+        for(let i = 0; i < data[0].otros_documento.length; i++){
+          this.comunicacion.setOtrosView(data[0].otros_documento[i]);
+        }
       }
     });
   }
