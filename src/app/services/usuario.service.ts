@@ -20,8 +20,14 @@ export class UsuarioService {
   public getUsuarios():Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/usuarios`);
   }
-  public getUsuarioById(id: string):Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/usuarios/${id}`);
+  public getUsuarioById(idUsr: string):Observable<any> {
+    const x = {
+      where: {
+        id: idUsr
+      }
+    };
+    const y = encodeURIComponent(JSON.stringify(x));
+    return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
   }
 //#endregion
 
@@ -53,9 +59,14 @@ public filterUsuarioByRol(rol: string):Observable<any> {
   const paramsHttp = new HttpParams().set('rol', rol);
   return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
 }
-public filterUsuarioByNombre(nombre: string):Observable<any> {
-  const paramsHttp = new HttpParams().set('nombre', nombre);
-  return this.http.get<any>(`${this.baseUrl}/usuarios`,{params: paramsHttp});
+public filterUsuarioByNombre(nom: string):Observable<any> {
+  const x = {
+    where: {
+      nombre: nom
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/usuarios/?filter=${y}`);
 }
 public getUsuarioNum(num: number):Observable<any> {
   const paramsHttp = new HttpParams().set('limit', num);
