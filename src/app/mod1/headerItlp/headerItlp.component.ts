@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'headerItlp',
@@ -13,12 +14,17 @@ export class HeaderITLPComponent implements OnInit {
   @ViewChild('docs') documentosLink:ElementRef;
   @ViewChild('usuario') usuarioLink:ElementRef;
   imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomar la foto del usuario loggeado
+  nombre:string;
   idLog:string;
 
-  constructor(private router:Router,private route:ActivatedRoute) { }
+  constructor(private router:Router,private route:ActivatedRoute, private usuario:UsuarioService) { }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
+    this.usuario.getUsuarioById(this.idLog).subscribe(data=>{
+      this.imgIcon = `../../../assets/img/userIcons/${data[0].imagen}.png`;
+      this.nombre = data[0].nombre;
+    });
   }
 
   ngOnClick(ruta: string){

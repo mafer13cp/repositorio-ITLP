@@ -1,5 +1,6 @@
 import { viewClassName } from '@angular/compiler';
 import { Component, OnInit,ViewChild,ElementRef,Output,EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'logInContainer',
@@ -12,7 +13,7 @@ export class LogInContainerComponent implements OnInit {
   contrasena:string;
   datos:Object;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -31,5 +32,6 @@ export class LogInContainerComponent implements OnInit {
   }
   ngShowRegistro(){
     //Redireccionar a la pantalla de registro.
+    this.router.navigate(['/registro']);
   }
 }
