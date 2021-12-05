@@ -50,7 +50,7 @@ const routes: Routes = [
     component:DocGenComponent
   },
   {
-    path:'editarDoc/:idLog',
+    path:'editarDoc/:idLog/:idDoc',
     component:EditarDocComponent
   },
   {
@@ -102,7 +102,7 @@ const routes: Routes = [
     component:ViewDocUsrComponent
   },
   {
-    path: 'ayuda',
+    path: 'ayuda/:idLog',
     component:AyudaComponent
   },
   {

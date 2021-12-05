@@ -75,7 +75,7 @@ export class HeaderITLPComponent implements OnInit {
 
   ngHelp() {
     console.log("Te manda a la pantalla de ayuda");
-    this.router.navigate([`/inicio/${this.idLog}`]); //Debe llevarnos a help
+    this.router.navigate([`/ayuda/${this.idLog}`]); //Debe llevarnos a help
   }
 
   ngRedirectInicio(){

@@ -74,12 +74,13 @@ export class ViewDocAutComponent implements OnInit {
   }
 
   ngClickCard(){
-    this.router.navigate([`/viewDocPan/${this.idLog}/${this.idDoc}`])
+    this.router.navigate([`/viewDocPan/${this.idLog}/${this.idDoc}`]);
   }
 
   ngOnEdit(control: any)
   {
     console.log("editar desde view autor");
+    this.router.navigate([`/editarDoc/${this.idLog}/${this.idDoc}`]);
   }
   ngOnDelete(control: any)
   {
