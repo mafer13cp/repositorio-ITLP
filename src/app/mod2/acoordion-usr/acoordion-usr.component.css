@@ -4,8 +4,14 @@
 .title {
     color: #495867;
 }
+.edit{
+    display: flex;
+    flex-direction: row;
+    color: #495867;
+}
 .list {
     color: #BDD5EA;
+    list-style: none;
 }
 .list li a {
     text-decoration: none;

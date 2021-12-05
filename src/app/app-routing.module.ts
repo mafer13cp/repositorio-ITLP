@@ -85,7 +85,7 @@ const routes: Routes = [
     component:TagGenComponent
   },
   {
-    path:'viewDocAut/:idDoc',
+    path:'viewDocAut/:idDoc/:a',
     component:ViewDocAutComponent
   },
   {
@@ -93,7 +93,7 @@ const routes: Routes = [
     component:ViewDocPanComponent
   },
   {
-    path:'viewDocUsr/:idDoc',
+    path:'viewDocUsr/:idDoc/:a',
     component:ViewDocUsrComponent
   },
   {
