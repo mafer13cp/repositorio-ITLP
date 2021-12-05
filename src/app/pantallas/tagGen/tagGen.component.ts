@@ -28,8 +28,13 @@ export class TagGenComponent implements OnInit {
   ngConsultarTags(){
     this.tag.getDocumentos().subscribe((data)=>{ //todas las materias y cada una con todos sus documentos en documentos_materia
       this.tags = data;
+      let c;
       this.tags.forEach(t => {
-        this.datos.push({id:t.id, name:t.nombre, count:t.documentos_tag.length});
+        if(t.documentos_tag == null)
+          c = 0;
+        else
+          c = t.documentos_tag.length;
+        this.datos.push({id:t.id, name:t.nombre, count:c + " documento(s)"});
       });
     });
   }

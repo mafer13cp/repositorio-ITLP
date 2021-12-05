@@ -4,16 +4,16 @@
     <div class="docContent">
         <div class="docInfo">
             <div class="edit">
-                <h2>Título del documento</h2>
+                <h2>{{titulo}}</h2>
                 <i class="material-icons" (click)=ngOnEdit($event)>edit</i>
             </div>
-            <cardDoc></cardDoc>
+            <cardDoc [docName]=titulo [id]=idDoc (click)="ngClickCard()"></cardDoc>
             <i id="cancel" class="material-icons" (click)=ngOnDelete($event)>cancel</i>
             <div class="edit">
                 <h3>Resúmen</h3>
                 <i class="material-icons" (click)=ngOnEdit($event)>edit</i>
             </div>
-            <p class="resumenDoc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore velit inventore asperiores vel est voluptatum recusandae quam ab voluptates, soluta qui quo similique totam rem facilis praesentium nihil id non?</p>
+            <p class="resumenDoc">{{descripcion}}</p>
         </div>
         <commentSection></commentSection>
     </div>

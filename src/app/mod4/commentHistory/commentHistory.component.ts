@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angular/core';
+import { ComentarioUsuario } from 'src/app/interfaces/comentarioUsuario';
 import { ComentShow } from 'src/app/interfaces/comentShow';
 import { DocumentoComentarioUsuario } from 'src/app/interfaces/documentoComentarioUsuario';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
@@ -22,11 +23,14 @@ export class CommentHistoryComponent implements OnInit {
   }];
 
   docComentarios:DocumentoComentarioUsuario;
+  comentariosUsuario:ComentarioUsuario[]=[];
   constructor(private comunicacion:ComunicacionService) { }
 
   ngOnInit(): void {
     this.comunicacion.getDocComentarios$().subscribe(docComen=>{
       this.docComentarios = docComen;
+      if(this.docComentarios.comentarios_documento != null)
+        this.comentariosUsuario = this.docComentarios.comentarios_documento;
     });
   }
   ngThrowParam(text:string){

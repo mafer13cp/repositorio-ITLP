@@ -32,6 +32,8 @@ export class ComunicacionService {
   private tagsView$:Subject<string[]>;
   private docComentarios:DocumentoComentarioUsuario;
   private docComentarios$:Subject<DocumentoComentarioUsuario>;
+  private urlDocFull:string;
+  private urlDocFull$:Subject<string>;
 
   constructor() { 
     this.documentoGrid = [];
@@ -48,6 +50,7 @@ export class ComunicacionService {
     this.materiaView$ = new Subject();
     this.tagsView$ = new Subject();
     this.docComentarios$ = new Subject();
+    this.urlDocFull$ = new Subject();
   }
 
   addDocumentoUsr(documento:DocumentoAutorUsuario){
@@ -65,11 +68,11 @@ export class ComunicacionService {
     this.documentoGrid$.next(this.documentoGrid);
   }
 
-  addDocumentoUsr2(documento:Documento, usuarios:Usuario[],usuario:Usuario){
+  addDocumentoUsr2(documento:Documento,usuario:Usuario){
     this.docShowTemp = {
       idDoc:documento.id,
       nombreDoc:documento.nombre,
-      usuarios:usuarios,
+      usuarios:[],
       usuarioPrincipal:usuario, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
@@ -105,6 +108,7 @@ export class ComunicacionService {
 
   setDocsEmpty(){
     this.documentoGrid = [];
+    this.documentoGrid$.next(this.documentoGrid);
   }
 
   setUsuarioPerfil(usuario:UsuarioRol){
@@ -174,6 +178,14 @@ export class ComunicacionService {
     return this.tagsView$.asObservable();
   }
 
+  setTagMatAutViewEmpty(){
+    this.tagsView = [];
+    this.autoresView = [];
+    this.materiaView = "";
+    this.materiaView$.next(this.materiaView);
+    this.autoresView$.next(this.autoresView);
+    this.tagsView$.next(this.tagsView);
+  }
   setDocComentarios(docCom:DocumentoComentarioUsuario){
     this.docComentarios = docCom;
     this.docComentarios$.next(this.docComentarios);
@@ -181,5 +193,14 @@ export class ComunicacionService {
 
   getDocComentarios$():Observable<DocumentoComentarioUsuario>{
     return this.docComentarios$.asObservable();
+  }
+
+  setUrlFull(url:string){
+    this.urlDocFull = url;
+    this.urlDocFull$.next(this.urlDocFull);
+  }
+
+  getUrlFull$():Observable<string>{
+    return this.urlDocFull$.asObservable();
   }
 }

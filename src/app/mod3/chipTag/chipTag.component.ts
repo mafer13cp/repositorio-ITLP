@@ -41,6 +41,7 @@ export class ChipTagComponent{
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
+    console.log(value);
 
     // Add our fruit
     if (value) {

@@ -28,8 +28,13 @@ export class MatGenComponent implements OnInit {
   ngConsultarMaterias(){
     this.materia.getDocumentos().subscribe((data)=>{ //todas las materias y cada una con todos sus documentos en documentos_materia
       this.materias = data;
+      let c;
       this.materias.forEach(mat => {
-        this.datos.push({id:mat.id, name:mat.nombre, count:mat.documentos_materia.length});
+        if(mat.documentos_materia == null)
+          c = 0;
+        else
+          c = mat.documentos_materia.length;
+        this.datos.push({id:mat.id, name:mat.nombre, count:c + " documento(s)"});
       });
     });
   }

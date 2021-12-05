@@ -63,29 +63,13 @@ export class ResBusquedaComponent implements OnInit {
     }
     else if(filtro == "SFText"){
       this.comunicacion.setDocsEmpty();
-        this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
+        this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
           if(data.length == 0)
-            this.openSnackBar("ERROR: No se encontró coincidencia","OK");
+            this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
           else{
-            let docs = this.comunicacion.getDocumentoUsrNormal();
-            let coincidencias = false;
-            data.forEach(tag => {
-              if(tag.documentos_tag != null){
-                tag.documentos_tag.forEach(docUsr => {
-                  coincidencias = true;
-                  if(docs.length == 0)
-                    this.comunicacion.addDocumentoUsr(docUsr);
-                  else{
-                    docs.forEach(doc => {
-                      if(doc.idDoc != docUsr.id)
-                        this.comunicacion.addDocumentoUsr(docUsr);
-                    });
-                  }
-                });
-              }
+            data.forEach(docUsr => {
+              this.comunicacion.addDocumentoUsr(docUsr);
             });
-            if(!coincidencias)
-              this.openSnackBar("No hay documentos asociados al tag especificado","OK");
           }
         });
     }
@@ -117,85 +101,16 @@ export class ResBusquedaComponent implements OnInit {
 
   ngRecibirFiltro(filtro:string){
     this.filtro = filtro;
-    if(filtro == "Documentos"){
-      this.comunicacion.setDocsEmpty();
-        this.documento.getUsuariosNomDoc("").subscribe((data)=>{
-          if(data.length == 0)
-            this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
-          else{
-            data.forEach(docUsr => {
-              this.comunicacion.addDocumentoUsr(docUsr);
-            });
-          }
+    this.comunicacion.setDocsEmpty();
+    this.documento.getUsuariosNomDoc("").subscribe((data)=>{
+      if(data.length == 0)
+        this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
+      else{
+        data.forEach(docUsr => {
+        this.comunicacion.addDocumentoUsr(docUsr);
         });
-    }
-    else if(filtro == "Autores"){
-      this.comunicacion.setDocsEmpty();
-        this.usuario.getDocsUsrByUsrNombre("").subscribe((data)=>{
-          if(data.length == 0)
-            this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
-          else{
-            data.forEach(usr => {
-              if(usr.documentos_usuario != null){
-                usr.documentos_usuario.forEach(doc => {
-                  let docs = this.comunicacion.getDocumentoUsrNormal();
-                    if(docs.length == 0)
-                      this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,fk_carrera:usr.fk_carrera});
-                    else{
-                      docs.forEach(d => {
-                        if(d.idDoc != doc.id){
-                          this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,
-                            contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,
-                            fk_carrera:usr.fk_carrera});
-                        }
-                      });
-                    }
-                });
-              }
-            });
-          }
-        });
-    }
-    else if(filtro == "Materias"){
-      this.comunicacion.setDocsEmpty();
-      this.materia.getDocsUsrByMatNombre("").subscribe((data)=>{
-        if(data.length == 0)
-          this.openSnackBar("ERROR: No hay ningún documento asociado a materias","OK");
-        else{
-          data.forEach(materia => {
-            if(materia.documentos_materia != null){
-              materia.documentos_materia.forEach(docUsr => {
-                this.comunicacion.addDocumentoUsr(docUsr);
-              });
-            }
-          });
-        }
-      });
-    }
-    else if(filtro == "Etiquetas"){
-      this.comunicacion.setDocsEmpty();
-        this.tag.getDocsUsrByTagNombre("").subscribe((data)=>{
-          if(data.length == 0)
-            this.openSnackBar("ERROR: No hay ningún documento asociado a un tag","OK");
-          else{
-            let docs = this.comunicacion.getDocumentoUsrNormal();
-            data.forEach(tag => {
-              if(tag.documentos_tag != null){
-                tag.documentos_tag.forEach(docUsr => {
-                  if(docs.length == 0)
-                    this.comunicacion.addDocumentoUsr(docUsr);
-                  else{
-                    docs.forEach(doc => {
-                      if(doc.idDoc != docUsr.id)
-                        this.comunicacion.addDocumentoUsr(docUsr);
-                    });
-                  }
-                });
-              }
-            });
-          }
-        });
-    }
+      }
+    });
   }
 
   async ngRecibirTexto(texto:string){
@@ -204,7 +119,17 @@ export class ResBusquedaComponent implements OnInit {
       this.openSnackBar("ERROR: Debe elegir un filtro","OK");
     }
     else if(texto == null || texto == ""){
-      this.openSnackBar("ERROR: Se debe ingresar una algún texto para filtrar","OK");
+      this.comunicacion.setDocsEmpty();
+        this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
+          console.log(data);
+          if(data.length == 0)
+            this.openSnackBar("ERROR: No se encontró coincidencia","OK");
+          else{
+            data.forEach(docUsr => {
+              this.comunicacion.addDocumentoUsr(docUsr);
+            });
+          }
+        });
     }
     else{
       if(this.filtro == "Documentos"){
@@ -226,21 +151,37 @@ export class ResBusquedaComponent implements OnInit {
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
-            data.forEach(usr => {
-              if(usr.documentos_usuario!=null){
-                usr.documentos_usuario.forEach(doc => {
-                  let docs = this.comunicacion.getDocumentoUsrNormal();
-                    if(docs.length == 0)
-                      this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,fk_carrera:usr.fk_carrera});
-                    else{
-                      docs.forEach(d => {
-                        if(d.idDoc != doc.id){
-                          this.comunicacion.addDocumentoUsr2(doc,data,{id:usr.id,nombre:usr.nombre,correo:usr.correo,
-                            contrasena:"",descripcion:usr.descripcion,imagen:usr.imagen,fk_rol:usr.fkrol,
-                            fk_carrera:usr.fk_carrera});
-                          }
-                      });
+            console.log(data);
+            let docExistentes:number[] = [];
+            data.forEach(usuario => {
+              if(usuario.documentos_usuario != null){
+                usuario.documentos_usuario.forEach(doc => {
+                  if(docExistentes.length == 0){
+                    this.comunicacion.addDocumentoUsr2(doc,{id:usuario.id,nombre:usuario.nombre,correo:usuario.correo,contrasena:usuario.contrasena,imagen:usuario.imagen,descripcion:usuario.descripcion,fk_carrera:usuario.fk_carrera,fk_rol:usuario.fk_rol});
+                    
+                    docExistentes.push(doc.id)
+                    console.log(docExistentes);
+                  }
+                  else{
+                    console.log("else");
+                    let existe = 0;
+                    for(let i = 0; i < docExistentes.length; i++){
+                      console.log(doc.id);
+                      if(doc.id == docExistentes[i]){
+                        existe = 1;
+                        console.log("ID DOCUMENTO");
+                        console.log(doc.id);
+                        console.log("ID EN EL ARREGLO");
+                        console.log(docExistentes[i]);
+                      }
                     }
+                    console.log(existe);
+                    if(existe == 0){
+                      this.comunicacion.addDocumentoUsr2(doc,{id:usuario.id,nombre:usuario.nombre,correo:usuario.correo,contrasena:usuario.contrasena,imagen:usuario.imagen,descripcion:usuario.descripcion,fk_carrera:usuario.fk_carrera,fk_rol:usuario.fk_rol});
+                      docExistentes.push(doc.id);
+                    }
+                  }
+
                 });
               }
             });
@@ -253,9 +194,24 @@ export class ResBusquedaComponent implements OnInit {
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
+            let docExistentes:number[] =[];
             data.forEach(materia => {
               materia.documentos_materia.forEach(docUsr => {
-                this.comunicacion.addDocumentoUsr(docUsr);
+                if(docExistentes.length == 0){
+                  this.comunicacion.addDocumentoUsr(docUsr);
+                  docExistentes.push(docUsr.id);
+                }
+                else{
+                  let existe = 0;
+                  for(let i = 0; i < docExistentes.length; i++){
+                    if(docExistentes[i]==docUsr.id)
+                      existe=1;
+                  }
+                  if(existe == 0){
+                    this.comunicacion.addDocumentoUsr(docUsr);
+                    docExistentes.push(docUsr.id);
+                  }
+                }
               });
             });
           }
@@ -264,20 +220,29 @@ export class ResBusquedaComponent implements OnInit {
       else if(this.filtro == "Etiquetas"){
         this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
+          console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
-            let docs = this.comunicacion.getDocumentoUsrNormal();
+            let docExistentes:number[] = [];
             data.forEach(tag => {
               if(tag.documentos_tag != null){
                 tag.documentos_tag.forEach(docUsr => {
-                  if(docs.length == 0)
+                  if(docExistentes.length == 0){
                     this.comunicacion.addDocumentoUsr(docUsr);
+                    docExistentes.push(docUsr.id)
+                  }
                   else{
-                    docs.forEach(doc => {
-                      if(doc.idDoc != docUsr.id)
-                        this.comunicacion.addDocumentoUsr(docUsr);
-                    });
+                    let existe = 0;
+                    for(let i = 0; i < docExistentes.length; i++){
+                      if(docUsr.id == docExistentes[i]){
+                        existe = 1;
+                      }
+                    }
+                    if(existe == 0){
+                      this.comunicacion.addDocumentoUsr(docUsr);
+                      docExistentes.push(docUsr.id);
+                    }
                   }
                 });
               }
