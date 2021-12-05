@@ -8,11 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardDocComponent implements OnInit {
 
   @Input () docName: string = "title";
-
+  
   constructor() { 
   }
 
   ngOnInit(): void {
   }
 
+  ngShowDonPan(){
+
+  }
 }

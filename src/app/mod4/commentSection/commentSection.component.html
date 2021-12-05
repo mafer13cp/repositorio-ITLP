@@ -1,6 +1,6 @@
 <div id="commentSection">
     <h2>Comentarios</h2>
     <divider [color]="'light'"></divider>
-    <inputLine [desc]="'Agregar comentario'"></inputLine>
+    <inputLine [desc]="'Agregar comentario'" (ComEvent)="ngRealizarComentario($event)"></inputLine>
     <commentHistory class="comHistory" (UserEvent)="ngThrowParam($event)"></commentHistory>
 </div>

@@ -30,7 +30,6 @@ export class DocumentoService {
     const headers = {'content-type': 'application/json'};
     let x = {nombre:doc.nombre, descripcion:doc.descripcion, archivoUrl:doc.archivoUrl,fecha:doc.fecha, fk_materia:doc.fk_materia};
     const body = JSON.stringify(x);
-    console.log(body);
     return this.http.post(`${this.baseUrl}/documentos`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion
@@ -98,6 +97,35 @@ public getComentarios():Observable<any>{ //entre [] va la relación de lb4 parec
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["comentarios_documento"]}`);
 }
 
+public getComentariosByDocId(idDoc:number):Observable<any>{ 
+  const x = {
+    where: {
+      id:idDoc
+    },
+    include:['comentarios_documento']
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
+}
+
+public getComentariosUsuarioByDocId(idDoc:number):Observable<any>{ 
+  const x = {
+    where: {
+      id:idDoc
+    },
+    include: [
+      {
+        relation: 'comentarios_documento',
+        scope: {
+          include: [{relation: 'comentario_usuario'}],
+        }
+      }
+    ]
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
+}
+
 public getUsuariosComentarios():Observable<any>{
   const x = {
     include: [
@@ -157,6 +185,17 @@ public getUsuarioRatings():Observable<any>{
 
 public getTags():Observable<any>{ //entre [] va la relación de lb4 parece.
   return this.http.get<any>(`${this.baseUrl}/documentos/?filter={"include":["tags_documento"]}`);
+}
+
+public getAuts_Tags_Mat_ByDocId(idDoc:number):Observable<any>{
+  const x = {
+    where: {
+      id:idDoc
+    },
+    include:['usuarios_documento','tags_documento','documento_materia']
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/documentos/?filter=${y}`);
 }
 //#enderegion
 }

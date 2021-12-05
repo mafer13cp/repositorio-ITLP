@@ -1,23 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/interfaces/usuario';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { DocumentoService } from 'src/app/services/documento.service';
 
 @Component({
   selector: 'inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css','../../app.component.css']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent implements OnInit{
   user:UsuarioAutorDocumento[];
 
-  constructor(private usuario:UsuarioService) { }
+  constructor(private documento:DocumentoService,private comunicacion:ComunicacionService,readonly snackBar: MatSnackBar,
+    private router:Router) { }
 
   ngOnInit(): void {
-    const timeElapsed = Date.now();
-const today = new Date(timeElapsed);
-today.toLocaleDateString();
-console.log(today);
+    this.comunicacion.setDocsEmpty();
+        this.documento.getUsuariosNomDoc("").subscribe((data)=>{
+          if(data.length == 0)
+            this.openSnackBar("ERROR: No hay ningún documento en el sistema","OK");
+          else{
+            for(let i = 0; i < data.length; i++){
+              this.comunicacion.addDocumentoUsr(data[i]);
+              if(i>20)
+                break;
+            }
+          }
+        });
     /*
     // PARA EJECUTAR UNA CONSULTA.
     this.prueba1().then((data)=>{
@@ -36,19 +47,33 @@ console.log(today);
 
   }
 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
+  }
+
   ngClickSF(text:string){
     //redireccionar a resBusqueda y mandar parámetro ingresado
-    console.log("Desde inicio");
-    console.log(text);
+    if(text != null && text != "")
+      this.router.navigate([`/resBusqueda/${"SFText"}/${text}`]);
+    else
+      this.router.navigate([`/resBusqueda/${"SFText"}/${"_"}`]);
   }
-  ngClickAcc(text: string)
+  ngClickAcc(text: any)
   {
-    console.log("desde inicio: " + text);
+    if(text[1]=="Tag"){
+      
+      this.router.navigate([`/resBusqueda/${"Tag"}/${text[0]}`]);
+    }
+    else if(text[1]=="Materia"){
+      this.router.navigate([`/resBusqueda/${"Materia"}/${text[0]}`]);
+    }
   }
 
   ngSubir(){
     //Redireccionar a página para subir documento
-    console.log("Botón de subir");
+    this.router.navigate(['/subirDoc']);
   }
 /*
   prueba1(){

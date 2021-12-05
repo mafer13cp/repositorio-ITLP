@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DocumentoAutorUsuario } from 'src/app/interfaces/documentoAutorUsuario';
 import { DocumentoService } from 'src/app/services/documento.service';
 
@@ -12,14 +13,17 @@ export class DocGenComponent implements OnInit {
   documentos:DocumentoAutorUsuario[];
   count:number;
 
-  constructor(private documento:DocumentoService) { }
+  constructor(private documento:DocumentoService,private router:Router) { }
 
   ngOnInit(): void {
     this.ngConsultarDocs();
   }
 
-  ngClickSearchBar(texto:string){
-    //Aqui debe ir a resBusqueda y buscar con el filtro TAG usando el texto.
+  ngClickSearchBar(text:string){
+    if(text != null && text != "")
+      this.router.navigate([`/resBusqueda/${"SFText"}/${text}`]);
+    else
+      this.router.navigate([`/resBusqueda/${"SFText"}/${"_"}`]);
   }
 
   ngConsultarDocs(){

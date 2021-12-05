@@ -25,9 +25,9 @@ export class AutorService {
 //#endregion
 
 //#region POST
-  public postAutor(autor: Autor):Observable<any> {
+  public postAutor(usrID:string,docID:number):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(autor);
+    const body = JSON.stringify({fk_usuario:usrID,fk_documento:docID});
     return this.http.post(`${this.baseUrl}/autores`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion

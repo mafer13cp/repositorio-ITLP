@@ -25,9 +25,9 @@ export class OtrosService {
 //#endregion
 
 //#region POST
-  public postOtro(otro: Otro):Observable<any> {
+  public postOtro(nom:string,doc:number):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(otro);
+    const body = JSON.stringify({nombre:nom,fk_documento:doc});
     return this.http.post(`${this.baseUrl}/otros`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion

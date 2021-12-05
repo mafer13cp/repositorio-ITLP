@@ -6,7 +6,7 @@ import { Usuario } from '../interfaces/usuario';
 })
 export class UsuarioLogService {
   private loggeado:boolean;
-  private usuarioLoggeado:Usuario = {id:"0",nombre:"DEFAULT",correo:"DEFAULT@DEFAULT.com",descripcion:"DEFAULT",contrasena:"DEFAULT",imagen:0,fk_rol:1,fk_carrera:"default"};
+  private usuarioLoggeado:Usuario = {id:"17310710",nombre:"DEFAULT",correo:"DEFAULT@DEFAULT.com",descripcion:"DEFAULT",contrasena:"DEFAULT",imagen:0,fk_rol:1,fk_carrera:"default"};
   
 
 
@@ -24,9 +24,6 @@ export class UsuarioLogService {
 
   setUsuarioLoggeado(usr:Usuario){
     this.usuarioLoggeado = usr;
-    console.log("LOGGEADO");
-    console.log(usr);
-    console.log(this.usuarioLoggeado);
   }
 
   getUsuarioLoggeado():Usuario{

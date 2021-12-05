@@ -3,6 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { DocShow } from '../interfaces/docShow';
 import { Documento } from '../interfaces/documento';
 import { DocumentoAutorUsuario } from '../interfaces/documentoAutorUsuario';
+import { DocumentoComentarioUsuario } from '../interfaces/documentoComentarioUsuario';
 import { Materia } from '../interfaces/materia';
 import { Tag } from '../interfaces/tag';
 import { Usuario } from '../interfaces/usuario';
@@ -21,6 +22,16 @@ export class ComunicacionService {
   private materias$:Subject<string[]>;
   private tags:string[];
   private tags$:Subject<string[]>;
+  private esView:boolean = false; //No está en un viewAut o viewUsr
+  private esView$:Subject<boolean>;
+  private autoresView:string[];
+  private materiaView:string;
+  private tagsView:string[];
+  private autoresView$:Subject<string[]>;
+  private materiaView$:Subject<string>;
+  private tagsView$:Subject<string[]>;
+  private docComentarios:DocumentoComentarioUsuario;
+  private docComentarios$:Subject<DocumentoComentarioUsuario>;
 
   constructor() { 
     this.documentoGrid = [];
@@ -30,6 +41,13 @@ export class ComunicacionService {
     this.materias = [];
     this.tags$ = new Subject();
     this.tags = [];
+    this.esView$ = new Subject();
+    this.autoresView = [];
+    this.tagsView = [];
+    this.autoresView$ = new Subject();
+    this.materiaView$ = new Subject();
+    this.tagsView$ = new Subject();
+    this.docComentarios$ = new Subject();
   }
 
   addDocumentoUsr(documento:DocumentoAutorUsuario){
@@ -47,12 +65,12 @@ export class ComunicacionService {
     this.documentoGrid$.next(this.documentoGrid);
   }
 
-  addDocumentoUsr2(documento:Documento, usuarios:Usuario[]){
+  addDocumentoUsr2(documento:Documento, usuarios:Usuario[],usuario:Usuario){
     this.docShowTemp = {
       idDoc:documento.id,
       nombreDoc:documento.nombre,
       usuarios:usuarios,
-      usuarioPrincipal:usuarios[0], //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
+      usuarioPrincipal:usuario, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
       tags:null,
@@ -79,6 +97,10 @@ export class ComunicacionService {
 
   getDocumentoUsr$():Observable<DocShow[]>{
     return this.documentoGrid$.asObservable();
+  }
+
+  getDocumentoUsrNormal():DocShow[]{
+    return this.documentoGrid;
   }
 
   setDocsEmpty(){
@@ -114,5 +136,50 @@ export class ComunicacionService {
 
   getTags():Observable<string[]>{
     return this.tags$.asObservable();
+  }
+
+  setEsView(valor:boolean){
+    this.esView = valor;
+    this.esView$.next(this.esView);
+  }
+
+  getEsView$():Observable<boolean>{
+    return this.esView$.asObservable();
+  }
+
+  setMateriaView(materia:string){
+    this.materiaView = materia;
+    this.materiaView$.next(this.materiaView);
+  }
+
+  getMateriaView$():Observable<string>{
+    return this.materiaView$.asObservable();
+  }
+
+  setAutoresView(autor:string){
+    this.autoresView.push(autor);
+    this.autoresView$.next(this.autoresView);
+  }
+
+  getAutoresView$():Observable<string[]>{
+    return this.autoresView$.asObservable();
+  }
+
+  setTagsView(tag:string){
+    this.tagsView.push(tag);
+    this.tagsView$.next(this.tagsView);
+  }
+
+  getTagsView$():Observable<string[]>{
+    return this.tagsView$.asObservable();
+  }
+
+  setDocComentarios(docCom:DocumentoComentarioUsuario){
+    this.docComentarios = docCom;
+    this.docComentarios$.next(this.docComentarios);
+  }
+
+  getDocComentarios$():Observable<DocumentoComentarioUsuario>{
+    return this.docComentarios$.asObservable();
   }
 }
