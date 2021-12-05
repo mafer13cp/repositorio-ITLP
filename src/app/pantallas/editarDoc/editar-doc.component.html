@@ -9,17 +9,11 @@
                 <label id="lblAutor">Materia</label>
                 <myAutocomp (MAEvent)="ngRecibirMateria($event)"></myAutocomp>
             </div>
-            <div class="inputTSp">
-                <div class="btnc1"><label id="lblAutor">Autor(es)</label><chipautor (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
-            </div>
         </div>
     </div>
     <div class="cuerpo2">
         <div class="desc">
             <largeInputText (LITEvent)="ngRecibirDescripcion($event)"></largeInputText>
-        </div>
-        <div class="select">
-            <selectDropDown (SDDEvent)="ngRecibirTags($event)" [tags]=tags></selectDropDown>
         </div>
     </div>
     <div class="cuerpo3">

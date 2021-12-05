@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentoAutorUsuario } from 'src/app/interfaces/documentoAutorUsuario';
 import { DocumentoService } from 'src/app/services/documento.service';
 
@@ -12,18 +12,20 @@ export class DocGenComponent implements OnInit {
   datos:any[]=[];
   documentos:DocumentoAutorUsuario[];
   count:number;
+  idLog:string;
 
-  constructor(private documento:DocumentoService,private router:Router) { }
+  constructor(private documento:DocumentoService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.ngConsultarDocs();
   }
 
   ngClickSearchBar(text:string){
     if(text != null && text != "")
-      this.router.navigate([`/resBusqueda/${"SFText"}/${text}`]);
+      this.router.navigate([`/resBusqueda/${this.idLog}/${"SFText"}/${text}`]);
     else
-      this.router.navigate([`/resBusqueda/${"SFText"}/${"_"}`]);
+      this.router.navigate([`/resBusqueda/${this.idLog}/${"SFText"}/${"_"}`]);
   }
 
   ngConsultarDocs(){

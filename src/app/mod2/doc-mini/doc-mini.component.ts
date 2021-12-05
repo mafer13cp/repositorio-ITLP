@@ -13,12 +13,14 @@ export class DocMiniComponent implements OnInit {
   @Input() docTitle: string = "title";
   @Input() autorName: string = "name";
   @Input() idDoc:number = 0;
+  idLog:string;
 
   constructor(private documento:DocumentoService,private router:Router,
-    private comunicacion:ComunicacionService) { 
+    private comunicacion:ComunicacionService,private route:ActivatedRoute) { 
   }
 
   ngOnInit(): void { 
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
   }
 
   ngShowDoc(){
@@ -29,17 +31,17 @@ export class DocMiniComponent implements OnInit {
         for(let i = 0; i < data.length; i++){
           if(data[i].usuarios_documento != null){
             for(let j = 0; j < data[i].usuarios_documento.length; j++){
-              if(data[i].usuarios_documento[j].nombre =="Alfonso Rochín Gómez" && data[i].id == this.idDoc){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
+              if(data[i].usuarios_documento[j].id == this.idLog && data[i].id == this.idDoc){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
                 esAutor = true;
               }
             }
           }
         }
         if(esAutor){ 
-          this.router.navigate([`/viewDocAut/${this.idDoc}/${'a'}`]);//Definir ruta en donde reciban id del documento y el nombre del autor.
+          this.router.navigate([`/viewDocAut/${this.idLog}/${this.idDoc}/${'a'}`]);//Definir ruta en donde reciban id del documento y el nombre del autor.
         }
         else{
-          this.router.navigate([`/viewDocUsr/${this.idDoc}/${'u'}`]);//Definir ruta en donde reciban id del documento.
+          this.router.navigate([`/viewDocUsr/${this.idLog}/${this.idDoc}/${'u'}`]);//Definir ruta en donde reciban id del documento.
         }
       }
     });

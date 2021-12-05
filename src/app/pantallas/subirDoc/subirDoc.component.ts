@@ -1,6 +1,7 @@
 import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { Materia } from 'src/app/interfaces/materia';
 import { Tag } from 'src/app/interfaces/tag';
 import { Usuario } from 'src/app/interfaces/usuario';
@@ -12,7 +13,6 @@ import { MateriaService } from 'src/app/services/materia.service';
 import { OtrosService } from 'src/app/services/otro.service';
 import { TagDocService } from 'src/app/services/tag-doc.service';
 import { TagService } from 'src/app/services/tag.service';
-import { UsuarioLogService } from 'src/app/services/usuario-log.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -39,13 +39,15 @@ export class SubirDocComponent implements OnInit {
   otherTagN:string[]=[];
   matID:string;
   date:string;
+  idLog:string;
 
   constructor(readonly snackBar: MatSnackBar,private materia:MateriaService, private comunicacion:ComunicacionService,
-    private tag:TagService, private usuario:UsuarioService, private usuarioLog:UsuarioLogService,
+    private tag:TagService, private usuario:UsuarioService,
     private docServ:DocumentoService,private tagDocServ:TagDocService,private tagServ:TagService,
-    private autorServ:AutorService,private otrosServ:OtrosService, private fireServ:FirebaseService) { }
+    private autorServ:AutorService,private otrosServ:OtrosService, private fireServ:FirebaseService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.date = new Date(Date.now()).toLocaleDateString().toString();
     this.materia.getMats().subscribe((data)=>{
       this.materiasO = data;
@@ -62,9 +64,9 @@ export class SubirDocComponent implements OnInit {
     });
     this.usuario.getUsuarios().subscribe((data)=>{
       this.autoresO = data;
-      this.usuarioL = this.usuarioLog.getUsuarioLoggeado();
+      //this.usuarioL = this.usuarioLog.getUsuarioLoggeado();
       data.forEach(a => {
-        if(a.nombre != this.usuarioL.nombre)
+        if(a.id != this.idLog)
           this.autores.push(a.nombre);
       });
     });
@@ -152,7 +154,8 @@ export class SubirDocComponent implements OnInit {
       this.otherTagN = [];
       this.tagsID = [];
 
-      this.usrsID.push(this.usuarioLog.getUsuarioLoggeado().id);
+      //this.usrsID.push(this.usuarioLog.getUsuarioLoggeado().id);
+      this.usrsID.push(this.idLog);
       console.log(this.usrsID);
       console.log(this.coleccion);
       //Obtención de autores registrados en el sistema y de autores no registrados en el sistema.

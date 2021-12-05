@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'headerItlp',
@@ -13,10 +13,12 @@ export class HeaderITLPComponent implements OnInit {
   @ViewChild('docs') documentosLink:ElementRef;
   @ViewChild('usuario') usuarioLink:ElementRef;
   imgIcon: string = "../../../assets/img/userIcons/0.png"; //Debe tomar la foto del usuario loggeado
+  idLog:string;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
   }
 
   ngOnClick(ruta: string){
@@ -26,25 +28,25 @@ export class HeaderITLPComponent implements OnInit {
         //Redireccionar a materias
         this.headerEvent.emit(ruta);
         console.log("Te manda a ver las materias ehe");
-        this.router.navigate([`/matGen`]);
+        this.router.navigate([`/matGen/${this.idLog}`]);
         break;
       case 'tags':
         //Redireccionar a tags
         this.headerEvent.emit(ruta);
         console.log("Te manda a ver las tags ehe");
-        this.router.navigate([`/tagGen`]);
+        this.router.navigate([`/tagGen/${this.idLog}`]);
         break;
       case 'docs':
         //Redireccionar a documentos
         this.headerEvent.emit(ruta);
         console.log("Te manda a ver los documentos ehe");
-        this.router.navigate([`/docGen`]);
+        this.router.navigate([`/docGen/${this.idLog}`]);
           break;
       case 'usuario':
         //Redireccionar a perfil de usuario
         this.headerEvent.emit(ruta);
         console.log("Te manda a tu perfil de usuario ehe");
-        this.router.navigate([`/perfilUsr/${"17310710"}`]); //obtener el id del loggeado.
+        this.router.navigate([`/perfilUsr/${this.idLog}`]); //obtener el id del loggeado.
           break;
       default:
         break;
@@ -53,7 +55,7 @@ export class HeaderITLPComponent implements OnInit {
 
   ngEdit() {
     console.log("Te manda a la pantalla de editar usuario");
-    this.router.navigate([`/editarUsuario/${"17310710"}`]);
+    this.router.navigate([`/editarUsuario/${this.idLog}`]);
   }
 
   ngLogOut() {
@@ -63,11 +65,11 @@ export class HeaderITLPComponent implements OnInit {
 
   ngHelp() {
     console.log("Te manda a la pantalla de ayuda");
-    this.router.navigate([`/inicio`]); //Debe llevarnos a help
+    this.router.navigate([`/inicio/${this.idLog}`]); //Debe llevarnos a help
   }
 
   ngRedirectInicio(){
-    this.router.navigate([`/inicio`]);
+    this.router.navigate([`/inicio/${this.idLog}`]);
   }
 
 }

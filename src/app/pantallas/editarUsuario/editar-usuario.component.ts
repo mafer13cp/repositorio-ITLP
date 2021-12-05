@@ -16,7 +16,7 @@ export class EditarUsuarioComponent implements OnInit {
   constructor(readonly snackBar: MatSnackBar,private route:ActivatedRoute,private usr:UsuarioService) { }
 
   ngOnInit(): void {
-    let idUsr = this.route.snapshot.paramMap.get('idUsr');
+    let idUsr = this.route.snapshot.paramMap.get('idLog');
     this.usr.getUsuarioById(idUsr).subscribe(data => {
       this.usuario = data[0];
     })
