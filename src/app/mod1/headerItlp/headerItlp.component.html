@@ -15,8 +15,8 @@
                 <label class="editUser" (click)="ngEdit()">Editar usuario <i class="material-icons">edit</i></label>
                 <label class="logOut" (click)="ngLogOut()">Cerrar sesión <i class="material-icons" >logout</i></label>
                 <label class="help" (click)="ngHelp()">Necesito ayuda <i class="material-icons" >contact_support</i></label>
-                <label *ngIf="admin"  (click)="ngBusAdmin()">Eliminar elementos<i class="material-icons" >settings</i></label>
-                <label *ngIf="admin"  (click)="ngAddAdmin()">Añadir elementos<i class="material-icons" >settings</i></label>
+                <label *ngIf="admin" class="admin" (click)="ngBusAdmin()">Eliminar <i class="material-icons" >settings</i></label>
+                <label *ngIf="admin" class="admin" (click)="ngAddAdmin()">Añadir <i class="material-icons" >settings</i></label>
             </div>
         </div>
         
