@@ -27,7 +27,7 @@ export class RatingService {
 //#region POST
   public postRating(rating: Rating):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(rating);
+    const body = JSON.stringify({calificacion:rating.calificacion,fk_documento:rating.fk_documento,fk_usuario:rating.fk_usuario});
     return this.http.post(`${this.baseUrl}/ratings`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion
@@ -35,7 +35,7 @@ export class RatingService {
 //#region PUT 
   public putRating(rating: Rating):Observable<any> {
     const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(rating);
+    const body = JSON.stringify({calificacion:rating.calificacion,fk_documento:rating.fk_documento,fk_usuario:rating.fk_usuario});
     return this.http.put(`${this.baseUrl}/ratings/${rating.id}`,body, {'headers': headers, observe: 'response'});
   }
 //#endregion
@@ -52,11 +52,11 @@ public filterRatingByUsuario(usuario: string):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_usuario', usuario);
   return this.http.get<any>(`${this.baseUrl}/ratings`,{params: paramsHttp});
 }
-public filterRatingByDoc(doc: string):Observable<any> {
+public filterRatingByDoc(doc: number):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_documento', doc);
   return this.http.get<any>(`${this.baseUrl}/ratings`,{params: paramsHttp});
 }
-public getDocRating(doc: string):number {
+public getDocRating(doc: number):number {
   const ratingList = this.filterRatingByDoc(doc);
   let sum = 0;
   let i = 0;
