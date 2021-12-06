@@ -16,6 +16,7 @@ export class ViewDocAutComponent implements OnInit {
   titulo:string;
   descripcion:string;
   idDoc:number;
+  imgDoc:string;
   idLog:string;
 
   constructor(public dialog: MatDialog,private router:Router, private route:ActivatedRoute,
@@ -35,6 +36,7 @@ export class ViewDocAutComponent implements OnInit {
     this.documento.getAuts_Tags_Mat_ByDocId(this.idDoc).subscribe(doc=>{
       this.titulo = doc[0].nombre;
       this.descripcion = doc[0].descripcion;
+      this.imgDoc = doc[0].imgUrl;
       //obtenerAutores
       if(doc[0].usuarios_documento != null){
         for(let i = 0; i < doc[0].usuarios_documento.length; i++){

@@ -74,7 +74,7 @@ export class EditarDocComponent implements OnInit {
       this.openSnackBar("ERROR: Debe ingresar un título","OK");
     else if(this.coleccion.descripcion == null || this.coleccion.descripcion == "")
       this.openSnackBar("ERROR: Debe ingresar una descripción","OK");
-    else  if(this.coleccion.titulo.length > 30) //Validación longitud de datos
+    else  if(this.coleccion.titulo.length > 80) //Validación longitud de datos
       this.openSnackBar("ERROR: El título excede la longitud máxima","OK");
     else if(this.coleccion.descripcion.length > 200)
       this.openSnackBar("ERROR: La descripción excede la longitud máxima","OK");
@@ -113,7 +113,7 @@ export class EditarDocComponent implements OnInit {
       if(!this.boolAutor){
         this.documento.getDocById(this.idDoc).subscribe(data=>{
           console.log(data.id);
-          this.documento.putDoc({id:this.idDoc,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:data.archivoUrl,fk_materia:data.fk_materia,fecha:data.fecha}).subscribe(res=>{
+          this.documento.putDoc({id:this.idDoc,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:data.archivoUrl,imgUrl:data.imgUrl,fk_materia:data.fk_materia,fecha:data.fecha}).subscribe(res=>{
             console.log(res);
           });
 
