@@ -47,12 +47,12 @@
 }
 .menuUser {
     background-color: #b4cce3;
-    color: #4e5867;
+    color: #1b4683;
     display: none;
     flex-direction: column;
     justify-content: space-evenly;
     width: 200px;
-    height: 90px;
+    height: fit-content;
     padding-left: 2vh;
     padding-bottom: 1vh;
     z-index: 9999;
@@ -68,6 +68,10 @@
     border: 2px dotted #4e5867;
     border-width: 0 0 2px 0;
     cursor: pointer;
+    padding-top: 2%;
+}
+.admin {
+    color: #4e5867;
 }
 .material-icons{
     font-size: 2.5vh;
