@@ -66,9 +66,11 @@ export class PerfilUsrComponent implements OnInit {
   ngConsultarUsuarioDocumento(id:string){
     this.comunicacion.setDocsEmpty();
     this.usr.getDocsById(id).subscribe((data)=>{
-      data[0].documentos_usuario.forEach(doc => {
-        this.comunicacion.addDocumentoUsrPerfil(doc,data[0].nombre);
-      });
+      if (data[0].documentos_usuario != null) {
+        data[0].documentos_usuario.forEach(doc => {
+          this.comunicacion.addDocumentoUsrPerfil(doc,data[0].nombre);
+        });
+      }
     });
   }
 }

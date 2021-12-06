@@ -21,8 +21,6 @@ export class DeleteDialogComponent implements OnInit {
     readonly snackBar: MatSnackBar, private documento:DocumentoService,private router:Router) { }
 
   ngOnInit(): void {
-    console.log(this.data.documentoId); //id del documento
-    console.log(this.data.idLog);
   }
   ngOnCancel() {
     this.dialogRef.close();
@@ -30,7 +28,6 @@ export class DeleteDialogComponent implements OnInit {
   ngOnDelete() {
     //Aquí se manda a eliminar el documento
     this.documento.delDoc(this.data.documentoId).subscribe(data=>{
-      console.log(data);
       
       this.dialogRef.close();
       this.openSnackBar("El archivo ha sido eliminado.", "Ok");

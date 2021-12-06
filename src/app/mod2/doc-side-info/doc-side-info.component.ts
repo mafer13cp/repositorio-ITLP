@@ -40,7 +40,6 @@ export class DocSideInfoComponent implements OnInit {
 
   ngThrowParam(text:string){
     this.AccEvent.emit([text,this.tagOMat]);
-    console.log("desde doc info: " + text);
   }
 
   ngEsMateria(){

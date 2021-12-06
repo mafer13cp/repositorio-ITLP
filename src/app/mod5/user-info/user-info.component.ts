@@ -34,19 +34,19 @@ export class UserInfoComponent implements OnInit {
 
   setIconRol(rol: number) {
     switch (rol) {
-      case 0: //alumno
+      case 1: //alumno
         this.iconRol = "school"
         this.ttt = "Este usuario es un alumno de la institutción";
         break;
-      case 1: //maestro
+      case 2: //maestro
         this.iconRol = "history_edu"
         this.ttt = "Este usuario es un maestro de la institutción";
         break;
-      case 2: // empleado
+      case 3: // empleado
         this.iconRol = "work"
         this.ttt = "Este usuario es un empleado de la institutción";
         break;
-      case 3: //admin
+      case 4: //admin
         this.iconRol = "local_police"
         this.ttt = "Este usuario es un administrador del sitio";
         break;

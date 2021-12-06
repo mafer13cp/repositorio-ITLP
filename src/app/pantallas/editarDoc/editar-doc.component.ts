@@ -105,28 +105,23 @@ export class EditarDocComponent implements OnInit {
             this.otrosN.push(this.coleccion.autores[i]);
         }
       }
-      console.log("Usuarios en el sistema");
-      console.log(this.usrsID);
-      console.log("Otros Usuarios");
-      console.log(this.otrosN);
 
       if(!this.boolAutor){
         this.documento.getDocById(this.idDoc).subscribe(data=>{
-          console.log(data.id);
           this.documento.putDoc({id:this.idDoc,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:data.archivoUrl,imgUrl:data.imgUrl,fk_materia:data.fk_materia,fecha:data.fecha}).subscribe(res=>{
-            console.log(res);
+            
           });
 
         });
         for(let i = 0; i < this.otrosN.length; i++){
           this.otrosServ.postOtro(this.otrosN[i],this.idDoc).subscribe((data)=>{
-            console.log(data);
+            
           });
         }
 
         for(let i = 0; i < this.usrsID.length; i++){
           this.autorServ.postAutor(this.usrsID[i],this.idDoc).subscribe((data)=>{
-            console.log(data);
+            
           });
         }
         setTimeout(() => {

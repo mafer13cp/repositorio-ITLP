@@ -34,11 +34,10 @@ export class DocMiniComponent implements OnInit {
     this.documento.getUsuariosNomDoc(this.docTitle).subscribe(data=>{
       let esAutor = false;
       if(data.length != 0){
-        console.log(data);
         for(let i = 0; i < data.length; i++){
           if(data[i].usuarios_documento != null){
             for(let j = 0; j < data[i].usuarios_documento.length; j++){
-              if((data[i].usuarios_documento[j].id == this.idLog && data[i].id == this.idDoc)||(this.usr.fk_rol == 3)){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
+              if((data[i].usuarios_documento[j].id == this.idLog && data[i].id == this.idDoc)||(this.usr.fk_rol == 4)){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
                 esAutor = true;
               }
             }

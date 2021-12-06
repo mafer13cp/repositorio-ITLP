@@ -29,7 +29,6 @@ export class ViewDocAutComponent implements OnInit {
     this.comunicacion.setTagMatAutOtroViewEmpty();
     this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.idDoc = parseInt(this.route.snapshot.paramMap.get('idDoc'));
-    console.log(this.idDoc);
     this.documento.getComentariosUsuarioByDocId(this.idDoc).subscribe(doc=>{
       this.comunicacion.setDocComentarios(doc[0]);
     });
@@ -85,12 +84,10 @@ export class ViewDocAutComponent implements OnInit {
 
   ngOnEdit(control: any)
   {
-    console.log("editar desde view autor");
     this.router.navigate([`/editarDoc/${this.idLog}/${this.idDoc}`]);
   }
   ngOnDelete(control: any)
   {
-    console.log("eliminar desde view autor");
     this.dialog.open(DeleteDialogComponent, {data: {documentoId: this.idDoc,idLog:this.idLog }}); //Recibe el id del doc
   }
 }

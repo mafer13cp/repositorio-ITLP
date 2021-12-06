@@ -18,7 +18,6 @@ export class InputTextComponent implements OnInit {
   ngOnInput() {
     const com = this.inputField.nativeElement.value
     this.ComEvent.emit(com);
-    console.log("Comentario: " + com);
     this.inputField.nativeElement.value = "";
   }
 

@@ -21,12 +21,10 @@ export class AccordionTagAutComponent implements OnInit {
     //Mandar el valor del tag y el id de la selección para modificar
     this.texto = control.srcElement.childNodes[1].textContent;
     this.AccEvent.emit(this.texto);
-    console.log("desde accordion tag aut: " + this.texto);
   }
   ngOnEdit(control: any){
     //Mandar el valor del tittle (tags, materia o docs) y el id de la selección
     const texto = control.srcElement.innerHTML;
     this.AccEvent.emit(texto);
-    console.log("desde accordion aut: " + texto);
   }
 }

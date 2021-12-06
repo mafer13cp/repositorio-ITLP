@@ -21,6 +21,5 @@ export class AccordionTagComponent implements OnInit {
     //Mandar el valor del tag y el id de la selección
     this.texto = control.srcElement.childNodes[1].textContent;
     this.AccEvent.emit(this.texto);
-    console.log("desde accordion tag: " + this.texto);
   }
 }
