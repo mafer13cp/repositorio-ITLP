@@ -1,4 +1,7 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'comment',
@@ -12,14 +15,16 @@ export class CommentComponent implements OnInit {
   @Input() text: string = "Lorem";
   @Input() imagen:number = 0;
   @Input() rol:number = 0;
-
+  @Input() idUsrCom:string;
   imgIcon: string = ""; //Debe tomarlo del usuario
   iconRol: string = "school";  //Debe tomarlo del usuario x2
   ttt: string =""; // ToolTip Text  //Debe tomarlo del usuario x3
+  idLog:string;
 
-  constructor() { }
+  constructor(private usuario:UsuarioService,private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idLog = this.route.snapshot.paramMap.get('idLog');
     //Aquí se debe de hacer la consulta del usuario y poner la info en las variables
     this.setIconRol(this.rol);
     this.imgIcon = `../../../assets/img/userIcons/${this.imagen}.png`; //Debe tomarlo del usuario
@@ -29,6 +34,7 @@ export class CommentComponent implements OnInit {
     //Mandar el nombre de usuario y el id para mostrar perfil
     const texto = control.srcElement.innerHTML;
     this.UserEvent.emit(texto);
+    this.router.navigate([`/perfilUsr/${this.idLog}/${this.idUsrCom}`]);
     console.log("desde comentario: " + texto);
   }
 

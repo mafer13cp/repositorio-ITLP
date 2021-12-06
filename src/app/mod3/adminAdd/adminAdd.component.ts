@@ -93,7 +93,7 @@ export class AdminAddComponent implements OnInit {
             }
             if(existe == 0){
               this.materia.postMat({id:this.datos[0],nombre:this.datos[1],fk_carrera:idCarr}).subscribe(data=>{
-                console.log(data);
+                this.openSnackBar("La materia se subio exitosamente","OK");
               });
             }
             else
@@ -110,7 +110,7 @@ export class AdminAddComponent implements OnInit {
         this.openSnackBar("ERROR: El nombre del tag excede el tamaño máximo","OK");
       else{
         this.tag.postTag(this.datos[0]).subscribe(res=>{
-          console.log(res);
+          this.openSnackBar("El tag se subió exitosamente","OK");
         });
       }
     }   

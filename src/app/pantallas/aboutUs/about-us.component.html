@@ -10,15 +10,15 @@
     <h1 class="texto2">Desarrolladores</h1>
     <section class="desarrolladores">
         <div class="des">
-            <devCard class="card" [name]="'Alfonso Rochín'" [imgUrl]="'../../../assets/img/rochin.jpg'"></devCard>
+            <devCard class="card" (click)="ngDev('1')" [name]="'Alfonso Rochín'" [imgUrl]="'../../../assets/img/rochin.jpg'"></devCard>
             <h2 class="texto3">It can be fixed on the road 🍷</h2>
         </div>
         <div class="des">
-            <devCard class="card" [name]="'María Fernanda Cota'" [imgUrl]="'../../../assets/img/mafer.jpg'"></devCard>
+            <devCard class="card" (click)="ngDev('2')" [name]="'María Fernanda Cota'" [imgUrl]="'../../../assets/img/mafer.jpg'"></devCard>
             <h2 class="texto3">Just give me my coffee! ☕</h2>
         </div>
         <div class="des">
-            <devCard class="card" [name]="'Juan Carlos Valadez'" [imgUrl]="'../../../assets/img/juan.jpg'"></devCard>
+            <devCard class="card" (click)="ngDev('3')" [name]="'Juan Carlos Valadez'" [imgUrl]="'../../../assets/img/juan.jpg'"></devCard>
             <h2 class="texto3">Cheers!! 🍻</h2>
         </div>
     </section>

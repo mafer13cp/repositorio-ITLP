@@ -39,7 +39,7 @@ export class SubirDocComponent implements OnInit {
   usrsID:string[]=[];
   tagsID:number[]=[];
   otherTagN:string[]=[];
-  matID:string;
+  matID:string = null;
   date:string;
   idLog:string;
 
@@ -114,8 +114,6 @@ export class SubirDocComponent implements OnInit {
     this.boolMat = true;
     if(this.coleccion.titulo == null || this.coleccion.titulo == "") //Validación de vacio o nulo
       this.openSnackBar("ERROR: Debe ingresar un título","OK");
-    else if(this.coleccion.materia == null || this.coleccion.materia == "")
-      this.openSnackBar("ERROR: Debe ingresar una materia","OK");
     else if(this.coleccion.archivo == null || this.coleccion.archivo == "")
       this.openSnackBar("ERROR: Debe seleccionar un archivo","OK");
     else if(this.coleccion.descripcion == null || this.coleccion.descripcion == "")
