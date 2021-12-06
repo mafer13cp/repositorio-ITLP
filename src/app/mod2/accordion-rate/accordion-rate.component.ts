@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { RatingService } from 'src/app/services/rating.service';
 
@@ -16,7 +17,7 @@ export class AccordionRateComponent implements OnInit {
   idLog:string;
   idDoc:number;
 
-  constructor(private route:ActivatedRoute, private rating:RatingService) { 
+  constructor(private route:ActivatedRoute, private rating:RatingService,private snackBar:MatSnackBar) { 
   }
 
   ngOnInit(): void {
@@ -65,14 +66,12 @@ export class AccordionRateComponent implements OnInit {
         }
       }
     });
-    /*setTimeout(() => {
-      let i = 0;
-      while (i < this.numero) {
-        this.controlesRate[i].innerHTML = "star";
-        i++;
-      }
-    }, 100);
-    */
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      panelClass: ["sbBlack"]
+    });
   }
 
   ngOnClick(num: number): void {
@@ -91,9 +90,7 @@ export class AccordionRateComponent implements OnInit {
     this.rating.filterRatingByDoc(this.idDoc).subscribe(data=>{
       if(data.length == 0){
         this.rating.postRating({id:null,calificacion:num,fk_documento:this.idDoc,fk_usuario:this.idLog}).subscribe(res=>{
-          console.log("1");
-          console.log("Voto guardado");
-          console.log(res);
+          this.openSnackBar("Su voto se ha registrado","OK");
           this.ngOnInit();
         });
       }
@@ -108,17 +105,14 @@ export class AccordionRateComponent implements OnInit {
         }
         if(existe == 0){
           this.rating.postRating({id:null,calificacion:num,fk_documento:this.idDoc,fk_usuario:this.idLog}).subscribe(res=>{
-            console.log("2");
-            console.log("Voto guardado");
-            console.log(res);
+            this.openSnackBar("Su voto se ha registrado","OK");
             this.ngOnInit();
           });
         }
         else{
           this.rating.putRating({id:idRat,calificacion:num,fk_documento:this.idDoc,fk_usuario:this.idLog}).subscribe(res=>{
             console.log("3");
-            console.log("Voto actualizado");
-            console.log(res);
+            this.openSnackBar("Su voto se ha actualizado","OK");
             this.ngOnInit();
           });
         }
