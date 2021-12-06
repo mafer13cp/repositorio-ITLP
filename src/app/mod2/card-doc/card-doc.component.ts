@@ -10,6 +10,7 @@ export class CardDocComponent implements OnInit {
 
   @Input () docName: string = "title";
   @Input() id:number;
+  @Input() imgDoc:string;
   
   constructor(private router:Router) { 
   }

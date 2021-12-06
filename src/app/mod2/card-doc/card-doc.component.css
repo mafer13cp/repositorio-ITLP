@@ -10,9 +10,17 @@
     height: 150px;
     cursor: pointer;
 }
+.prev {
+    font-size: 1.5vh;
+    color: rgb(146, 143, 143);
+}
 .content {
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 95px;
+    overflow: hidden;
+}
+.mini {
+    width: 85%;
 }
 .nameTitle {
     width: 98%;

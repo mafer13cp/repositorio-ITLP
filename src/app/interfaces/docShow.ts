@@ -8,6 +8,7 @@ export interface DocShow {
     nombreDoc:string;
     fechaDoc:string;
     materia:Materia;
+    imgUrl:string;
     tags:Tag[]
     rating:Rating;
     usuarios:Usuario[];

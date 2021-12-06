@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { DocImgService } from 'src/app/services/docImg.service';
 import { DocumentoService } from 'src/app/services/documento.service';
 
 @Component({

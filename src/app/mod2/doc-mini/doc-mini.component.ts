@@ -15,6 +15,7 @@ export class DocMiniComponent implements OnInit {
   @Input() docTitle: string = "title";
   @Input() autorName: string = "name";
   @Input() idDoc:number = 0;
+  @Input() imgDoc:string;
   idLog:string;
   usr:Usuario;
 

@@ -7,6 +7,7 @@ import { Tag } from 'src/app/interfaces/tag';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AutorService } from 'src/app/services/autor.service';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { DocImgService } from 'src/app/services/docImg.service';
 import { DocumentoService } from 'src/app/services/documento.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { MateriaService } from 'src/app/services/materia.service';
@@ -44,7 +45,8 @@ export class SubirDocComponent implements OnInit {
   constructor(readonly snackBar: MatSnackBar,private materia:MateriaService, private comunicacion:ComunicacionService,
     private tag:TagService, private usuario:UsuarioService,
     private docServ:DocumentoService,private tagDocServ:TagDocService,private tagServ:TagService,
-    private autorServ:AutorService,private otrosServ:OtrosService, private fireServ:FirebaseService, private route:ActivatedRoute) { }
+    private autorServ:AutorService,private otrosServ:OtrosService, private fireServ:FirebaseService, 
+    private route:ActivatedRoute, private docImg: DocImgService) { }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
@@ -116,7 +118,7 @@ export class SubirDocComponent implements OnInit {
       this.openSnackBar("ERROR: Debe ingresar una descripción","OK");
     else if(this.coleccion.tags == null || this.coleccion.tags == [])
       this.openSnackBar("ERROR: Debe ingresar al menos un tag","OK");
-    else  if(this.coleccion.titulo.length > 30) //Validación longitud de datos
+    else  if(this.coleccion.titulo.length > 80) //Validación longitud de datos
     this.openSnackBar("ERROR: El título excede la longitud máxima","OK");
     else if(this.coleccion.descripcion.length > 200)
       this.openSnackBar("ERROR: La descripción excede la longitud máxima","OK");
@@ -205,9 +207,17 @@ export class SubirDocComponent implements OnInit {
       console.log(this.tagsID);
       console.log("SIGO BIEN");
       if(!this.boolTag && !this.boolAutor && !this.boolMat){
-        this.fireServ.uploadDoc(this.coleccion.archivo).then(()=>{
-          this.fireServ.consultDoc(this.coleccion.archivo.name).then((url)=>{
-            this.docServ.postDoc({id:null,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:url,fk_materia:this.matID,fecha:this.date}).subscribe((data)=>{
+        this.fireServ.uploadDoc(this.coleccion.archivo).then(()=>{ //Subir doc a firebase
+          this.fireServ.consultDoc(this.coleccion.archivo.name).then((url)=>{ //obtener link del doc
+
+            //
+
+            this.docImg.postDocImg(url, this.coleccion.archivo.name).subscribe((imgDocUrl) => { //Subir y obtener img de la portada del doc
+              console.log(imgDocUrl.body.Files[0].Url);
+              let imgDoc = imgDocUrl.body.Files[0].Url;
+            //
+            //Agregar doc a al BD
+            this.docServ.postDoc({id:null,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:url,imgUrl:imgDoc,fk_materia:this.matID,fecha:this.date}).subscribe((data)=>{
 
               for(let i = 0; i < this.otherTagN.length; i++){
                 this.tagServ.postTag(this.otherTagN[i]).subscribe((data)=>{
@@ -233,6 +243,7 @@ export class SubirDocComponent implements OnInit {
               }, 3000);
 
               this.openSnackBar("El documento se ha subido exitosamente","OK");
+            });
             });
           });
         })

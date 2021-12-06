@@ -3,6 +3,7 @@ export interface Documento {
     nombre: string;
     descripcion: string;
     archivoUrl: string;
-    fk_materia: string;
+    imgUrl: string;
     fecha:string;
+    fk_materia: string;
 }

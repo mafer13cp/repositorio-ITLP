@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { strictEqual } from 'assert';
 import { Observable, Subject } from 'rxjs';
 import { DocShow } from '../interfaces/docShow';
 import { Documento } from '../interfaces/documento';
@@ -66,6 +67,7 @@ export class ComunicacionService {
       usuarioPrincipal:documento.usuarios_documento[0], //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
+      imgUrl: documento.imgUrl,
       tags:null,
       rating:null
     };
@@ -81,6 +83,7 @@ export class ComunicacionService {
       usuarioPrincipal:usuario, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
+      imgUrl:documento.imgUrl,
       tags:null,
       rating:null
     };
@@ -96,6 +99,7 @@ export class ComunicacionService {
       usuarioPrincipal:{id:"",nombre:usuario,correo:"",imagen:1,fk_rol:1,fk_carrera:"",contrasena:"", descripcion:""}, //ESTE ERROR DA PORQUE HAY DOCUMENTOS EN LA BD SIN USUARIOS ASOCIADOS
       fechaDoc:documento.fecha,
       materia:null,
+      imgUrl:documento.imgUrl,
       tags:null,
       rating:null
     };
