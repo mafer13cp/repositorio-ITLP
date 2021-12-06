@@ -23,14 +23,6 @@ export class DocImgService {
               }
           },
           {
-              "Name": "StoreFile",
-              "Value": true
-          },
-          {
-              "Name": "FileName",
-              "Value": n
-          },
-          {
               "Name": "PageRange",
               "Value": "1"
           }
@@ -40,4 +32,5 @@ export class DocImgService {
     return this.http.post(` https://v2.convertapi.com/convert/pdf/to/png?Secret=TWohDfBTts4v26kl`,body, {'headers': headers, observe: 'response'});
   }
 
+  
 }

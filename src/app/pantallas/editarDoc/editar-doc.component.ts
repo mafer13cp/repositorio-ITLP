@@ -129,8 +129,10 @@ export class EditarDocComponent implements OnInit {
             console.log(data);
           });
         }
-
-        this.openSnackBar("El documento se ha actualizado exitosamente","OK");
+        setTimeout(() => {
+          this.openSnackBar("El documento se ha actualizado exitosamente","OK");
+          this.router.navigate([`/inicio/${this.idLog}`]);
+        }, 1000);
       }
     }
   }
