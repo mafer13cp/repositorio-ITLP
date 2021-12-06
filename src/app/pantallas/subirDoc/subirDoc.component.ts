@@ -247,7 +247,9 @@ export class SubirDocComponent implements OnInit {
                   this.openSnackBar("El documento se ha subido exitosamente","OK");
                   this.router.navigate([`/inicio/${this.idLog}`]);
                 });
+
               })            
+
             });
           });
         })
