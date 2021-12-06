@@ -56,6 +56,17 @@ public filterRatingByDoc(doc: number):Observable<any> {
   const paramsHttp = new HttpParams().set('fk_documento', doc);
   return this.http.get<any>(`${this.baseUrl}/ratings`,{params: paramsHttp});
 }
+
+public filterRatingByDoc2(doc: number):Observable<any> {
+  const x = {
+    where: {
+      fk_documento: doc
+    }
+  };
+  const y = encodeURIComponent(JSON.stringify(x));
+  return this.http.get<any>(`${this.baseUrl}/ratings/?filter=${y}`);
+}
+
 public getDocRating(doc: number):number {
   const ratingList = this.filterRatingByDoc(doc);
   let sum = 0;

@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Usuario } from 'src/app/interfaces/usuario';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 import { DocumentoService } from 'src/app/services/documento.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'docMini',
@@ -14,13 +16,17 @@ export class DocMiniComponent implements OnInit {
   @Input() autorName: string = "name";
   @Input() idDoc:number = 0;
   idLog:string;
+  usr:Usuario;
 
   constructor(private documento:DocumentoService,private router:Router,
-    private comunicacion:ComunicacionService,private route:ActivatedRoute) { 
+    private comunicacion:ComunicacionService,private route:ActivatedRoute,private usuario:UsuarioService) { 
   }
 
   ngOnInit(): void { 
     this.idLog = this.route.snapshot.paramMap.get('idLog');
+    this.usuario.getUsuarioById(this.idLog).subscribe(data=>{
+      this.usr = data[0];
+    });
   }
 
   ngShowDoc(){
@@ -31,7 +37,7 @@ export class DocMiniComponent implements OnInit {
         for(let i = 0; i < data.length; i++){
           if(data[i].usuarios_documento != null){
             for(let j = 0; j < data[i].usuarios_documento.length; j++){
-              if(data[i].usuarios_documento[j].id == this.idLog && data[i].id == this.idDoc){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
+              if((data[i].usuarios_documento[j].id == this.idLog && data[i].id == this.idDoc)||(this.usr.fk_rol == 3)){ //En vez de comparar con autorName debe comparar con el nombre del usuario loggeado.
                 esAutor = true;
               }
             }
