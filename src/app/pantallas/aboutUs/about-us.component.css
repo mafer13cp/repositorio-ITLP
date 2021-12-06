@@ -26,4 +26,5 @@
 }
 .card{
     margin-bottom: 3%;
+    cursor: pointer;
 }

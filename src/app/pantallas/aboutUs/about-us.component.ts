@@ -18,4 +18,15 @@ export class AboutUsComponent implements OnInit {
     
   }
 
+  ngDev(dev:string){
+    if(dev == "1")
+      this.router.navigate([`/perfilUsr/${"17310710"}`]);
+    else if(dev == "2")
+      this.router.navigate([`/perfilUsr/${"17310749"}`]);
+    else if(dev == "3")
+      this.router.navigate([`/perfilUsr/${"17310715"}`]);
+  }
+
+
+
 }
