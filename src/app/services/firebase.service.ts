@@ -30,4 +30,11 @@ export class FirebaseService {
     return url;
   }
 
+  async uploadImg(file:any, name:string):Promise<string> {
+    const archivoPath = this.storageRef.child(`Imagenes/${name}`);
+    await archivoPath.putString(file,'base64', {contentType: 'image/png'});
+    const url = await archivoPath.getDownloadURL();
+    return url;
+  }
+
 }

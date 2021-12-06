@@ -215,38 +215,39 @@ export class SubirDocComponent implements OnInit {
             //
 
             this.docImg.postDocImg(url, this.coleccion.archivo.name).subscribe((imgDocUrl) => { //Subir y obtener img de la portada del doc
-              console.log(imgDocUrl.body.Files[0].Url);
-              let imgDoc = imgDocUrl.body.Files[0].Url;
-            //
-            //Agregar doc a al BD
-            this.docServ.postDoc({id:null,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:url,imgUrl:imgDoc,fk_materia:this.matID,fecha:this.date}).subscribe((data)=>{
+              
+              let f = imgDocUrl.body.Files[0].FileData;
+              this.fireServ.uploadImg(f.toString(), this.coleccion.archivo.name).then((imgUrl) => {
+                //Agregar doc a al BD
+                this.docServ.postDoc({id:null,nombre:this.coleccion.titulo,descripcion:this.coleccion.descripcion,archivoUrl:url,imgUrl:imgUrl,fk_materia:this.matID,fecha:this.date}).subscribe((data)=>{
 
-              for(let i = 0; i < this.otherTagN.length; i++){
-                this.tagServ.postTag(this.otherTagN[i]).subscribe((data)=>{
-                  this.tagsID.push(data.body.id);
+                  for(let i = 0; i < this.otherTagN.length; i++){
+                    this.tagServ.postTag(this.otherTagN[i]).subscribe((data)=>{
+                      this.tagsID.push(data.body.id);
+                    });
+                  }
+    
+                  for(let i = 0; i < this.otrosN.length; i++){
+                    this.otrosServ.postOtro(this.otrosN[i],data.body.id).subscribe((data)=>{
+                    });
+                  }
+    
+                  for(let i = 0; i < this.usrsID.length; i++){
+                    this.autorServ.postAutor(this.usrsID[i],data.body.id).subscribe((data)=>{
+                    });
+                  }
+    
+                  setTimeout(() => {
+                    for(let i = 0; i < this.tagsID.length; i++){
+                      this.tagDocServ.postTagDoc(this.tagsID[i],data.body.id).subscribe((data)=>{
+                      });
+                    }
+                  }, 3000);
+    
+                  this.openSnackBar("El documento se ha subido exitosamente","OK");
+                  this.router.navigate([`/inicio/${this.idLog}`]);
                 });
-              }
-
-              for(let i = 0; i < this.otrosN.length; i++){
-                this.otrosServ.postOtro(this.otrosN[i],data.body.id).subscribe((data)=>{
-                });
-              }
-
-              for(let i = 0; i < this.usrsID.length; i++){
-                this.autorServ.postAutor(this.usrsID[i],data.body.id).subscribe((data)=>{
-                });
-              }
-
-              setTimeout(() => {
-                for(let i = 0; i < this.tagsID.length; i++){
-                  this.tagDocServ.postTagDoc(this.tagsID[i],data.body.id).subscribe((data)=>{
-                  });
-                }
-              }, 3000);
-
-              this.openSnackBar("El documento se ha subido exitosamente","OK");
-              this.router.navigate([`/inicio/${this.idLog}`]);
-            });
+              })            
             });
           });
         })
