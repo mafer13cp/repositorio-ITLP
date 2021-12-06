@@ -7,7 +7,7 @@
                 <h2>{{titulo}}</h2>
                 <i class="material-icons" (click)=ngOnEdit($event)>edit</i>
             </div>
-            <cardDoc [docName]=titulo [id]=idDoc (click)="ngClickCard()"></cardDoc>
+            <cardDoc [docName]=titulo [id]=idDoc [imgDoc]=imgDoc (click)="ngClickCard()"></cardDoc>
             <i id="cancel" class="material-icons" (click)=ngOnDelete($event)>cancel</i>
             <div class="edit">
                 <h3>Resúmen</h3>

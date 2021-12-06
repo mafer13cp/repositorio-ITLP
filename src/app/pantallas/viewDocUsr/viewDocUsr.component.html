@@ -4,7 +4,7 @@
     <div class="docContent">
         <div class="docInfo">
             <h2>{{titulo}}</h2>
-            <cardDoc [docName]=titulo [id]=idDoc (click)="ngClickCard()"></cardDoc>
+            <cardDoc [docName]=titulo [id]=idDoc [imgDoc]=imgDoc (click)="ngClickCard()"></cardDoc>
             <h3>Resúmen</h3>
             <p class="resumenDoc">{{descripcion}}</p>
         </div>
