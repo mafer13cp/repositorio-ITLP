@@ -6,7 +6,7 @@ import { DocumentoService } from 'src/app/services/documento.service';
 @Component({
   selector: 'docGen',
   templateUrl: './docGen.component.html',
-  styleUrls: ['./docGen.component.css']
+  styleUrls: ['./docGen.component.css','../../app.component.css']
 })
 export class DocGenComponent implements OnInit {
   datos:any[]=[];

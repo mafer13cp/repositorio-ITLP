@@ -6,7 +6,16 @@
         <div class="cuerpo1">
             <div class="inputT"><inputText (ITEvent)="ngRecibirTitulo($event)" [text]="'Título del documento'"></inputText></div>
             <div class="inputTSp">
-                <div class="btnc1"><label id="lblAutor">Otros autores</label><chipautor [autores]=autores (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
+                <div class="btnc1">
+                    <div>
+                        <label id="lblAutor">Otros autores</label>
+                        <div class="tooltip">
+                            <i class="material-icons icon" matTooltip="?">help_outline</i>
+                            <span class="tooltiptext">No te agreges a ti mismo, ni a los autores ya agregados</span>
+                        </div>
+                    </div>
+                    <chipautor [autores]=autores (CAEvent)="ngRecibirAutores($event)"></chipautor>
+                </div>
             </div>
         </div>
     </div>

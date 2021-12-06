@@ -7,7 +7,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'editarUsuario',
   templateUrl: './editar-usuario.component.html',
-  styleUrls: ['./editar-usuario.component.css']
+  styleUrls: ['./editar-usuario.component.css','../../app.component.css']
 })
 export class EditarUsuarioComponent implements OnInit {
   //el input es el usuario original, o sea el uruaio loggeado

@@ -8,7 +8,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css','../../app.component.css']
 })
 export class RegistroComponent implements OnInit {
   usr:Usuario;

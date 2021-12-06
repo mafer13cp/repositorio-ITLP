@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'resBusqueda',
   templateUrl: './resBusqueda.component.html',
-  styleUrls: ['./resBusqueda.component.css']
+  styleUrls: ['./resBusqueda.component.css','../../app.component.css']
 })
 export class ResBusquedaComponent implements OnInit {
   filtro:string;
