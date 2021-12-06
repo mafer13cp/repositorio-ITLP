@@ -24,7 +24,10 @@ export class AccordionRateComponent implements OnInit {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.idDoc = parseInt(this.route.snapshot.paramMap.get('idDoc'));
     
-    this.rating.filterRatingByDoc(this.idDoc).subscribe(data=>{
+    console.log(this.idLog);
+    console.log(this.idDoc);
+    this.rating.filterRatingByDoc2(this.idDoc).subscribe(data=>{
+      console.log(this.idDoc)
       console.log(data);
       console.log(data[0]);
       if(data.length == null){
@@ -87,7 +90,7 @@ export class AccordionRateComponent implements OnInit {
     }
     console.log("rating: " + num);
     //Aquí se actualiza rating
-    this.rating.filterRatingByDoc(this.idDoc).subscribe(data=>{
+    this.rating.filterRatingByDoc2(this.idDoc).subscribe(data=>{
       if(data.length == 0){
         this.rating.postRating({id:null,calificacion:num,fk_documento:this.idDoc,fk_usuario:this.idLog}).subscribe(res=>{
           this.openSnackBar("Su voto se ha registrado","OK");
