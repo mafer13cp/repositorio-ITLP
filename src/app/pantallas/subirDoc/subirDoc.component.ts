@@ -1,7 +1,7 @@
 import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Materia } from 'src/app/interfaces/materia';
 import { Tag } from 'src/app/interfaces/tag';
 import { Usuario } from 'src/app/interfaces/usuario';
@@ -10,6 +10,7 @@ import { ComunicacionService } from 'src/app/services/comunicacion.service';
 import { DocImgService } from 'src/app/services/docImg.service';
 import { DocumentoService } from 'src/app/services/documento.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { MateriaService } from 'src/app/services/materia.service';
 import { OtrosService } from 'src/app/services/otro.service';
 import { TagDocService } from 'src/app/services/tag-doc.service';
@@ -45,8 +46,11 @@ export class SubirDocComponent implements OnInit {
   constructor(readonly snackBar: MatSnackBar,private materia:MateriaService, private comunicacion:ComunicacionService,
     private tag:TagService, private usuario:UsuarioService,
     private docServ:DocumentoService,private tagDocServ:TagDocService,private tagServ:TagService,
-    private autorServ:AutorService,private otrosServ:OtrosService, private fireServ:FirebaseService, 
-    private route:ActivatedRoute, private docImg: DocImgService) { }
+    private autorServ:AutorService,private otrosServ:OtrosService, private fireServ:FirebaseService, private route:ActivatedRoute,
+    private loggeado:LoggeadoService,private router:Router, private docImg: DocImgService) { 
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+    }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');

@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Rol } from 'src/app/interfaces/rol';
 import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento';
 import { UsuarioRol } from 'src/app/interfaces/usuarioRol';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -20,7 +21,11 @@ export class PerfilUsrComponent implements OnInit {
   documentos:UsuarioAutorDocumento;
   idLog:string;
 
-  constructor(private usr:UsuarioService, private comunicacion:ComunicacionService,private route:ActivatedRoute) { }
+  constructor(private usr:UsuarioService, private comunicacion:ComunicacionService,private route:ActivatedRoute,
+    private loggeado:LoggeadoService, private router:Router) { 
+    if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
     let idUsr:string = this.route.snapshot.paramMap.get('idUsr');

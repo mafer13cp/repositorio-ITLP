@@ -5,6 +5,8 @@ import { MateriaService } from 'src/app/services/materia.service';
 import { TagService } from 'src/app/services/tag.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 
 @Component({
   selector: 'busAdmin',
@@ -19,9 +21,17 @@ export class BusAdminComponent implements OnInit {
   tipo:string;
 
   constructor(private documento:DocumentoService, private materia:MateriaService, 
-    private tag:TagService, private usuario:UsuarioService,readonly snackBar: MatSnackBar) { }
+    private tag:TagService, private usuario:UsuarioService,readonly snackBar: MatSnackBar,private router:Router,
+    private loggeado:LoggeadoService) { 
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+    }
 
   ngOnInit(): void {
+  }
+
+  ngReload(tipo:string){
+    this.ngRecibirFiltro(tipo);
   }
 
   openSnackBar(message: string, action: string) {

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AutorService } from 'src/app/services/autor.service';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 import { DocumentoService } from 'src/app/services/documento.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { MateriaService } from 'src/app/services/materia.service';
 import { OtrosService } from 'src/app/services/otro.service';
 import { TagService } from 'src/app/services/tag.service';
@@ -27,7 +28,11 @@ export class EditarDocComponent implements OnInit {
   date:string;
 
   constructor(readonly snackBar: MatSnackBar, private otrosServ:OtrosService, private autorServ:AutorService,
-    private route:ActivatedRoute, private usuario:UsuarioService,private documento:DocumentoService) { }
+    private route:ActivatedRoute, private usuario:UsuarioService,private documento:DocumentoService,private router:Router,
+    private loggeado:LoggeadoService) { 
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+    }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');

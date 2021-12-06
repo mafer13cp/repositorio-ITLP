@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 import { DocumentoService } from 'src/app/services/documento.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -16,7 +17,10 @@ export class ViewDocPanComponent implements OnInit {
   idLog:string;
 
   constructor(private router:Router, private route:ActivatedRoute,private documento:DocumentoService,
-    private comunicacion:ComunicacionService, private usuario:UsuarioService) { }
+    private comunicacion:ComunicacionService, private usuario:UsuarioService,private loggeado:LoggeadoService) {
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+     }
 
   ngOnInit(): void {
     this.comunicacion.setTagMatAutOtroViewEmpty();

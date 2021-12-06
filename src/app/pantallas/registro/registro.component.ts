@@ -91,7 +91,7 @@ export class RegistroComponent implements OnInit {
             this.usuario.postUsuario(this.usr).subscribe(data=>{
               this.openSnackBar("Usuario dado de alta exitosamente","OK");
               setTimeout(() => {
-                this.router.navigate(['/Login'])
+                this.router.navigate(['/login'])
               }, 1000);
             });
           });

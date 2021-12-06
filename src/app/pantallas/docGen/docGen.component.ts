@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentoAutorUsuario } from 'src/app/interfaces/documentoAutorUsuario';
 import { DocumentoService } from 'src/app/services/documento.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 
 @Component({
   selector: 'docGen',
@@ -14,7 +15,10 @@ export class DocGenComponent implements OnInit {
   count:number;
   idLog:string;
 
-  constructor(private documento:DocumentoService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private documento:DocumentoService,private router:Router,private route:ActivatedRoute,private loggeado:LoggeadoService) {
+    if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+   }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
