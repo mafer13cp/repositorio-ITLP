@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DeleteDialogComponent } from 'src/app/mod1/delete-dialog/delete-dialog.component';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 import { DocumentoService } from 'src/app/services/documento.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -18,7 +19,10 @@ export class ViewDocAutComponent implements OnInit {
   idLog:string;
 
   constructor(public dialog: MatDialog,private router:Router, private route:ActivatedRoute,
-    private documento:DocumentoService,private comunicacion:ComunicacionService, private usuario:UsuarioService) { }
+    private documento:DocumentoService,private comunicacion:ComunicacionService, private usuario:UsuarioService, private loggeado:LoggeadoService) { 
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+    }
 
   ngOnInit(): void {
     this.comunicacion.setTagMatAutOtroViewEmpty();

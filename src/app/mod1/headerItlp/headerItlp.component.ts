@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class HeaderITLPComponent implements OnInit {
   idLog:string;
   admin:boolean;
 
-  constructor(private router:Router,private route:ActivatedRoute, private usuario:UsuarioService) { }
+  constructor(private router:Router,private route:ActivatedRoute, private usuario:UsuarioService,private loggeado:LoggeadoService) {
+
+   }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
@@ -70,6 +73,7 @@ export class HeaderITLPComponent implements OnInit {
 
   ngLogOut() {
     console.log("Cierra sesión, te regresa a la pantalla de login");
+    this.loggeado.setUsrId(false);
     this.router.navigate([`/login`]);
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MateriaDocumento } from 'src/app/interfaces/materiaDocumento';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { MateriaService } from 'src/app/services/materia.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class MatGenComponent implements OnInit {
   materias:MateriaDocumento[];
   idLog:string;
 
-  constructor(private materia:MateriaService,private router:Router, private route:ActivatedRoute) { }
+  constructor(private materia:MateriaService,private router:Router, private route:ActivatedRoute,private loggeado:LoggeadoService) {
+    if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+   }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');

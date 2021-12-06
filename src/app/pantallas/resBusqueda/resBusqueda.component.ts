@@ -11,6 +11,7 @@ import { TagService } from 'src/app/services/tag.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 
 @Component({
   selector: 'resBusqueda',
@@ -28,7 +29,10 @@ export class ResBusquedaComponent implements OnInit {
 
   constructor(private usuario:UsuarioService, private documento:DocumentoService, private materia:MateriaService,
     private comunicacion:ComunicacionService, private tag:TagService,readonly snackBar: MatSnackBar,
-    private router:Router, private route:ActivatedRoute) { }
+    private router:Router, private route:ActivatedRoute,private loggeado:LoggeadoService) { 
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+    }
 
   ngOnInit(): void {
     let filtro:string = this.route.snapshot.paramMap.get('filtro');

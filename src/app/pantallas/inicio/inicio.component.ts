@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioAutorDocumento } from 'src/app/interfaces/usuarioAutorDocumento';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 import { DocumentoService } from 'src/app/services/documento.service';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 
 @Component({
   selector: 'inicio',
@@ -15,8 +16,10 @@ export class InicioComponent implements OnInit{
   idLog:string;
 
   constructor(private documento:DocumentoService,private comunicacion:ComunicacionService,readonly snackBar: MatSnackBar,
-    private router:Router, private route:ActivatedRoute) { 
+    private router:Router, private route:ActivatedRoute,private loggeado:LoggeadoService) { 
       //router.navigate(['/login']);
+      if(!loggeado.getUsrId())
+        router.navigate(['/login']);
     }
 
   ngOnInit(): void {

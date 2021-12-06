@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 
 @Component({
   selector: 'temGen',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemGenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private loggeado:LoggeadoService) { 
+    if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
   }

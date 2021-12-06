@@ -8,7 +8,7 @@
         <headerLine [title]="''"></headerLine>
     </div>
     <div class="cuerpo3">
-        <adminSearchResult [tipo]=tipo [resultados]=resultados></adminSearchResult>
+        <adminSearchResult [tipo]=tipo [resultados]=resultados (ASREvent)="ngReload($event)"></adminSearchResult>
     </div>
 </section>
 <!--Termina componente-->

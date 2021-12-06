@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TagTagDocDocumento } from 'src/app/interfaces/tagTagDocDocumento';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { TagService } from 'src/app/services/tag.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class TagGenComponent implements OnInit {
   tags:TagTagDocDocumento[];
   idLog:string;
 
-  constructor(private tag:TagService,private router:Router, private route:ActivatedRoute) { }
+  constructor(private tag:TagService,private router:Router, private route:ActivatedRoute,private loggeado:LoggeadoService) { 
+    if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
     this.idLog = this.route.snapshot.paramMap.get('idLog');

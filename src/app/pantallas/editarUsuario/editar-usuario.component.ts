@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { LoggeadoService } from 'src/app/services/loggeado.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class EditarUsuarioComponent implements OnInit {
   //el input es el usuario original, o sea el uruaio loggeado
   usuario:Usuario;
 
-  constructor(readonly snackBar: MatSnackBar,private route:ActivatedRoute,private router:Router,private usr:UsuarioService) { }
+  constructor(readonly snackBar: MatSnackBar,private route:ActivatedRoute,private router:Router,private usr:UsuarioService,private loggeado:LoggeadoService) {
+    if(!loggeado.getUsrId())
+        router.navigate(['/login']);
+   }
 
   ngOnInit(): void {
     let idUsr = this.route.snapshot.paramMap.get('idLog');
