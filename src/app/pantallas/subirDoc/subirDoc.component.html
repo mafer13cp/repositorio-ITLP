@@ -6,11 +6,26 @@
         <div class="cuerpo1">
             <div class="inputT"><inputText (ITEvent)="ngRecibirTitulo($event)" [text]="'Título del documento'"></inputText></div>
             <div class="inputT">
-                <label id="lblAutor">Materia</label>
+                <div>
+                    <label id="lblAutor">Materia</label>
+                    <div class="tooltip">
+                        <i class="material-icons icon" matTooltip="?">help_outline</i>
+                        <span class="tooltiptext">Puedes dejar este campo en blanco</span>
+                    </div>
+                </div>
                 <myAutocomp (MAEvent)="ngRecibirMateria($event)"></myAutocomp>
             </div>
             <div class="inputTSp">
-                <div class="btnc1"><label id="lblAutor">Otros autores</label><chipautor [autores]=autores (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
+                <div class="btnc1">
+                    <div>
+                        <label id="lblAutor">Otros autores</label>
+                        <div class="tooltip">
+                            <i class="material-icons icon" matTooltip="?">help_outline</i>
+                            <span class="tooltiptext">No te agreges a ti mismo</span>
+                        </div>
+                    </div>
+                    <chipautor [autores]=autores (CAEvent)="ngRecibirAutores($event)"></chipautor>
+                </div>
             </div>
         </div>
     </div>

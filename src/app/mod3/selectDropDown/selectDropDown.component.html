@@ -1,6 +1,10 @@
 <div class="center">
     <div class="input">
         <label id="lblAutor">Tags</label>
+        <div class="tooltip">
+            <i class="material-icons icon">help_outline</i>
+            <span class="tooltiptext">Si no existe el tag que deseas ingresar, puedes agregarlo</span>
+        </div>
     </div>
     <div class="ddl">
         <chipTag (CTEvent)="ngEnviarTags($event)" [tags]=tags></chipTag>

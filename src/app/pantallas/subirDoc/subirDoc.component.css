@@ -3,6 +3,7 @@
     flex-direction: column;
     min-height: 87%;
     min-width: 500px;
+    width: 100%;
 }
 .cuerpo0{
     width: 95%;
@@ -30,11 +31,14 @@
 .file,.button{
     width: 100%;
     text-align: center;
-
 }
 .cuerpo3{
     width: 68%;
-
+}
+.cuerpo4 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 .inputT{
     margin-top: 1%;
@@ -80,3 +84,46 @@
     font-size: 3vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.icon {
+    color: #BDD5EA;
+    cursor: help;
+    font-size: 3vh;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #BDD5EA;
+    color: rgb(87,115,153);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #BDD5EA transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
