@@ -54,4 +54,8 @@ export class SideNavComponent implements OnInit {
   ngRedirectAboutUs(){
     this.router.navigate([`/aboutUs/${this.idLog}`]);
   }
+
+  ngRedirectHelp(){
+    this.router.navigate([`/ayuda/${this.idLog}`]);
+  }
 }

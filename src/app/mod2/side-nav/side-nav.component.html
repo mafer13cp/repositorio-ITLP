@@ -8,7 +8,7 @@
             <!--<accordion [title]="'Carreras'" [listItems]="['uno', 'dos', 'tres', 'cuatro']" (AccEvent)="ngThrowParam($event)"></accordion>-->
         </section>
         <section class="more">
-            <h3>Ayuda <i class="material-icons">help</i></h3>
+            <h3 (click)="ngRedirectHelp()"> Ayuda <i class="material-icons">help</i></h3>
             <h3 (click)="ngRedirectAboutUs()">Acerca de nosotros <i class="material-icons">info</i></h3>
         </section>
     </div>

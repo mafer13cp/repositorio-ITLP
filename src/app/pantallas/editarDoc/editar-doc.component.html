@@ -5,9 +5,8 @@
         <headerLine [title]="'Editar Documento'"></headerLine>
         <div class="cuerpo1">
             <div class="inputT"><inputText (ITEvent)="ngRecibirTitulo($event)" [text]="'Título del documento'"></inputText></div>
-            <div class="inputT">
-                <label id="lblAutor">Materia</label>
-                <myAutocomp (MAEvent)="ngRecibirMateria($event)"></myAutocomp>
+            <div class="inputTSp">
+                <div class="btnc1"><label id="lblAutor">Otros autores</label><chipautor [autores]=autores (CAEvent)="ngRecibirAutores($event)"></chipautor></div>
             </div>
         </div>
     </div>

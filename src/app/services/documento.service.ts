@@ -20,7 +20,7 @@ export class DocumentoService {
   public getDocs():Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/documentos`);
   }
-  public getDocById(id: string):Observable<any> {
+  public getDocById(id: number):Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/documentos/${id}`);
   }
 //#endregion

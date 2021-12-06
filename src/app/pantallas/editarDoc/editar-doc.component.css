@@ -25,7 +25,8 @@
     
 }
 .desc, .select{
-    width: 50%;
+    width: 55%;
+    margin: 0 auto;
 }
 .file,.button{
     width: 100%;
@@ -64,9 +65,10 @@
     margin-top: 1%
 }
 .cuerpo2{
-    width: 55%;
+    width: 100%;
     display: flex;
     align-self: center;
+    margin: 0 auto;
     margin-top: 1%;
 }
 .btnSel{
