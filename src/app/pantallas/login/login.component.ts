@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
   constructor(readonly snackBar: MatSnackBar, private usuario:UsuarioService,private router:Router) { }
 
   ngOnInit(): void {
-    
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button";//esta linea es necesaria para chrome
+    window.onhashchange=function(){window.location.hash="no-back-button";}
   }
 
   openSnackBar(message: string, action: string) {
