@@ -11,19 +11,24 @@ export class DocImgService {
 
   constructor(private http:HttpClient) { }
 
-  public postDocImg (): Observable<any> {
+  public postDocImg (urlArchivo: string, name: string): Observable<any> {
     const headers = {'content-type': 'application/json'};
+    let n = name + ".repositorioItlp";
     let x = {
       "Parameters": [
           {
               "Name": "File",
               "FileValue": {
-                  "Url": "https://firebasestorage.googleapis.com/v0/b/repoitlp-c59be.appspot.com/o/Documentos%2FSpitfire_Practica13.pdf?alt=media&token=c9ac907c-56ed-49a2-b49e-f6e385da5f3d"
+                  "Url": urlArchivo
               }
           },
           {
               "Name": "StoreFile",
               "Value": true
+          },
+          {
+              "Name": "FileName",
+              "Value": n
           },
           {
               "Name": "PageRange",
