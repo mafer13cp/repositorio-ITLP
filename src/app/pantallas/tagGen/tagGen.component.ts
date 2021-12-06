@@ -6,7 +6,7 @@ import { TagService } from 'src/app/services/tag.service';
 @Component({
   selector: 'tagGen',
   templateUrl: './tagGen.component.html',
-  styleUrls: ['./tagGen.component.css']
+  styleUrls: ['./tagGen.component.css','../../app.component.css']
 })
 export class TagGenComponent implements OnInit {
   datos:any[]=[];

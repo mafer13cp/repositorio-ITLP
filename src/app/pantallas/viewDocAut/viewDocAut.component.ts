@@ -9,7 +9,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'viewDocAut',
   templateUrl: './viewDocAut.component.html',
-  styleUrls: ['./viewDocAut.component.css']
+  styleUrls: ['./viewDocAut.component.css','../../app.component.css']
 })
 export class ViewDocAutComponent implements OnInit {
   titulo:string;

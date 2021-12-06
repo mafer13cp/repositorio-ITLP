@@ -9,7 +9,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'perfilUsr',
   templateUrl: './perfilUsr.component.html',
-  styleUrls: ['./perfilUsr.component.css']
+  styleUrls: ['./perfilUsr.component.css','../../app.component.css']
 })
 export class PerfilUsrComponent implements OnInit {
   rol:Rol = {id:1,nombre:"Administrador"}; //Temporal en lo que se recibe un UsuarioRol

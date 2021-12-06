@@ -5,7 +5,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'addAdmins',
   templateUrl: './addAdmins.component.html',
-  styleUrls: ['./addAdmins.component.css']
+  styleUrls: ['./addAdmins.component.css','../../app.component.css']
 })
 export class AddAdminsComponent implements OnInit {
   idLog:string;

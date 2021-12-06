@@ -9,7 +9,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'busAdmin',
   templateUrl: './busAdmin.component.html',
-  styleUrls: ['./busAdmin.component.css']
+  styleUrls: ['./busAdmin.component.css','../../app.component.css']
 })
 export class BusAdminComponent implements OnInit {
   filtro:string;
