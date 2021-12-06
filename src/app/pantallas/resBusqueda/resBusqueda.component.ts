@@ -43,7 +43,6 @@ export class ResBusquedaComponent implements OnInit {
       this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
           this.comunicacion.setDocsEmpty();
-          console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
@@ -137,7 +136,6 @@ export class ResBusquedaComponent implements OnInit {
       this.comunicacion.setDocsEmpty();
         this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
           this.comunicacion.setDocsEmpty();
-          console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
@@ -152,7 +150,6 @@ export class ResBusquedaComponent implements OnInit {
         this.comunicacion.setDocsEmpty();
         this.documento.getUsuariosNomDoc(texto).subscribe((data)=>{
           this.comunicacion.setDocsEmpty();
-          console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
@@ -169,7 +166,6 @@ export class ResBusquedaComponent implements OnInit {
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{
-            console.log(data);
             let docExistentes:number[] = [];
             data.forEach(usuario => {
               if(usuario.documentos_usuario != null){
@@ -178,22 +174,14 @@ export class ResBusquedaComponent implements OnInit {
                     this.comunicacion.addDocumentoUsr2(doc,{id:usuario.id,nombre:usuario.nombre,correo:usuario.correo,contrasena:usuario.contrasena,imagen:usuario.imagen,descripcion:usuario.descripcion,fk_carrera:usuario.fk_carrera,fk_rol:usuario.fk_rol});
                     
                     docExistentes.push(doc.id)
-                    console.log(docExistentes);
                   }
                   else{
-                    console.log("else");
                     let existe = 0;
                     for(let i = 0; i < docExistentes.length; i++){
-                      console.log(doc.id);
                       if(doc.id == docExistentes[i]){
                         existe = 1;
-                        console.log("ID DOCUMENTO");
-                        console.log(doc.id);
-                        console.log("ID EN EL ARREGLO");
-                        console.log(docExistentes[i]);
                       }
                     }
-                    console.log(existe);
                     if(existe == 0){
                       this.comunicacion.addDocumentoUsr2(doc,{id:usuario.id,nombre:usuario.nombre,correo:usuario.correo,contrasena:usuario.contrasena,imagen:usuario.imagen,descripcion:usuario.descripcion,fk_carrera:usuario.fk_carrera,fk_rol:usuario.fk_rol});
                       docExistentes.push(doc.id);
@@ -240,7 +228,6 @@ export class ResBusquedaComponent implements OnInit {
         this.comunicacion.setDocsEmpty();
         this.tag.getDocsUsrByTagNombre(texto).subscribe((data)=>{
           this.comunicacion.setDocsEmpty();
-          console.log(data);
           if(data.length == 0)
             this.openSnackBar("ERROR: No se encontró coincidencia","OK");
           else{

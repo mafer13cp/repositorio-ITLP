@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         let existe = false;
         for(let i =0; i < data.length;i++){
           if(data[i].id == datos['usuario'] && data[i].contrasena == datos['contrasena']){ //no es usuario, es ID
-            console.log(datos);
+            
             this.router.navigate([`/inicio/${datos['usuario']}`]);
             this.logged.setUsrId(true);
             existe = true;

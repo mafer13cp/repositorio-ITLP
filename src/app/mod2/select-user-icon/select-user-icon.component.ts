@@ -34,7 +34,6 @@ export class SelectUserIconComponent implements OnInit {
   ngOnSelect (img: any)
   {
     this.selectedImg = img.url;
-    console.log(img.num);
     this.IconEvent.emit(img.num);
   }
 

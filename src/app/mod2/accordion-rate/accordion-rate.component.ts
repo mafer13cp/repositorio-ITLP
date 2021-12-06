@@ -24,12 +24,7 @@ export class AccordionRateComponent implements OnInit {
     this.idLog = this.route.snapshot.paramMap.get('idLog');
     this.idDoc = parseInt(this.route.snapshot.paramMap.get('idDoc'));
     
-    console.log(this.idLog);
-    console.log(this.idDoc);
     this.rating.filterRatingByDoc2(this.idDoc).subscribe(data=>{
-      console.log(this.idDoc)
-      console.log(data);
-      console.log(data[0]);
       if(data.length == null){
         this.numero = 0;
       }
@@ -37,7 +32,6 @@ export class AccordionRateComponent implements OnInit {
         this.numero = 0;
         data.forEach(rat => {
           this.numero += rat.calificacion;
-          console.log(rat.calificacion);
         });
         this.numero = Math.round(this.numero/data.length);
         for(let i = 0; i < this.controlesRate.length; i++){
@@ -88,7 +82,6 @@ export class AccordionRateComponent implements OnInit {
       this.controles[i].innerHTML = "star";
       i++;
     }
-    console.log("rating: " + num);
     //Aquí se actualiza rating
     this.rating.filterRatingByDoc2(this.idDoc).subscribe(data=>{
       if(data.length == 0){
@@ -114,7 +107,6 @@ export class AccordionRateComponent implements OnInit {
         }
         else{
           this.rating.putRating({id:idRat,calificacion:num,fk_documento:this.idDoc,fk_usuario:this.idLog}).subscribe(res=>{
-            console.log("3");
             this.openSnackBar("Su voto se ha actualizado","OK");
             this.ngOnInit();
           });

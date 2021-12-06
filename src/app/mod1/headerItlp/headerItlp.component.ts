@@ -40,25 +40,21 @@ export class HeaderITLPComponent implements OnInit {
       case 'materias':
         //Redireccionar a materias
         this.headerEvent.emit(ruta);
-        console.log("Te manda a ver las materias ehe");
         this.router.navigate([`/matGen/${this.idLog}`]);
         break;
       case 'tags':
         //Redireccionar a tags
         this.headerEvent.emit(ruta);
-        console.log("Te manda a ver las tags ehe");
         this.router.navigate([`/tagGen/${this.idLog}`]);
         break;
       case 'docs':
         //Redireccionar a documentos
         this.headerEvent.emit(ruta);
-        console.log("Te manda a ver los documentos ehe");
         this.router.navigate([`/docGen/${this.idLog}`]);
           break;
       case 'usuario':
         //Redireccionar a perfil de usuario
         this.headerEvent.emit(ruta);
-        console.log("Te manda a tu perfil de usuario ehe");
         this.router.navigate([`/perfilUsr/${this.idLog}`]); //obtener el id del loggeado.
           break;
       default:
@@ -67,18 +63,15 @@ export class HeaderITLPComponent implements OnInit {
   }
 
   ngEdit() {
-    console.log("Te manda a la pantalla de editar usuario");
     this.router.navigate([`/editarUsuario/${this.idLog}`]);
   }
 
   ngLogOut() {
-    console.log("Cierra sesión, te regresa a la pantalla de login");
     this.loggeado.setUsrId(false);
     this.router.navigate([`/login`]);
   }
 
   ngHelp() {
-    console.log("Te manda a la pantalla de ayuda");
     this.router.navigate([`/ayuda/${this.idLog}`]); //Debe llevarnos a help
   }
 

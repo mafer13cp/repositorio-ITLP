@@ -17,8 +17,8 @@ export class AcoordionUsrComponent implements OnInit {
   @Input() otros: boolean = false;
   autor = false;
 
-  rolIcon: string[] = ["school", "history_edu", "work", "local_police"];
-  ttt: string[] = ["Este usuario es un alumno de la institutción", 
+  rolIcon: string[] = ["","school", "history_edu", "work", "local_police"];
+  ttt: string[] = ["","Este usuario es un alumno de la institutción", 
                     "Este usuario es un maestro de la institutción",
                     "Este usuario es un empleado de la institutción",
                     "Este usuario es un administrador del sitio"];

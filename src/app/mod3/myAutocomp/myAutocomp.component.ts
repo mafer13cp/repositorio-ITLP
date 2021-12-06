@@ -29,14 +29,4 @@ export class MyAutocompComponent implements OnInit {
     this.MAEvent.emit(cadena);
   }
 
-  /*
-  focusText(){
-    this.autoC.nativeElement.style.borderRadius = "50px 50px 0 0";
-  }
-
-  blurText(){
-    console.log("FOCUS");
-    this.autoC.nativeElement.style.borderRadius = "50px";
-  }
-  */
 }

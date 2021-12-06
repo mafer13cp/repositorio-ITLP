@@ -33,21 +33,18 @@ export class AdminResultComponent implements OnInit {
   ngEliminarElemento(){
     if(this.tipo == "Documento"){
       this.documento.delDoc(this.id).subscribe(res=>{
-        console.log(res);
         this.openSnackBar("El documento se eliminó con éxito","OK");
         this.AREvent.emit("Documentos");
       });
     }
     else if(this.tipo == "Materia"){
       this.materia.delMat(this.id).subscribe(res=>{
-        console.log(res);
         this.openSnackBar("La materia se eliminó con éxito","OK");
         this.AREvent.emit("Materias");
       });
     }
     else if(this.tipo == "Tag"){
       this.tag.delTag(this.id).subscribe(res=>{
-        console.log(res);
         this.openSnackBar("El tag se eliminó con éxito","OK");
         this.AREvent.emit("Etiquetas");
       });

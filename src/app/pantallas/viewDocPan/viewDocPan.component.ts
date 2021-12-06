@@ -29,7 +29,6 @@ export class ViewDocPanComponent implements OnInit {
     this.documento.getComentariosUsuarioByDocId(this.idDoc).subscribe(doc=>{
       this.comunicacion.setDocComentarios(doc[0]);
       this.comunicacion.setUrlFull(doc[0].archivoUrl);
-      console.log(doc[0].archivoUrl);
     });
     this.documento.getAuts_Tags_Mat_ByDocId(this.idDoc).subscribe(doc=>{
       this.titulo = doc[0].nombre;

@@ -18,14 +18,11 @@ export class DocumentFullComponent implements OnInit {
 
   ngOnInit(): void {
     this.comunicacion.getUrlFull$().subscribe(url=>{
-      console.log(this.url);
       this.embed.nativeElement.src=url;
     });
   }
 
   ngOnClick() {
-    console.log("Regresar a la pantalla de info");
-    //Routing
     this.location.back();
   }
 

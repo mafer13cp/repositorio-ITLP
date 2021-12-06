@@ -160,8 +160,6 @@ export class SubirDocComponent implements OnInit {
 
       //this.usrsID.push(this.usuarioLog.getUsuarioLoggeado().id);
       this.usrsID.push(this.idLog);
-      console.log(this.usrsID);
-      console.log(this.coleccion);
       //Obtención de autores registrados en el sistema y de autores no registrados en el sistema.
       if(this.coleccion.autores != null){
         for(let i = 0; i < this.coleccion.autores.length; i++){
@@ -199,15 +197,6 @@ export class SubirDocComponent implements OnInit {
           break;
         }
       }
-      console.log("Usuarios en el sistema");
-      console.log(this.usrsID);
-      console.log("Otros Usuarios");
-      console.log(this.otrosN);
-      console.log("tags Nuevos");
-      console.log(this.otherTagN);
-      console.log("Tags Existentes");
-      console.log(this.tagsID);
-      console.log("SIGO BIEN");
       if(!this.boolTag && !this.boolAutor && !this.boolMat){
         this.fireServ.uploadDoc(this.coleccion.archivo).then(()=>{ //Subir doc a firebase
           this.fireServ.consultDoc(this.coleccion.archivo.name).then((url)=>{ //obtener link del doc

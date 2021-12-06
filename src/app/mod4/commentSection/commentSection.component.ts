@@ -31,8 +31,7 @@ export class CommentSectionComponent implements OnInit {
   ngRealizarComentario(texto:string){
     let date:string = new Date(Date.now()).toLocaleDateString().toString();
     this.comentario.postCom({id:1,texto:texto,fk_documento:this.idDoc,fk_usuario:this.idLog,fecha:date}).subscribe(com=>{
-      console.log(com);
-      console.log("Se subio");
+      
       this.documento.getComentariosUsuarioByDocId(this.idDoc).subscribe(doc=>{
         this.comunicacion.setDocComentarios(doc[0]);
       });
