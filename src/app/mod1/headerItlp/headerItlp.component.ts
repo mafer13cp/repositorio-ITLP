@@ -28,7 +28,7 @@ export class HeaderITLPComponent implements OnInit {
     this.usuario.getUsuarioById(this.idLog).subscribe(data=>{
       this.imgIcon = `../../../assets/img/userIcons/${data[0].imagen}.png`;
       this.nombre = data[0].nombre;
-      if(data[0].fk_rol == 3){
+      if(data[0].fk_rol == 4){
         this.admin = true;
       }
     });
