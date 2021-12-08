@@ -1,6 +1,6 @@
 <div (mouseleave)="ngMouseOut()" class="dropdown">
   <button  (mouseover)="ngMouseOver()" class="dropbtn"><p #btn>{{default}}</p></button>
-  <div #contenido class="dropdown-content" (mouseleave)="ngMouseOut()">
+  <div #contenido class="dropdown-content {{size}}" (mouseleave)="ngMouseOut()">
       <p *ngFor="let op of ops"  (click)="ngOnSelectEvent($event)">{{op}}</p>
   </div>
 </div>
