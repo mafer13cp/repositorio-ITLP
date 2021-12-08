@@ -60,13 +60,13 @@ export class RegistroComponent implements OnInit {
       let re = new RegExp(`.*@lapaz.tecnm.mx$`,'i');
       if(datos['correo'].match(re)){
         if(datos['rol']=="Alumno")
-          this.idRol = 0;
-        else if(datos['rol']=="Maestro")
           this.idRol = 1;
-        else if(datos['rol']=="Empleado")
+        else if(datos['rol']=="Maestro")
           this.idRol = 2;
-        else if(datos['rol']=="Administrador")
+        else if(datos['rol']=="Empleado")
           this.idRol = 3;
+        else if(datos['rol']=="Administrador")
+          this.idRol = 4;
 
         let existe = false;
         for(let i = 0; i < this.idUsr.length; i++){
