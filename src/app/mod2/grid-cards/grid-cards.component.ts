@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { DocShow } from 'src/app/interfaces/docShow';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
@@ -13,12 +14,20 @@ export class GridCardsComponent implements OnInit{
   @Input() title: string = "title";
   @Input() documents: DocShow[] = []; 
 
-  constructor(private comunicacion:ComunicacionService) { }
+  constructor(private comunicacion:ComunicacionService,private router:Router) { }
 
   ngOnInit(): void {
-    this.comunicacion.getDocumentoUsr$().subscribe(documentos =>{
-      this.documents = documentos;
-    });
+    let re = new RegExp(`/perfilUSr.*`,'i');
+    if(this.router.url.match(re)){
+      this.comunicacion.getDocumentoUsrPerfil$().subscribe(documentos =>{
+        this.documents = documentos;
+      });
+    }
+    else{
+      this.comunicacion.getDocumentoUsr$().subscribe(documentos =>{
+        this.documents = documentos;
+      });
+    }
   }
 
 }

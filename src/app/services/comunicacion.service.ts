@@ -17,6 +17,8 @@ import { UsuarioRol } from '../interfaces/usuarioRol';
 export class ComunicacionService {
   private documentoGrid:DocShow[];
   private documentoGrid$:Subject<DocShow[]>;
+  private documentoGridPerfil:DocShow[];
+  private documentoGridPerfil$:Subject<DocShow[]>;
   private docShowTemp:DocShow;
   private usuarioPerfil:UsuarioRol;
   private usuarioPerfil$:Subject<UsuarioRol>;
@@ -42,6 +44,8 @@ export class ComunicacionService {
   constructor() { 
     this.documentoGrid = [];
     this.documentoGrid$ = new Subject();
+    this.documentoGridPerfil = [];
+    this.documentoGridPerfil$ = new Subject();
     this.usuarioPerfil$ = new Subject();
     this.materias$ = new Subject();
     this.materias = [];
@@ -103,12 +107,16 @@ export class ComunicacionService {
       tags:null,
       rating:null
     };
-    this.documentoGrid.push(this.docShowTemp);
-    this.documentoGrid$.next(this.documentoGrid);
+    this.documentoGridPerfil.push(this.docShowTemp);
+    this.documentoGridPerfil$.next(this.documentoGridPerfil);
   }
 
   getDocumentoUsr$():Observable<DocShow[]>{
     return this.documentoGrid$.asObservable();
+  }
+
+  getDocumentoUsrPerfil$():Observable<DocShow[]>{
+    return this.documentoGridPerfil$.asObservable();
   }
 
   getDocumentoUsrNormal():DocShow[]{
@@ -116,6 +124,8 @@ export class ComunicacionService {
   }
 
   setDocsEmpty(){
+    this.documentoGridPerfil = [];
+    this.documentoGridPerfil$.next(this.documentoGridPerfil);
     this.documentoGrid = [];
     this.documentoGrid$.next(this.documentoGrid);
   }

@@ -11,6 +11,7 @@ export class DropDownListComponent implements OnInit {
   @Output() public DDLEvent = new EventEmitter;
   @Input() default:string = "Elige un filtro";
   @ViewChild('contenido') contenido:ElementRef;
+  @Input() size = "long";
 
   constructor() { }
 
